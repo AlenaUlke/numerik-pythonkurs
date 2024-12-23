@@ -39,3 +39,8 @@ parts:
       file: content/chapter02_basics/arrays/logische_arrays
     - title: Quiz
       file: content/chapter02_basics/arrays/quiz
+  - title: Funktionen und Ausgaben von Funktionen
+    file: content/chapter02_basics/functions/functions_intro
+    sections: 
+    - title: Ausgaben von Funktionen
+      file: content/chapter02_basics/functions/funktionsaufrufe
