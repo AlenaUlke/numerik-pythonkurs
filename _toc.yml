@@ -39,3 +39,11 @@ parts:
       file: content/chapter02_basics/arrays/logische_arrays
     - title: Quiz
       file: content/chapter02_basics/arrays/quiz
+  chapters: 
+  - title: Datenvisualisierung
+    file: content/chapter02_basics/visualization/visualization_intro
+    sections: 
+    - title: Visualisierung
+      file: content/chapter02_basics/visualization/visualization
+    - title: Datenimportierung
+      file: content/chapter02_basics/visualization/data_import
