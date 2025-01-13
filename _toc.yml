@@ -39,7 +39,6 @@ parts:
       file: content/chapter02_basics/arrays/logische_arrays
     - title: Quiz
       file: content/chapter02_basics/arrays/quiz
-  chapters: 
   - title: Datenvisualisierung
     file: content/chapter02_basics/visualization/visualization_intro
     sections: 
@@ -52,3 +51,12 @@ parts:
     sections: 
     - title: Ausgaben von Funktionen
       file: content/chapter02_basics/functions/funktionsaufrufe
+  - title: Programmierkonstrukte
+    file: content/chapter02_basics/programmablaeufe/intro
+    sections: 
+    - title: While-Schleifen
+      file: content/chapter02_basics/programmablaeufe/while_loops
+    - title: For-Schleifen
+      file: content/chapter02_basics/programmablaeufe/for_loops
+    - title: While-Schleifen
+      file: content/chapter02_basics/programmablaeufe/decision_branching
