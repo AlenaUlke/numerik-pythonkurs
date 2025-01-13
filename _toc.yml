@@ -47,3 +47,8 @@ parts:
       file: content/chapter02_basics/visualization/visualization
     - title: Datenimportierung
       file: content/chapter02_basics/visualization/data_import
+  - title: Funktionen und Ausgaben von Funktionen
+    file: content/chapter02_basics/functions/functions_intro
+    sections: 
+    - title: Ausgaben von Funktionen
+      file: content/chapter02_basics/functions/funktionsaufrufe
