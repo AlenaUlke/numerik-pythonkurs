@@ -39,3 +39,14 @@ parts:
       file: content/chapter02_basics/arrays/logische_arrays
     - title: Quiz
       file: content/chapter02_basics/arrays/quiz
+
+
+- caption: Spezialisierung in Python
+  chapters:
+  - title: Mit Daten arbeiten
+    file: content/chapter03_spezialisierung/working_with_data/working_with_data_intro
+    sections:
+    - title: Daten in Tabellen
+      file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_table
+
+
