@@ -48,5 +48,30 @@ parts:
     sections:
     - title: Daten in Tabellen
       file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_table
-
+  - title: Arrays II
+    file: content/chapter03_spezialisierung/arrays_2/arrays_2_intro
+    sections:
+    - title: Arrayerstellung
+      file: content/chapter03_spezialisierung/arrays_2/arrayerstellung
+    - title: Arrays zusammenfügen
+      file: content/chapter03_spezialisierung/arrays_2/concatenating_arrays
+    - title: Arrays umformen
+      file: content/chapter03_spezialisierung/arrays_2/reshaping_arrays
+  - title: Visualisierung II
+    file: content/chapter03_spezialisierung/visualisation_2/visualisation_2_intro
+    sections:
+    - title: Plots individuell gestalten
+      file: content/chapter03_spezialisierung/visualisation_2/advaced_2D_plots
+    - title: 3D Plots
+      file: content/chapter03_spezialisierung/visualisation_2/3D_plots
+  - title: Debugging
+    file: content/chapter03_spezialisierung/debugging/debugging_intro
+    sections:
+    - title: Fehleranzeigen in Python
+      file: content/chapter03_spezialisierung/debugging/error_signs
+  - title: Vektorisierung
+    file: content/chapter03_spezialisierung/vectorisation/vectorisation_intro
+    sections:
+    - title: Effizienter werden
+      file: content/chapter03_spezialisierung/vectorisation/efficiency
 
