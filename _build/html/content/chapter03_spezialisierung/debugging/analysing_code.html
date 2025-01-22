@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fehleranalyse &#8212; Python-Programmierkurs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/debugging/analysing_code';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Vektorisierung" href="../vectorisation/vectorisation_intro.html" />
+    <link rel="prev" title="Fehleranzeige" href="error_signs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Python-Programmierkurs</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Markdown Notebook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">Vorwort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/arrays/array_intro.html">Arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/indizierung.html">Indizierung von Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/rechnen_mit_arrays.html">Rechnen mit Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/logische_arrays.html">Logische Indizierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/quiz.html">Quiz</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spezialisierung in Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_data/organizing_data_in_table.html">Daten in Tabellen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation_2/3D_plots.html">3D Plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="debugging_intro.html">Debugging</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="error_signs.html">Fehleranzeigen in Python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fehleranzeigen in Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vectorisation/vectorisation_intro.html">Vektorisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vectorisation/efficiency.html">Effizienter werden</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/chapter03_spezialisierung/debugging/analysing_code.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fehleranalyse</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#den-code-nach-fehlern-durchgehen">Den Code nach Fehlern durchgehen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-nach-fehlern-durchgehen">Funktionen nach Fehlern durchgehen</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fehleranalyse">
+<h1>Fehleranalyse<a class="headerlink" href="#fehleranalyse" title="Link to this heading">#</a></h1>
+<section id="den-code-nach-fehlern-durchgehen">
+<h2>Den Code nach Fehlern durchgehen<a class="headerlink" href="#den-code-nach-fehlern-durchgehen" title="Link to this heading">#</a></h2>
+<p>This script should fit a polynomial to electricity usage data. But, there is an error indicating that the first two inputs to polyfit should be the same size.</p>
+<p>You can inspect the variables elapsedYears and usage to know they are not the same size. usage should be a vector, not a matrix.</p>
+<p>The variable usage keeps changing! So where did the mistake occur?</p>
+<p>You can see where the error seems to be introduced by removing semicolons (line 8). It would be helpful to pause the code right before this line so we can test modifications using the value at that point in the script.</p>
+<p>Bild 7 gibt eine Übersicht über das Skript, um das es geht.</p>
+<p>In this lesson, you will learn to step through your code and pause execution before certain lines. Not only does this allow you to see how variables change with each modification, but also you can troubleshoot and test possible solutions using the intermediate variable value.</p>
+<p>One way that you may already be familiar with is to leverage sections. You can add section breaks and run the script section-by-section with Run and Advance in the Live Editor tab in the toolstrip.</p>
+<p>Between code sections, you can try things out at the command prompt. If adding sections breaks up your code organization, you may need to remove unneeded section breaks later.</p>
+<p>Another way to step through code is to use built-in debugging tools. To pause code execution before a line, you can set breakpoints by clicking the line number. These are indicated with a red box. Here, we added breakpoints before each line that modifies usage.</p>
+<p>Now when you click run, MATLAB will pause before executing lines 3, 8, 9, and 11, allowing you to inspect variables and try things out before continuing.</p>
+<p>When you click, Run, the first two lines are executed. Line 3, highlighted in green, has not been run. So, usage has not been created yet. To continue to the next breakpoint, click Continue in the Live Editor tab in the toolstrip. This executes every line before the next breakpoint.</p>
+<p>When your code execution is paused, you can inspect variables in the workspace or by mousing over just like you did before. usage is the right size before it is modified in line 8.</p>
+<p>In addition to inspecting other variables, you can try things out at the command prompt. The command prompt is marked with a “K” to indicate you are in debug mode.</p>
+<p>It is a common strategy to test the line you are about to run and try other solutions. It looks like the current line changes the size of usage. The normalization should have been element-wise for usage to remain a vector. You can fix that by changing / to ./.</p>
+<p>If you want to step through your code one line at a time instead of continuing to the next breakpoint, you can use the Step button in the Live Editor tab in the toolstrip. For instance, clicking Step twice will get you to the start of line 10, even though there is no breakpoint there.</p>
+<p>The breakpoints have changed to gray to indicate there was a change in the code that may not be reflected as you step through.</p>
+<p>When you are finished making changes, save your work. This exits debug mode. Then right-click the side bar to clear the breakpooints.</p>
+<p>To exit debug mode without saving your work, click the Stop button in the Live Editor tab in the toolstrip.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">datafile</span> <span class="o">=</span> <span class="s2">&quot;elec_res.xlsx&quot;</span><span class="p">;</span>
+
+<span class="c1"># falscher Code</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">readtable</span><span class="p">(</span><span class="n">datafile</span><span class="p">);</span>
+<span class="n">sector</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Properties</span><span class="o">.</span><span class="n">VariableNames</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+<span class="n">usage</span> <span class="o">=</span> <span class="n">data</span><span class="p">{:,</span><span class="mi">2</span><span class="p">};</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Date</span><span class="p">;</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">dates</span><span class="p">;</span>
+<span class="n">d</span><span class="p">(</span><span class="n">end</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">d</span><span class="p">(</span><span class="n">end</span><span class="p">)</span> <span class="o">+</span> <span class="n">calmonths</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">daysInMth</span> <span class="o">=</span> <span class="n">days</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">d</span><span class="p">));</span>
+<span class="n">usage</span> <span class="o">=</span> <span class="n">usage</span><span class="o">./</span><span class="n">daysInMth</span><span class="p">;</span> <span class="o">%</span> <span class="n">per</span><span class="o">-</span><span class="n">day</span> <span class="n">usage</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">usage</span><span class="p">);</span>
+<span class="n">usageSm</span> <span class="o">=</span> <span class="n">usage</span><span class="p">;</span>
+<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">usageSm</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">usage</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">end</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="n">usage</span><span class="p">,</span><span class="n">dates</span><span class="p">,</span><span class="n">usageSm</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="s2">&quot;Usage&quot;</span><span class="p">,</span> <span class="s2">&quot;Smoothed Usage&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-1 admonition">
+<p class="admonition-title">Aufgabe 1.1</p>
+<p>The live script elec.mlx loads and smooths electricity usage data, but there is an error inside the for loop.</p>
+<p>Set a breakpoint at line 14 (the line where usageSm(k) is updated), and then step through the code, inspecting variables until you find what is wrong.</p>
+<p>At the command prompt, try</p>
+<p>K&gt;&gt; k
+K&gt;&gt; usage(k-1:k+1)</p>
+<p>before running that line. What are the values of k and usage(k-1:k+1) when the code errors?</p>
+<p>You can see a solution by opening elecSoln.mlx with edit elecSoln.mlx.</p>
+<p>Breakpoints are a helpful in understanding what happens to variables on each iteration of a for loop. Once you have fixed the bug, run the script with the breakpoint inside the for loop.  What happens to usageSm as you press Continue a few times?</p>
+<p>When you are finished, exit debug mode and clear the breakpoints.</p>
+<p>This activity is unassessed.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="funktionen-nach-fehlern-durchgehen">
+<h2>Funktionen nach Fehlern durchgehen<a class="headerlink" href="#funktionen-nach-fehlern-durchgehen" title="Link to this heading">#</a></h2>
+<p>Bild 8 gehört zur nachfolgenden Beschreibung</p>
+<p>Debugging Run-Time Errors
+Functions hide their workspaces from you, so how do you troubleshoot code in a function?</p>
+<p>Just like in scripts, the Code Analyzer identifies syntax errors in functions and is your first line of defense against bugs.</p>
+<p>Here, the Code Analyzer hasn’t detected any syntax errors. Let’s call the function predictUsage at the command line.</p>
+<p>But as you have seen before, a clear Code Analyzer doesn’t mean there isn’t a bug. We’ve encountered a run-time error.</p>
+<p>The error message contains the line number of the command that generated the error.</p>
+<p>Click the line number, and the Editor opens the file to that line of code.</p>
+<p>Let’s set breakpoints at the line where the error occurred and a few lines above.</p>
+<p>Let’s set breakpoints at the line where the error occurred and a few lines above.
+Now when you call the function, the program pauses at the first breakpoint—just like in scripts. And since the program was paused while executing the function, you can see a snapshot of the intermediate variables.</p>
+<p>Line 7 has not run, so elapsedYears has not been created yet.</p>
+<p>Pausing mid-function gives you a window into the function’s workspace. Now you have access to all of the tools you had for debugging scripts: inspecting variables, stepping through code, and testing commands</p>
+<p>After stepping through line by line, it appears that endDuration is a duration variable, but the polyval function only accepts numeric inputs.</p>
+<p>Recall that the command prompt is marked with a K to indicate you are in debug mode. You can test your solution in the Command Window to see if it resolves the error.</p>
+<p>It doesn’t produce the error, so you’ve identified the change you need to make.
+To fix this error, you can convert endDuration to a numeric value using the years function.</p>
+<p>Now you can modify your code and save the file. Click the Stop button to end your debugging session.</p>
+<p>Before calling your function, clear the breakpoints so the execution doesn’t get halted again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># falscher Code</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="n">fibN</span> <span class="o">=</span> <span class="n">fibSeq</span>
+
+
+<span class="n">function</span> <span class="n">fibN</span> <span class="o">=</span> <span class="n">fibSeq</span>
+    <span class="n">fib</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+    <span class="n">fib</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="o">%</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">Fibonacci</span> <span class="n">Sequence</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+
+        <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+    <span class="n">end</span>
+    <span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-2-1 admonition">
+<p class="admonition-title">Aufgabe 2.1</p>
+<p>Notice that this local function has an error and a warning in the Code Analyzer. Set a breakpoint on the line indicated by the error message and inspect the variables in the Workspace by clicking the tab on the right.</p>
+<p>Try to fix the error and address the warning in the Code Analyzer.  When n is 8, fibN should be 13.  Don’t forget to clear any breakpoints in the file.</p>
+<p>When you are ready, you can open the solution at the command prompt.</p>
+<p>edit fibSeqLocFunSoln.mlx</p>
+<p>This activity is unassessed.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<p>Bild 10 und 11 sind vielleicht für eine Zusammenfassung gut</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\chapter03_spezialisierung\debugging"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="error_signs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fehleranzeige</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../vectorisation/vectorisation_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vektorisierung</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#den-code-nach-fehlern-durchgehen">Den Code nach Fehlern durchgehen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-nach-fehlern-durchgehen">Funktionen nach Fehlern durchgehen</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jacob Heieck, Alena Ulke
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

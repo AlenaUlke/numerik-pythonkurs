@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plots individuell gestalten &#8212; Python-Programmierkurs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/visualisation_2/advanced_2D_plots';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3D Plots" href="3D_plots.html" />
+    <link rel="prev" title="Visualisierung 2" href="visualisation_2_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Python-Programmierkurs</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Markdown Notebook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">Vorwort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/arrays/array_intro.html">Arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/indizierung.html">Indizierung von Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/rechnen_mit_arrays.html">Rechnen mit Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/logische_arrays.html">Logische Indizierung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/quiz.html">Quiz</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spezialisierung in Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_data/organizing_data_in_table.html">Daten in Tabellen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="visualisation_2_intro.html">Visualisierung II</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3D_plots.html">3D Plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../debugging/error_signs.html">Fehleranzeigen in Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vectorisation/vectorisation_intro.html">Vektorisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vectorisation/efficiency.html">Effizienter werden</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/chapter03_spezialisierung/visualisation_2/advanced_2D_plots.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Plots individuell gestalten</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-des-plots-anpassen">Eigenschaften des Plots anpassen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#echte-daten-plotten-und-gestalten">Echte Daten plotten und gestalten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anpassung-der-achsen">Anpassung der Achsen</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="plots-individuell-gestalten">
+<h1>Plots individuell gestalten<a class="headerlink" href="#plots-individuell-gestalten" title="Link to this heading">#</a></h1>
+<section id="eigenschaften-des-plots-anpassen">
+<h2>Eigenschaften des Plots anpassen<a class="headerlink" href="#eigenschaften-des-plots-anpassen" title="Link to this heading">#</a></h2>
+<p>A large number of properties of plot elements can be specified directly using optional pairs of inputs to the plot function (and other similar plotting functions):</p>
+<p>plot(x,y,Property1,Value1,Property2,Value2,Property3,Value3,…)</p>
+<p>The properties are given as text, such as “LineWidth”.
+The accompanying value can be either a string or a numeric value, depending on the details of the property.</p>
+<div class="cell tag_thebe-init docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">:</span><span class="mi">2007</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.88</span> <span class="mf">7.49</span> <span class="mf">8.41</span> <span class="mf">9.42</span> <span class="mf">9.67</span> <span class="mf">8.79</span> <span class="mf">11.72</span> <span class="mf">13.63</span><span class="p">];</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;o-&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-1 admonition">
+<p class="admonition-title">Aufgabe 1.1</p>
+<p>Repeat the plot command in the script, using a solid line and circular markers. This time use a “MarkerSize” of 10.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>You can specify the marker size by setting the “MarkerSize” property.
+plot(x,y,”o-“,”PropertyName”,PropertyValue)</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;o-&quot;</span><span class="p">,</span><span class="s2">&quot;MarkerSize&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>You can set multiple properties at once by providing multiple pairs of property names and values.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The properties can be given in any order.
+A property must be immediately followed by its value.
+The name-value pairs appear at the end of the argument list.
+</pre></div>
+</div>
+<div class="admonition-aufgabe-1-2 admonition">
+<p class="admonition-title">Aufgabe 1.2</p>
+<p>Plot the data with a solid line, circular markers of size 10, and a marker fill color of green (“g”).</p>
+<p>You can set the fill color of markers with the “MarkerFaceColor” property.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Specify both the “MarkerSize” and “MarkerFaceColor” properties (to 10 and “g”, respectively).</p>
+<p>plot(x,y,”o-“,Property1,Value1,Property2,Value2)</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;o-&quot;</span><span class="p">,</span><span class="s2">&quot;MarkerSize&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;MarkerFaceColor&quot;</span><span class="p">,</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>You can experiment with modifying other properties, such as the line width. Other than the properties that can be changed with line specification input (marker, line style, and line color), the most commonly modified properties for a line plot are:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>LineWidth (width of the line and marker edges)
+MarkerSize (size of the marker symbols)
+MarkerEdgeColor (color of the edge of the marker symbols)
+MarkerFaceColor (color of the interior of the marker symbols)
+</pre></div>
+</div>
+<p>Different graphical objects, including different plot types, have different sets of properties. Rather than try to remember the vast number of property names for each of the various types of graphical objects, you can access detailed documentation on MATLAB Graphics Objects Properties.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<p>For eight specific colors, you can refer to them by name or a single letter abbreviation:
+red (r)	green (g)	blue (b)	black (k)
+magenta (m)	yellow (y)	cyan (c)	white (w)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-4 admonition">
+<p class="admonition-title">Aufgabe 1.4</p>
+<p>Plot the data stored in the x and y variables again, this time with a black line.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>You can use the optional line specification input to the plot function to specify line color with a text code. Use “k” or “black” to specify a black line.</p>
+<p>plot(x,y,”k”)</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>You can specify over ten million other colors with a 3-element vector of red-green-blue (RGB) values. The three elements correspond to the fractional red, green, and blue parts of the color composition. The values in this RGB range from 0 to 1.</p>
+<p>Note that you cannot use an RGB triplet in the line specification input. Instead, to specify line color with an RGB vector, you need to provide an optional property name-value pair to the plot function. The property name is “Color” and the corresponding value is the RGB triplet</p>
+<div class="admonition-aufgabe-1-5 admonition">
+<p class="admonition-title">Aufgabe 1.5</p>
+<p>Plot the data with the “Color” property set to the RGB vector [0.5 0.6 0].</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Specify the “Color” property with an associated value of [0.5 0.6 0].</p>
+<p>plot(x,y,Property,Value)</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;Color&quot;</span><span class="p">,[</span><span class="mf">0.5</span> <span class="mf">0.6</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>You can use either text codes or RGB vectors when specifying any color property.</p>
+<div class="admonition-aufgabe-1-6 admonition">
+<p class="admonition-title">Aufgabe 1.6</p>
+<p>Plot the data with cyan circular markers and a solid line with the custom color [0.6 0.2 0.8].</p>
+<p>Use the “MarkerEdgeColor” and “Color” properties to set the colors. Cyan can be specified with the text code “c”.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use the “o-” line specification and set both properties by specifying name-value pairs. Use the RGB vector to set the line color and the code “c” to set the marker color.</p>
+<p>plot(x,y,”o-“,”Color”,RGB,”MarkerEdgeColor”,code)</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;o-&quot;</span><span class="p">,</span><span class="s2">&quot;Color&quot;</span><span class="p">,[</span><span class="mf">0.6</span> <span class="mf">0.2</span> <span class="mf">0.8</span><span class="p">],</span><span class="s2">&quot;MarkerEdgeColor&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>In the last plot, the edge of the markers and the line are different colors. What happens when we change the face color of the markers?</p>
+<div class="admonition-aufgabe-1-7 admonition">
+<p class="admonition-title">Aufgabe 1.7</p>
+<p>Plot the data with cyan circular markers and a solid line with the custom color [0.6 0.2 0.8].</p>
+<p>This time, use the “MarkerFaceColor” instead of “MarkerEdgeColor”.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Change “MarkerEdgeColor” to “MarkerFaceColor”.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;o-&quot;</span><span class="p">,</span><span class="s2">&quot;Color&quot;</span><span class="p">,[</span><span class="mf">0.6</span> <span class="mf">0.2</span> <span class="mf">0.8</span><span class="p">],</span><span class="s2">&quot;MarkerFaceColor&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>You may have noticed that when there are multiple plots on a graph, they have different colors, and the sequence of colors MATLAB uses is always the same. This is called the color order and can be accessed programmatically.</p>
+<p>cols = colororder</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<br>
+</section>
+<section id="echte-daten-plotten-und-gestalten">
+<h2>Echte Daten plotten und gestalten<a class="headerlink" href="#echte-daten-plotten-und-gestalten" title="Link to this heading">#</a></h2>
+<p>Hier benötigen wir einen echten Datensatz. Der in Matlab ist resElectricity. Dieser beinhaltet 3 315x1 Vektoren. residential (residential electricity usage), year (Jahreszahl wie 1999) und resFitted</p>
+<p>Hier erklären, was der Datensatz macht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datensatz laden oder so, wie auch immer wir das machen</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-2-1 admonition">
+<p class="admonition-title">Aufgabe 2.1</p>
+<p>Plot the residential electricity usage (residential) as a function of yr with a solid line and circular markers of size 3 filled with the custom color given by RGB = [0.7 0.9 1].</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use the plot function to plot residential against yr with circular markers and a solid line. Use property name-value pairs to set the “MarkerSize” and “MarkerFaceColor” properties.</p>
+<p>plot(x,y,”o-“,”Property1”,Value1,”Property2”,Value2)</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span><span class="n">residential</span><span class="p">,</span><span class="s2">&quot;o-&quot;</span><span class="p">,</span><span class="s2">&quot;MarkerSize&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;MarkerFaceColor&quot;</span><span class="p">,[</span><span class="mf">0.7</span> <span class="mf">0.9</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-aufgabe-2-2 admonition">
+<p class="admonition-title">Aufgabe 2.2</p>
+<p>Add the fitted model (resFitted) as a function of yr to the plot, using a solid red line of width 2 (and no markers).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use hold on and hold off to add to your current plot.</p>
+<p>Use the plot function to plot resFitted against yr with a solid red line. Use a property name-value pair to set the “LineWidth” property.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hold</span> <span class="n">on</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span><span class="n">resFitted</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="s2">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">hold</span> <span class="n">off</span>
+</pre></div>
+</div>
+</div>
+<p>Erkläre hier, wie die Legende funktionier. Eventuell noch das mit den Achsen, wenn es nicht eh gleich kommt.</p>
+<div class="admonition-aufgabe-2-3 admonition">
+<p class="admonition-title">Aufgabe 2.3</p>
+<p>Add a legend and other annotations to your plot.</p>
+<p>Try modifying the x-axis limits to fit the data.</p>
+<p>xlim([yr(1) yr(end)])</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<br>
+</section>
+<section id="anpassung-der-achsen">
+<h2>Anpassung der Achsen<a class="headerlink" href="#anpassung-der-achsen" title="Link to this heading">#</a></h2>
+<p>How do you change the scale of a plot?
+MATLAB automatically chooses the limits and tick markings for plot axes. Although the automatic values are usually aesthetically reasonable, you may want more precise control of the axis appearance to investigate subsets of the data.</p>
+<p>For instance, this graph tracking gas prices shows an upward trend starting in 2001. How can you zoom in on the data from that point on? And how can you see the changing gas prices on an absolute scale where the y -axis starts at zero?</p>
+<p>Bild 1 shows such a plot. We want to reproduce something close to that.</p>
+<p>In this practice, you will learn to control the axes of a plot so you can focus on a portion of the data and control the scale on which it is displayed.</p>
+<p>Before looking at the data from the 1990’s separately from the 2000’s, let’s extract the default limits of the graph.</p>
+<p>You can use the function axis with no inputs to get the current axes limits. For example, if the following figure is open:</p>
+<p>Bild 2</p>
+<p>then the command v = axis returns a vector of 4 elements containing the x- and y-axis limits.</p>
+<p>v = axis
+v =
+10   20   1   5</p>
+<p>Wir benötigen hier einen Datensatz, der ähnliche Dinge tut, wie der in Matlab. Dort stehen für verschiedene Länder die Gaspreise für verschieden Zeiten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+<span class="n">load</span> <span class="n">AuDeMx</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">Year</span><span class="p">,</span><span class="n">Australia</span><span class="p">,</span><span class="s2">&quot;*--&quot;</span><span class="p">)</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">Year</span><span class="p">,</span><span class="n">Germany</span><span class="p">,</span><span class="s2">&quot;*--&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">Year</span><span class="p">,</span><span class="n">Mexico</span><span class="p">,</span><span class="s2">&quot;*--&quot;</span><span class="p">)</span>
+<span class="n">hold</span> <span class="n">off</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Prices (USD/gal)&quot;</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="s2">&quot;Gasoline Prices&quot;</span><span class="p">;</span>
+<span class="n">title</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="s2">&quot;Australia&quot;</span><span class="p">,</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span><span class="s2">&quot;Mexico&quot;</span><span class="p">,</span><span class="s2">&quot;Location&quot;</span><span class="p">,</span><span class="s2">&quot;northwest&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-3-1 admonition">
+<p class="admonition-title">Aufgabe 3.1</p>
+<p>Get the existing axes limits of the plot and store them in the variable xyLims.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Enter the command axis and assign it to xyLims.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xyLims</span> <span class="o">=</span> <span class="n">axis</span>
+</pre></div>
+</div>
+</div>
+<p>You can use the functions xlim and ylim to set the x- and y-axis limits. Both functions take a vector of two elements as an input. For example, the following command sets the lower y-axis limit to 2 and the upper y-axis limit to 4.
+ylim([2 4])</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-3-2 admonition">
+<p class="admonition-title">Aufgabe 3.2</p>
+<p>Change the y-axis limits so that y starts at 0 and has the same upper limit as before.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use the ylim function to change the y-axis limits to values specified in a vector. You can create the vector using the xyLims variable.</p>
+<p>[0 xyLims(end)];</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span> <span class="n">xyLims</span><span class="p">(</span><span class="n">end</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<p>To focus on the steady increase that started around 2001, you need to change the x- axis limits to start at 2001 and go to the final year, which is stored in the second element of xyLims.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-3-3 admonition">
+<p class="admonition-title">Aufgabe 3.3</p>
+<p>Change the x-axis limits so that x starts at 2001 and has the same upper limit as before.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use the xlim(v) function to change the x-axis limits to values specified in a vector. The first element of of the vector should be 2001, and you can get the second element using the xyLims variable.</p>
+<p>[2001 xyLims(2)];</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlim</span><span class="p">([</span><span class="mi">2001</span> <span class="n">xyLims</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<p>When you change the x- and y-axis limits, the underlying data in the axes is not modified—it’s all still there. Only the way the plot is displayed is changed.</p>
+<p>If you want to change the axes limits to equal exactly the range of the data, use the command:</p>
+<p>axis tight</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-3-4 admonition">
+<p class="admonition-title">Aufgabe 3.4</p>
+<p>Change the axis limits to match the smallest and the largest values in the data.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use the command:</p>
+<p>axis tight</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">axis</span> <span class="n">tight</span>
+</pre></div>
+</div>
+</div>
+<p>Try other options for axis. What do you think each one does?</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>axis equal
+axis square
+axis normal
+</pre></div>
+</div>
+<div class="admonition-aufgabe-3-5 admonition">
+<p class="admonition-title">Aufgabe 3.5</p>
+<p>Try other options for axis. What do you think each one does?</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>axis equal
+axis square
+axis normal
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\chapter03_spezialisierung\visualisation_2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="visualisation_2_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Visualisierung 2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3D_plots.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3D Plots</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-des-plots-anpassen">Eigenschaften des Plots anpassen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#echte-daten-plotten-und-gestalten">Echte Daten plotten und gestalten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anpassung-der-achsen">Anpassung der Achsen</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jacob Heieck, Alena Ulke
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

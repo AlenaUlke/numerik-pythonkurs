@@ -43,11 +43,20 @@ parts:
 
 - caption: Spezialisierung in Python
   chapters:
+  - title: Funktionen
+    file: content/chapter03_spezialisierung/functions/functions_intro
+    sections:
+    - title: Funktionen schreiben
+      file: content/chapter03_spezialisierung/functions/dreiecke
+    - title: Function handles
+      file: content/chapter03_spezialisierung/functions/function_handles
   - title: Mit Daten arbeiten
     file: content/chapter03_spezialisierung/working_with_data/working_with_data_intro
     sections:
-    - title: Daten in Tabellen
+    - title: Datenaufbereitung in Tabellenform
       file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_table
+    - title: Datenaufbereitung mit Arrays 
+      file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_cell_array
   - title: Arrays II
     file: content/chapter03_spezialisierung/arrays_2/arrays_2_intro
     sections:
@@ -61,14 +70,16 @@ parts:
     file: content/chapter03_spezialisierung/visualisation_2/visualisation_2_intro
     sections:
     - title: Plots individuell gestalten
-      file: content/chapter03_spezialisierung/visualisation_2/advaced_2D_plots
+      file: content/chapter03_spezialisierung/visualisation_2/advanced_2D_plots
     - title: 3D Plots
       file: content/chapter03_spezialisierung/visualisation_2/3D_plots
   - title: Debugging
     file: content/chapter03_spezialisierung/debugging/debugging_intro
     sections:
-    - title: Fehleranzeigen in Python
+    - title: Fehleranzeige
       file: content/chapter03_spezialisierung/debugging/error_signs
+    - title: Fehleranalyse
+      file: content/chapter03_spezialisierung/debugging/analysing_code
   - title: Vektorisierung
     file: content/chapter03_spezialisierung/vectorisation/vectorisation_intro
     sections:

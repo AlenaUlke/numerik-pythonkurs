@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Daten mit Tabellen &#8212; Python-Programmierkurs</title>
+    <title>Datenaufbereitung in Tabellenform &#8212; Python-Programmierkurs</title>
   
   
   
@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
@@ -62,11 +62,10 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/working_with_data/organizing_data_in_table';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Datenaufbereitung mit Arrays" href="organizing_data_in_cell_array.html" />
     <link rel="prev" title="Mit Daten arbeiten" href="working_with_data_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,7 +192,28 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Spezialisierung in Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="working_with_data_intro.html">Mit Daten arbeiten</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Daten in Tabellen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Datenaufbereitung in Tabellenform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizing_data_in_cell_array.html">Datenaufbereitung mit Arrays</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation_2/3D_plots.html">3D Plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../debugging/error_signs.html">Fehleranzeigen in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging/analysing_code.html">Fehleranzeigen in Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vectorisation/vectorisation_intro.html">Vektorisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vectorisation/efficiency.html">Effizienter werden</a></li>
 </ul>
 </details></li>
 </ul>
@@ -362,7 +382,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Daten mit Tabellen</h1>
+    <h1>Datenaufbereitung in Tabellenform</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -372,9 +392,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellen-erstellen">Tabellen erstellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existierende-tabellen-zusammenfugen">Existierende Tabellen zusammenfügen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellendaten-auslesen">Tabellendaten auslesen</a></li>
 </ul>
             </nav>
         </div>
@@ -386,17 +406,161 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="daten-mit-tabellen">
-<h1>Daten mit Tabellen<a class="headerlink" href="#daten-mit-tabellen" title="Link to this heading">#</a></h1>
-<p>Ein <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array können Sie sich am einfachsten wie ein Vektor oder eine Matrix vorstellen. Es zeichnet sich durch drei Kernkenngrößen aus: die Dimension, die Größe sowie die Einträge des Arrays.</p>
-<p><strong>Bild</strong></p>
-<p>Die <strong>Dimension</strong> eines Arrays entspricht der Anzahl der Indizes, die benötigt werden, um ein Element zu adressieren. Beispielsweise kann ein eindimensionales Array als ein Vektor und ein zweidimensionales als Matrix interpretiert werden.</p>
-<p>Die <strong>Größe</strong> eines Arrays (engl. <em>shape</em>) wird durch ein Tupel <span class="math notranslate nohighlight">\((n_1, n_2, \dots, n_{\mathrm{dim}})\)</span> charakterisiert, wobei <span class="math notranslate nohighlight">\(n_i\)</span> die Anzahl der Einträge der <span class="math notranslate nohighlight">\(i\)</span>-ten Dimension entspricht.
-Eindimensionale Arras haben die Größe oder Länge <span class="math notranslate nohighlight">\(n\)</span> und zweidimensionale die Größe <span class="math notranslate nohighlight">\((m, n)\)</span>, was <span class="math notranslate nohighlight">\(m\)</span> Zeilen und <span class="math notranslate nohighlight">\(n\)</span> Spalten entspricht.</p>
-<section id="manuelle-arrayerstellung">
-<h2>Manuelle Arrayerstellung<a class="headerlink" href="#manuelle-arrayerstellung" title="Link to this heading">#</a></h2>
-<p>Sie können ein eindimensionales <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array erstellen, in dem Sie dessen Einträge in einer Liste (gekennzeichent durch eckige Klammern <code class="docutils literal notranslate"><span class="pre">[]</span></code>) zusammenfassen und der Funktion <code class="docutils literal notranslate"><span class="pre">np.array</span></code> übergeben:</p>
-<div class="cell tag_thebe-init docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="datenaufbereitung-in-tabellenform">
+<h1>Datenaufbereitung in Tabellenform<a class="headerlink" href="#datenaufbereitung-in-tabellenform" title="Link to this heading">#</a></h1>
+<p>We often have vectors of related information. If the variables contain information about a set of observations and can be arranged as a table, then we call the data tabular.
+Here you will learn when and how to organize related vectors of data in a table.</p>
+<section id="tabellen-erstellen">
+<h2>Tabellen erstellen<a class="headerlink" href="#tabellen-erstellen" title="Link to this heading">#</a></h2>
+<p>The variables can be different data types, but must have the same number of rows, here 4.</p>
+<p>Bild 1</p>
+<p>To combine the data into a table, each entry should correspond to the same observation. Here the third entry of each variable identifies the 2018 Honda Odyssey, which is a minivan.
+Sometimes you may have tables you want to combine. For instance, you may want to add new cars to your dataset.</p>
+<p>Bild 2</p>
+<p>It would also be useful to attach numeric data about the cars in the fleet.</p>
+<p>Bild 3</p>
+<p>When several variables in your workspace hold data about the same observations, you can use the table function to collect this information into a table.</p>
+<p>eklärendes Bild wie Bild 4</p>
+<p>Use the ‘VariableNames’ property to specify column names. So the following command creates a table with columns named Thought1 and OnSecondThought.</p>
+<p>tbl = table(var1,var2, ‘VariableNames’,{‘Thought1’,’OnSecondThought’})</p>
+<p>In this exercise, you will combine information on several 2018 cars into a single table. Wir haben hier genau so einen Datensatz wie in Bild 1 dargestellt, mit exakt 4 Einträgen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+<span class="n">load</span> <span class="n">carInfo</span><span class="o">.</span><span class="n">mat</span>
+<span class="n">whos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-1 admonition">
+<p class="admonition-title">Aufgabe 1.1</p>
+<p>Create a table named fleet containing the data in variables mk, md, yr, tp.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use the table function.  The following syntax creates a table from variables a, b, and c:</p>
+<p>table(a,b,c)</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span><span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="n">mk</span><span class="p">,</span><span class="n">md</span><span class="p">,</span><span class="n">yr</span><span class="p">,</span><span class="n">tp</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>One of the advantages of tables is that each column is a named variable so you and others can understand quickly how the dataset is organized and access the data efficiently.  To leverage this advantage, specify descriptive variable names.</p>
+<div class="admonition-aufgabe-1-2 admonition">
+<p class="admonition-title">Aufgabe 1.2</p>
+<p>Again, create a table named fleet containing the data in variables mk, md, yr, and tp.  This time give the variables the names:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Make
+Model
+Year
+Type
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use the VariableNames name-value pair argument to specify the desired variable names as a cell array of character vectors.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="n">mk</span><span class="p">,</span><span class="n">md</span><span class="p">,</span><span class="n">yr</span><span class="p">,</span><span class="n">tp</span><span class="p">,</span><span class="s1">&#39;VariableNames&#39;</span><span class="p">,{</span><span class="s1">&#39;Make&#39;</span> <span class="s1">&#39;Model&#39;</span> <span class="s1">&#39;Year&#39;</span> <span class="s1">&#39;Type&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<p>You have created a table containing information about cars in a fleet.</p>
+<p>You can view the properties of the table, including the variable names, by calling the properties with dot notation.</p>
+<p>fleet.Properties</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<br>
+</section>
+<section id="existierende-tabellen-zusammenfugen">
+<h2>Existierende Tabellen zusammenfügen<a class="headerlink" href="#existierende-tabellen-zusammenfugen" title="Link to this heading">#</a></h2>
+<p>Sometimes information is spread across multiple tables. Vertical and horizontal concatenation work the same way as they do with matrices as long as the concatenation is compatible.</p>
+<p>Vertical Concatenation
+For vertical concatenation, each column must have the same name and compatible data types.
+Bild 5</p>
+<p>Horizontal Concatenation
+Each table must have the same number of rows, and each row should correspond to the same observation for horizontal concatenation to make sense
+Bild 6
+These tables do not have the same number of rows.
+The rows in these tables do not correspond to the same observation. The code would run but the resulting table would not make sense.
+Horizontal concatenation makes sense for these tables, but you may want to remove duplicate information after concatenating.
+Bild 7</p>
+<p>Tables may contain information about the same observations, but the rows may be sorted differently. Horizontal concatenation would not cause a syntax error, but may result in mismatched data or columns with redundant information.
+Bild 8
+Here we want to add the weight, length, and width of each car to the corresponding row in fleet.</p>
+<p>You can join tables together with the join function to match corresponding rows using key variables.</p>
+<blockquote>
+<div><blockquote>
+<div><p>newTbl
+= join(tbl1,tbl2,”Keys”,[“Var1” “Var2”])
+Bild 9</p>
+</div></blockquote>
+</div></blockquote>
+<p>The redundant columns of tbl2 are not included in newTbl.</p>
+<p>In this exercise, you will add 2019 cars to the existing 2018 fleet. Ich würde sagen, wir machen hier die gleichen Daten wie in den Bildern angezeigt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+<span class="n">load</span> <span class="n">fleet</span><span class="o">.</span><span class="n">mat</span>
+<span class="n">load</span> <span class="n">fleet2019</span><span class="o">.</span><span class="n">mat</span>
+<span class="n">load</span> <span class="n">sizeData</span><span class="o">.</span><span class="n">mat</span>
+<span class="n">whos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-2-1 admonition">
+<p class="admonition-title">Aufgabe 2.1</p>
+<p>Update the variable fleet so that it contains the cars from the original variable fleet on top of cars from the variable fleet2019.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use square brackets to concatenate tables just as you would for numeric arrays.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span> <span class="o">=</span> <span class="p">[</span><span class="n">fleet</span><span class="p">;</span> <span class="n">fleet2019</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>You would like to append numeric data on the vehicles in your fleet to your table, but the cars in the new set are listed in a different order</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
@@ -404,271 +568,30 @@ Eindimensionale Arras haben die Größe oder Länge <span class="math notranslat
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="c1"># erstellt ein Array mit Einträgen 0 und 4</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-1 admonition">
-<p class="admonition-title">Aufgabe 1.1</p>
-<p>Erstellen Sie einen Vektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">y</span></code> und den drei Elementen <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(7\)</span> und <span class="math notranslate nohighlight">\(9\)</span>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Fassen Sie die Werte <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(7\)</span> und <span class="math notranslate nohighlight">\(9\)</span> mittels eckiger Klammern (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) zusammen und nutzen Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.array</span></code>.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<p>Auch wenn ein eindimensionales <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array als Vektor interpretiert werden kann, ist es in Python weder ein Zeilen- noch ein Spaltenvektoren.
-In dem Sinne sind eindimensionale Arrays Objekte, welche Zahlen in einer festen Reihenfolge speichern.
-Im folgenden werden wir sie dennoch <em>Vektoren</em> nennen.</p>
-<p>Sie können eckige Klammern verschachteln und durch Kommata trennen, um ein zweidimensionales <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array bzw. eine Matrix zu erstellen. Dabei geben Sie die Elemente Zeile für Zeile ein. Jede Zeile wird durch eckige Klammern abgegrenzt.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erste Zeile von A: [1, 2, 3]</span>
-<span class="c1"># zweite Zeile von A: [4, 5, 6]</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-2 admonition">
-<p class="admonition-title">Aufgabe 1.2</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix mit dem Namen <code class="docutils literal notranslate"><span class="pre">A_23</span></code> und diesen Werten:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{pmatrix} 
-        4 &amp; 3 &amp; 2 \\
-        6 &amp; 7 &amp; 8
-    \end{pmatrix}
-\end{split}\]</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_23</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-3 admonition">
-<p class="admonition-title">Aufgabe 1.3</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((4 \times 2)\)</span> Matrix mit dem Namen <code class="docutils literal notranslate"><span class="pre">A_42</span></code> und diesen Werten:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{pmatrix} 
-        -1 &amp;0 \\
-        -7 &amp; 10 \\
-        2 &amp; 4.5 \\
-        3 &amp; -5
-    \end{pmatrix}
-\end{split}\]</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_42</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-4 admonition">
-<p class="admonition-title">Aufgabe 1.4</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((1 \times 2)\)</span> Matrix mit dem Namen <code class="docutils literal notranslate"><span class="pre">A_zeile</span></code> und diesen Werten:</p>
-<div class="math notranslate nohighlight">
-\[
-    \begin{pmatrix} 
-        5 &amp; 10 
-    \end{pmatrix}
-\]</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">A_zeile</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># sollte (1, 2) liefern</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_zeile</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-5 admonition">
-<p class="admonition-title">Aufgabe 1.5</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((3 \times 1)\)</span> Matrix mit dem Namen <code class="docutils literal notranslate"><span class="pre">A_spalte</span></code> und diesen Werten:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{pmatrix} 
-        3 \\ 6 \\ -2
-    \end{pmatrix}
-\end{split}\]</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">A_spalte</span><span class="p">)</span> <span class="c1"># sollte (3, 1) liefern</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_spalte</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<br>
-<p>Innerhalb der eckigen Klammern können Sie auch Berechnungen durchführen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-6 admonition">
-<p class="admonition-title">Aufgabe 1.6</p>
-<p>Erstellen Sie einen Vektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">y</span></code>, der <code class="docutils literal notranslate"><span class="pre">np.sqrt(49)</span></code> (<span class="math notranslate nohighlight">\(\sqrt{49}\)</span>) als erstes Element, <code class="docutils literal notranslate"><span class="pre">np.pi**2</span></code> (<span class="math notranslate nohighlight">\(\pi^2\)</span>) als zweites Element und <code class="docutils literal notranslate"><span class="pre">np.sin(4)</span></code> als drittes Element enthält.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">49</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
-</pre></div>
-</div>
-</div>
-<br>
-</section>
-<section id="vektoren-mit-werten-in-gleichmaszigen-abstanden">
-<h2>Vektoren mit Werten in gleichmäßigen Abständen<a class="headerlink" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden" title="Link to this heading">#</a></h2>
-<p>In der Numerik und auch beim Programmieren (in Python) allgemein, benötigen Sie häufig Vektoren, dessen aufeinanderfolgenden Einträge immer die gleiche Differenz haben, wie zum Beispiel bei dem Vektor <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-1 admonition">
-<p class="admonition-title">Aufgabe 2.1</p>
-<p>Definieren Sie einen Vektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">y</span></code>, der die Werte <span class="math notranslate nohighlight">\(10\)</span>, <span class="math notranslate nohighlight">\(11\)</span> und <span class="math notranslate nohighlight">\(12\)</span> in der genau dieser Reihenfolge enthält.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Nutzen Sie den Befehl <code class="docutils literal notranslate"><span class="pre">np.array</span></code> und fassen Sie die Elemente des Vektors in eckige Klammern zusammen.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<p>Bei langen Vektoren ist das manuelle Eingeben der einzelnen Werte äußerst unpraktisch. Eine schnellere Alternative zum Erstellen von Vektoren mit gleichmäßigem Abstand zwischen den Werten bietet die Funktion <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> bei der lediglich der Start- und Endwert angegeben werden müssen:</p>
-<p><code class="docutils literal notranslate"><span class="pre">np.arange(startwert,</span> <span class="pre">endwert)</span></code></p>
-<p>Der Endwert ist allerdings <strong>nicht</strong> enthalten, das heißt <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> erzeugt einen Wertebereich im Sinne des halboffenen Intervalls <span class="math notranslate nohighlight">\([\texttt{startwert}, \texttt{endwert})\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Erstellen Sie mit dem Befehl <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> einen Vektor mit den ganzzahligen Werten von <span class="math notranslate nohighlight">\(10\)</span> bis <span class="math notranslate nohighlight">\(20\)</span>. Speichern Sie das Ergebnis in der Variable <code class="docutils literal notranslate"><span class="pre">x_range</span></code>.</p>
+<p>Update the variable fleet so that it includes the numeric data in sizeData so that the weights are associated to the correct cars and there are no redundant columns.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use the join function with key variables Make and Model.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">fleet</span><span class="p">,</span><span class="n">sizeData</span><span class="p">,</span><span class="s2">&quot;Keys&quot;</span><span class="p">,[</span><span class="s2">&quot;Make&quot;</span> <span class="s2">&quot;Model&quot;</span><span class="p">])</span>
 </pre></div>
-</div>
-</div>
-<p>Standardmäßig verwendet die Funktion <code class="docutils literal notranslate"><span class="pre">np.arange</span></code>einen Abstand von <span class="math notranslate nohighlight">\(1\)</span> zwischen zwei aufeinanderfolgenden Einträgen.
-Es ist aber auch möglich einen anderen Abstand festzulegen.
-Übergibt man der Funktion <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> ein drittes Argument dann lassen sich auch Vektoren mit beliebigen Abständen erzeugen:</p>
-<p><code class="docutils literal notranslate"><span class="pre">np.arange(startwert,</span> <span class="pre">endwert,</span> <span class="pre">abstand)</span></code></p>
-<p>Zum Beispiel liefert der folgende Code ein Vektor mit Abstand <span class="math notranslate nohighlight">\(3\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="admonition-aufgabe-2-3 admonition">
 <p class="admonition-title">Aufgabe 2.3</p>
-<p>Erstellen Sie einen Vektor <code class="docutils literal notranslate"><span class="pre">y_range</span></code>, dessen Elemente bei <span class="math notranslate nohighlight">\(-2\)</span> beginnen, bei <span class="math notranslate nohighlight">\(3\)</span> enden und jeweils durch einen Abstand von <span class="math notranslate nohighlight">\(0.5\)</span> getrennt sind.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-4 admonition">
-<p class="admonition-title">Aufgabe 2.4</p>
-<p>Erstellen Sie einen Vektor <code class="docutils literal notranslate"><span class="pre">z_range</span></code>, dessen Elemente bei <span class="math notranslate nohighlight">\(0\)</span> beginnen, bei <span class="math notranslate nohighlight">\(30\)</span> enden und jeweils durch einen Abstand von <span class="math notranslate nohighlight">\(2\)</span> getrennt sind.</p>
+<p>Complete! What is the difference in switching the order of fleet and sizeData in Task 2? Try changing the order of inputs in your code.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,59 +602,38 @@ Es ist aber auch möglich einen anderen Abstand festzulegen.
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
-<p>Anstatt den Abstand zwischen den einzelnen Elementen eines Vektors, ist es auch möglich die gewünschte Elementanzahl zwischen einem Start- und Endwert anzugeben. Dazu können Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> verwenden:</p>
-<p><code class="docutils literal notranslate"><span class="pre">linspace(startwert,</span> <span class="pre">endwert,</span> <span class="pre">anzahl_elemente)</span></code></p>
-<p>Im Gegensatz zu der Funktion <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> ist der Endwert bei <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> im Wertebereich des Vektors enthalten. Die Funktion erzeugt also einen Wertebereich im Sinne des abgeschlossenen Intervalls <span class="math notranslate nohighlight">\([\texttt{startwert}, \texttt{endwert}]\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-5 admonition">
-<p class="admonition-title">Aufgabe 2.5</p>
-<p>Erstellen Sie einen Zeilenvektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">y_linspace</span></code>, der bei <span class="math notranslate nohighlight">\(1\)</span> beginnt, bei <span class="math notranslate nohighlight">\(12\)</span> endet und der <span class="math notranslate nohighlight">\(4\)</span> Elemente enthält.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_linspace</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="admonition-zusatzaufgabe admonition">
-<p class="admonition-title">Zusatzaufgabe</p>
-<p>Wenn Sie einen Vektor mit Werten im gleichen Abstand von <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(2\pi\)</span>
-mit <span class="math notranslate nohighlight">\(100\)</span> Elementen erstellen wollten, würden Sie dann <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> oder <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> verwenden?</p>
-</div>
+<br>
 </section>
-<section id="arrayerstellung-mittels-funktionen">
-<h2>Arrayerstellung mittels Funktionen<a class="headerlink" href="#arrayerstellung-mittels-funktionen" title="Link to this heading">#</a></h2>
-<p>In Python gibt es neben Funktionen, die Vektoren mit aufeinander folgenden Werten oder mit Werten einer konstanten Differenz erzeugen, auch weitere Funktionen, mit denen Arrays beliebiger Dimension erstellt werden können.
-Zum Beispiel erstellt die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.rand(n)</span></code> einen Vektor mit <span class="math notranslate nohighlight">\(n\)</span> zufälligen Einträgen.</p>
+<section id="tabellendaten-auslesen">
+<h2>Tabellendaten auslesen<a class="headerlink" href="#tabellendaten-auslesen" title="Link to this heading">#</a></h2>
+<p>You will sometimes need to do analysis on a portion of your data. There are two ways to extract data from a table:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Extract a portion of the original table as a table itself.
+Extract the contents of a table. For instance if you have a column of numeric values, you can extract a numeric array.
+</pre></div>
+</div>
+<p>The best choice depends on if you need the structure of a table or a homogeneous data type.
+Bild 10</p>
+<p>Most tables contain more data than you might need for your particular analysis. You may want to take a smaller piece of your data to remove the extraneous information.
+You can index into a table using array indexing with parentheses. Columns can be specified either numerically or by name.
+Bild 11
+As with any array indexing, the result is always the same data type as the original data.</p>
+<p>You can index into a table using the numerical index of the rows you want. Dieser Datensatz ist wieder ähnlich (und wahrscheinlich macht es Sinn immer mit dem gleichen Datensatz zu arbeiten). Wir Haben Spalten Make (das Unternehmen, welches die Autos gemacht hat), Model, Jahr, Typ (SUV, minivan, compact), weight, length and width.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># erstellt ein Vektor der Länge 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+<span class="n">load</span> <span class="n">fleet</span><span class="o">.</span><span class="n">mat</span>
+<span class="n">fleet</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-3-1 admonition">
 <p class="admonition-title">Aufgabe 3.1</p>
-<p>Erstellen Sie einen Vektor der Länge <span class="math notranslate nohighlight">\(7\)</span> mit Zufallseinträgen und speichern Sie den Vektor in der Variablen <code class="docutils literal notranslate"><span class="pre">y_rand</span></code>.</p>
+<p>Create a variable named smallCars that contains the last four columns of fleet for the cars in row 1 and rows 4 to the end.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -742,26 +644,40 @@ Zum Beispiel erstellt die Funktion <code class="docutils literal notranslate"><s
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code> und verwenden Sie <span class="math notranslate nohighlight">\(7\)</span> als Argument.</p>
+<p>The end keyword can be used to get the last rows or columns when indexing.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">smallCars</span> <span class="o">=</span> <span class="n">fleet</span><span class="p">([</span><span class="mi">1</span> <span class="mi">4</span><span class="p">:</span><span class="n">end</span><span class="p">],</span><span class="n">end</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="n">end</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code> erlaubt auch mehrere Eingaben, um zum Beispiel Matrizen zu erzeugen. Der Code <code class="docutils literal notranslate"><span class="pre">np.random.randn(n,</span> <span class="pre">m)</span></code> erstellt eine <span class="math notranslate nohighlight">\((n \times m)\)</span> Matrix mit zufälligen Einträgen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># erstellt eine 3 x 2 Matrix</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>You can specify specific columns by name using a string array.</p>
 <div class="admonition-aufgabe-3-2 admonition">
 <p class="admonition-title">Aufgabe 3.2</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((4 \times 4)\)</span> Matrix mit zufälligen Einträgen und speichern Sie die Matrix in der Variablen <code class="docutils literal notranslate"><span class="pre">A_rand</span></code>.</p>
+<p>Create a table named sizes that contains the columns of fleet named Weight, Length, and Width.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>You can use the : operator to extract an entire row or column.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sizes</span> <span class="o">=</span> <span class="n">fleet</span><span class="p">(:,[</span><span class="s2">&quot;Weight&quot;</span><span class="p">,</span> <span class="s2">&quot;Length&quot;</span><span class="p">,</span> <span class="s2">&quot;Width&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>Text</p>
+<div class="admonition-aufgabe-3-3 admonition">
+<p class="admonition-title">Aufgabe 3.3</p>
+<p>Try creating a table for all of the Toyota cars.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -772,124 +688,185 @@ Zum Beispiel erstellt die Funktion <code class="docutils literal notranslate"><s
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
-<p>Es gibt noch weitere Funktionen, um Arrays einer bestimmten Dimension und Größe zu erzeugen. Beispielsweise erzeugen die Funktionen <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> und <code class="docutils literal notranslate"><span class="pre">np.ones</span></code> Arrays, die ausschließlich aus Nullen bzw. Einsen bestehen.
-Die Erstellung von Vektoren funktioniert hierbei analog wie bei Funktion <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code>.</p>
+<p>Extracting from a Single Column Using Dot Notation
+To perform analysis on the data contained in a table, you’ll need to extract the contents from the table before passing it to another function, such as plot.
+You can index using dot notation with the variable name to extract the contents from a table variable.
+variableData = tableName.VariableName</p>
+<p>Bild 12
+The result from dot indexing has the data type of the underlying data.</p>
+<p>Extracting from Multiple Columns Using Curly Braces
+You can also index using curly brackets to extract the contents of multiple columns. You specify the rows and columns using numerical or named indexing.</p>
+<p>variableData = tableName{rowIndices,colIndices}
+The variable rowIndices is a numeric vector. colIndices can be either a numeric vector or string array specifying column names. You can also use logical vectors to specify rows and columns.</p>
+<p>Bild 13
+The result from dot indexing has the data type of the underlying data.
+When extracting from multiple columns, you must be careful to only extract columns with compatible data types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-3-3 admonition">
-<p class="admonition-title">Aufgabe 3.3</p>
-<p>Erzeugen Sie mit Hilfe der Funktion <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> einen Vektor <code class="docutils literal notranslate"><span class="pre">x_zero</span></code> der Länge <span class="math notranslate nohighlight">\(4\)</span> und ausschließlich Null-Einträgen.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_zero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>Das Erzeugen von <span class="math notranslate nohighlight">\((m \times n)\)</span> Matrizen mittels <code class="docutils literal notranslate"><span class="pre">np.ones</span></code> oder <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> unterscheidet sich jedoch leicht zu der Funktion <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code>.</p>
-<p>In diesem Fall muss man die Anzahl der Zeilen <span class="math notranslate nohighlight">\(m\)</span> und die Anzahl der Spalten <span class="math notranslate nohighlight">\(n\)</span> in einem Tupel <code class="docutils literal notranslate"><span class="pre">(m,</span> <span class="pre">n)</span></code> oder einer Liste <code class="docutils literal notranslate"><span class="pre">[m,</span> <span class="pre">n]</span></code> zusammenfassen und als Eingabe verwenden.
-Beides liefert jedoch dasselbe Ergebnis:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_rund</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># runde Klammern um 4, 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A_rund =&quot;</span><span class="p">,</span> <span class="n">A_rund</span><span class="p">)</span>
-
-<span class="n">A_eckig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># eckige Klammern um 4, 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A_eckig =&quot;</span><span class="p">,</span> <span class="n">A_eckig</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
+<span class="n">load</span> <span class="n">fleet</span><span class="o">.</span><span class="n">mat</span>
+<span class="n">fleet</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-3-4 admonition">
 <p class="admonition-title">Aufgabe 3.4</p>
-<p>Erzeugen Sie mit Hilfe der Funktion <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> eine <span class="math notranslate nohighlight">\((4 \times 7)\)</span> Matrix aus Nullen und speichern Sie das Ergebnis in einer Varaiblen <code class="docutils literal notranslate"><span class="pre">A_zero</span></code>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_zero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
-
-<span class="c1"># alternativ</span>
-<span class="n">A_zero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<p>Sie können die Größe, die Dimension und die Anzahl der Elemente eines bereits erstellten Array mit Hilfe der folgenden Funktionen auslesen:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>: Größe des Arrays</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ndim</span></code>: Dimension des Arrays</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: Anzahl der gesamten Elemente des Arrays</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Mit nur einer Codezeile können Sie so ein Array erstellen, das genauso groß ist wie die bereits vorhandene Matrix.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B_same_shape_as_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-3-5 admonition">
-<p class="admonition-title">Aufgabe 3.5</p>
-<p>Bestimmen Sie die Dimension, die Größe und die Anzahl der Elemente des Arrays <code class="docutils literal notranslate"><span class="pre">A_mystery</span></code>. Was fällt bezüglich der Beziehung zwischen der Größe und der Anzahl der Elemente des Arrays auf? Erstellen Sie ein Array <code class="docutils literal notranslate"><span class="pre">B</span></code>, welches nur Nulleinträge hat und dieselbe Größe wie <code class="docutils literal notranslate"><span class="pre">A_mystery</span></code> hat.</p>
+<p>Create a string variable called models containing the Model column of fleet.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-
-
-<span class="c1"># load A_mystery</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>You can use . indexing to specify the name of the column you want.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="n">fleet</span><span class="o">.</span><span class="n">Model</span>
+</pre></div>
+</div>
+</div>
+<p>Text</p>
+<div class="admonition-aufgabe-3-5 admonition">
+<p class="admonition-title">Aufgabe 3.5</p>
+<p>Create a numeric variable called w containing the Weight column of fleet.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>You can use . indexing to specify the name of the column you want.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">fleet</span><span class="o">.</span><span class="n">Weight</span>
+</pre></div>
+</div>
+</div>
+<p>You can also use . notation to update data in a table using the syntax:</p>
+<p>tbl.Var = updatedColumn
+tbl.Var(2) = updatedValue</p>
+<div class="admonition-aufgabe-3-6 admonition">
+<p class="admonition-title">Aufgabe 3.6</p>
+<p>Convert the data in the Weight column from kilograms to pounds. One kilogram is equal to 2.2046 pounds.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>You can use . indexing to specify the Weight column. Assign the new weights to that column. (The new values should be a little over twice the original values.)</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span><span class="o">.</span><span class="n">Weight</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="mf">2.2046</span>
+</pre></div>
+</div>
+</div>
+<p>You can also use . notation to create a new column in a table using the syntax:</p>
+<p>tbl.newVar = newColumn</p>
+<div class="admonition-aufgabe-3-7 admonition">
+<p class="admonition-title">Aufgabe 3.7</p>
+<p>Add a new column called Area to the table fleet by multiplying each element in the column Length by the corresponding element in the column Width</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Use elementwise multiplication to multiply each element of Length by the corresponding element in the column Width.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span><span class="o">.</span><span class="n">Area</span> <span class="o">=</span> <span class="n">fleet</span><span class="o">.</span><span class="n">Length</span><span class="o">.*</span><span class="n">fleet</span><span class="o">.</span><span class="n">Width</span>
+</pre></div>
+</div>
+</div>
+<p>You can use curly brackets to extract data from multiple columns.</p>
+<div class="admonition-aufgabe-3-8 admonition">
+<p class="admonition-title">Aufgabe 3.8</p>
+<p>Create a double array called data containing all of the numeric physical properties from the table fleet. Then find the average of each numeric variable using the mean function. Save this to the variable m.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>The physical properties are in the Weight, Length, Width, and Area columns. The mean function will return the average of each column of a numeric array.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">fleet</span><span class="p">{:,</span><span class="n">end</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="n">end</span><span class="p">}</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Once a column is extracted, you can use it to make logical comparisons. The resulting logical vector can be used to subset the original table.</p>
+<div class="admonition-aufgabe-3-9 admonition">
+<p class="admonition-title">Aufgabe 3.9</p>
+<p>Create a logical vector named idx identifying each of the compact cars. Use idx to create a string array called smallCars containing the makes and models of compact cars.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Create idx by comparing each element of Type to “compact”.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">fleet</span><span class="o">.</span><span class="n">Type</span> <span class="o">==</span> <span class="s2">&quot;compact&quot;</span>
+<span class="n">smallCars</span> <span class="o">=</span> <span class="n">fleet</span><span class="p">{</span><span class="n">idx</span><span class="p">,[</span><span class="s2">&quot;Make&quot;</span> <span class="s2">&quot;Model&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+<p>The vartype function allows you to select all columns of a specific data type. For instance,</p>
+<p>T{:,vartype(“categorical”)}</p>
+<p>extracts data from all of the categorical columns and outputs a categorical array.</p>
+<div class="admonition-aufgabe-3-10 admonition">
+<p class="admonition-title">Aufgabe 3.10</p>
+<p>Try extracting all of the variables of type string and pass that to the join function to create a list of cars.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -935,6 +912,15 @@ Beides liefert jedoch dasselbe Ergebnis:</p>
         <p class="prev-next-title">Mit Daten arbeiten</p>
       </div>
     </a>
+    <a class="right-next"
+       href="organizing_data_in_cell_array.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Datenaufbereitung mit Arrays</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -952,9 +938,9 @@ Beides liefert jedoch dasselbe Ergebnis:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellen-erstellen">Tabellen erstellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existierende-tabellen-zusammenfugen">Existierende Tabellen zusammenfügen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellendaten-auslesen">Tabellendaten auslesen</a></li>
 </ul>
   </nav></div>
 

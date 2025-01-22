@@ -62,8 +62,6 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/vectorisation/efficiency';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -192,20 +190,30 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Spezialisierung in Python</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functions/dreiecke.html">Funktionen schreiben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/function_handles.html">Function handles</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../working_with_data/organizing_data_in_table.html">Daten in Tabellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_data/organizing_data_in_table.html">Datenaufbereitung in Tabellenform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_data/organizing_data_in_cell_array.html">Datenaufbereitung mit Arrays</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../arrays_2/complex_arrays.html">Komplexe Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation_2/3D_plots.html">3D Plots</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../debugging/error_signs.html">Fehleranzeigen in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging/analysing_code.html">Fehleranzeigen in Python</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="vectorisation_intro.html">Vektorisierung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -365,9 +373,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -383,16 +389,6 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -404,33 +400,65 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="vektorisierung">
 <h1>Vektorisierung<a class="headerlink" href="#vektorisierung" title="Link to this heading">#</a></h1>
-<p>Ein <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array können Sie sich am einfachsten wie ein Vektor oder eine Matrix vorstellen. Es zeichnet sich durch drei Kernkenngrößen aus: die Dimension, die Größe sowie die Einträge des Arrays.</p>
-<p><strong>Bild</strong></p>
-<p>Die <strong>Dimension</strong> eines Arrays entspricht der Anzahl der Indizes, die benötigt werden, um ein Element zu adressieren. Beispielsweise kann ein eindimensionales Array als ein Vektor und ein zweidimensionales als Matrix interpretiert werden.</p>
-<p>Die <strong>Größe</strong> eines Arrays (engl. <em>shape</em>) wird durch ein Tupel <span class="math notranslate nohighlight">\((n_1, n_2, \dots, n_{\mathrm{dim}})\)</span> charakterisiert, wobei <span class="math notranslate nohighlight">\(n_i\)</span> die Anzahl der Einträge der <span class="math notranslate nohighlight">\(i\)</span>-ten Dimension entspricht.
-Eindimensionale Arras haben die Größe oder Länge <span class="math notranslate nohighlight">\(n\)</span> und zweidimensionale die Größe <span class="math notranslate nohighlight">\((m, n)\)</span>, was <span class="math notranslate nohighlight">\(m\)</span> Zeilen und <span class="math notranslate nohighlight">\(n\)</span> Spalten entspricht.</p>
-<section id="manuelle-arrayerstellung">
-<h2>Manuelle Arrayerstellung<a class="headerlink" href="#manuelle-arrayerstellung" title="Link to this heading">#</a></h2>
-<p>Sie können ein eindimensionales <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array erstellen, in dem Sie dessen Einträge in einer Liste (gekennzeichent durch eckige Klammern <code class="docutils literal notranslate"><span class="pre">[]</span></code>) zusammenfassen und der Funktion <code class="docutils literal notranslate"><span class="pre">np.array</span></code> übergeben:</p>
+<p>Think of the best way of completing each of the following tasks in MATLAB:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Add two vectors x and y.
+Find the square root of each of the elements of the vector n.
+Calculate the difference between the adjacent elements of the vector x.
+</pre></div>
+</div>
+<p>You could do these with a for loop. However, MATLAB is an array-based language, and you can often get improved performance by using MATLAB functions that are specifically designed to work with arrays. The process of revising loop–based code to use array operations is called vectorization .</p>
+<p>Bild 1</p>
+<p>Code often runs faster, is more concise, and looks more like math equations.</p>
+<p>Consider the problem of finding the difference between the adjacent elements of a vector. Let’s compare two solutions to this problem: one uses a vectorized function and the other uses a for loop.</p>
+<p>Bild 2</p>
+<p>You can see that the solution using the vectorized function diff is more concise. Also, the vectorized solution is faster than the non-vectorized solution.
+A subset of vectorized functions and operations is provided below. You should look for opportunities to vectorize your code and consult MATLAB documentation for possible solutions.</p>
+<p>Bild 3</p>
 <div class="cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="n">load</span> <span class="n">sensorData</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">sensorData</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">trimCell</span><span class="p">(</span><span class="n">sensorData</span><span class="p">(</span><span class="n">k</span><span class="p">,:));</span>
+    
+    <span class="n">Fx</span> <span class="o">=</span> <span class="n">s</span><span class="p">{</span><span class="mi">1</span><span class="p">}(:,</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">Fy</span> <span class="o">=</span> <span class="n">s</span><span class="p">{</span><span class="mi">2</span><span class="p">}(:,</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">Fz</span> <span class="o">=</span> <span class="n">s</span><span class="p">{</span><span class="mi">3</span><span class="p">}(:,</span><span class="mi">2</span><span class="p">);</span>
+    
+    <span class="n">clear</span> <span class="n">F</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">Fx</span><span class="p">);</span>
+    <span class="c1">#this for loop shall be replaced</span>
+    <span class="k">for</span> <span class="n">kk</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">m</span>
+        <span class="n">F</span><span class="p">(</span><span class="n">kk</span><span class="p">)</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">Fx</span><span class="p">(</span><span class="n">kk</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Fy</span><span class="p">(</span><span class="n">kk</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Fz</span><span class="p">(</span><span class="n">kk</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">end</span>
+    <span class="c1"># get the max force and the mean.</span>
+    <span class="p">[</span><span class="n">Fmax</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">maxIdx</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">F</span><span class="p">);</span>
+    <span class="n">Fmean</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">F</span><span class="p">);</span>
+<span class="n">end</span>
+
+<span class="c1"># view result</span>
+<span class="n">Fmax</span>
+<span class="n">Fmean</span>
+
+<span class="c1"># A helper function to trim a cell array of column vectors so that all the column vectors have the same number of rows. It will also work for matrices provided they have more rows than columns. It will return the result as a cell array</span>
+<span class="n">function</span> <span class="n">F</span> <span class="o">=</span> <span class="n">trimCell</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">cellfun</span><span class="p">(</span><span class="nd">@length</span><span class="p">,</span> <span class="n">F</span><span class="p">);</span>
+<span class="n">minL</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">l</span><span class="p">);</span>
+<span class="n">f</span> <span class="o">=</span> <span class="o">@</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">minL</span><span class="p">,:);</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">cellfun</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="s2">&quot;UniformOutput&quot;</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+<span class="n">end</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="c1"># erstellt ein Array mit Einträgen 0 und 4</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>The code in calcFvec.mlx calculates the maximum and average force on the head given sensor data measuring force in the x, y, and z directions.</p>
+<p>The force at each instant is measured within the inner for loop, and then the maximum and mean are calculated.  Vectorizing that calculation would speed up the code.</p>
+<p>Wir haben hier wieder unsere tollen sensor data, die wir nutzen zum vektorisieren. Mir ist grundsätzlich egal, welche Daten wir nutzen. es ist nur wichtig, dass man eine ordentliche for-Schleife hat. Hier wirklich ein übersichtlicheres Beispiel wählen, ich bin kein Fan.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Erstellen Sie einen Vektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">y</span></code> und den drei Elementen <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(7\)</span> und <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<p>Replace the inner for loop with a vectorized calculation of the force.  There should be only one for loop in the script.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -441,38 +469,49 @@ Eindimensionale Arras haben die Größe oder Länge <span class="math notranslat
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Fassen Sie die Werte <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(7\)</span> und <span class="math notranslate nohighlight">\(9\)</span> mittels eckiger Klammern (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) zusammen und nutzen Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.array</span></code>.</p>
+<p>The .^ operator raises each element of a vector or matrix to the specified power.  Remember to delete the inner for loop before submitting.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">Fx</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Fy</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Fz</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="s1">&#39;;</span>
 </pre></div>
 </div>
 </div>
-<p>Auch wenn ein eindimensionales <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array als Vektor interpretiert werden kann, ist es in Python weder ein Zeilen- noch ein Spaltenvektoren.
-In dem Sinne sind eindimensionale Arrays Objekte, welche Zahlen in einer festen Reihenfolge speichern.
-Im folgenden werden wir sie dennoch <em>Vektoren</em> nennen.</p>
-<p>Sie können eckige Klammern verschachteln und durch Kommata trennen, um ein zweidimensionales <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array bzw. eine Matrix zu erstellen. Dabei geben Sie die Elemente Zeile für Zeile ein. Jede Zeile wird durch eckige Klammern abgegrenzt.</p>
+<p>Nun kommt ein Video über die Addition von Matrixen und Skalaren (das Skalar wird auf jeden Eintrag gerechnet) und einem Vektor (passen die Dimensionen, so wird auf jede Spalte der Matrix der Spaltenvekor addiert. Analog für Zeilenvektoren). Achtung bei Spaltenvektor und Zeilenvektor multiplikation, dass da keine Matrix herauskommt, sondern ein Skalar. Dimensionen sehr wichtig!!</p>
+<p>Dies kann man natürlich grafisch dargestellt zeigen.</p>
+<p>Bild 4 ist Quiz-Idee dazu.</p>
+<p>This code loads the weight, length, and width of cars, then converts the data to metric units.
+The starter code loads a matrix, weightLengthWidth, whose columns contain the weight, length, and width of 1000 cars in kilograms and milimeters.  Then for loops are used to convert the measurements into pounds and inches, but a vectorized calculation would run faster.</p>
+<p>You can use tic and toc to time code and save the elapsed time.</p>
+<p>tic</p>
+<p>t = toc</p>
+<p>Run the starter code a few times to see approximately how long it takes to do these conversions with for loops.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erste Zeile von A: [1, 2, 3]</span>
 <span class="c1"># zweite Zeile von A: [4, 5, 6]</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">load</span> <span class="n">carStats</span><span class="o">.</span><span class="n">mat</span>
+<span class="n">weightLengthWidth</span> <span class="c1"># 1000x3 Matrix</span>
+
+<span class="n">tic</span>
+<span class="n">uscust</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">weightLengthWidth</span><span class="p">));</span>
+<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">uscust</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">uscust</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">weightLengthWidth</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">2.2</span><span class="p">;</span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="o">=</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">uscust</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">ii</span><span class="p">)</span> <span class="o">=</span> <span class="n">weightLengthWidth</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">ii</span><span class="p">)</span><span class="o">*</span><span class="mf">0.04</span><span class="p">;</span>
+    <span class="n">end</span>
+<span class="n">end</span>
+<span class="n">toc</span>
+
+<span class="n">uscust</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix mit dem Namen <code class="docutils literal notranslate"><span class="pre">A_23</span></code> und diesen Werten:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{pmatrix} 
-        4 &amp; 3 &amp; 2 \\
-        6 &amp; 7 &amp; 8
-    \end{pmatrix}
-\end{split}\]</div>
+<p>Vectorize the conversion to U.S. customary and save the result in uscustVec.</p>
+<p>Delete lines 4-14 (von tic bis uscust) before submitting. To pass the assessments, your code should not contain the word for or while anywhere in the script.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -481,24 +520,31 @@ Im folgenden werden wir sie dennoch <em>Vektoren</em> nennen.</p>
 </div>
 </div>
 </div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>weightLengthWidth is a 1000-by-3 numeric array.  Element-wise multiplication by a 1-by-3 vector will result in each row of the array being multiplied (element-wise) by that vector.</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_23</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tic</span>
+<span class="n">uscustVec</span> <span class="o">=</span> <span class="n">weightLengthWidth</span><span class="o">.*</span><span class="p">[</span><span class="mf">2.2</span> <span class="mf">.04</span> <span class="mf">.04</span><span class="p">]</span>
+<span class="n">toc</span>
 </pre></div>
+</div>
+</div>
+<p>In the script, the weights are extracted and saved in the variable wt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code creates a variable of car weights for the next task.</span>
+<span class="n">wt</span> <span class="o">=</span> <span class="n">weightLengthWidth</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-3 admonition">
 <p class="admonition-title">Aufgabe 1.3</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((4 \times 2)\)</span> Matrix mit dem Namen <code class="docutils literal notranslate"><span class="pre">A_42</span></code> und diesen Werten:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{pmatrix} 
-        -1 &amp;0 \\
-        -7 &amp; 10 \\
-        2 &amp; 4.5 \\
-        3 &amp; -5
-    \end{pmatrix}
-\end{split}\]</div>
+<p>Create a 1000-by-3 matrix named convertedWts whose columns are the original weight in kilograms, the weight in pounds, and the weight in tons (in that order). To do this, you will need to multiply every element of wt by 1, 2.2, and .001.</p>
+<p>This can be done in one line. To pass the assessments, your code should not contain the word for or while anywhere in the script</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -507,75 +553,38 @@ Im folgenden werden wir sie dennoch <em>Vektoren</em> nennen.</p>
 </div>
 </div>
 </div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>This can be solved in one line with either implicit expansion or matrix multiplication.</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_42</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tic</span>
+<span class="n">convertedWts</span> <span class="o">=</span> <span class="n">wt</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span> <span class="mf">2.2</span> <span class="mf">.001</span><span class="p">]</span>
+<span class="n">toc</span>
 </pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erste Zeile von A: [1, 2, 3]</span>
+<span class="c1"># zweite Zeile von A: [4, 5, 6]</span>
+<span class="n">tic</span>
+<span class="n">uscust</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">weightLengthWidth</span><span class="p">));</span>
+<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">uscust</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">uscust</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">weightLengthWidth</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">2.2</span><span class="p">;</span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="o">=</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">uscust</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">ii</span><span class="p">)</span> <span class="o">=</span> <span class="n">weightLengthWidth</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">ii</span><span class="p">)</span><span class="o">*</span><span class="mf">0.04</span><span class="p">;</span>
+    <span class="n">end</span>
+<span class="n">end</span>
+<span class="n">toc</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-4 admonition">
 <p class="admonition-title">Aufgabe 1.4</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((1 \times 2)\)</span> Matrix mit dem Namen <code class="docutils literal notranslate"><span class="pre">A_zeile</span></code> und diesen Werten:</p>
-<div class="math notranslate nohighlight">
-\[
-    \begin{pmatrix} 
-        5 &amp; 10 
-    \end{pmatrix}
-\]</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">A_zeile</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># sollte (1, 2) liefern</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_zeile</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-5 admonition">
-<p class="admonition-title">Aufgabe 1.5</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((3 \times 1)\)</span> Matrix mit dem Namen <code class="docutils literal notranslate"><span class="pre">A_spalte</span></code> und diesen Werten:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{pmatrix} 
-        3 \\ 6 \\ -2
-    \end{pmatrix}
-\end{split}\]</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">A_spalte</span><span class="p">)</span> <span class="c1"># sollte (3, 1) liefern</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_spalte</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<br>
-<p>Innerhalb der eckigen Klammern können Sie auch Berechnungen durchführen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-6 admonition">
-<p class="admonition-title">Aufgabe 1.6</p>
-<p>Erstellen Sie einen Vektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">y</span></code>, der <code class="docutils literal notranslate"><span class="pre">np.sqrt(49)</span></code> (<span class="math notranslate nohighlight">\(\sqrt{49}\)</span>) als erstes Element, <code class="docutils literal notranslate"><span class="pre">np.pi**2</span></code> (<span class="math notranslate nohighlight">\(\pi^2\)</span>) als zweites Element und <code class="docutils literal notranslate"><span class="pre">np.sin(4)</span></code> als drittes Element enthält.</p>
+<p>Try wrapping your solution for Task 1 in tic and toc and compare its performance to the for loop implementation.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -586,330 +595,10 @@ Im folgenden werden wir sie dennoch <em>Vektoren</em> nennen.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">49</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
-<br>
-</section>
-<section id="vektoren-mit-werten-in-gleichmaszigen-abstanden">
-<h2>Vektoren mit Werten in gleichmäßigen Abständen<a class="headerlink" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden" title="Link to this heading">#</a></h2>
-<p>In der Numerik und auch beim Programmieren (in Python) allgemein, benötigen Sie häufig Vektoren, dessen aufeinanderfolgenden Einträge immer die gleiche Differenz haben, wie zum Beispiel bei dem Vektor <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-1 admonition">
-<p class="admonition-title">Aufgabe 2.1</p>
-<p>Definieren Sie einen Vektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">y</span></code>, der die Werte <span class="math notranslate nohighlight">\(10\)</span>, <span class="math notranslate nohighlight">\(11\)</span> und <span class="math notranslate nohighlight">\(12\)</span> in der genau dieser Reihenfolge enthält.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Nutzen Sie den Befehl <code class="docutils literal notranslate"><span class="pre">np.array</span></code> und fassen Sie die Elemente des Vektors in eckige Klammern zusammen.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<p>Bei langen Vektoren ist das manuelle Eingeben der einzelnen Werte äußerst unpraktisch. Eine schnellere Alternative zum Erstellen von Vektoren mit gleichmäßigem Abstand zwischen den Werten bietet die Funktion <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> bei der lediglich der Start- und Endwert angegeben werden müssen:</p>
-<p><code class="docutils literal notranslate"><span class="pre">np.arange(startwert,</span> <span class="pre">endwert)</span></code></p>
-<p>Der Endwert ist allerdings <strong>nicht</strong> enthalten, das heißt <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> erzeugt einen Wertebereich im Sinne des halboffenen Intervalls <span class="math notranslate nohighlight">\([\texttt{startwert}, \texttt{endwert})\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-2 admonition">
-<p class="admonition-title">Aufgabe 2.2</p>
-<p>Erstellen Sie mit dem Befehl <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> einen Vektor mit den ganzzahligen Werten von <span class="math notranslate nohighlight">\(10\)</span> bis <span class="math notranslate nohighlight">\(20\)</span>. Speichern Sie das Ergebnis in der Variable <code class="docutils literal notranslate"><span class="pre">x_range</span></code>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>Standardmäßig verwendet die Funktion <code class="docutils literal notranslate"><span class="pre">np.arange</span></code>einen Abstand von <span class="math notranslate nohighlight">\(1\)</span> zwischen zwei aufeinanderfolgenden Einträgen.
-Es ist aber auch möglich einen anderen Abstand festzulegen.
-Übergibt man der Funktion <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> ein drittes Argument dann lassen sich auch Vektoren mit beliebigen Abständen erzeugen:</p>
-<p><code class="docutils literal notranslate"><span class="pre">np.arange(startwert,</span> <span class="pre">endwert,</span> <span class="pre">abstand)</span></code></p>
-<p>Zum Beispiel liefert der folgende Code ein Vektor mit Abstand <span class="math notranslate nohighlight">\(3\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-3 admonition">
-<p class="admonition-title">Aufgabe 2.3</p>
-<p>Erstellen Sie einen Vektor <code class="docutils literal notranslate"><span class="pre">y_range</span></code>, dessen Elemente bei <span class="math notranslate nohighlight">\(-2\)</span> beginnen, bei <span class="math notranslate nohighlight">\(3\)</span> enden und jeweils durch einen Abstand von <span class="math notranslate nohighlight">\(0.5\)</span> getrennt sind.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-4 admonition">
-<p class="admonition-title">Aufgabe 2.4</p>
-<p>Erstellen Sie einen Vektor <code class="docutils literal notranslate"><span class="pre">z_range</span></code>, dessen Elemente bei <span class="math notranslate nohighlight">\(0\)</span> beginnen, bei <span class="math notranslate nohighlight">\(30\)</span> enden und jeweils durch einen Abstand von <span class="math notranslate nohighlight">\(2\)</span> getrennt sind.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>Anstatt den Abstand zwischen den einzelnen Elementen eines Vektors, ist es auch möglich die gewünschte Elementanzahl zwischen einem Start- und Endwert anzugeben. Dazu können Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> verwenden:</p>
-<p><code class="docutils literal notranslate"><span class="pre">linspace(startwert,</span> <span class="pre">endwert,</span> <span class="pre">anzahl_elemente)</span></code></p>
-<p>Im Gegensatz zu der Funktion <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> ist der Endwert bei <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> im Wertebereich des Vektors enthalten. Die Funktion erzeugt also einen Wertebereich im Sinne des abgeschlossenen Intervalls <span class="math notranslate nohighlight">\([\texttt{startwert}, \texttt{endwert}]\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-5 admonition">
-<p class="admonition-title">Aufgabe 2.5</p>
-<p>Erstellen Sie einen Zeilenvektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">y_linspace</span></code>, der bei <span class="math notranslate nohighlight">\(1\)</span> beginnt, bei <span class="math notranslate nohighlight">\(12\)</span> endet und der <span class="math notranslate nohighlight">\(4\)</span> Elemente enthält.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_linspace</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="admonition-zusatzaufgabe admonition">
-<p class="admonition-title">Zusatzaufgabe</p>
-<p>Wenn Sie einen Vektor mit Werten im gleichen Abstand von <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(2\pi\)</span>
-mit <span class="math notranslate nohighlight">\(100\)</span> Elementen erstellen wollten, würden Sie dann <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> oder <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> verwenden?</p>
-</div>
-</section>
-<section id="arrayerstellung-mittels-funktionen">
-<h2>Arrayerstellung mittels Funktionen<a class="headerlink" href="#arrayerstellung-mittels-funktionen" title="Link to this heading">#</a></h2>
-<p>In Python gibt es neben Funktionen, die Vektoren mit aufeinander folgenden Werten oder mit Werten einer konstanten Differenz erzeugen, auch weitere Funktionen, mit denen Arrays beliebiger Dimension erstellt werden können.
-Zum Beispiel erstellt die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.rand(n)</span></code> einen Vektor mit <span class="math notranslate nohighlight">\(n\)</span> zufälligen Einträgen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># erstellt ein Vektor der Länge 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-3-1 admonition">
-<p class="admonition-title">Aufgabe 3.1</p>
-<p>Erstellen Sie einen Vektor der Länge <span class="math notranslate nohighlight">\(7\)</span> mit Zufallseinträgen und speichern Sie den Vektor in der Variablen <code class="docutils literal notranslate"><span class="pre">y_rand</span></code>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code> und verwenden Sie <span class="math notranslate nohighlight">\(7\)</span> als Argument.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code> erlaubt auch mehrere Eingaben, um zum Beispiel Matrizen zu erzeugen. Der Code <code class="docutils literal notranslate"><span class="pre">np.random.randn(n,</span> <span class="pre">m)</span></code> erstellt eine <span class="math notranslate nohighlight">\((n \times m)\)</span> Matrix mit zufälligen Einträgen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># erstellt eine 3 x 2 Matrix</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-3-2 admonition">
-<p class="admonition-title">Aufgabe 3.2</p>
-<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((4 \times 4)\)</span> Matrix mit zufälligen Einträgen und speichern Sie die Matrix in der Variablen <code class="docutils literal notranslate"><span class="pre">A_rand</span></code>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<p>Es gibt noch weitere Funktionen, um Arrays einer bestimmten Dimension und Größe zu erzeugen. Beispielsweise erzeugen die Funktionen <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> und <code class="docutils literal notranslate"><span class="pre">np.ones</span></code> Arrays, die ausschließlich aus Nullen bzw. Einsen bestehen.
-Die Erstellung von Vektoren funktioniert hierbei analog wie bei Funktion <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-3-3 admonition">
-<p class="admonition-title">Aufgabe 3.3</p>
-<p>Erzeugen Sie mit Hilfe der Funktion <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> einen Vektor <code class="docutils literal notranslate"><span class="pre">x_zero</span></code> der Länge <span class="math notranslate nohighlight">\(4\)</span> und ausschließlich Null-Einträgen.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_zero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>Das Erzeugen von <span class="math notranslate nohighlight">\((m \times n)\)</span> Matrizen mittels <code class="docutils literal notranslate"><span class="pre">np.ones</span></code> oder <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> unterscheidet sich jedoch leicht zu der Funktion <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code>.</p>
-<p>In diesem Fall muss man die Anzahl der Zeilen <span class="math notranslate nohighlight">\(m\)</span> und die Anzahl der Spalten <span class="math notranslate nohighlight">\(n\)</span> in einem Tupel <code class="docutils literal notranslate"><span class="pre">(m,</span> <span class="pre">n)</span></code> oder einer Liste <code class="docutils literal notranslate"><span class="pre">[m,</span> <span class="pre">n]</span></code> zusammenfassen und als Eingabe verwenden.
-Beides liefert jedoch dasselbe Ergebnis:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_rund</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># runde Klammern um 4, 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A_rund =&quot;</span><span class="p">,</span> <span class="n">A_rund</span><span class="p">)</span>
-
-<span class="n">A_eckig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># eckige Klammern um 4, 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A_eckig =&quot;</span><span class="p">,</span> <span class="n">A_eckig</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-3-4 admonition">
-<p class="admonition-title">Aufgabe 3.4</p>
-<p>Erzeugen Sie mit Hilfe der Funktion <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> eine <span class="math notranslate nohighlight">\((4 \times 7)\)</span> Matrix aus Nullen und speichern Sie das Ergebnis in einer Varaiblen <code class="docutils literal notranslate"><span class="pre">A_zero</span></code>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_zero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
-
-<span class="c1"># alternativ</span>
-<span class="n">A_zero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<p>Sie können die Größe, die Dimension und die Anzahl der Elemente eines bereits erstellten Array mit Hilfe der folgenden Funktionen auslesen:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>: Größe des Arrays</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ndim</span></code>: Dimension des Arrays</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: Anzahl der gesamten Elemente des Arrays</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Mit nur einer Codezeile können Sie so ein Array erstellen, das genauso groß ist wie die bereits vorhandene Matrix.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B_same_shape_as_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-3-5 admonition">
-<p class="admonition-title">Aufgabe 3.5</p>
-<p>Bestimmen Sie die Dimension, die Größe und die Anzahl der Elemente des Arrays <code class="docutils literal notranslate"><span class="pre">A_mystery</span></code>. Was fällt bezüglich der Beziehung zwischen der Größe und der Anzahl der Elemente des Arrays auf? Erstellen Sie ein Array <code class="docutils literal notranslate"><span class="pre">B</span></code>, welches nur Nulleinträge hat und dieselbe Größe wie <code class="docutils literal notranslate"><span class="pre">A_mystery</span></code> hat.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-
-
-<span class="c1"># load A_mystery</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">A_mystery</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -957,24 +646,6 @@ Beides liefert jedoch dasselbe Ergebnis:</p>
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
