@@ -399,8 +399,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-der-matrix-und-vektor-funktionen">Übersicht der Matrix- und Vektor-Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorerstellung">Vektorerstellung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-matrizen">Erstellung von Matrizen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-zufallsmatrizen">Erstellung von Zufallsmatrizen</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -414,23 +421,14 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="arrayerstellung">
 <h1>Arrayerstellung<a class="headerlink" href="#arrayerstellung" title="Link to this heading">#</a></h1>
-<p>Im vorangegangenen Kapitel zur <a class="reference internal" href="#./content/chapter02_basics/arrays/arrayerstellung.md"><span class="xref myst">Arrayserstellung</span></a></p>
-<p>In this activity, you’ll practice creating evenly-spaced vectors using the colon operator (:) and the linspace function.</p>
-<p>Your script should not contain any square brackets ([]) or the task will be marked incorrect.</p>
-<section id="vektoren-mit-werten-in-gleichmaszigen-abstanden">
-<h2>Vektoren mit Werten in gleichmäßigen Abständen<a class="headerlink" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden" title="Link to this heading">#</a></h2>
-<p>Alles basierend auf Bild 1 bis 6</p>
-<div class="cell tag_thebe-init docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
-</div>
+<p>Im vorangegangenen Kapitel zur <a class="reference internal" href="#./content/chapter02_basics/arrays/arrayerstellung.md"><span class="xref myst">Arrayserstellung</span></a> [ACHTUNG, LINK FUNKTIONIERT BEI MIR NICHT] haben Sie bereits einige Möglichkeiten kennengelernt, um Arrays zu erzeugen. Insbesondere Methoden zur manuellen Arrayerstellung, Erstellung von Vektoren mit gleichmäßigen Abständen und Arrayerstellung mit Hilfe von Funktionen.</p>
+<p>In diesem Kapitel sollen Sie die gelernten Aspekte wiederholen, um diese elementaren Operationen zu festigen und im nächten Kapitel zu vertiefen.</p>
+<section id="manuelle-arrayerstellung">
+<h2>Manuelle Arrayerstellung<a class="headerlink" href="#manuelle-arrayerstellung" title="Link to this heading">#</a></h2>
+<p>Zunächst wiederholen Sie, wie man manuell Arrays erstellt.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Create a row vector named <code class="docutils literal notranslate"><span class="pre">y</span></code> that starts at <span class="math notranslate nohighlight">\(5\)</span>, ends at <span class="math notranslate nohighlight">\(15\)</span>, and whose elements are separated by <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Erstellen Sie einen Vektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">x</span></code> mit den Elementen <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(\sin(\pi)\)</span> und <span class="math notranslate nohighlight">\(\sqrt{36}\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -441,23 +439,66 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">:</span></code> operator to create a row vector of consecutive integers: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3:5</span></code>.</p>
+<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.array</span></code>und eckige Klammern (<code class="docutils literal notranslate"><span class="pre">[]</span></code>), um den Vektor zu erstellen. Die verwendeten Funktionen und Werte könne Sie mittels <code class="docutils literal notranslate"><span class="pre">np.sin</span></code>, <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> und  <code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code> ausdrücken. Vergessen Sie nicht, die notwendigen Pakete zu importieren.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">:</span><span class="mi">15</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">36</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Create a variable named <code class="docutils literal notranslate"><span class="pre">y</span></code> that contains the row vector shown below.</p>
+<p>Erstellen Sie eine Matrix mit dem Namen <code class="docutils literal notranslate"><span class="pre">A</span></code> und diesen Werten:</p>
 <div class="math notranslate nohighlight">
-\[
+\[\begin{split}
     \begin{pmatrix} 
-        3 &amp; 5 &amp; 7 &amp; 9 &amp; 11
+        1 &amp; 2 &amp; 3 &amp; 4\\
+        5 &amp; 6 &amp; 7 &amp; 8
+    \end{pmatrix}.
+\end{split}\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.array</span></code>und eckige Klammern (<code class="docutils literal notranslate"><span class="pre">[[],[]]</span></code>), um die Matrix zu erstellen</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<br>
+</section>
+<section id="vektoren-mit-werten-in-gleichmaszigen-abstanden">
+<h2>Vektoren mit Werten in gleichmäßigen Abständen<a class="headerlink" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden" title="Link to this heading">#</a></h2>
+<p>Die erste Spalte von <code class="docutils literal notranslate"><span class="pre">A</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        1 &amp; 2 &amp; 3 &amp; 4\\
+    \end{pmatrix},
+\end{split}\]</div>
+<p>kann auch mit Hilfe von in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> enthaltenen Funktionen erzeugt werden, statt sie manuell einzutippen. Die Aufgaben dieses Abschnitts sollen zur Wiederholung dieser Funktionen gelten.</p>
+<div class="admonition-aufgabe-2-1 admonition">
+<p class="admonition-title">Aufgabe 2.1</p>
+<p>Erstellen Sie einen Vektor</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        1 &amp; 2 &amp; 3 &amp; 4\\
     \end{pmatrix}
-\]</div>
+\end{split}\]</div>
+<p>namens <code class="docutils literal notranslate"><span class="pre">A_zeile1</span></code> mit Hilfe von in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> enthaltenen Funktionen.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -468,26 +509,25 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">:</span></code> operator to create an evenly-spaced vector when the spacing between elements, dx, is known : <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a:dx:b</span></code>.</p>
+<p>Nutzen Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.arange(startwert,</span> <span class="pre">endwert)</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">11</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_zeile1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_zeile1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>The colon operator produces ascending arrays by default. However, descending arrays can be created using a negative spacing.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-3 admonition">
-<p class="admonition-title">Aufgabe 1.3</p>
-<p>Create a row vector named <code class="docutils literal notranslate"><span class="pre">z</span></code> that starts at <span class="math notranslate nohighlight">\(5\)</span>, ends at <span class="math notranslate nohighlight">\(1\)</span>, and whose elements are spaced by <span class="math notranslate nohighlight">\(-1\)</span></p>
+<div class="admonition-aufgabe-2-2 admonition">
+<p class="admonition-title">Aufgabe 2.2</p>
+<p>Erstellen Sie den Vektor <code class="docutils literal notranslate"><span class="pre">x_absteigend</span></code> mit den Werten</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        55 &amp; 52 &amp; 49 &amp; 46 &amp; 43 &amp; 40\\
+    \end{pmatrix}
+\end{split}\]</div>
+<p>mit Hilfe von in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> enthaltenen Funktionen.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -498,26 +538,18 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the colon operator (:): <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">14:-2:2</span></code>.</p>
+<p>Nutzen Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.arange(startwert,</span> <span class="pre">endwert,</span> <span class="pre">abstand)</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_absteigend</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_absteigend</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>In the previous tasks, the spacing was defined such that there were an integer number of spaces between the starting and end points. What happens when this is not the case?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-4 admonition">
-<p class="admonition-title">Aufgabe 1.4</p>
-<p>Create a row vector named <code class="docutils literal notranslate"><span class="pre">A</span></code> that starts at <span class="math notranslate nohighlight">\(0\)</span>, ends at <span class="math notranslate nohighlight">\(12\)</span> and whose elements are spaced by <span class="math notranslate nohighlight">\(2.5\)</span>.</p>
+<div class="admonition-aufgabe-2-3 admonition">
+<p class="admonition-title">Aufgabe 2.3</p>
+<p>Erstellen Sie den Vektor <code class="docutils literal notranslate"><span class="pre">x_pi</span></code>, welcher bei <span class="math notranslate nohighlight">\(-\pi\)</span> startet, bei <span class="math notranslate nohighlight">\(3\pi\)</span> endet und <span class="math notranslate nohighlight">\(50\)</span> Elemente enthält.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,88 +560,20 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the colon operator (:): <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a:dx:b</span></code></p>
+<p>Nutzen Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.linspace(startwert,</span> <span class="pre">endwert,</span> <span class="pre">anzahl_elemente)</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mf">2.5</span><span class="p">:</span><span class="mi">12</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">x_pi</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Depending on the chosen spacing, you are not guaranteed to produce a vector that includes the end point.</p>
-<p>The linspace function guarantees that the vector will contain the starting and end points, but does not allow you to control the size of the spacing.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-5 admonition">
-<p class="admonition-title">Aufgabe 1.5</p>
-<p>Create a row vector named <code class="docutils literal notranslate"><span class="pre">B</span></code> that starts at 0, ends at 1 and contains 90 evenly-spaced elements.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">linspace</span></code> function with inputs 0, 1, and 90.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">90</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">linspace</span></code> can also help when it is not obvious what the spacing should be between elements.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-6 admonition">
-<p class="admonition-title">Aufgabe 1.6</p>
-<p>Create a row vector named C that starts at 3*pi, ends at -pi and contains 20 evenly-spaced elements</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Use the linspace function with inputs <span class="math notranslate nohighlight">\(3*pi\)</span>, <span class="math notranslate nohighlight">\(-pi\)</span>, and <span class="math notranslate nohighlight">\(20\)</span>.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span><span class="o">-</span><span class="n">pi</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>The colon operator allows you to control the spacing between elements in a vector whereas linspace allows you to control the number of elements between the starting and end points.</p>
-<p>Try creating a vector using linspace that contains just 1 element and that starts from 0 and ends at 10.</p>
-<p>Alternatively, try using the colon operator to create a vector that starts at 0, ends at 10, and has a spacing of 15.</p>
-<p>What do you expect to happen in these scenarios?</p>
-<p>Remember that you can execute your script by clicking the Run or Run Section button in the MATLAB Toolstrip.</p>
-<p>When you’re finished practicing, you can move on to the next section.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
+<p>Die Funktionen <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> und <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>, sind sehr nützliche Funktionen, um eine regelmäßige Zahlenfolgen zu erzeugen. Was erwarten Sie, wenn Sie die Funktion dazu zwingen nur einen Wert auszugeben? Bevor sie die nächste Aufgabe bearbeiten, stellen Sie eine Vermutung auf, wie das Ergebnis aussehen wird. Stimmt Ihre Vermutung mit der tatsächlichen Ausgabe überein?</p>
+<div class="admonition-aufgabe-2-4 admonition">
+<p class="admonition-title">Aufgabe 2.4</p>
+<p>Erstellen Sie mit <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> einen Vektor <code class="docutils literal notranslate"><span class="pre">x_arange_1element</span></code>, dessen Elemente bei <span class="math notranslate nohighlight">\(0\)</span> beginnen, bei <span class="math notranslate nohighlight">\(10\)</span> enden und jeweils durch einen Abstand von <span class="math notranslate nohighlight">\(15\)</span> getrennt sind.</p>
+<p>Erstellen Sie weiterhin einen Vektor <code class="docutils literal notranslate"><span class="pre">x_linspace_1element</span></code>, der bei <span class="math notranslate nohighlight">\(0\)</span> beginnt, bei <span class="math notranslate nohighlight">\(10\)</span> endet und der nur <span class="math notranslate nohighlight">\(1\)</span> Element enthält.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -620,7 +584,10 @@
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_arange_1element</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">x_linspace_1element</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x_arange_1element =&quot;</span><span class="p">,</span> <span class="n">x_arange_1element</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x_linspace_1element =&quot;</span><span class="p">,</span> <span class="n">x_linspace_1element</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -628,12 +595,11 @@
 </section>
 <section id="arrayerstellung-mittels-funktionen">
 <h2>Arrayerstellung mittels Funktionen<a class="headerlink" href="#arrayerstellung-mittels-funktionen" title="Link to this heading">#</a></h2>
-<p>Remember that MATLAB has several functions that you can use to create arrays. For example, an array of all zeros or an array of all ones.</p>
-<p>The syntax for these functions all have the same basic structure in that you must specify the number of rows and columns of the array.</p>
-<p>** Bild 7 **</p>
-<div class="admonition-aufgabe-2-1 admonition">
-<p class="admonition-title">Aufgabe 2.1</p>
-<p>Create an array named x that has 3 rows and 4 columns and where every element is the number 1.</p>
+<p>Um Matrizen mit gewisser Struktur zu erzeugen, haben Sie bereits einige Methoden kennengelernt. Insbesondere begegnet uns in der Mathematik oft die Einheitsmatrix. Auch für sie existiert in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> bereits ein Befehl. Mir <code class="docutils literal notranslate"><span class="pre">np.eye(n)</span></code> erstellt man eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale Einheitsmatrix.</p>
+<p>Versuchen Sie sich durch die erste Aufgabe dieses Abschnittes mit den bereits bekannten Methoden und der <code class="docutils literal notranslate"><span class="pre">np.eye</span></code> Funktion vertraut zu machen.</p>
+<div class="admonition-aufgabe-3-1 admonition">
+<p class="admonition-title">Aufgabe 3.1</p>
+<p>Erstellen Sie die <span class="math notranslate nohighlight">\((4 \times 4)\)</span> Matrix <code class="docutils literal notranslate"><span class="pre">A_nur5</span></code>, bei der jeder Eintrag die Zahl <span class="math notranslate nohighlight">\(5\)</span> ist. Berechnen Sie anschließend mit Hilfe der erstellten Matrix <code class="docutils literal notranslate"><span class="pre">A_nur5</span></code>, die Matrix <code class="docutils literal notranslate"><span class="pre">A_nur45</span></code>, bei der alle Einträge <span class="math notranslate nohighlight">\(5\)</span> sind außer die Diagonaleinträge. Diese enthalten den Wert <span class="math notranslate nohighlight">\(4\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -644,26 +610,37 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use ones to create the matrix: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">ones(m,n)</span></code>.</p>
+<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.ones(zeilen,</span> <span class="pre">spalten)</span></code> und multiplizieren Sie die Matrix mit dem passenden Faktor. Nutzen Sie anschließend <code class="docutils literal notranslate"><span class="pre">np.eye(dimension)</span></code>, um von jedem Diagonaleintrag <span class="math notranslate nohighlight">\(1\)</span> abzuziehen.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_nur5</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">A_nur45</span> <span class="o">=</span> <span class="n">A_nur5</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_nur45</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Hier steht ein erklärender Text.</p>
+<p>Neben den Ihnen bereits bekannten Funktionen, enthält <code class="docutils literal notranslate"><span class="pre">numpy</span></code> viele weitere Funktionen. Dazu gehört <code class="docutils literal notranslate"><span class="pre">np.diag</span></code>. Der Code <code class="docutils literal notranslate"><span class="pre">np.diag([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code> erstellt eine <span class="math notranslate nohighlight">\((3 \times 3)\)</span> Diagonalmatrix, mit den Einträgen <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span> und <span class="math notranslate nohighlight">\(3\)</span> auf der Diagonalen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c1"># erstellt eine 3 x 3 Diagonalmatrix mit Diagonalelemente 1,2 und 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-2-2 admonition">
-<p class="admonition-title">Aufgabe 2.2</p>
-<p>Create an array named x that has 3 rows and 4 columns and where every element is the number 5.</p>
+<div class="admonition-aufgabe-3-2 admonition">
+<p class="admonition-title">Aufgabe 3.2</p>
+<p>Erstellen Sie die Matrix <code class="docutils literal notranslate"><span class="pre">A_diagonal</span></code> mit den Werten:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        12 &amp; 0 &amp; 0 &amp; 0\\
+        0 &amp; -3 &amp; 0 &amp; 0\\
+        0 &amp; 0 &amp; 3 &amp; 0\\
+        0 &amp; 0 &amp; 0 &amp; 0
+    \end{pmatrix}.
+\end{split}\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,27 +651,63 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use ones to create the matrix: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">ones(m,n)</span></code>. Then you can scale the array by a constant.</p>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.diag</span></code> mit der passenden Eingabevariablen.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_diagonal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_diagonal</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>The rand function creates a matrix of uniformly distributed random numbers. Random numbers can be useful for creating simulations.</p>
+<p>Zudem gibt es Methoden obere und untere Dreiecksmatrizen zu erzeugen. Dazu erstellt <code class="docutils literal notranslate"><span class="pre">np.tri(n)</span></code> eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale untere Dreiecksmatrix mit <span class="math notranslate nohighlight">\(1\)</span> auf und unterhalb der Diagonalen. Der Ausdruck <code class="docutils literal notranslate"><span class="pre">np.triu(A)</span></code> transformiert eine quadratische Matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> in eine obere Dreiecksmatrix, indem er alle Einträge unterhalb der Diagonalen auf <span class="math notranslate nohighlight">\(0\)</span> setzt. Analog transformiert <code class="docutils literal notranslate"><span class="pre">np.tril(A)</span></code> die quadratische Matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> in eine untere Dreiecksmatrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># erstellt die Matrix aus Aufgabe 3.1</span>
+<span class="n">A_untere_dreieck</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tril</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># löscht alle Einträge oberhalb der Diagonalen</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_untere_dreieck</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-2-3 admonition">
-<p class="admonition-title">Aufgabe 2.3</p>
+<div class="admonition-aufgabe-3-3 admonition">
+<p class="admonition-title">Aufgabe 3.3</p>
+<p>Erstellen Sie die Matrix <code class="docutils literal notranslate"><span class="pre">A_kein_dreieck</span></code> mit den Werten:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        3 &amp; 2 &amp; 2\\
+        1 &amp; 3 &amp; 2\\
+        1 &amp; 1 &amp; 3
+    \end{pmatrix}.
+\end{split}\]</div>
+<p>Nutzen Sie dabei die Summe zweier Dreiecksmatrizen.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.tri</span></code>, um eine untere Dreiecksmatrix zu erstellen, und <code class="docutils literal notranslate"><span class="pre">np.ones</span></code> sowie <code class="docutils literal notranslate"><span class="pre">np.triu</span></code>, um eine obere Dreiecksmatrix zu erstellen.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_tri</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tri</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">A_obere_dreieck</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">A_kein_dreieck</span> <span class="o">=</span> <span class="n">A_tri</span> <span class="o">+</span> <span class="n">A_obere_dreieck</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_kein_dreieck</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Sie haben außerdem Funktionen kennengelernt, die verwendet werden, um Matrizen mit Zufallszahlen zu generieren. Dazu kennen Sie den Befehl <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code>. Dieser generiert gleichverteilte Zufallszahlen im Intervall <span class="math notranslate nohighlight">\([0,1]\)</span>. Zudem existiert die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code>, welche standardnormalverteilte Zufallszahlen erzeugt. Zum Beispiel der Ausdruck <code class="docutils literal notranslate"><span class="pre">np.random.randn(3,2)</span></code> erstellt eine <span class="math notranslate nohighlight">\((3 \times 2)\)</span> Matrix mit standardnormalverteilten Einträgen.</p>
+<div class="admonition-aufgabe-3-4 admonition">
+<p class="admonition-title">Aufgabe 3.4</p>
 <p>Aufgabe
-Create a 100-by-1 vector of uniformly distributed random numbers with the name xU.</p>
+Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <code class="docutils literal notranslate"><span class="pre">A_uniform</span></code>, die zufällig gleichverteilte Einträge zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> annimmt, sowie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <code class="docutils literal notranslate"><span class="pre">A_normal</span></code>, die standardnormalverteilte Zufallszahlen beinhaltet. Vergleichen Sie die maximalen Einträge beider Matrizen.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -705,26 +718,29 @@ Create a 100-by-1 vector of uniformly distributed random numbers with the name x
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the rand function with inputs 100 and 1: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">rand(m,n)</span></code></p>
+<p>Verwenden Sie die Funktionen <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code> und <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code>, um die Matrizen zu erzeugen. Nutzen Sie anschließend <code class="docutils literal notranslate"><span class="pre">.max()</span></code>, um den maximalen Wert zu extrahieren.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xU</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_uniform</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">A_normal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der maximale Wert der uniform verteilten Matrix ist&#39;</span><span class="p">,</span> <span class="n">A_uniform</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;und der der gleichverteilten ist&#39;</span><span class="p">,</span> <span class="n">A_normal</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="c1"># Beobachtung: Der gleichverteilte maximale Wert ist nahe bei 1, der normalverteilte deutlich über 1.</span>
 </pre></div>
 </div>
 </div>
-<p>The randn function creates a matrix of normally distributed random numbers.</p>
+<p>Für manche Anwendung möchte man zufällige ganze Zahlen erzeugen. Auch dafür bietet <code class="docutils literal notranslate"><span class="pre">numpy</span></code> eine Funktion an. Sie heißt <code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code> und hat 3 Eingabeparameter: <code class="docutils literal notranslate"><span class="pre">np.random.randint(min_wert,</span> <span class="pre">max_wert,</span> <span class="pre">size)</span></code>. Die Funktion gibt nun eine Matrix der Größe <code class="docutils literal notranslate"><span class="pre">size</span></code> aus, welche gleichmäßig verteilte ganze Zahlen aus dem Intervall <span class="math notranslate nohighlight">\([\text{min_wert},\text{max_wert})\)</span> als Einträge besitzt. Der Ausdruck <code class="docutils literal notranslate"><span class="pre">np.random.randint(0,</span> <span class="pre">10,</span> <span class="pre">(2,3))</span></code> erzeugt eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix, die nur ganze Zahlen zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(9\)</span> annimmt. Beachten Sie auch hier wieder, dass die obere Grenze, die man angibt nicht angenommen wird.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_randint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># erzeugt 2 x 3 Matrix, die nur ganze Zahlen zwischen 0 und 9 annimmt</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_randint</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-2-4 admonition">
-<p class="admonition-title">Aufgabe 2.4</p>
-<p>Create a 100-by-1 vector of normally distributed random numbers with the name xN.</p>
+<div class="admonition-aufgabe-3-5 admonition">
+<p class="admonition-title">Aufgabe 3.5</p>
+<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <code class="docutils literal notranslate"><span class="pre">A_ganzzahlig</span></code>, die zufällige ganzzahlige Einträge zwischen <span class="math notranslate nohighlight">\(-3\)</span> und <span class="math notranslate nohighlight">\(4\)</span> annimmt. Betrachten Sie anschließend den maximalen Wert der Matrix.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -735,27 +751,27 @@ Create a 100-by-1 vector of uniformly distributed random numbers with the name x
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the randn function with inputs 100 and 1: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">randn(m,n)</span></code>.</p>
+<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code>, um die Matrix zu erzeugen. Nutzen Sie anschließend <code class="docutils literal notranslate"><span class="pre">.max()</span></code>, um den maximalen Wert zu extrahieren.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xN</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_ganzzahlig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der maximale Wert der gleichverteilten, ganzzahligen Matrix ist&#39;</span><span class="p">,</span> <span class="n">A_ganzzahlig</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>The randi function creates a matrix of uniformly distributed random integers. Provide the maximum value as the first input, followed by the size of the array you want to create.</p>
-<p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">randi(maxVal,m,n)</span></code></p>
+<p>Möchten Sie Zahlen innerhalb des Intervalls <span class="math notranslate nohighlight">\([\text{min_wert},\text{max_wert})\)</span> erzeugen, die nicht zwingend ganzzahlig sind, so können Sie auf die bereits bekannte Funktion <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code> zurückgreifen. Dabei müssen die so erzeugten Zufallszahlen geeignet skaliert werden. Dies erreichen sie mit Hilfe der Tansformation <code class="docutils literal notranslate"><span class="pre">min_wert</span> <span class="pre">+</span> <span class="pre">(max_wert</span> <span class="pre">-</span> <span class="pre">min_wert)</span> <span class="pre">*</span> <span class="pre">np.random.rand(m,n)</span></code>. Der Code <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">+</span> <span class="pre">(12</span> <span class="pre">-</span> <span class="pre">4)</span> <span class="pre">*</span> <span class="pre">np.random.rand(3,2)</span></code> erzeugt eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix, die beliebige rationale Zahlen zwischen <span class="math notranslate nohighlight">\(4\)</span> und <span class="math notranslate nohighlight">\(12\)</span> annimmt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_rational</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="p">(</span><span class="mi">12</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># erzeugt 2 x 3 Matrix mit beliebigen rationalen Zahlen zwischen 4 und 12</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_rational</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-2-5 admonition">
-<p class="admonition-title">Aufgabe 2.5</p>
-<p>Create a 100-by-1 vector of uniformly distributed random integers with a maximum value of 10. Name the vector xI.</p>
+<div class="admonition-aufgabe-3-6 admonition">
+<p class="admonition-title">Aufgabe 3.6</p>
+<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <code class="docutils literal notranslate"><span class="pre">A_nicht_ganzzahlig</span></code>, die zufällige rationale Einträge zwischen <span class="math notranslate nohighlight">\(-3\)</span> und <span class="math notranslate nohighlight">\(4\)</span> annimmt. Betrachten Sie anschließend den maximalen Wert der Matrix.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -766,29 +782,27 @@ Create a 100-by-1 vector of uniformly distributed random numbers with the name x
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the randi function with inputs 10, 100, and 1: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">randi(maxVal,m,n)</span></code>.</p>
+<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.rand</span></code> und skalieren Sie diese geeignet, um die Matrix zu erzeugen. Nutzen Sie anschließend <code class="docutils literal notranslate"><span class="pre">.max()</span></code>, um den maximalen Wert zu extrahieren.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xI</span> <span class="o">=</span> <span class="n">randi</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_nicht_ganzzahlig</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der maximale Wert der gleichverteilten, rationalen Matrix ist&#39;</span><span class="p">,</span> <span class="n">A_nicht_ganzzahlig</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>The uniformly distributed random integers generated by randi lie between one and the specified maximum value by default.</p>
-<p>You can specify the interval over which the random integers are distributed.</p>
-<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">randi([minVal</span> <span class="pre">maxVal],m,n)</span></code></p>
-<p>This code will generate random integers between minVal and maxVal</p>
+<p>Nach einem ähnlichen Vorgehen können Sie normalverteilte Zufallszahlen mit Erwartungsert <code class="docutils literal notranslate"><span class="pre">nu</span></code> und Standardabweichung <code class="docutils literal notranslate"><span class="pre">sigma</span></code> generieren. Dazu verwenden wir erneut <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code>und skalieren es nach dem Muster <code class="docutils literal notranslate"><span class="pre">nu</span> <span class="pre">+</span> <span class="pre">sigma</span> <span class="pre">*</span> <span class="pre">np.random.randn(m,n)</span></code>. Der Code <code class="docutils literal notranslate"><span class="pre">-1</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">np.random.randn(3,2)</span></code> erzeugt eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix, die normalverteilte Zahlen mit Erwartungswert <span class="math notranslate nohighlight">\(-1\)</span> und Standardabweichung <span class="math notranslate nohighlight">\(3\)</span> annimmt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_normal_skaliert</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># erzeugt 2 x 3 Matrix mit normalverteilte Zahlen zwischen mit Erwartungswert -1 und Standardabweichung 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_normal_skaliert</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-2-6 admonition">
-<p class="admonition-title">Aufgabe 2.6</p>
-<p>Use randi to create a 100-by-1 vector of uniformly distributed random integers between 11 and 20. Name the vector xI2</p>
+<div class="admonition-aufgabe-3-7 admonition">
+<p class="admonition-title">Aufgabe 3.7</p>
+<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <code class="docutils literal notranslate"><span class="pre">A_normal2</span></code>, die standardnormalverteilte Zufallszahlen mit Erwartungswert <span class="math notranslate nohighlight">\(2\)</span> uns Standardabweichung <span class="math notranslate nohighlight">\(0.5\)</span> annimmt. Betrachten Sie anschließend den maximalen Wert der Matrix.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -799,78 +813,12 @@ Create a 100-by-1 vector of uniformly distributed random numbers with the name x
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the randi function in the same way you did in Task 4, but replace 10 with [11 20].</p>
+<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code> und skalieren Sie diese geeignet, um die Matrix zu erzeugen. Nutzen Sie anschließend <code class="docutils literal notranslate"><span class="pre">.max()</span></code>, um den maximalen Wert zu extrahieren.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xI2</span> <span class="o">=</span> <span class="n">randi</span><span class="p">([</span><span class="mi">11</span> <span class="mi">20</span><span class="p">],</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>The uniformly distributed random numbers generated by rand lie between zero and one by default.</p>
-<p>The rand function doesn’t allow you to specify the interval over which the numbers are distributed.</p>
-<p>If you want uniformly distributed numbers between values a and b, you can compute the following:</p>
-<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">(b-a)*rand(m,n)</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-7 admonition">
-<p class="admonition-title">Aufgabe 2.7</p>
-<p>Use rand to create a 100-by-1 vector of uniformly distributed random numbers between -1 and 1. Name the vector xU2</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Use the syntax <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">(b-a)*rand(m,n)</span></code> with a = -1 and b = 1.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xU2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>Similarly, normally distributed random numbers generated by the randn function will have a mean of zero and a standard deviation of one by default.</p>
-<p>If you want normally distributed numbers with mean M and standard deviation sd, you can compute the following:</p>
-<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">M</span> <span class="pre">+</span> <span class="pre">sd*randn(m,n)</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-8 admonition">
-<p class="admonition-title">Aufgabe 2.8</p>
-<p>Use randn to create a 100-by-1 vector of normally distributed random numbers with mean 100 and standard deviation 5. Name the vector xN2</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Use the syntax</p>
-<p>x = M + sd*randn(m,n)</p>
-<p>with M = 100 and sd = 5.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xN2</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_normal2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der maximale Wert der gleichverteilten, rationalen Matrix ist&#39;</span><span class="p">,</span> <span class="n">A_normal2</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -879,8 +827,49 @@ Create a 100-by-1 vector of uniformly distributed random numbers with the name x
 <p>** Bild 8 **</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import notwendiger Bibliotheken</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">FloatSlider</span><span class="p">,</span> <span class="n">VBox</span>
+
+<span class="c1"># Funktion zur Erstellung der Verteilungen</span>
+<span class="k">def</span> <span class="nf">plot_distributions</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="c1"># Gleichverteilte Zufallszahlen</span>
+    <span class="n">x_uniform</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+    <span class="c1"># Gleichverteilte Zufallszahlen Histogramm</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x_uniform</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">a</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">10</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Uniformly Distributed Random Numbers&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Normalverteilte Zufallszahlen</span>
+    <span class="n">x_normal</span> <span class="o">=</span> <span class="n">M</span> <span class="o">+</span> <span class="n">s</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+    <span class="c1"># Normalverteilte Zufallszahlen Histogramm</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x_normal</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">M</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">M</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Normally Distributed Random Numbers&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Interaktive Schieberegler erstellen</span>
+<span class="n">a_slider</span> <span class="o">=</span> <span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=-</span><span class="mi">12</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mi">50</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">b_slider</span> <span class="o">=</span> <span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="nb">min</span><span class="o">=-</span><span class="mi">50</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">M_slider</span> <span class="o">=</span> <span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+<span class="n">s_slider</span> <span class="o">=</span> <span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+
+<span class="c1"># Interaktive Funktion verbinden</span>
+<span class="n">ui</span> <span class="o">=</span> <span class="n">VBox</span><span class="p">([</span><span class="n">a_slider</span><span class="p">,</span> <span class="n">b_slider</span><span class="p">,</span> <span class="n">M_slider</span><span class="p">,</span> <span class="n">s_slider</span><span class="p">])</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">interact</span><span class="p">(</span><span class="n">plot_distributions</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a_slider</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">b_slider</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="n">M_slider</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">s_slider</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -895,6 +884,136 @@ Create a 100-by-1 vector of uniformly distributed random numbers with the name x
 </div>
 </div>
 </div>
+</section>
+<section id="ubersicht-der-matrix-und-vektor-funktionen">
+<h2>Übersicht der Matrix- und Vektor-Funktionen<a class="headerlink" href="#ubersicht-der-matrix-und-vektor-funktionen" title="Link to this heading">#</a></h2>
+<p>Abschließend möchten wir Ihnen noch eine grobe Übersicht über die Funktionen zum Erzeugen von Matrizen und Vektoren geben. Dabei haben wir die Liste um ein paar nützliche Befehle erweitert, die wir in diesem Kurs nicht explizit ansprechen, die aber durchaus von Nutzen sein können.</p>
+<section id="vektorerstellung">
+<h3>Vektorerstellung<a class="headerlink" href="#vektorerstellung" title="Link to this heading">#</a></h3>
+<style>
+.no-wrap {
+    white-space: nowrap;
+}
+</style>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Funktion</p></th>
+<th class="head"><p>Beschreibung</p></th>
+<th class="head"><p>Beispiel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.arange(start,stop,step)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erzeugt Werte von <code class="docutils literal notranslate"><span class="pre">start</span></code> bis <code class="docutils literal notranslate"><span class="pre">stop</span></code><br> mit einer Schrittweite von <code class="docutils literal notranslate"><span class="pre">step</span></code>.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.arange(0,5,1)</span></code> <br> → [0, 1, 2, 3, 4]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.linspace(start,stop,num)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erzeugt gleichmäßig verteilte Zahlen <br> zwischen <code class="docutils literal notranslate"><span class="pre">start</span></code> und <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.linspace(0,1,5)</span></code> <br> → [0., 0.25, 0.5, 0.75, 1.]</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.logspace(start,stop,base)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erzeugt logarithmisch verteilte Zahlen <br> zwischen <code class="docutils literal notranslate"><span class="pre">start</span></code> und <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.logspace(0,2,5)</span></code> <br> → [1., 3.162, 10., 31.62, 100.]</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="erstellung-von-matrizen">
+<h3>Erstellung von Matrizen<a class="headerlink" href="#erstellung-von-matrizen" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Funktion</p></th>
+<th class="head"><p>Beschreibung</p></th>
+<th class="head"><p>Beispiel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.zeros(shape)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erstellt eine Matrix der Form <br> <code class="docutils literal notranslate"><span class="pre">shape</span></code>, die nur Nullen enthält.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.zeros((2,3))</span></code> <br> → [[0., 0., 0.], <br>      [0., 0., 0.]]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.ones(shape)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erstellt eine Matrix der Form <br> <code class="docutils literal notranslate"><span class="pre">shape</span></code>, die nur Einsen enthält.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.ones((2,3))</span></code> <br> → [[1., 1., 1.], <br>      [1., 1., 1.]]</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.full(shape,w)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erstellt eine Matrix, die mit <br> einem angegebenen Wert <br> <code class="docutils literal notranslate"><span class="pre">w</span></code> gefüllt ist.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.full((2,3),7)</span></code> <br> → [[7, 7, 7], <br>      [7, 7, 7]]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.eye(N)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erstellt eine Identitätsmatrix <br> der Größe <code class="docutils literal notranslate"><span class="pre">N</span></code>.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.eye(3)</span></code> <br> → [[1., 0., 0.], <br>      [0., 1., 0.], <br>      [0., 0., 1.]]</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.diag(v)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erstellt eine diagonale Matrix <br> mit den Elementen von <code class="docutils literal notranslate"><span class="pre">v</span></code>.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.diag([1,2,3])</span></code> <br> → [[1, 0, 0], <br>      [0, 2, 0], <br>      [0, 0, 3]]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.tri(N)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erstellt eine untere Dreiecksmatrix <br> der Größe <code class="docutils literal notranslate"><span class="pre">N</span></code> mit Einsen unterhalb <br> der Diagonalen.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.tri(3)</span></code> <br> → [[1., 0., 0.], <br>      [1., 1., 0.], <br>      [1., 1., 1.]]</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.triu(A)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erstellt eine obere Dreiecksmatrix, <br> indem alle Werte unter der <br> Diagonalen von <code class="docutils literal notranslate"><span class="pre">A</span></code> auf Null <br> gesetzt werden.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.triu([[1,2,3],[4,5,6],[7,8,9]])</span></code> <br> → [[1, 2, 3], <br>      [0, 5, 6], <br>      [0, 0, 9]]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.tril(A)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erstellt eine untere Dreiecksmatrix, <br> indem alle Werte oberhalb der <br> Diagonalen von <code class="docutils literal notranslate"><span class="pre">A</span></code> auf Null <br> gesetzt werden.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.tril([[1,2,3],[4,5,6],[7,8,9]])</span></code> <br> → [[1, 0, 0], <br>      [4, 5, 0], <br>      [7, 8, 9]]</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="erstellung-von-zufallsmatrizen">
+<h3>Erstellung von Zufallsmatrizen<a class="headerlink" href="#erstellung-von-zufallsmatrizen" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Funktion</p></th>
+<th class="head"><p>Beschreibung</p></th>
+<th class="head"><p>Beispiel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.random.rand(d0,d1)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erzeugt eine <span class="math notranslate nohighlight">\((d0 \times d1)\)</span> Matrix mit <br> Zufallswerten gleichmäßig verteilt <br> zwischen 0 und 1.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.random.rand(2,3)</span></code> <br> → [[0.840228, 0.466983, 0.156066], <br>      [0.771374, 0.634024, 0.530364]]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.random.randn(d0,d1)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erzeugt eine <span class="math notranslate nohighlight">\((d0 \times d1)\)</span> Matrix mit <br> Zufallswerten aus einer <br> Standardnormalverteilung.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.random.randn(2,3)</span></code> <br> → [[ 0.389413, -0.923499,  0.037768], <br>      [-0.714868, -1.67741,  -2.08224 ]]</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.random.randint(l,h,size)</span></code></span></p></td>
+<td><p><span class="no-wrap">Erzeugt eine Matrix der Form <code class="docutils literal notranslate"><span class="pre">size</span></code> <br> mit ganzzahligen Zufallswerte <br> zwischen <code class="docutils literal notranslate"><span class="pre">l</span></code>und <code class="docutils literal notranslate"><span class="pre">h</span></code>.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.random.randint(0,10,(2,3))</span></code> <br> → [[3, 3, 9], <br>      [1, 6, 3]]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.random.choice(v,size)</span></code></span></p></td>
+<td><p><span class="no-wrap"> Erzeugt eine Matrix der Form <code class="docutils literal notranslate"><span class="pre">size</span></code> <br> mit Einträgen zufällig aus dem <br> Array <code class="docutils literal notranslate"><span class="pre">v</span></code>.</span></p></td>
+<td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">np.random.choice([1,2,3,4],(2,3))</span></code> <br> → [[3, 4, 2], <br>      [2, 2, 1]]</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Aufgabe 2.1</label><div class="sd-tab-content docutils">
+<p>s</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Aufgabe 2.2</label><div class="sd-tab-content docutils">
+<p>s</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Aufgabe 2.3</label><div class="sd-tab-content docutils">
+<p>s</p>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -963,8 +1082,15 @@ Create a 100-by-1 vector of uniformly distributed random numbers with the name x
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-der-matrix-und-vektor-funktionen">Übersicht der Matrix- und Vektor-Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorerstellung">Vektorerstellung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-matrizen">Erstellung von Matrizen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-zufallsmatrizen">Erstellung von Zufallsmatrizen</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

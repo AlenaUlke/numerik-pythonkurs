@@ -414,111 +414,206 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="arrays-zusammenfugen">
 <h1>Arrays zusammenfügen<a class="headerlink" href="#arrays-zusammenfugen" title="Link to this heading">#</a></h1>
-<p>Hier erklären, wie man Arrays zusammenfügt. Ähnlich motivieren wie in Bild 9, dass man Umweltschermutzungsdaten vom Morgen und Abend unter der Woche hat und die vom Wochenende</p>
-<section id="existierende-arrays-kombinieren">
-<h2>Existierende Arrays kombinieren<a class="headerlink" href="#existierende-arrays-kombinieren" title="Link to this heading">#</a></h2>
-<p>Bild 10 (hier) und 11 (bei der nächsten Aufgabe) verwenden, um zu erklären, wie man Arrays kombinieren kann. Aber achtung aufpassen bei den Dimensionen, dass Spalten und Zeilen zusammenpassen.</p>
-<p>You can concatenate two matrices horizontally (side-by-side) if they are the same height (have an equal number of rows).
-z = [ x y ]
-Use square brackets around the matrices and separate them with a space.</p>
-<p>x = [x11 ; x21];
-y = [y11 y12 ; y21 y22];
-z = [x y]</p>
+<p>Der Lehrstuhl für wissenschaftliches Rechnen der Universität Mannheim hat sich zu Beginn des Jahres 2025 zum Ziel gesetzt die Anzahl an NextBike Ausleihen zu analysieren. Dazu wurden vom 06.01.2025 bis zum 19.01.2025 alle Ausleihen von der NextBike Station am Hauptbahnhof gezählt. Um Das Arbeitszeitgesetz nicht zu verletzen, wurde die Zählung in 3 Schichten unterteilt. Die erste Schicht beinhaltet den Zeitrum 00:00 Uhr bis 11:59 Uhr unter der Woche. Die Ergebnisse der ersten Schicht für Woche 1 (06.01-10.01) sind in der Matrix <code class="docutils literal notranslate"><span class="pre">W1_vormittag</span></code> gespeichert:</p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{pmatrix} 
+        32 &amp; 47 &amp; 42 &amp; 42 &amp; 22
+    \end{pmatrix}.
+\]</div>
+<p>Dabei steht der erste Eintrag für Montag, der zweite für Dienstag etc.. Die für Woche 2 (13.01-17.01) <code class="docutils literal notranslate"><span class="pre">W2_vormittag</span></code> sind</p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{pmatrix} 
+        35 &amp; 52 &amp; 37 &amp; 50 &amp; 27 
+    \end{pmatrix}.
+\]</div>
+<p>Analog hat die zweite Schicht (12:00 Uhr bis 23.59 Uhr werktags) ihre Ergebnisse in <code class="docutils literal notranslate"><span class="pre">W1_nachmittag</span></code></p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{pmatrix} 
+        50 &amp; 36 &amp; 18 &amp; 39 &amp; 50
+    \end{pmatrix}.
+\]</div>
+<p>und <code class="docutils literal notranslate"><span class="pre">W2_nachmittag</span></code></p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{pmatrix} 
+        58 &amp; 55 &amp; 58 &amp; 60 &amp; 55
+    \end{pmatrix}
+\]</div>
+<p>gespeichert. In der letzten Schicht wurden die Wochenenden gezählt. Die erste Woche lieferte <code class="docutils literal notranslate"><span class="pre">W1_wochenende</span></code>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{pmatrix} 
-        x11 &amp; y11 &amp; y12 \\
-        x21 &amp; y21 &amp; y22
+        21 &amp; 14\\
+        37 &amp; 76
     \end{pmatrix}
 \end{split}\]</div>
+<p>und die zweite <code class="docutils literal notranslate"><span class="pre">W2_wochenende</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        26 &amp; 19\\
+        60 &amp; 63
+    \end{pmatrix}.
+\end{split}\]</div>
+<p>Die erste Zeile zeigt jeweils die Ausleihen am Vormittag und die Zweite am Nachmittag an. Die erste Spalte repräsentiert Samstag und die Zweite Sonntag.</p>
+<p>Das Ziel dieses Kapitels ist es, die in den einzelnen Schichten erhobenen Daten je Woche in einer Matrix zusammenzuführen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+         &amp; \text{Mo} &amp; \text{Di} &amp; \text{Mi} &amp; \text{Do} &amp; \text{Fr} &amp; \text{Sa} &amp; \text{So}\\
+        \text{Vormittag} &amp; 32 &amp; 47 &amp; 42 &amp; 42 &amp; 22 &amp; 21 &amp; 14\\
+        \text{Nachmittag} &amp; 50 &amp; 36 &amp; 18 &amp; 39 &amp; 50 &amp; 37 &amp; 76\\
+    \end{pmatrix}.
+\end{split}\]</div>
+<section id="existierende-arrays-kombinieren">
+<h2>Existierende Arrays kombinieren<a class="headerlink" href="#existierende-arrays-kombinieren" title="Link to this heading">#</a></h2>
+<p>Es gibt zwei Möglichkeiten Matrizen zusammenzufügen: vertikal und horitontal.</p>
+<figure class="align-default" id="fig-meinbild">
+<a class="reference internal image-reference" href="../../../_images/hstack_vstack.png"><img alt="../../../_images/hstack_vstack.png" src="../../../_images/hstack_vstack.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Vertikales und horizontales Zusammenfügen</span><a class="headerlink" href="#fig-meinbild" title="Link to this image">#</a></p>
+<div class="legend">
+<p style="font-size: 80%; text-align: center; margin-top: 0; padding-top: 0;">
+<strong>Quelle:</strong> <a href="https://aman.ai/primers/numpy/">Aman's AI Journal</a>
+</p>
+</div>
+</figcaption>
+</figure>
+<p>Das vertikale Zusammenfügen funktioniert über den Befehl <code class="docutils literal notranslate"><span class="pre">np.vstack((a,b))</span></code>, wobei in diesem Fall die Matrix <code class="docutils literal notranslate"><span class="pre">b</span></code> unten an die Matrix <code class="docutils literal notranslate"><span class="pre">a</span></code> gehängt wird.</p>
+<div class="warning admonition">
+<p class="admonition-title">Achtung</p>
+<p>Beachten Sie, dass sie mit <code class="docutils literal notranslate"><span class="pre">np.vstack</span></code> nur zwei Matrizen mit der gleichen Anzahl an Spalten zusammenfügen können.</p>
+</div>
 <div class="cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
-<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span><span class="mi">3</span> <span class="mi">4</span><span class="p">;</span><span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
-<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span><span class="mi">4</span> <span class="n">NaN</span> <span class="mi">6</span><span class="p">;</span><span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="n">a_über_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_über_b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Create a 3-by-5 matrix named BC concatenating B and C where B is on the left and C is on the right.</p>
+<p>Fügen Sie <code class="docutils literal notranslate"><span class="pre">W1_vormittag</span></code> und <code class="docutils literal notranslate"><span class="pre">W1_nachmittag</span></code> zu der Matrix <code class="docutils literal notranslate"><span class="pre">W1_werktags</span></code> zusammen, so dass in der ersten Zeile die Ausleihen von vormittag stehen und in der Zweiten die vom Nachmittag.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">W1_vormittag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">22</span><span class="p">]])</span>
+<span class="n">W1_nachmittag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">50</span><span class="p">]])</span>
+<span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use square brackets and a space to concatenate matrices horizontally.</p>
-<p>mCat = [m1 m2 m3]</p>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.vstack</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BC</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span> <span class="n">C</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">W1_werktags</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">W1_vormittag</span><span class="p">,</span> <span class="n">W1_nachmittag</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W1_werktags</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>You can concatenate two matrices vertically (stacked on top of one another) using ; if they are the same width (have an equal number of columns).
-z = [ x ; y ]
-Use square brackets around the matrices and separate them with a ;.</p>
-<p>x = [x11 x12; x21 x22];
-y = [y11 y12];
-z = [x;y]</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{pmatrix} 
-        x11 &amp; x12\\
-        x21 &amp; x22\\
-        y11 &amp; y12
-    \end{pmatrix}
-\end{split}\]</div>
+<p>Mit dem Befehl <code class="docutils literal notranslate"><span class="pre">np.hstack((a,c))</span></code> fügt man zwei Matrizen horizontal zusammen. Wie im Bild gezeigt, wird die Matrix <code class="docutils literal notranslate"><span class="pre">c</span></code> rechts an die Matrix <code class="docutils literal notranslate"><span class="pre">a</span></code> gehängt.</p>
+<div class="warning admonition">
+<p class="admonition-title">Achtung</p>
+<p>Beachten Sie, dass sie mit <code class="docutils literal notranslate"><span class="pre">np.hstack</span></code> nur zwei Matrizen mit der gleichen Anzahl an Zeilen zusammenfügen können.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="n">a_links_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_links_c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Create a 5-by-3 matrix named CA where C is on top of A.</p>
+<p>Fügen Sie <code class="docutils literal notranslate"><span class="pre">W1_werktags</span></code> und <code class="docutils literal notranslate"><span class="pre">W1_wochenende</span></code> zu der Matrix <code class="docutils literal notranslate"><span class="pre">W1</span></code> zusammen, so dass die ersten <span class="math notranslate nohighlight">\(5\)</span> Spalten die Werktage beschreiben und die letzten beiden das Wochenende.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">W1_wochenende</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">14</span><span class="p">],[</span><span class="mi">37</span><span class="p">,</span> <span class="mi">76</span><span class="p">]])</span>
+<span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use square brackets and ; to concatenate matrices vertically.</p>
-<p>mCat = [m1;m2;m3]</p>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.hstack</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CA</span> <span class="o">=</span> <span class="p">[</span><span class="n">C</span><span class="p">;</span><span class="n">A</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">W1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">W1_werktags</span><span class="p">,</span> <span class="n">W1_wochenende</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Text</p>
+<p>Alternativ zu <code class="docutils literal notranslate"><span class="pre">np.vstack((a,b))</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">np.hstack((a,c))</span></code> kann man auch <code class="docutils literal notranslate"><span class="pre">np.concatenate((a,b),</span> <span class="pre">axis=0)</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">np.concatenate((a,c),</span> <span class="pre">axis=1)</span></code> verwenden. Der zusätzliche Eingabeparameter <code class="docutils literal notranslate"><span class="pre">axis</span></code> gibt an, ob man die Matrizen vertikal (<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>) oder horizontal (<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>) zusammenfügen möchte.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="n">a_über_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">a_links_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_über_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_links_c</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-3 admonition">
 <p class="admonition-title">Aufgabe 1.3</p>
-<p>Add a row containing 10, 11, and 12, in order, to the bottom of C. Name the resulting matrix CR.</p>
+<p>Fügen Sie zu <code class="docutils literal notranslate"><span class="pre">W1</span></code> eine Zeile hinzu, sodass die Matrix die Form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{pmatrix} 
-        1 &amp; 3 &amp; 3\\
-        4 &amp; NaN &amp; 6\\
-        7 &amp; 8 &amp; 9\\
-        10 &amp; 11 &amp; 12
+        \text{Mo} &amp; \text{Di} &amp; \text{Mi} &amp; \text{Do} &amp; \text{Fr} &amp; \text{Sa} &amp; \text{So}\\
+        32 &amp; 47 &amp; 42 &amp; 42 &amp; 22 &amp; 21 &amp; 14\\
+        50 &amp; 36 &amp; 18 &amp; 39 &amp; 50 &amp; 37 &amp; 76\\
     \end{pmatrix}
+\end{split}\]</div>
+<p>hat.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Nutzen Sie <code class="docutils literal notranslate"><span class="pre">np.vstack</span></code> oder <code class="docutils literal notranslate"><span class="pre">np.concatenate</span></code>. Füllen Sie die Einträge des Vektors, den sie an <code class="docutils literal notranslate"><span class="pre">W1</span></code> anhängen mit <code class="docutils literal notranslate"><span class="pre">strings</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">W1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Mo&quot;</span><span class="p">,</span><span class="s2">&quot;Di&quot;</span><span class="p">,</span><span class="s2">&quot;Mi&quot;</span><span class="p">,</span><span class="s2">&quot;Do&quot;</span><span class="p">,</span><span class="s2">&quot;Fr&quot;</span><span class="p">,</span><span class="s2">&quot;Sa&quot;</span><span class="p">,</span><span class="s2">&quot;So&quot;</span><span class="p">]]),</span> <span class="n">W1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-4 admonition">
+<p class="admonition-title">Aufgabe 1.4</p>
+<p>Fügen Sie zu <code class="docutils literal notranslate"><span class="pre">W1</span></code> eine Spalte hinzu, sodass die Matrix die Form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        \ &amp; \text{Mo} &amp; \text{Di} &amp; \text{Mi} &amp; \text{Do} &amp; \text{Fr} &amp; \text{Sa} &amp; \text{So}\\
+        \text{Vormittag} &amp; 32 &amp; 47 &amp; 42 &amp; 42 &amp; 22 &amp; 21 &amp; 14\\
+        \text{Nachmittag} &amp; 50 &amp; 36 &amp; 18 &amp; 39 &amp; 50 &amp; 37 &amp; 76\\
+    \end{pmatrix}.
 \end{split}\]</div>
 </div>
 <div class="cell docutils container">
@@ -530,96 +625,77 @@ z = [x;y]</p>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use square brackets and use ; between rows.</p>
-<p>result = [m; x11 x12 x13]</p>
+<p>Nutzen Sie <code class="docutils literal notranslate"><span class="pre">np.hstack</span></code> oder <code class="docutils literal notranslate"><span class="pre">np.concatenate</span></code>. Füllen Sie die Einträge des Vektors, den sie an <code class="docutils literal notranslate"><span class="pre">W1</span></code> anhängen mit <code class="docutils literal notranslate"><span class="pre">strings</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CR</span> <span class="o">=</span> <span class="p">[</span><span class="n">C</span><span class="p">;</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<p>Text</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-4 admonition">
-<p class="admonition-title">Aufgabe 1.4</p>
-<p>Add a column containing 10, 11, and 12, in order, to the right of C. Name the resulting matrix CC.</p>
-<p>$<span class="math notranslate nohighlight">\(
-    \begin{pmatrix} 
-        1 &amp; 3 &amp; 3 &amp; 10\\
-        4 &amp; NaN &amp; 6 &amp; 11\\
-        7 &amp; 8 &amp; 9 &amp; 12\\
-    \end{pmatrix}
-\)</span>$:::</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>You may find it helpful to use an intermediate column vector, and concatenate this with C. Use square brackets and use ; between rows.</p>
-<p>iv = (1:3)’;
-result = [m iv]</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">;</span><span class="mi">11</span><span class="p">;</span><span class="mi">12</span><span class="p">];</span>
-<span class="n">CC</span> <span class="o">=</span> <span class="p">[</span><span class="n">C</span> <span class="n">v</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">W1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;&quot;</span><span class="p">],[</span><span class="s2">&quot;Vormittag&quot;</span><span class="p">],[</span><span class="s2">&quot;Nachmittag&quot;</span><span class="p">]]),</span> <span class="n">W1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-5 admonition">
 <p class="admonition-title">Aufgabe 1.5</p>
-<p>Just like when creating vectors, spaces and commas are interchangeable. Give it a try, and see!</p>
+<p>Versuchen Sie nun die die Daten für Woche 2 in der Matrix <code class="docutils literal notranslate"><span class="pre">W2</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+         &amp; \text{Mo} &amp; \text{Di} &amp; \text{Mi} &amp; \text{Do} &amp; \text{Fr} &amp; \text{Sa} &amp; \text{So}\\
+        \text{Vormittag} &amp; 35 &amp; 52 &amp; 37 &amp; 50 &amp; 27 &amp; 26 &amp; 19\\
+        \text{Nachmittag} &amp; 58 &amp; 55 &amp; 58 &amp; 60 &amp; 55 &amp; 60 &amp; 63\\
+    \end{pmatrix},
+\end{split}\]</div>
+<p><strong>in einer Zeile Code</strong> aus Ihren Einzelteilen zusammenzusetzen.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># benötigte Vektoren und Matrizen mit den Daten</span>
+<span class="n">W2_vormittag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">27</span><span class="p">]])</span>
+<span class="n">W2_nachmittag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">58</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">55</span><span class="p">]])</span>
+<span class="n">W2_wochenende</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">26</span><span class="p">,</span> <span class="mi">19</span><span class="p">],[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">63</span><span class="p">]])</span>
+<span class="n">wochentage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Mo&quot;</span><span class="p">,</span><span class="s2">&quot;Di&quot;</span><span class="p">,</span><span class="s2">&quot;Mi&quot;</span><span class="p">,</span><span class="s2">&quot;Do&quot;</span><span class="p">,</span><span class="s2">&quot;Fr&quot;</span><span class="p">,</span><span class="s2">&quot;Sa&quot;</span><span class="p">,</span><span class="s2">&quot;So&quot;</span><span class="p">]])</span>
+<span class="n">zeiten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;&quot;</span><span class="p">],[</span><span class="s2">&quot;Vormittag&quot;</span><span class="p">],[</span><span class="s2">&quot;Nachmittag&quot;</span><span class="p">]])</span>
+<span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verketten Sie alle Operationen, die Sie in den vorangegangenen Aufgaben durchgeführt haben.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">W2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">zeiten</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">wochentage</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">W2_vormittag</span><span class="p">,</span> <span class="n">W2_nachmittag</span><span class="p">)),</span> <span class="n">W2_wochenende</span><span class="p">))))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Bild 12 und 13 sind möhliche Quizfragen.</p>
 <br>
 </section>
 <section id="arrays-mittels-zusammenfugen-erstellen">
 <h2>Arrays mittels Zusammenfügen erstellen<a class="headerlink" href="#arrays-mittels-zusammenfugen-erstellen" title="Link to this heading">#</a></h2>
-<p>Text</p>
+<p>Wenn Matrizen gewisse Regelmäßigkeiten in ihren Zeilen oder Spalten aufweisen, kann man die sie effizient über Vektoren erzeugen.</p>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
-<p>Create the following arrays.
-$<span class="math notranslate nohighlight">\(
+<p>Erstellen Sie die 3 Arrays</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 s=\begin{pmatrix} 
         99
-    \end{pmatrix}, v = 
+    \end{pmatrix},\  v = 
     \begin{pmatrix} 
         1\\
         2\\
         3
-    \end{pmatrix} und M = \begin{pmatrix} 
+    \end{pmatrix} \ \text{ und } \ M = \begin{pmatrix} 
         1 &amp; 1 &amp; 1\\
         2 &amp; 2 &amp; 2\\
         3 &amp; 3 &amp; 3\\
-    \end{pmatrix}
-\)</span>$
-Note that once you have created v, you need not create M manually row by row.</p>
+    \end{pmatrix}.
+\end{split}\]</div>
+<p>Nutzen Sie dabei den Vektor <code class="docutils literal notranslate"><span class="pre">v</span></code>, um <code class="docutils literal notranslate"><span class="pre">M</span></code> zu erzeugen.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -630,42 +706,27 @@ Note that once you have created v, you need not create M manually row by row.</p
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Create variables using the assignment operator.</p>
-<p>name = value</p>
-<p>You can create a vector using the colon operator. However, you will need to transpose it.</p>
-<p>vector = (firstNum:lastNum)’</p>
-<p>Create a matrix row by row.</p>
-<p>x = [ x11 x12 x13 ; x21 x22 x23 ; x31 x32 x33 ]</p>
-<p>You can also create a matrix by concatenating column vectors</p>
-<p>x = [A B C]</p>
+<p>Nutzen Sie den Befehl <code class="docutils literal notranslate"><span class="pre">np.hstack</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">99</span>
-<span class="n">v</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="s1">&#39;</span>
-<span class="n">M</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">3</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span> <span class="n">B</span> <span class="n">C</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">99</span><span class="p">]])</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">v</span><span class="p">)),</span><span class="n">v</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<p>Hier steht ein erklärender Text.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
 </div>
 </div>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Create a matrix named CM with the configuration shown below.
-$<span class="math notranslate nohighlight">\(
+<p>Erstellen Sie die Matrix <code class="docutils literal notranslate"><span class="pre">CM</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{pmatrix} 
         M &amp; v\\
         v^T &amp; s
-\end{pmatrix}
-\)</span>$</p>
+\end{pmatrix}.
+\end{split}\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -676,35 +737,25 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Concatenate row by row.</p>
-<p>M = [ A11 A12 ; A21 A22 ]</p>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.hstack</span></code> und <code class="docutils literal notranslate"><span class="pre">np.vstack</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CM</span> <span class="o">=</span> <span class="p">[</span><span class="n">M</span> <span class="n">v</span><span class="p">;</span> <span class="n">v</span><span class="s1">&#39; s]</span>
-
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">M</span><span class="p">,</span><span class="n">v</span><span class="p">)),</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">s</span><span class="p">))))</span>
 </pre></div>
-</div>
-</div>
-<p>Text</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
 </div>
 </div>
 <div class="admonition-aufgabe-2-3 admonition">
 <p class="admonition-title">Aufgabe 2.3</p>
 <p>Aufgabe
-Create a matrix named CM2 with the configuration shown below.
-$<span class="math notranslate nohighlight">\(
+Erstellen Sie die Matrix <code class="docutils literal notranslate"><span class="pre">CM2</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{pmatrix} 
         M &amp; s\\
         v^T &amp; v
 \end{pmatrix}
-\)</span>$</p>
+\end{split}\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -715,32 +766,23 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>It might help to make an intermediate matrix that concatenates M on top of v’ using ;. And another that concatenates s on top of v using ;. Then, concatenate the intermediate matrices using a space.</p>
-<p>im1 = [ A1 ; A2’ ]
-im2 = [ A3 ; A2 ]
-M = [ im1 im2 ]</p>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">np.hstack</span></code> und <code class="docutils literal notranslate"><span class="pre">np.vstack</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CM2</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="n">M</span><span class="p">;</span><span class="n">v</span><span class="s1">&#39;] [s;v] ]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CM2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">M</span><span class="p">,</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="p">)),</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
-<div class="admonition-aufgabe-2-4 admonition">
-<p class="admonition-title">Aufgabe 2.4</p>
-<p>What other ways can you combine M, v, and s?</p>
+<div class="admonition-zusatzaufgabe admonition">
+<p class="admonition-title">Zusatzaufgabe</p>
+<p>Gibt es weitere Möglichkeiten, um <code class="docutils literal notranslate"><span class="pre">M</span></code>, <code class="docutils literal notranslate"><span class="pre">v</span></code> und <code class="docutils literal notranslate"><span class="pre">s</span></code> zu kombinieren?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </div>
 </section>
