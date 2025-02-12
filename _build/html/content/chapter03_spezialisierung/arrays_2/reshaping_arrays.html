@@ -67,7 +67,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/arrays_2/reshaping_arrays';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Visualisierung 2" href="../visualisation_2/visualisation_2_intro.html" />
+    <link rel="next" title="Quiz" href="quiz.html" />
     <link rel="prev" title="Arrays zusammenfügen" href="concatenating_arrays.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -207,6 +207,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concatenating_arrays.html">Arrays zusammenfügen</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Arrays umformen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quiz.html">Quiz</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -403,46 +404,105 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="arrays-umformen">
 <h1>Arrays umformen<a class="headerlink" href="#arrays-umformen" title="Link to this heading">#</a></h1>
-<p>Hier erklären, wie man Arrays umformt. Motivation sind erneut Daten. Manchmal muss man zum Beispiel Das Datenformat von Bildern ändern, um mit ihnen arbeiten zu können.</p>
-<p>Forme Vektor zu Matrix um und Matrix zu Matrix in einer anderen Form. Sollt ähnlich aussehen wie Bild 14. Merke an, dass in den Beispielen, die wir uns bisher angesehen haben, immer die gleiche Anzahl an Einträgen sind. Was passiert, wenn das nicht der Fall ist? Matlab wäre Fehler. Was man bei Matlab machen kann, ist eine dimension offen zu lassen und das Programm sucht sich selbst die passende offen gelassene Dimension raus (Bild 15). Falls in Python auch vorhanden, hier anmerken, dass man auch eine Matrix direkt in einen Vektor umformen kann.</p>
-<p>You can use the reshape function to reshape an m-by-n matrix into a p-by-q matrix, as long as the total number of elements remains the same (i.e., m×n = p×q).</p>
-<p>B = reshape(A,p,q)</p>
+<p>Manchmal ist das Problem bei erhobenen Daten nicht, dass sie durch ein Schichtsystem in kleineren Matrixen oder Vektoren aufgeteilt sind, sondern dass sie in einem ungünstigen Format abgespeichert wurden. Um die NextBike Daten, die der Lehrstuhl für wissenschatliches Rechnen erhoben hat, gegenzuprügen, hat der Lehrstuhl für stochastische Numerik unabhängig von diesem ebenfalls die NextBike Ausleihen gezählt. Sie haben die Zahlen allerdings anders vermerkt. Es gab einen Zettel, der bei Schichtende an die nächste Person weitergegeben wurde. Auf diesem Zettel wurden alle Zahlen nebeneinander notiert. Das heißt die Daten haben nicht die Form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+         &amp; \text{Mo} &amp; \text{Di} &amp; \text{Mi} &amp; \text{Do} &amp; \text{Fr} &amp; \text{Sa} &amp; \text{So}\\
+        \text{Vormittag} &amp; 32 &amp; 47 &amp; 42 &amp; 42 &amp; 22 &amp; 21 &amp; 14\\
+        \text{Nachmittag} &amp; 50 &amp; 36 &amp; 18 &amp; 39 &amp; 50 &amp; 37 &amp; 76\\
+    \end{pmatrix}
+\end{split}\]</div>
+<p>sondern</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        32 &amp; 47 &amp; 42 &amp; 42 &amp; 22 &amp; 21 &amp; 14 &amp; 50 &amp; 36 &amp; 18 &amp; 39 &amp; 50 &amp; 37 &amp; 76\\
+    \end{pmatrix}.
+\end{split}\]</div>
+<p>Unser Ziel in diesem Kapitel ist es, auch diese erhobenen Daten in unsere übersichtliche Matrixform zu bringen.</p>
+<p>Um dies zu erreichen, können wir uns die in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> existierende Funktion <code class="docutils literal notranslate"><span class="pre">reshape</span></code> zu Nutze machen. Hängt man an eine Matrix oder einen Vektor den Befehl <code class="docutils literal notranslate"><span class="pre">.reshape(m,n)</span></code> an, wird diese in eine <span class="math notranslate nohighlight">\((m \times n)\)</span> Matrix umgeformt.</p>
+<figure class="align-default" id="fig-meinbild">
+<a class="reference internal image-reference" href="../../../_images/reshape_standard.png"><img alt="../../../_images/reshape_standard.png" src="../../../_images/reshape_standard.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Vertikales und horizontales Zusammenfügen</span><a class="headerlink" href="#fig-meinbild" title="Link to this image">#</a></p>
+<div class="legend">
+<p style="font-size: 80%; text-align: center; margin-top: 0; padding-top: 0;">
+<strong>Quelle:</strong> <a href="https://medium.com/towards-data-science/reshaping-numpy-arrays-in-python-a-step-by-step-pictorial-tutorial-aed5f471cf0b">Medium</a>
+</p>
+</div>
+</figcaption>
+</figure>
 <div class="cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="n">rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">randi</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">a1_3x4_matrix</span> <span class="o">=</span> <span class="n">a1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1_3x4_matrix</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>A matrix A is created in the live script.</p>
-<p>Create a matrix named B that contains the data from A in eight rows and three columns.</p>
+<p>Erstellen Sie die Matrix <code class="docutils literal notranslate"><span class="pre">W1</span></code></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+         &amp; \text{Mo} &amp; \text{Di} &amp; \text{Mi} &amp; \text{Do} &amp; \text{Fr} &amp; \text{Sa} &amp; \text{So}\\
+        \text{Vormittag} &amp; 32 &amp; 47 &amp; 42 &amp; 42 &amp; 22 &amp; 21 &amp; 14\\
+        \text{Nachmittag} &amp; 50 &amp; 36 &amp; 18 &amp; 39 &amp; 50 &amp; 37 &amp; 76\\
+    \end{pmatrix}
+\end{split}\]</div>
+<p>mit Hilfe der erhobenen Daten <code class="docutils literal notranslate"><span class="pre">rohdaten</span></code> in Vektorform.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rohdaten</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">76</span><span class="p">]])</span>
+<span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the reshape function.</p>
-<p>reshape(data,numRows,numCols)</p>
+<p>Nutzen Die den Befehl <code class="docutils literal notranslate"><span class="pre">.reshape</span></code> und achten Sie auf die richtige Anzahl an Spalten und Zeilen.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">W1</span> <span class="o">=</span> <span class="n">rohdaten</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">W1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;&quot;</span><span class="p">],[</span><span class="s2">&quot;Vormittag&quot;</span><span class="p">],[</span><span class="s2">&quot;Nachmittag&quot;</span><span class="p">]]),</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Mo&quot;</span><span class="p">,</span><span class="s2">&quot;Di&quot;</span><span class="p">,</span><span class="s2">&quot;Mi&quot;</span><span class="p">,</span><span class="s2">&quot;Do&quot;</span><span class="p">,</span><span class="s2">&quot;Fr&quot;</span><span class="p">,</span><span class="s2">&quot;Sa&quot;</span><span class="p">,</span><span class="s2">&quot;So&quot;</span><span class="p">]]),</span> <span class="n">W1</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>For convenience, you can leave one of the dimensions blank, using [], when calling reshape and that dimension will be calculated automatically.</p>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">reshape</span></code> bietet ebenfalls die Möglichkeit nur eine Dimension vorzugeben. Der Ausdruck <code class="docutils literal notranslate"><span class="pre">.reshape(-1,n)</span></code> formt eine Matrix oder einen Vektor in eine <span class="math notranslate nohighlight">\((x \times n)\)</span> Matrix um, wobei <span class="math notranslate nohighlight">\(x\)</span> so gewählt wird, dass die die Anzahl der Einträge vor und nach der Umformung übereinstimmen. Analog funktioniert der Befehl <code class="docutils literal notranslate"><span class="pre">.reshape(m,-1)</span></code>, der eine <span class="math notranslate nohighlight">\((m \times x)\)</span> Matrix erzeugt.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/reshape_one_input.png"><img alt="../../../_images/reshape_one_input.png" src="../../../_images/reshape_one_input.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Vertikales und horizontales Zusammenfügen</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<div class="legend">
+<p style="font-size: 80%; text-align: center; margin-top: 0; padding-top: 0;">
+<strong>Quelle:</strong> <a href="https://medium.com/towards-data-science/reshaping-numpy-arrays-in-python-a-step-by-step-pictorial-tutorial-aed5f471cf0b">Medium</a>
+</p>
+</div>
+</figcaption>
+</figure>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1_3x4_matrix_spalten</span> <span class="o">=</span> <span class="n">a1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">a1_3x4_matrix_zeilen</span> <span class="o">=</span> <span class="n">a1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1_3x4_matrix_spalten</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1_3x4_matrix_zeilen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Create a matrix named C that contains the data from A in four columns.</p>
+<p>Erstellen Sie erneut die Matrix <code class="docutils literal notranslate"><span class="pre">W1</span></code> mit Hilfe der erhobenen Daten <code class="docutils literal notranslate"><span class="pre">rohdaten</span></code> in Vektorform, indem Sie nur eine Dimension vorgeben</p>
+</div>
+<div class="docutils">
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -453,79 +513,47 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the reshape function.</p>
-<p>reshape(data,numRows,numCols)</p>
+<p>Nutzen Die den Befehl <code class="docutils literal notranslate"><span class="pre">.reshape</span></code> und achten Sie auf die richtige Anzahl an Spalten oder Zeilen.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">A</span><span class="p">,[],</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">W1</span> <span class="o">=</span> <span class="n">rohdaten</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="c1"># Alternativ: W1 = rohdaten.reshape(2,-1)</span>
+<span class="n">W1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;&quot;</span><span class="p">],[</span><span class="s2">&quot;Vormittag&quot;</span><span class="p">],[</span><span class="s2">&quot;Nachmittag&quot;</span><span class="p">]]),</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Mo&quot;</span><span class="p">,</span><span class="s2">&quot;Di&quot;</span><span class="p">,</span><span class="s2">&quot;Mi&quot;</span><span class="p">,</span><span class="s2">&quot;Do&quot;</span><span class="p">,</span><span class="s2">&quot;Fr&quot;</span><span class="p">,</span><span class="s2">&quot;Sa&quot;</span><span class="p">,</span><span class="s2">&quot;So&quot;</span><span class="p">]]),</span> <span class="n">W1</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Reshaping arrays is also among the many uses of the colon operator (:).</p>
-<p>You can reshape any matrix into a column vector using x(:).</p>
+<p>Mit dem <code class="docutils literal notranslate"><span class="pre">.ravel()</span></code> Befehl kann man eine beliebige Matrix wieder in einen Vektor umformen.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/reshape_ravel.png"><img alt="../../../_images/reshape_ravel.png" src="../../../_images/reshape_ravel.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Vertikales und horizontales Zusammenfügen</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<div class="legend">
+<p style="font-size: 80%; text-align: center; margin-top: 0; padding-top: 0;">
+<strong>Quelle:</strong> <a href="https://medium.com/towards-data-science/reshaping-numpy-arrays-in-python-a-step-by-step-pictorial-tutorial-aed5f471cf0b">Medium</a>
+</p>
+</div>
+</figcaption>
+</figure>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1_kopie</span> <span class="o">=</span> <span class="n">a1_3x4_matrix</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1_kopie</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-3 admonition">
 <p class="admonition-title">Aufgabe 1.3</p>
-<p>Create a vector named D with all the data in A in one column.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Use the reshape function on the transposed data in A, A’.</p>
-<p>reshape(data’,numRows,numCols)</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="n">A</span><span class="p">(:)</span>
-</pre></div>
-</div>
-</div>
-<p>Did you notice that it’s not necessary to specify the order in which the elements of A are extracted? This is because MATLAB stores data in a column-major format.</p>
-<p>M = [ 1 2 3 ; 4 5 6 ]</p>
-<p>M =
-$<span class="math notranslate nohighlight">\(
-    \begin{pmatrix} 
-        1 &amp; 2 &amp; 3\\
-        4 &amp; 5 &amp; 6
-    \end{pmatrix}
-\)</span>$</p>
-<p>The matrix M is stored in memory as 1, 4, 2, 5, 3, 6. And, thus, the reshaped array is populated in the same order along each column.</p>
-<p>reshape(M,3,2)</p>
-<p>ans =</p>
+<p>Extrahieren Sie aus der Matrix <code class="docutils literal notranslate"><span class="pre">W1</span></code> wieder die Rohdaten</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{pmatrix} 
-        1 &amp; 5\\
-        4 &amp; 3\\
-        2 &amp; 6
-    \end{pmatrix}
+        32 &amp; 47 &amp; 42 &amp; 42 &amp; 22 &amp; 21 &amp; 14 &amp; 50 &amp; 36 &amp; 18 &amp; 39 &amp; 50 &amp; 37 &amp; 76\\
+    \end{pmatrix}.
 \end{split}\]</div>
-<p>To extract elements row-wise, use the transpose operator, ‘, to transpose the matrix before reshaping.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier kommt erklärender Code</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-1-4 admonition">
-<p class="admonition-title">Aufgabe 1.4</p>
-<p>Create a vector named E with all the data in A in one row. Extract the data row-wise rather than column-wise.</p>
+<p>unter dem Namen <code class="docutils literal notranslate"><span class="pre">rohdaten_kopie</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,20 +564,19 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the reshape function on the transposed data in A, A’.</p>
-<p>reshape(data’,numRows,numCols)</p>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">ravel.()</span></code>. Achten Sie darauf nur die relevanten Einträge aus <code class="docutils literal notranslate"><span class="pre">W1</span></code> zu verwenden.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">A</span><span class="s1">&#39;,1,[])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rohdaten_kopie</span> <span class="o">=</span> <span class="n">W1</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rohdaten_kopie</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="admonition-aufgabe-1-5 admonition">
-<p class="admonition-title">Aufgabe 1.5</p>
-<p>Try creating a 4 column matrix populated row-wise from the rows of A. You can use the reshape function with the transpose operator, ‘, and then make sure to transpose the result, as well.</p>
-<p>What happens if you supply a size with a different number of elements?</p>
-<p>reshape(A,3,5)</p>
+<p>Sie haben vielleicht bemerkt, dass jeder Eintrag als <code class="docutils literal notranslate"><span class="pre">string</span></code> gespeichert ist. Dies wurde von <code class="docutils literal notranslate"><span class="pre">numpy</span></code> automatisch gemacht, als wir eine Zeile/Spalte mit <code class="docutils literal notranslate"><span class="pre">strings</span></code> hinzugefügt haben. Um dies rückgängig zu machen, kann der Befehl <code class="docutils literal notranslate"><span class="pre">.astype(int)</span></code> angehängt werden. So werden alle Einträge wieder in ganze Zahlen umgewandelt.</p>
+<div class="admonition-aufgabe-1-4 admonition">
+<p class="admonition-title">Aufgabe 1.4</p>
+<p>Wandels Sie <code class="docutils literal notranslate"><span class="pre">rohdaten_kopie</span></code> in einen Vektor mit ganzzahligen Einträgen um.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -558,13 +585,52 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 </div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie <code class="docutils literal notranslate"><span class="pre">.astype(int)</span></code>.</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rohdaten_kopie</span> <span class="o">=</span> <span class="n">rohdaten_kopie</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rohdaten_kopie</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Bild 16 und 17 sind möhliche Quizfragen.</p>
+<p>Bisher haben wir die Matrizen immer Zeilenweise gefüllt. Das heißt, die erste Zeile besteht aus den ersten Einträgen des Vektors, die Zweite aus den Einträgen danach usw.. Natürlich kann man eine Matrix auch Spaltenweise füllen. Dazu muss <code class="docutils literal notranslate"><span class="pre">reshape</span></code> die zusätzliche Eingabe <code class="docutils literal notranslate"><span class="pre">order</span> <span class="pre">=</span> <span class="pre">'F'</span></code> hinzugefügt werden.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/reshape_order.png"><img alt="../../../_images/reshape_order.png" src="../../../_images/reshape_order.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Vertikales und horizontales Zusammenfügen</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<div class="legend">
+<p style="font-size: 80%; text-align: center; margin-top: 0; padding-top: 0;">
+<strong>Quelle:</strong> <a href="https://medium.com/towards-data-science/reshaping-numpy-arrays-in-python-a-step-by-step-pictorial-tutorial-aed5f471cf0b">Medium</a>
+</p>
+</div>
+</figcaption>
+</figure>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1_3x4_matrix_columnwise</span> <span class="o">=</span> <span class="n">a1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1_3x4_matrix_columnwise</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Achtung</p>
+<p><code class="docutils literal notranslate"><span class="pre">reshape</span></code> kann lediglich verwendet werden, um Matrizen ineinander umzuformen, wenn sie die gleiche Anzahl an Einträgen haben. Das heißt eine <span class="math notranslate nohighlight">\((p \times q)\)</span> Matrix kann nur in eine <span class="math notranslate nohighlight">\((m \times n)\)</span> Matrix umgeformt werden, wenn <span class="math notranslate nohighlight">\(p \cdot q = m \cdot n\)</span> erfüllt ist.</p>
+</div>
+<div class="admonition-aufgabe-1-5 admonition">
+<p class="admonition-title">Aufgabe 1.5</p>
+<p>Versuchen Sie <code class="docutils literal notranslate"><span class="pre">a1</span></code> in eine <span class="math notranslate nohighlight">\((5 \times 2)\)</span> Matrix umzuformen. Was beobachten Sie?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -607,11 +673,11 @@ $<span class="math notranslate nohighlight">\(
       </div>
     </a>
     <a class="right-next"
-       href="../visualisation_2/visualisation_2_intro.html"
+       href="quiz.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualisierung 2</p>
+        <p class="prev-next-title">Quiz</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

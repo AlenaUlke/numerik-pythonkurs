@@ -66,6 +66,8 @@ parts:
       file: content/chapter03_spezialisierung/arrays_2/concatenating_arrays
     - title: Arrays umformen
       file: content/chapter03_spezialisierung/arrays_2/reshaping_arrays
+    - title: Quiz
+      file: content/chapter03_spezialisierung/arrays_2/quiz
   - title: Visualisierung II
     file: content/chapter03_spezialisierung/visualisation_2/visualisation_2_intro
     sections:

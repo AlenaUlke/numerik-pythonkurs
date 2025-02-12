@@ -1,14 +1,13 @@
 # Arrays II 
-In Python gibt es verschiedene Möglichkeiten mehrere Daten oder Zahlwerte in einer einzigen Variable zusammenzufassen. Einige Beispiele dafür sind Listen, Tupel und Arrays.
 
-In diesen Kapitel werden wir uns primär mit `numpy` Arrays beschäftigen, eine Datenstruktur, die das Paket `numpy` bereitstellt und im Kontext der Numerik diverse Vorteile bietet. Beispielsweise stellt `numpy` eine Großzahl an mathematischen Funktionen und Konstanten als auch Konstrukte der Lineare Algebra wie Matrizen und Vektoren zur Verfügung sowie vieles mehr.
+Im Kapitel [Arrays](../../chapter02_basics/arrays_intro.md) haben Sie bereits gelernt wie man mit `numpy` Arrays erstellen kann. Dieses Wissen wollen wir in der Spezialisierung von Python vertiefen. 
 
-Da Arrays zur Implementierung numerischer Algorithmen ein grundlegendes Programmierwerkzeug sind, müssen Sie sich mit dem Umgang von `numpy` Arrays vertraut machen.
+Der Hauptfokus liegt dabei auf dem Zusammenführen und Umformen von bereits existierenden Matrizen. Insbesondere wird es Ihnen so möglich sein Daten für ihre Zwecke anpassen zu können. Dazu reicht weiterhin das Paket `numpy` aus, welche einige Funktionen bereitstellt.  
 
 ## Lernziele
 
-- Was sind `numpy` Arrays?
-- Wie erstellt man ein `numpy` Array? Welche verschiedenen Methoden gibt es ein `numpy` Array zu erstellen?
-- Wie kann man Informationen wie Größe und Dimension eines `numpy` Arrays auslesen?
-- Wie greift auf man Einträge eines `numpy` Array zu und wie kann man Einträge eines `numpy` Arrays verändern?
-- Wie kann man mit `numpy` Arrays im Sinne von Matrix-Vektor-Operationen rechnen?
+- Wiederholen der gelernten Methoden aus Kapitel [Arrays](../../chapter02_basics/arrays_intro.md).
+- Welche Matrizen kann man mit `numpy` erzeugen ohne Sie händisch eingeben zu müssen?
+- Welche zufälligen Matrizen kann man mit `numpy` erzeugen?
+- Wie kann man zwei oder mehr Matrizen zusammenführen? 
+- Wie kann man die Form einer Matrix verändern?
