@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Vektorisierung &#8212; Python-Programmierkurs</title>
+    <title>Programmieren mit KI &#8212; Python-Programmierkurs</title>
   
   
   
@@ -64,10 +64,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/vectorisation/efficiency';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/AI/Programmieren mir KI';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="prev" title="Vektorisierung" href="vectorisation_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -118,6 +117,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -191,7 +192,7 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Spezialisierung in Python</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../functions/dreiecke.html">Funktionen schreiben</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functions/function_handles.html">Function handles</a></li>
@@ -219,12 +220,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../debugging/analysing_code.html">Fehleranalyse</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../AI/KI_intro.html">AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="KI_intro.html">AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Programmieren_mit_KI.html">Programmieren mit KI</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="vectorisation_intro.html">Vektorisierung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Effizienter werden</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vectorisation/vectorisation_intro.html">Vektorisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vectorisation/efficiency.html">Effizienter werden</a></li>
 </ul>
 </details></li>
 </ul>
@@ -317,7 +318,7 @@
       
       
       
-      <li><a href="../../../_sources/content/chapter03_spezialisierung/vectorisation/efficiency.ipynb" target="_blank"
+      <li><a href="../../../_sources/content/chapter03_spezialisierung/AI/Programmieren mir KI.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,7 +392,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Vektorisierung</h1>
+    <h1>Programmieren mit KI</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,108 +406,122 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="vektorisierung">
-<h1>Vektorisierung<a class="headerlink" href="#vektorisierung" title="Link to this heading">#</a></h1>
-<p>In der numerischen Mathematik spielt die Effizienz von Algorithmen eine zentrale Rolle. Eine der wichtigsten Techniken zur Beschleunigung von Berechnungen in <code class="docutils literal notranslate"><span class="pre">Python</span></code> ist die <code class="docutils literal notranslate"><span class="pre">Vektorisierung</span></code>, die durch die Verwendung von <code class="docutils literal notranslate"><span class="pre">numpy-Arrays</span></code> anstelle von expliziten Schleifen erreicht wird. Vektorisierte Operationen sind in der Regel um ein Vielfaches schneller als Schleifen in <code class="docutils literal notranslate"><span class="pre">Python</span></code>, da <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> diese Operationen in optimierten, vorcompilierten <code class="docutils literal notranslate"><span class="pre">C-Routinen</span></code> ausführen. Klassische Beispiele für Vektorisierung sind die Additon von zwei Vektoren</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="programmieren-mit-ki">
+<h1>Programmieren mit KI<a class="headerlink" href="#programmieren-mit-ki" title="Link to this heading">#</a></h1>
+<p>Das Schreiben von Algorithmen ist oft eine herausfordernde Aufgabe. Während Programmieren traditionell bedeutet, dass wir alle Details selbst festlegen müssen, eröffnet uns KI neue Möglichkeiten, diese Prozesse zu beschleunigen und zu vereinfachen. Auch wenn KI sehr leistungsfähig ist, ist es wichtig zu verstehen, dass ihre Lösungen nicht immer fehlerfrei sind. Die Vorschläge müssen hinterfragt und überprüft werden, um sicherzustellen, dass sie nicht nur syntaktisch korrekt, sondern auch logisch und inhaltlich sinnvoll sind.</p>
+<p>In diesem Abschnitt werden wir uns damit beschäftigen, wie man Künstliche Intelligenz als Unterstützung beim Programmieren nutzen kann. Sie werden lernen, wie Sie kleine Aufgaben selbstständig programmieren, diese dann der KI übergeben und anschließend die Ergebnisse kritisch prüfen. Durch dieses Vorgehen erfahren Sie nicht nur, wie Sie von der Effizienz der KI profitieren können, sondern auch, wie Sie ihre Ausgaben verbessern und optimieren.</p>
+<p>Dazu betrachten wir ein Text-RPG-Spiel, welches Sie simulieren sollen. Die Spielregeln sind folgende:</p>
+<ul class="simple">
+<li><p>Es gibt zwei Spieler: Der „Spieler“ und der „Gegner“.</p></li>
+<li><p>Jeder Spieler hat 100 Lebenspunkte, die nicht überschritten werden können.</p></li>
+<li><p>Der Gegner greift in jedem Zug an, was zufälligen Schaden zwischen 5 und 30 Punkten anrichtet.</p></li>
+<li><p>Der Spieler entscheidet, ob er angreifen oder sich heilen möchte.</p>
+<ul>
+<li><p>Heilen: Der Spieler heilt sich um 10 bis 20 Punkte.</p></li>
+<li><p>Angriff: Der Spieler fügt dem Gegner zwischen 5 und 30 Punkten Schaden zu.</p></li>
+</ul>
+</li>
+<li><p>Der Kampf geht weiter, bis einer der beiden Spieler 0 Lebenspunkte erreicht.</p></li>
+<li><p>Am Ende des Kampfes soll angezeigt werden, wer gewonnen hat und wie lange der Kampf gedauert hat.</p></li>
+</ul>
+<p>Da dieses Spiel interaktiv programmiert wird, sollten einige Dinge beachtet werden. Es sollte möglichst alles, was im Spiel passiert, über einen <code class="docutils literal notranslate"><span class="pre">print</span></code> an den Spieler übergeben werden, damit er basierend darauf seine nächste Entscheidung treffen kann. Das heißt die aktuellen Lebenspunkte sollten in jeder Runde angezeigt werden. Zudem ist der Befehl <code class="docutils literal notranslate"><span class="pre">input()</span></code> von großer Bedeutung. Mit diesem ist es möglich, dass die Person, die das Spiel spielt eigene Entscheidungen treffen kann.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-<span class="c1"># Variante mit Schleife</span>
-<span class="n">startzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">c_schleife</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">c_schleife</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="n">endzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Schleifenzeit: </span><span class="si">{</span><span class="n">endzeit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">startzeit</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> Sekunden&quot;</span><span class="p">)</span>
-
-<span class="c1"># Vektorisierte Variante</span>
-<span class="n">startzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">c_vektorisierung</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="n">endzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vektorisierte Zeit: </span><span class="si">{</span><span class="n">endzeit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">startzeit</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> Sekunden&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Zahl</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wähle eine Zahl zwischen 1 und 6 &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deine Zahl ist </span><span class="si">{</span><span class="n">Zahl</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>oder die elementarweise Anwendung der Wurzel auf einen Vektor</p>
+<p>Mit diesem Code wird zunächst ein <code class="docutils literal notranslate"><span class="pre">string</span></code> erzeugt, der beschreibt, was getan werden soll. Außerdem öffnet sich ein Eingabefeld, in dem nun etwas geschrieben werden Kann. Nachdem die Eingabe mit der Eingabetaste bestätigt wurde, wird ein Text ausgegeben, der die ausgewählte Zahl beschreibt. Als Eingabe kann auch ein Wort geschriegen werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Variante mit Schleife</span>
-<span class="n">startzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">sqrt_schleife</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">sqrt_schleife</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="n">endzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Schleifenzeit: </span><span class="si">{</span><span class="n">endzeit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">startzeit</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> Sekunden&quot;</span><span class="p">)</span>
-
-<span class="c1"># Vektorisierte Variante</span>
-<span class="n">startzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">sqrt_vektorisierung</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">endzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vektorisierte Zeit: </span><span class="si">{</span><span class="n">endzeit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">startzeit</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> Sekunden&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Wort</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Was ist Ihr Lieblingswort? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ihr Lieblingswort ist </span><span class="si">{</span><span class="n">Wort</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Mit dem Befehl <code class="docutils literal notranslate"><span class="pre">time.time()</span></code> kann die aktuelle Zeit abgerufen werden. Indem man die Zeit zum Startzeitpunkt mit der zum Endzeitpunkt der Rechnungen vergleicht, kann man die Rechendauer beider Varianten evaluieren. Dies wurde in beiden Beispielen für Sie gemacht. Bevor Sie sich den kommenden Aufgaben widmen, bei denen Sie selbst eine vektorisierte Variante erarbeiten, ändern Sie die Variable <code class="docutils literal notranslate"><span class="pre">n</span></code> in den vorherigen Beispielen. Wie verändert sich der Unterschied der Rechenzeiten beider Varianten?</p>
+<p>Der Anhang <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> bewirkt, dass alle Leerzeichen in der Eingabe eliminiert werden, während <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> alle Buchstaben in Kleinbuchstaben verwandelt. Diese Zusätze machen es leichter später einheitlich mit der Eingabe zu arbeiten.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Der folgende Code soll die euklidische Norm jeder Zeile einer <span class="math notranslate nohighlight">\((m \times n)\)</span> Matrix berechnen. Für die vektorisierte Variante soll dabei der Befehl <code class="docutils literal notranslate"><span class="pre">np.linalg.norm</span></code> verwendet werden. Machen Sie sich mit einer beliebigen Suchmaschine oder künstlichen Intelligenz mit dem Begriff vertraut und ergänzen Sie den fehlenden Code.</p>
+<p>Probieren Sie aus, wie sich die Ausgabe ändert, wenn Sie Leerzeichen und Großbuchstaben verwenden.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-
-<span class="c1"># Variante mit Schleife</span>
-<span class="n">startzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="c1"># Ihr Code </span>
-
-
-
-<span class="n">endzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Schleifenzeit: </span><span class="si">{</span><span class="n">endzeit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">startzeit</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> Sekunden&quot;</span><span class="p">)</span>
-
-<span class="c1"># Vektorisierte Variante</span>
-<span class="n">startzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="c1"># Ihr Code </span>
-
-<span class="n">endzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vektorisierte Zeit: </span><span class="si">{</span><span class="n">endzeit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">startzeit</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> Sekunden&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Möchte man die Auswahl der Eingaben eingrenzen, kann es sinnvoll sein die möglichen Eingaben in der Frage zu erwähnen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Wort</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Welches Wort mögen Sie mehr: Freizeit oder Urlaub? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-2 admonition">
+<p class="admonition-title">Aufgabe 1.2</p>
+<p>Schreiben Sie einen interaktiven Code, der das oben genannte Spiel simuliert.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Nutzen Sie für die Schleifen-Variante eine <code class="docutils literal notranslate"><span class="pre">for-Schleife</span></code> über <code class="docutils literal notranslate"><span class="pre">range(m)</span></code>. Für die Vektorisierung verwenden Sie den Befehl <code class="docutils literal notranslate"><span class="pre">np.linalg.norm(,axis</span> <span class="pre">=</span> <span class="pre">1)</span></code>.</p>
+<p>Nutzen Sie <code class="docutils literal notranslate"><span class="pre">input()</span></code> und beschreiben Sie mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> alle Geschehnisse des Spiels in der Ausgabe.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># Variante mit Schleife</span>
-<span class="n">startzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">norm_schleife</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-    <span class="n">norm_schleife</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">endzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Schleifenzeit: </span><span class="si">{</span><span class="n">endzeit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">startzeit</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> Sekunden&quot;</span><span class="p">)</span>
-
-<span class="c1"># Vektorisierte Variante</span>
-<span class="n">startzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">norm_vektorisierung</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">endzeit</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vektorisierte Zeit: </span><span class="si">{</span><span class="n">endzeit</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">startzeit</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> Sekunden&quot;</span><span class="p">)</span>
+<span class="n">spieler_lp</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Lebenspunkte des Spielers</span>
+<span class="n">gegner_lp</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Lebenspunkte des Gegners</span>
+<span class="n">runden</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Anzahl der Runden</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Willkommen zum Kampf!&quot;</span><span class="p">)</span>
+    
+<span class="k">while</span> <span class="n">spieler_lp</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">gegner_lp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">runden</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Runde </span><span class="si">{</span><span class="n">runden</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deine Lebenspunkte: </span><span class="si">{</span><span class="n">spieler_lp</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gegnerische Lebenspunkte: </span><span class="si">{</span><span class="n">gegner_lp</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+    <span class="n">aktion</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wähle eine Aktion (angreifen/heilen): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        
+    <span class="k">if</span> <span class="n">aktion</span> <span class="o">==</span> <span class="s2">&quot;angreifen&quot;</span><span class="p">:</span>
+        <span class="n">schaden</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="n">gegner_lp</span> <span class="o">-=</span> <span class="n">schaden</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du greifst an und verursachst </span><span class="si">{</span><span class="n">schaden</span><span class="si">}</span><span class="s2"> Schaden!&quot;</span><span class="p">)</span>
+        
+    <span class="k">elif</span> <span class="n">aktion</span> <span class="o">==</span> <span class="s2">&quot;heilen&quot;</span><span class="p">:</span>
+        <span class="n">heilung</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="n">spieler_lp</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">spieler_lp</span> <span class="o">+</span> <span class="n">heilung</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du heilst dich um </span><span class="si">{</span><span class="n">heilung</span><span class="si">}</span><span class="s2"> Punkte!&quot;</span><span class="p">)</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ungültige Eingabe! Du verlierst deinen Zug.&quot;</span><span class="p">)</span>
+        
+    <span class="k">if</span> <span class="n">gegner_lp</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Herzlichen Glückwunsch! Du hast gewonnen!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+        
+    <span class="c1"># Gegner greift an</span>
+    <span class="n">gegner_schaden</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="n">spieler_lp</span> <span class="o">-=</span> <span class="n">gegner_schaden</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Gegner greift an und verursacht </span><span class="si">{</span><span class="n">gegner_schaden</span><span class="si">}</span><span class="s2"> Schaden!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+    <span class="k">if</span> <span class="n">spieler_lp</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du wurdest besiegt! Spiel vorbei.&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Kampf dauerte </span><span class="si">{</span><span class="n">runden</span><span class="si">}</span><span class="s2"> Runden.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -539,9 +554,9 @@
 \end{split}\]</div>
 <p>zu erzeugen. Auch hier hilft uns Vektorisierung Zeit zu sparen, denn es ist möglich einen Vektor spaltenweise und zeilenweise auf eine Matrix und einen anderen Vektor zu addieren. In unserem Beispiel kann das wie folgt aussehen.</p>
 <figure class="align-default" id="fig-meinbild">
-<a class="reference internal image-reference" href="../../../_images/numpy_broadcasting.png"><img alt="../../../_images/numpy_broadcasting.png" src="../../../_images/numpy_broadcasting.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="content/chapter03_spezialisierung/AI/numpy_broadcasting.png"><img alt="content/chapter03_spezialisierung/AI/numpy_broadcasting.png" src="content/chapter03_spezialisierung/AI/numpy_broadcasting.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">spaltenweise Addition</span><a class="headerlink" href="#fig-meinbild" title="Link to this image">#</a></p>
+<p><span class="caption-text">spaltenweise Addition</span><a class="headerlink" href="#fig-meinbild" title="Link to this image">#</a></p>
 <div class="legend">
 <p style="font-size: 80%; text-align: center; margin-top: 0; padding-top: 0;">
 <strong>Quelle:</strong> <a href="https://scipy-lectures.org/intro/numpy/operations.html">scipy lectures</a>
@@ -801,7 +816,7 @@ R = \begin{pmatrix}
         },
         kernelOptions: {
             name: "python3",
-            path: "./content\chapter03_spezialisierung\vectorisation"
+            path: "./content\chapter03_spezialisierung\AI"
         },
         predefinedOutput: true
     }
@@ -818,15 +833,6 @@ R = \begin{pmatrix}
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="vectorisation_intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Vektorisierung</p>
-      </div>
-    </a>
 </div>
                 </footer>
               

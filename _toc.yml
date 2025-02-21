@@ -82,6 +82,11 @@ parts:
       file: content/chapter03_spezialisierung/debugging/error_signs
     - title: Fehleranalyse
       file: content/chapter03_spezialisierung/debugging/analysing_code
+  - title: AI
+    file: content/chapter03_spezialisierung/AI/KI_intro
+    sections:
+    - title: Programmieren mit KI
+      file: content/chapter03_spezialisierung/AI/Programmieren_mit_KI
   - title: Vektorisierung
     file: content/chapter03_spezialisierung/vectorisation/vectorisation_intro
     sections:

@@ -62,13 +62,11 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/vectorisation/vectorisation_intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/AI/KI_intro';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Vektorisierung" href="efficiency.html" />
-    <link rel="prev" title="Programmieren mit KI" href="../AI/Programmieren_mit_KI.html" />
+    <link rel="next" title="Programmieren mit KI" href="Programmieren_mit_KI.html" />
+    <link rel="prev" title="Fehleranalyse" href="../debugging/analysing_code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -220,12 +218,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../debugging/analysing_code.html">Fehleranalyse</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../AI/KI_intro.html">AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">AI</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Programmieren_mit_KI.html">Programmieren mit KI</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Vektorisierung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="efficiency.html">Effizienter werden</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vectorisation/vectorisation_intro.html">Vektorisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vectorisation/efficiency.html">Effizienter werden</a></li>
 </ul>
 </details></li>
 </ul>
@@ -287,7 +285,7 @@
       
       
       
-      <li><a href="../../../_sources/content/chapter03_spezialisierung/vectorisation/vectorisation_intro.md" target="_blank"
+      <li><a href="../../../_sources/content/chapter03_spezialisierung/AI/KI_intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -393,11 +391,9 @@
 <section id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Was sind <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Arrays?</p></li>
-<li><p>Wie erstellt man ein <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array? Welche verschiedenen Methoden gibt es ein <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array zu erstellen?</p></li>
-<li><p>Wie kann man Informationen wie Größe und Dimension eines <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Arrays auslesen?</p></li>
-<li><p>Wie greift auf man Einträge eines <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array zu und wie kann man Einträge eines <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Arrays verändern?</p></li>
-<li><p>Wie kann man mit <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Arrays im Sinne von Matrix-Vektor-Operationen rechnen?</p></li>
+<li><p>Übe, wie KI-basierte Lösungen zu komplexeren Aufgaben beitragen können.</p></li>
+<li><p>Entwickle ein gutes Verständnis dafür, wie man Fehler in einer KI-generierten Lösung findet und behebt.</p></li>
+<li><p>Lerne, den generierten Code nicht nur zu übernehmen, sondern auch zu hinterfragen und zu optimieren.</p></li>
 </ul>
 </section>
 <div class="toctree-wrapper compound">
@@ -417,7 +413,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./content\chapter03_spezialisierung\vectorisation"
+            path: "./content\chapter03_spezialisierung\AI"
         },
         predefinedOutput: true
     }
@@ -435,20 +431,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../AI/Programmieren_mit_KI.html"
+       href="../debugging/analysing_code.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Programmieren mit KI</p>
+        <p class="prev-next-title">Fehleranalyse</p>
       </div>
     </a>
     <a class="right-next"
-       href="efficiency.html"
+       href="Programmieren_mit_KI.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vektorisierung</p>
+        <p class="prev-next-title">Programmieren mit KI</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -62,6 +62,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/debugging/error_signs';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -205,6 +207,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/quiz.html">Quiz</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -397,8 +400,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-fehler">Syntax Fehler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laufzeit-fehler">Laufzeit Fehler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxerror">SyntaxError</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runtimeerror">RuntimeError</a></li>
 </ul>
             </nav>
         </div>
@@ -412,23 +415,44 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fehleranzeige">
 <h1>Fehleranzeige<a class="headerlink" href="#fehleranzeige" title="Link to this heading">#</a></h1>
-<section id="syntax-fehler">
-<h2>Syntax Fehler<a class="headerlink" href="#syntax-fehler" title="Link to this heading">#</a></h2>
-<p>Eklären, was syntax ist und vor allem motivieren, wie man syntax mit der Sprache in Verbindung bringen kann Bild 1.</p>
-<p>common syntax errors are spelling mistakes, using wrong brackets, mismatched brackets, mismatched quotation marks ‘ and “. Some mistakes are highlighted by the editor (maybe include here a python picture). you should clear all warnings before triying to run the script. Maybe there is an indicator in python for this. Hier viele Bilder, wie die Fehler angezeigt werden. Vielleicht kann man auch klicken und wird direkt zum Fehler geführt.</p>
+<section id="syntaxerror">
+<h2>SyntaxError<a class="headerlink" href="#syntaxerror" title="Link to this heading">#</a></h2>
+<p>Wenn Sie eine neue Sprache lernen – sei es Englisch, Französisch oder eine Programmiersprache wie <code class="docutils literal notranslate"><span class="pre">Python</span></code> –, dann gibt es bestimmte Regeln, die Sie beachten müssen. Diese Regeln nennt man <code class="docutils literal notranslate"><span class="pre">Syntax</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Definition</p>
+<p>Die Syntax ist die Grammatik einer Programmiersprache. Sie legt fest, wie ein Programm geschrieben werden muss, damit der Computer es versteht.</p>
+</div>
+<p>Warum ist <code class="docutils literal notranslate"><span class="pre">Syntax</span></code> wichtig? Stellen Sie sich vor, Sie sagen zu jemandem: “Haben wir morgen Kino gehen?” Das klingt falsch, weil die Grammatik nicht stimmt. Ähnlich ist es in <code class="docutils literal notranslate"><span class="pre">Python</span></code>: Wenn du dich nicht an die Regeln hältst, bekommst du eine Fehlermeldung – einen <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>.</p>
+<p>Ein Beispiel für einen <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> wäre der Code: <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">&quot;Hallo,</span> <span class="pre">Welt!&quot;</span></code>. Führt man diesen Code aus, gibt Python eine Fehlermeldung aus:</p>
+<p><code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">Missing</span> <span class="pre">parentheses</span> <span class="pre">in</span> <span class="pre">call</span> <span class="pre">to</span> <span class="pre">'print'.</span> <span class="pre">Did</span> <span class="pre">you</span> <span class="pre">mean</span> <span class="pre">print(...)?</span></code></p>
+<p>Warum? Weil <code class="docutils literal notranslate"><span class="pre">print</span></code> Klammern braucht: <code class="docutils literal notranslate"><span class="pre">print(&quot;Hallo,</span> <span class="pre">Welt!&quot;)</span></code>.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">Python</span></code> werden Fehler normalerweise direkt im Ausgabe- oder Fehlerbereich angezeigt. Dort werden Sie eine Fehlermeldung sehen, die den Fehlerort und eine Beschreibung des Problems enthält. Die Fehlermeldung besteht häufig aus zwei Teilen:</p>
+<ol class="arabic simple">
+<li><p><strong>Fehlerbeschreibung</strong>: Hier wird der genaue Fehlertyp genannt, z.B. <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, und eine kurze Erklärung, was das Problem ist (z.B. “unexpected EOF while parsing”).</p></li>
+<li><p><strong>Fehlerort</strong>: Der Codeabschnitt, in dem der Fehler auftritt, wird angezeigt, wobei oft der genaue Zeile des Fehlers (z.B. eine fehlende Klammer oder ein falsches Schlüsselwort) durch einen Indikator markiert wird.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Hallo, Welt!&quot;</span>
+<span class="c1"># print(&quot;Hallo, Welt!&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dadurch wird die Diagnose erleichtert.</p>
+<p>Die nachfolgenden Abschnitte beschreiben Ihnen jeweils fehlerhafte Codeabschnitte. Versuchen Sie in den Aufgaben die <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> zu identifizieren und zu korrigieren. Nutzen Sie dazu gerne die Rückmeldung von <code class="docutils literal notranslate"><span class="pre">Python</span></code>, wenn Sie versuchen den Code laufen zu lassen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># falscher Code</span>
-<span class="n">M</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">7</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">5</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">numElementsX</span> <span class="o">=</span> <span class="n">prod</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">np</span> 
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Fix the syntax error so that the script runs.</p>
-<p>M should be a matrix after running the script, but otherwise, there are no restrictions on how you fix the error.</p>
+<p>Passen Sie den Code an, sodass die Fehlermeldung behoben wird.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -439,21 +463,30 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Mousing over the indicator line alerts us that the rows of the matrix M must be the same length. You can fix this either by adding an element to the first row or by deleting one from the second row.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'np'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code> deutet darauf hin, dass <code class="docutils literal notranslate"><span class="pre">numpy</span></code> nicht richtig importiert worden ist.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">7</span> <span class="n">pi</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">5</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">numElementsX</span> <span class="o">=</span> <span class="n">prod</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># numpy wurde korrekt importiert</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<p>Occasionally you will see orange indicators in the Code Analyzer.  These notify you of opportunities to improve code performance and possible mistakes.</p>
-<p>For instance, mouse over the orange indicator line to read the warning.</p>
-<p>script with warning indicator lines</p>
-<p>This code calculates the number of elements in a matrix by multiplying rows and columns. Clever! But there is a built in function that will make the code easier to read and maybe a bit faster: numel. You can incorporate the suggestion by clicking Fix to automatically update your code. Try it.</p>
-<p>Remember that you can execute your script by clicking the Run or Run Section button in the MATLAB Toolstrip.</p>
-<p>When you’re finished practicing, you may move on to the next section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># falscher Code</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-2 admonition">
+<p class="admonition-title">Aufgabe 1.2</p>
+<p>Passen Sie den Code an, sodass die Fehlermeldung behoben wird.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
@@ -461,58 +494,140 @@
 </div>
 </div>
 </div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p><code class="docutils literal notranslate"><span class="pre">VisibleDeprecationWarning:</span> <span class="pre">Creating</span> <span class="pre">an</span> <span class="pre">ndarray</span> <span class="pre">from</span> <span class="pre">ragged</span> <span class="pre">nested</span> <span class="pre">sequences</span> <span class="pre">is</span> <span class="pre">deprecated.</span></code> deutet darauf hin, dass <code class="docutils literal notranslate"><span class="pre">A</span></code> nicht korrekt definiert wurde.</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>  <span class="c1"># alle Zeilen haben die gleiche Länge</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  
 </pre></div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># falscher Code</span>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hallo!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-3 admonition">
+<p class="admonition-title">Aufgabe 1.3</p>
+<p>Passen Sie den Code an, sodass die Fehlermeldung behoben wird.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;function</span> <span class="pre">greet</span> <span class="pre">at</span> <span class="pre">0x...&gt;</span></code> deutet darauf hin, dass die Funktion nicht richtig aufgerufen wird.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hallo!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">())</span>  <span class="c1"># die Klammern haben gefehlt</span>
+</pre></div>
+</div>
+</div>
+<p>Zum Abschluss möchten wir Ihnen noch eine Liste der häufigsten <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> mit auf den Weg geben.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fehler</p></th>
+<th class="head"><p>Beispiel</p></th>
+<th class="head"><p>Erklärung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Vergessene Klammern</strong></p></td>
+<td><p><nobr><code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">World&quot;</span></code></nobr></p></td>
+<td><p>Eine schließende Klammer fehlt.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Falsche Klammern verwendet</strong></p></td>
+<td><p><nobr><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">[x</span> <span class="pre">&gt;</span> <span class="pre">10]:</span></code></nobr></p></td>
+<td><p>Statt runder Klammern <code class="docutils literal notranslate"><span class="pre">()</span></code> wurden eckige Klammern <code class="docutils literal notranslate"><span class="pre">[]</span></code> verwendet.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Falsche Einrückung</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">10:</span>&#160;&#160; <span class="pre">print(x)</span></code></p></td>
+<td><p>Einrückung muss konstant sein.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ungültiger Variablenname</strong></p></td>
+<td><p><nobr><code class="docutils literal notranslate"><span class="pre">2x</span> <span class="pre">=</span> <span class="pre">10</span></code></nobr></p></td>
+<td><p>Variablennamen dürfen nicht mit einer Zahl beginnen.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Falsche String-Begrenzung</strong></p></td>
+<td><p><nobr><code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">World&quot;</span></code></nobr></p></td>
+<td><p>Ein String muss mit dem gleichen Zeichentyp abgeschlossen werden (z.B. beide <code class="docutils literal notranslate"><span class="pre">'</span></code> oder beide <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Fehlender Operator</strong></p></td>
+<td><p><nobr><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">10</span></code></nobr></p></td>
+<td><p>Ein Operator zwischen Variablen fehlt (z.B. <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">10</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Verwendung von reservierten Wörtern</strong></p></td>
+<td><p><nobr><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">=</span> <span class="pre">10</span></code></nobr></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">def</span></code> ist ein reserviertes Schlüsselwort und kann nicht als Variablenname verwendet werden.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Zu viele Klammern</strong></p></td>
+<td><p><nobr><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">10)):</span></code></nobr></p></td>
+<td><p>Zu viele schließende Klammern.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Falsche Anzahl von Argumenten</strong></p></td>
+<td><p><nobr><code class="docutils literal notranslate"><span class="pre">print(&quot;Hello&quot;,</span> <span class="pre">10)</span></code></nobr></p></td>
+<td><p>Eine Funktion erhält nicht die erforderliche Anzahl von Argumenten.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <br>
 </section>
-<section id="laufzeit-fehler">
-<h2>Laufzeit Fehler<a class="headerlink" href="#laufzeit-fehler" title="Link to this heading">#</a></h2>
-<p>Just because you don’t have any syntax errors, doesn’t mean there isn’t a mistake in your code. Some errors occur because the code does something different than you think it should. Non-syntax errors are called runtime errors. An example is using the wrong variable name.</p>
-<p>Your first line of defense against bugs is the Code Analyzer. It is good practice to fix errors before running your code. Here, the Code Analyzer is clear, indicating no syntax errors.</p>
-<p>Bild 2</p>
-<p>But when you run the code, you see that avgYrPrice is undefined. For some typos, MATLAB offers a suggested fix. Clicking Fix updates the code and highlights the line that changed</p>
-<p>Bild 3</p>
-<p>Click on a variable to highlight all instances where it is used in the script. Now that you fixed line 3, you can see that the input to mean references a variable defined in the script.</p>
-<p>Bild 4</p>
-<p>Now the script runs without errors. But does it do what you need it to?</p>
-<p>Bild 5</p>
-<p>Runtime errors don’t always cause MATLAB to throw an error and stop execution. Sometimes they show up as unexpected results.</p>
-<p>Bild 6</p>
-<p>Since runtime errors are not identified by the Code Analyzer, it may take some investigation to identify mistakes and figure out what went wrong. Inspecting variables is a powerful way to make sure your code does what you think it does.</p>
-<p>Hier kann man ein Beispiel bringen. zum Beispiel, wenn man den Durchschnitt berechnen möchte bei einer Multiplikation zweier Vektoren. Dabei kann es passieren, dass man falche dimensioen nutzt und am Ende statt einer einzigen Zahl eine ganze Matrix herausbekommt. Wenn ich dann versuche die Matrix zu plotten, die eigentlich ein Durchschnitt ist, bekomme ich ganz wilde Grafiken. Wie findet man nun so einen Fehler. Immer zwischendurch Variablen anzeigen lassen (geht das vielleicht auch nur mit einem Click?)</p>
-<p>The Fibonacci sequence is a list of numbers where each number is calculated by adding the two previous numbers. The script fibSeq.mlx is meant to calculate the first 102 Fibonacci numbers and saves them in fib.  fibN should be the 102nd Fibonacci number. There are a couple of errors in the script, which you will fix in the next activity.</p>
-<p>Try inspecting k, fib, and fibN using the tools you just learned:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>remove semicolons
-mouse over variables
-look at them in the Workspace and Variable Editor. To view the Workspace, you may need to click the tab to the right of the editor.
-</pre></div>
-</div>
-<p>Is fib the correct length?  It should be 102.  You will dig into this example in the next interaction.</p>
-<p>This activity is unassessed.</p>
+<section id="runtimeerror">
+<h2>RuntimeError<a class="headerlink" href="#runtimeerror" title="Link to this heading">#</a></h2>
+<p>Ein <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> (Laufzeitfehler) tritt auf, wenn ein Programm syntaktisch korrekt ist, aber während der Ausführung einen Fehler verursacht. Diese Art von Fehler verhindert, dass das Programm weiterläuft oder manchmal auch, dass das Programm durchläuft, aber nicht das tut, was Sie wollen.</p>
+<p>Ein häufiger Grund für <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> ist die Verwendung einer nicht definierten bzw. falsch geschriebenen Variablen. Das passiert, wenn man versucht, auf eine Variable zuzugreifen, die vorher nicht deklariert wurde. Dieser Fall hat den Vorteil, dass <code class="docutils literal notranslate"><span class="pre">Python</span></code> eine Fehlermeldung hervorruft.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialcode</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">102</span><span class="p">;</span>
-<span class="n">fib</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-<span class="n">fib</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Masse</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">Geschwindigkeit</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">kinetische_Energie</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">masse</span> <span class="o">*</span> <span class="n">Geschwindigkeit</span>
+<span class="c1"># kinetische_Energie = 0.5 * Masse * Geschwindigkeit</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hier wurde die Variable <code class="docutils literal notranslate"><span class="pre">Masse</span></code> genannt, allerdings in der Rechnug über <code class="docutils literal notranslate"><span class="pre">masse</span></code> versucht aufgerufen zu werden. Auch wenn intuitiv klar ist, dass damit die gleiche Größe gemeint ist, kann <code class="docutils literal notranslate"><span class="pre">Python</span></code> damit nicht umgehen und zeigt die Fehlermeldung <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'masse'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>.</p>
+<p>Kniffliger wird es, wenn sich im eigenen Code <code class="docutils literal notranslate"><span class="pre">RuntimeErrors</span></code> eingeschlichen haben, die keine Fehlermeldung verursachen, aber die Ausführung so beeinflussen, dass das Ergebnis nicht das Gewünschte ist. Im Folgenden wollen wir uns dieses Phänomen anhand der Fibonacci-Folge anschauen. Diese ist eine Zahlenreihe, in der jede Zahl die Summe der beiden vorherigen Zahlen entspricht. Sie wird mit den beiden Folgenglieder 1 und 1 initialisiert. Folglich sind 1, 1, 2, 3, 5, 8, 13, ….die ersten 7 Folgenglieder. Das folgende Python-Code soll die ersten 10 Fibonacci-Zahlen berechnen. Es enthält jedoch Fehler, die wir schrittweise beheben werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1">#falscher Code, hier bitte anpassen in der Aufgabe</span>
-<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-    <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">end</span>
-<span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">end</span><span class="p">);</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># Erstellt ein Array mit 10 Einträgen</span>
+<span class="n">fib</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Setzt fib[0] und fib[1] auf 1</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> 
+    <span class="n">fib</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># Berechnet die Fibonacci-Zahlen iterativ</span>
+
+<span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>  <span class="c1"># Zugriff auf die zuletzt berechnete Zahl</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">. Fibonacci-Zahl ist: </span><span class="si">{</span><span class="n">fibN</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
-<p>Fix the Laufzeit error so that the script runs.</p>
+<p>Wenn Sie versuchen den Code auszuführen erhalten Sie die Fehlermeldung <code class="docutils literal notranslate"><span class="pre">IndexError:</span> <span class="pre">index</span> <span class="pre">10</span> <span class="pre">is</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">bounds</span> <span class="pre">for</span> <span class="pre">axis</span> <span class="pre">0</span> <span class="pre">with</span> <span class="pre">size</span> <span class="pre">10</span></code>. Woran könnte das liegen? Passen Sie den Code so an, dass die Fehlermeldung nicht mehr erscheint.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -521,29 +636,30 @@ look at them in the Workspace and Variable Editor. To view the Workspace, you ma
 </div>
 </div>
 </div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Der wie vielte Eintrag von <code class="docutils literal notranslate"><span class="pre">fib</span></code> wird über <code class="docutils literal notranslate"><span class="pre">fib[n]</span></code> abgefragt?</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># Erstellt ein Array mit 10 Einträgen</span>
+<span class="n">fib</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Setzt fib[0] und fib[1] auf 1</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>  
+    <span class="n">fib</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># Berechnet die Fibonacci-Zahlen iterativ</span>
+
+<span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Zugriff auf die zuletzt berechnete Zahl</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">. Fibonacci-Zahl ist: </span><span class="si">{</span><span class="n">fibN</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>When inspecting the variables, you may have noticed that the length of fib is 103, but it is only supposed to hold 102 Fibonacci numbers.</p>
-<p>The for loop goes until n=102, but the final value of k is 103, which creates a 103rd element of fib.  You don’t need to change the index variable inside a for loop.  This was also flagged with a Code Analyzer warning as a possible mistake.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># falscher Code</span>
-<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-    <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">end</span>
-<span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">end</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Wenn Sie den Code aus der Lösung ausführen, merken Sie dass nun keine Fehlermeldung mehr erscheint. Allerdings ist nach dem Code die 10. Fibonacci-Zahl die <span class="math notranslate nohighlight">\(9\)</span>, was nicht korrekt ist. Wie muss man den Code verändern, damit die richtige Zahl berechnet wird? In solchen Fällen kann es nützlich sein auch andere Variablen wie <code class="docutils literal notranslate"><span class="pre">fib</span></code> zu betrachten, um herauszufinden, an welcher Stelle der Code einen Fehler macht.</p>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Remove the code that increments k inside the for loop.</p>
+<p>Passen Sie den Code an, sodass die richtige 10. Fibonacci-Zahl berechnet wird, nämlich <span class="math notranslate nohighlight">\(55\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -554,95 +670,25 @@ look at them in the Workspace and Variable Editor. To view the Workspace, you ma
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Delete line 5  (k = k+1;).</p>
+<p>Läuft die Schleife über die richtigen Elemente? Wird die richtige Zahl überschrieben in der Schleife?</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
-    
-    <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">end</span>
-<span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">end</span><span class="p">);</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># Erstellt ein Array mit 10 Einträgen</span>
+<span class="n">fib</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Setzt fib[0] und fib[1] auf 1</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>  
+    <span class="n">fib</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># Berechnet die Fibonacci-Zahlen iterativ</span>
+
+<span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># Zugriff auf die zuletzt berechnete Zahl</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">. Fibonacci-Zahl ist: </span><span class="si">{</span><span class="n">fibN</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>The code runs, but is it correct?  If you mouse over fibN, you can see the value.  But the 102nd Fibonacci number is too large to tell if it is correct.</p>
-<p>One strategy for testing algorithms is to check the results on a smaller example.  The first eight Fibonacci numbers are 0, 1, 1, 2, 3, 5, 8, and 13.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># falscher Code</span>
-<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-    <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">end</span>
-<span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">end</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-3 admonition">
-<p class="admonition-title">Aufgabe 2.3</p>
-<p>Change n to 8.  Remove the semicolon from the line that creates fibN so you can see the result.</p>
-<p>Note that the value of fibN is incorrect.  You will fix this in subsequent tasks.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>In the first line of code, change 102 to 8.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
-    
-    <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">end</span>
-<span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">end</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<p>Recall that the Fibonacci numbers should be equal to the sum of the two previous values.</p>
-<p>Fk+1=F(k−1)+F(k)</p>
-<div class="admonition-aufgabe-2-4 admonition">
-<p class="admonition-title">Aufgabe 2.4</p>
-<p>Change the body of the for loop to calculate fib(k+1) correctly.  You can run the script to check that fibN is now 13.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-<p>Now that the algorithm is working correctly, you can change it back to the larger example.</p>
-<div class="admonition-aufgabe-2-5 admonition">
-<p class="admonition-title">Aufgabe 2.5</p>
-<p>Change n back to 102.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
+<p><strong>wichtig</strong>: Bitte in der Übung auf Hinweise, die im Jupyter Notebook angezeigt werden eingehen.</p>
 </section>
 </section>
 
@@ -711,8 +757,8 @@ look at them in the Workspace and Variable Editor. To view the Workspace, you ma
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-fehler">Syntax Fehler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laufzeit-fehler">Laufzeit Fehler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxerror">SyntaxError</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runtimeerror">RuntimeError</a></li>
 </ul>
   </nav></div>
 

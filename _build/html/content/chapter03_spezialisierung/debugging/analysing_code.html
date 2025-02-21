@@ -62,6 +62,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/debugging/analysing_code';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -205,6 +207,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays_2/quiz.html">Quiz</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -414,63 +417,84 @@
 <h1>Fehleranalyse<a class="headerlink" href="#fehleranalyse" title="Link to this heading">#</a></h1>
 <section id="den-code-nach-fehlern-durchgehen">
 <h2>Den Code nach Fehlern durchgehen<a class="headerlink" href="#den-code-nach-fehlern-durchgehen" title="Link to this heading">#</a></h2>
-<p>This script should fit a polynomial to electricity usage data. But, there is an error indicating that the first two inputs to polyfit should be the same size.</p>
-<p>You can inspect the variables elapsedYears and usage to know they are not the same size. usage should be a vector, not a matrix.</p>
-<p>The variable usage keeps changing! So where did the mistake occur?</p>
-<p>You can see where the error seems to be introduced by removing semicolons (line 8). It would be helpful to pause the code right before this line so we can test modifications using the value at that point in the script.</p>
-<p>Bild 7 gibt eine Übersicht über das Skript, um das es geht.</p>
-<p>In this lesson, you will learn to step through your code and pause execution before certain lines. Not only does this allow you to see how variables change with each modification, but also you can troubleshoot and test possible solutions using the intermediate variable value.</p>
-<p>One way that you may already be familiar with is to leverage sections. You can add section breaks and run the script section-by-section with Run and Advance in the Live Editor tab in the toolstrip.</p>
-<p>Between code sections, you can try things out at the command prompt. If adding sections breaks up your code organization, you may need to remove unneeded section breaks later.</p>
-<p>Another way to step through code is to use built-in debugging tools. To pause code execution before a line, you can set breakpoints by clicking the line number. These are indicated with a red box. Here, we added breakpoints before each line that modifies usage.</p>
-<p>Now when you click run, MATLAB will pause before executing lines 3, 8, 9, and 11, allowing you to inspect variables and try things out before continuing.</p>
-<p>When you click, Run, the first two lines are executed. Line 3, highlighted in green, has not been run. So, usage has not been created yet. To continue to the next breakpoint, click Continue in the Live Editor tab in the toolstrip. This executes every line before the next breakpoint.</p>
-<p>When your code execution is paused, you can inspect variables in the workspace or by mousing over just like you did before. usage is the right size before it is modified in line 8.</p>
-<p>In addition to inspecting other variables, you can try things out at the command prompt. The command prompt is marked with a “K” to indicate you are in debug mode.</p>
-<p>It is a common strategy to test the line you are about to run and try other solutions. It looks like the current line changes the size of usage. The normalization should have been element-wise for usage to remain a vector. You can fix that by changing / to ./.</p>
-<p>If you want to step through your code one line at a time instead of continuing to the next breakpoint, you can use the Step button in the Live Editor tab in the toolstrip. For instance, clicking Step twice will get you to the start of line 10, even though there is no breakpoint there.</p>
-<p>The breakpoints have changed to gray to indicate there was a change in the code that may not be reflected as you step through.</p>
-<p>When you are finished making changes, save your work. This exits debug mode. Then right-click the side bar to clear the breakpooints.</p>
-<p>To exit debug mode without saving your work, click the Stop button in the Live Editor tab in the toolstrip.</p>
+<p>Sie haben den folgenden Code gegeben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">datafile</span> <span class="o">=</span> <span class="s2">&quot;elec_res.xlsx&quot;</span><span class="p">;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># falscher Code</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">readtable</span><span class="p">(</span><span class="n">datafile</span><span class="p">);</span>
-<span class="n">sector</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Properties</span><span class="o">.</span><span class="n">VariableNames</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
-<span class="n">usage</span> <span class="o">=</span> <span class="n">data</span><span class="p">{:,</span><span class="mi">2</span><span class="p">};</span>
-<span class="n">dates</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Date</span><span class="p">;</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># für reproduzierbare Ergebnisse</span>
+<span class="c1"># Erszeugung der Anzahl an verkauften Mensaessen pro Semester </span>
+<span class="n">trend</span> <span class="o">=</span> <span class="mi">850</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  
+<span class="n">Mensaessen</span> <span class="o">=</span> <span class="n">trend</span> <span class="o">+</span> <span class="n">noise</span>
 
-<span class="n">d</span> <span class="o">=</span> <span class="n">dates</span><span class="p">;</span>
-<span class="n">d</span><span class="p">(</span><span class="n">end</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">d</span><span class="p">(</span><span class="n">end</span><span class="p">)</span> <span class="o">+</span> <span class="n">calmonths</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">daysInMth</span> <span class="o">=</span> <span class="n">days</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">d</span><span class="p">));</span>
-<span class="n">usage</span> <span class="o">=</span> <span class="n">usage</span><span class="o">./</span><span class="n">daysInMth</span><span class="p">;</span> <span class="o">%</span> <span class="n">per</span><span class="o">-</span><span class="n">day</span> <span class="n">usage</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">usage</span><span class="p">);</span>
-<span class="n">usageSm</span> <span class="o">=</span> <span class="n">usage</span><span class="p">;</span>
-<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">usageSm</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">usage</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
-<span class="n">end</span>
-
-<span class="n">plot</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="n">usage</span><span class="p">,</span><span class="n">dates</span><span class="p">,</span><span class="n">usageSm</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">(</span><span class="s2">&quot;Usage&quot;</span><span class="p">,</span> <span class="s2">&quot;Smoothed Usage&quot;</span><span class="p">)</span>
+<span class="c1"># Plotten der gemessenen Daten ohne Regression</span>
+<span class="n">Jahre</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Jahre</span><span class="p">,</span> <span class="n">Mensaessen</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Mensaessen&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jahre&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Anzahl der verkauften Mensaessen über die letzten 30 Semester&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Der Ziel dieses Codes ist die Anzahl an Mensaessen, die an einer fiktiven Mensa pro Semester komsumiert wurden grafisch darzustellen. Dazu werden zunächst die Daten für 30 verschiedene Semester erzeugt. Anschlißend wird der Code erstellt. Leider haben sich Fehler eingeschlichen.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>The live script elec.mlx loads and smooths electricity usage data, but there is an error inside the for loop.</p>
-<p>Set a breakpoint at line 14 (the line where usageSm(k) is updated), and then step through the code, inspecting variables until you find what is wrong.</p>
-<p>At the command prompt, try</p>
-<p>K&gt;&gt; k
-K&gt;&gt; usage(k-1:k+1)</p>
-<p>before running that line. What are the values of k and usage(k-1:k+1) when the code errors?</p>
-<p>You can see a solution by opening elecSoln.mlx with edit elecSoln.mlx.</p>
-<p>Breakpoints are a helpful in understanding what happens to variables on each iteration of a for loop. Once you have fixed the bug, run the script with the breakpoint inside the for loop.  What happens to usageSm as you press Continue a few times?</p>
-<p>When you are finished, exit debug mode and clear the breakpoints.</p>
-<p>This activity is unassessed.</p>
+<p>Finden Sie die Fehler in dem Codeausschnitt und verbessern Sie diese.</p>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Stimme die Dimensionen der zu plottenden Daten überein? Erscheinen die Achsenbeschriftungen sinnvoll?</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># für reproduzierbare Ergebnisse</span>
+<span class="c1"># Erszeugung der Anzahl an verkauften Mensaessen pro Semester </span>
+<span class="n">trend</span> <span class="o">=</span> <span class="mi">850</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  
+<span class="n">Mensaessen</span> <span class="o">=</span> <span class="n">trend</span> <span class="o">+</span> <span class="n">noise</span>
+
+<span class="c1"># Plotten der gemessenen Daten ohne Regression</span>
+<span class="n">Jahre</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">31</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Jahre</span><span class="p">,</span> <span class="n">Mensaessen</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahre&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mensaessen&#39;</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Anzahl der verkauften Mensaessen über die letzten 30 Semester&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Nun möchten wir eine lineare Regressionsgerade erzeugen. Dazu normieren wir die Daten zunächst und führen dann die Regression durch.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalisiere die Daten</span>
+<span class="n">Mensaessen_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Mensaessen</span><span class="p">)</span> <span class="o">/</span> <span class="n">Mensaessen</span> 
+
+<span class="c1"># Dürchführung der Regression</span>
+<span class="n">Grad</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="n">Koeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">Jahre</span><span class="p">,</span> <span class="n">Mensaessen_norm</span><span class="p">,</span> <span class="n">Grad</span><span class="p">)</span>
+<span class="n">polynomial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">Koeff</span><span class="p">)</span>
+<span class="n">Regression_Mensaessen</span> <span class="o">=</span> <span class="n">polynomial</span><span class="p">(</span><span class="n">Jahre</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Jahre</span><span class="p">,</span> <span class="n">Mensaessen_norm</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Jahre</span><span class="p">,</span> <span class="n">Regression_Mensaessen</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mensaessen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Regression der verkauften Mensaessen über die letzten 30 Semester&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-2 admonition">
+<p class="admonition-title">Aufgabe 1.2</p>
+<p>Finden Sie die Fehler in dem Codeausschnitt und verbessern Sie diese.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -479,63 +503,116 @@ K&gt;&gt; usage(k-1:k+1)</p>
 </div>
 </div>
 </div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Werden die Daten korrekt normiert?</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalisiere die Daten</span>
+<span class="n">Mensaessen_norm</span> <span class="o">=</span> <span class="n">Mensaessen</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Mensaessen</span><span class="p">)</span>
+
+<span class="c1"># Dürchführung der Regression</span>
+<span class="n">Grad</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="n">Koeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">Jahre</span><span class="p">,</span> <span class="n">Mensaessen_norm</span><span class="p">,</span> <span class="n">Grad</span><span class="p">)</span>
+<span class="n">polynomial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">Koeff</span><span class="p">)</span>
+<span class="n">Regression_Mensaessen</span> <span class="o">=</span> <span class="n">polynomial</span><span class="p">(</span><span class="n">Jahre</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Jahre</span><span class="p">,</span> <span class="n">Mensaessen_norm</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Jahre</span><span class="p">,</span> <span class="n">Regression_Mensaessen</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jahre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mensaessen&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Regression der verkauften Mensaessen über die letzten 30 Semester&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="funktionen-nach-fehlern-durchgehen">
 <h2>Funktionen nach Fehlern durchgehen<a class="headerlink" href="#funktionen-nach-fehlern-durchgehen" title="Link to this heading">#</a></h2>
-<p>Bild 8 gehört zur nachfolgenden Beschreibung</p>
-<p>Debugging Run-Time Errors
-Functions hide their workspaces from you, so how do you troubleshoot code in a function?</p>
-<p>Just like in scripts, the Code Analyzer identifies syntax errors in functions and is your first line of defense against bugs.</p>
-<p>Here, the Code Analyzer hasn’t detected any syntax errors. Let’s call the function predictUsage at the command line.</p>
-<p>But as you have seen before, a clear Code Analyzer doesn’t mean there isn’t a bug. We’ve encountered a run-time error.</p>
-<p>The error message contains the line number of the command that generated the error.</p>
-<p>Click the line number, and the Editor opens the file to that line of code.</p>
-<p>Let’s set breakpoints at the line where the error occurred and a few lines above.</p>
-<p>Let’s set breakpoints at the line where the error occurred and a few lines above.
-Now when you call the function, the program pauses at the first breakpoint—just like in scripts. And since the program was paused while executing the function, you can see a snapshot of the intermediate variables.</p>
-<p>Line 7 has not run, so elapsedYears has not been created yet.</p>
-<p>Pausing mid-function gives you a window into the function’s workspace. Now you have access to all of the tools you had for debugging scripts: inspecting variables, stepping through code, and testing commands</p>
-<p>After stepping through line by line, it appears that endDuration is a duration variable, but the polyval function only accepts numeric inputs.</p>
-<p>Recall that the command prompt is marked with a K to indicate you are in debug mode. You can test your solution in the Command Window to see if it resolves the error.</p>
-<p>It doesn’t produce the error, so you’ve identified the change you need to make.
-To fix this error, you can convert endDuration to a numeric value using the years function.</p>
-<p>Now you can modify your code and save the file. Click the Stop button to end your debugging session.</p>
-<p>Before calling your function, clear the breakpoints so the execution doesn’t get halted again.</p>
+<p>Auch Funktionen können Fehler enthalten. Die Fehlersuche erfolgt hier sehr ähnlich, allerdings muss man die Funktion zunächst aufrufen. Um zu testen, ob die Funktion das tut, für was sie erstellt wurde, können Sie Minimalbeispiele erzeugen und die Ausgabe der Funktion mit dem erwünschten Ergebnis vergleichen. So stellen Sie sicher, dass die Funktion auch die richtigen Ergenisse erzeugt, wenn die handschriftliche Rechnung zu aufwändig wäre. Dieses Vorgehen werden wir anhand einer einfachen Aufgabe testen. Dazu erstellen wir eine Funktion, die gewichtete Scores für verschiedene Produkten berechnet. Jedes Produkt hat eine Reihe von Werten, und diese Werte werden mit einem Gewichtsvektor multipliziert, um den Score jedes Produkts zu berechnen. Die Werte umfassen verschiedene Produktmerkmale. Die Produktinformationen sind in der folgenden Matrix dargestellt, wobei jede Zeile ein Produkt repräsentiert. Die erste Spalte enthält die Produktnummern, die restlichen Spalten enthalten die Werte für jedes Merkmal des Produkts:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{P} = \begin{pmatrix}
+1 &amp; 90 &amp; 85 &amp; 30 &amp; 80 &amp; 500 &amp; 1200 \\
+2 &amp; 80 &amp; 90 &amp; 20 &amp; 85 &amp; 200 &amp; 1500 \\
+  &amp;    &amp;    &amp; \vdots &amp;   &amp;   &amp; \\
+10 &amp; 76 &amp; 82 &amp; 30 &amp; 80 &amp; 350 &amp; 1100
+\end{pmatrix}
+\end{split}\]</div>
+<p>Dabei repräsentieren alle Spalten außer die Erste die verschiedene Merkmale des Produkts: Durchschnittsbewertung, Verkaufszahlen, Retourenquote, Preis-Leistungsverhältnis, Anzahl der Bewertungen und Lagerbestand.
+Die Gewichtsmatrix, die für die Berechnung des Scores verwendet wird, ist gegeben durch:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{w} = \begin{pmatrix}
+0.4 &amp; 0.25 &amp; -0.15 &amp; 0.15 &amp; 0.05 &amp; 0.05\\
+\end{pmatrix}
+\end{split}\]</div>
+<p>Der Score soll basierend auf den normierten Werten berechnet werden, das heißt jedes Merkmal wird durch den maximalen Wert des Merkmals geteilt.</p>
+<p>Daraus ergibt sich beispielshaft der Score für das erste Produkt</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Score}_1 = \left(\frac{90}{97} \cdot 0.4\right) + \left(\frac{85}{90} \cdot 0.25\right) + \left(\frac{30}{40} \cdot (-0.15)\right) + \left(\frac{80}{97} \cdot 0.15\right) + \left(\frac{500}{1000} \cdot 0.05\right) + \left(\frac{1200}{1600} \cdot 0.05\right) = 0.681.
+\]</div>
+<p>Sie haben bereits einen Codevorschlag einer Kommilitonin erhalten, die sich allerdings nicht sicher ist, ob alles stimmt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># falscher Code</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-<span class="n">fibN</span> <span class="o">=</span> <span class="n">fibSeq</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score_berechnung</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Berechnet die gewichteten Scores für Produkte.</span>
+<span class="sd">    EINGABE:</span>
+<span class="sd">     - P: numpy Array mit Produktinformationen (erste Spalte sind Nummern, restliche Spalten sind Merkmale)</span>
+<span class="sd">     - w: numpy Array mit Gewichtungen für jedes Merkmal</span>
+<span class="sd">    AUSGABE:</span>
+<span class="sd">     - scores: numpy Array mit Produktnummern und gewichteten Scores</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="n">P</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Produktnummern</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">P</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>  <span class="c1"># Merkmale</span>
 
+    <span class="c1"># Normalisierung der Merkmale</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
 
-<span class="n">function</span> <span class="n">fibN</span> <span class="o">=</span> <span class="n">fibSeq</span>
-    <span class="n">fib</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-    <span class="n">fib</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="c1"># Berechnung der Scores mit einer Schleife</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>  <span class="c1"># Initialisiere ein Array für die Scores</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)):</span>
+            <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># Gewichtetes Merkmal aufsummieren</span>
 
-    <span class="o">%</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">Fibonacci</span> <span class="n">Sequence</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+    <span class="c1"># Kombiniere Produktnummern mit Scores</span>
+    <span class="n">product_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">ids</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
 
-        <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
-    <span class="n">end</span>
-    <span class="n">fibN</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
-<span class="n">end</span>
+    <span class="k">return</span> <span class="n">product_scores</span>
+
+<span class="c1"># Beispiel-Daten</span>
+<span class="n">products</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1200</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">1500</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">800</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">1300</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1200</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1400</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">1100</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">1600</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">1100</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># Gewichtungen (für jedes Merkmal)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">])</span>
+
+<span class="c1"># Berechnung der Scores</span>
+<span class="n">product_scores</span> <span class="o">=</span> <span class="n">score_berechnung</span><span class="p">(</span><span class="n">products</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+
+<span class="c1"># Ausgabe der Produktnummern und Scores</span>
+<span class="k">for</span> <span class="n">product</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">product_scores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Produkt </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">product</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
-<p>Notice that this local function has an error and a warning in the Code Analyzer. Set a breakpoint on the line indicated by the error message and inspect the variables in the Workspace by clicking the tab on the right.</p>
-<p>Try to fix the error and address the warning in the Code Analyzer.  When n is 8, fibN should be 13.  Don’t forget to clear any breakpoints in the file.</p>
-<p>When you are ready, you can open the solution at the command prompt.</p>
-<p>edit fibSeqLocFunSoln.mlx</p>
-<p>This activity is unassessed.</p>
+<p>Schauen Sie zunächst, ob der Code für das erste Produkt mit den ersten drei Merkmalen richtig funktioniert. Passen Sie den Code eventuell so an, dass der Score für dieses Produkt richtig berechnet wird.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -544,13 +621,184 @@ To fix this error, you can convert endDuration to a numeric value using the year
 </div>
 </div>
 </div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Wird der Score des Produkts richitg berechnet? Wurden alle Indizes richtig gesetzt?</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score_berechnung</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Berechnet die gewichteten Scores für Produkte.</span>
+<span class="sd">    EINGABE:</span>
+<span class="sd">     - P: numpy Array mit Produktinformationen (erste Spalte sind Nummern, restliche Spalten sind Merkmale)</span>
+<span class="sd">     - w: numpy Array mit Gewichtungen für jedes Merkmal</span>
+<span class="sd">    AUSGABE:</span>
+<span class="sd">     - scores: numpy Array mit Produktnummern und gewichteten Scores</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="n">P</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Produktnummern</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">P</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>  <span class="c1"># Merkmale</span>
+
+    <span class="c1"># Normalisierung der Merkmale</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
+
+    <span class="c1"># Berechnung der Scores mit einer Schleife</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>  <span class="c1"># Initialisiere ein Array für die Scores</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)):</span>
+            <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># Gewichtetes Merkmal aufsummieren</span>
+
+    <span class="c1"># Kombiniere Produktnummern mit Scores</span>
+    <span class="n">product_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">ids</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">product_scores</span>
+
+<span class="c1"># Beispiel-Daten</span>
+<span class="n">products</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">30</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">])</span>
+
+<span class="c1"># Berechnung der Scores</span>
+<span class="n">product_scores</span> <span class="o">=</span> <span class="n">score_berechnung</span><span class="p">(</span><span class="n">products</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+
+<span class="c1"># Ausgabe der Produktnummern und Scores</span>
+<span class="k">for</span> <span class="n">product</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">product_scores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Produkt </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">product</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Bild 10 und 11 sind vielleicht für eine Zusammenfassung gut</p>
+<div class="admonition-aufgabe-2-2 admonition">
+<p class="admonition-title">Aufgabe 2.2</p>
+<p>Wiederholen Sie das Vorgehen mit den ersten zwei Produkten und den ersten 3 Merkmalen.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Bei der Normierung werden für untetschiedliche Produkte durch unterschiedliche Werte geteilt. Ist das sinnvoll? Laufen die Schleifen über die richtigen Werte?</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score_berechnung</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Berechnet die gewichteten Scores für Produkte.</span>
+<span class="sd">    EINGABE:</span>
+<span class="sd">     - P: numpy Array mit Produktinformationen (erste Spalte sind Nummern, restliche Spalten sind Merkmale)</span>
+<span class="sd">     - w: numpy Array mit Gewichtungen für jedes Merkmal</span>
+<span class="sd">    AUSGABE:</span>
+<span class="sd">     - scores: numpy Array mit Produktnummern und gewichteten Scores</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="n">P</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Produktnummern</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">P</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>  <span class="c1"># Merkmale</span>
+
+    <span class="c1"># Normalisierung der Merkmale</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Berechnung der Scores mit einer Schleife</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>  <span class="c1"># Initialisiere ein Array für die Scores</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)):</span>
+            <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>  <span class="c1"># Gewichtetes Merkmal aufsummieren</span>
+
+    <span class="c1"># Kombiniere Produktnummern mit Scores</span>
+    <span class="n">product_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">ids</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">product_scores</span>
+
+<span class="c1"># Beispiel-Daten</span>
+<span class="n">products</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># Gewichtungen (für jedes Merkmal)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">])</span>
+
+<span class="c1"># Berechnung der Scores</span>
+<span class="n">product_scores</span> <span class="o">=</span> <span class="n">score_berechnung</span><span class="p">(</span><span class="n">products</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+
+<span class="c1"># Ausgabe der Produktnummern und Scores</span>
+<span class="k">for</span> <span class="n">product</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">product_scores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Produkt </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">product</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-aufgabe-2-3 admonition">
+<p class="admonition-title">Aufgabe 2.3</p>
+<p>Testen Sie nun die ersten beiden Produkte mit allen Merkmalen. Fällt Ihnen noch ein Fehler auf? Falls ja, beheben Sie diesen. Danach können Sie alle 10 Produkte als Eingabe für die Funktion ausprobieren.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Wenn Sie keine Unstimmigkeiten mehr finden, sind sie fertig.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score_berechnung</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Berechnet die gewichteten Scores für Produkte.</span>
+<span class="sd">    EINGABE:</span>
+<span class="sd">     - P: numpy Array mit Produktinformationen (erste Spalte sind Nummern, restliche Spalten sind Merkmale)</span>
+<span class="sd">     - w: numpy Array mit Gewichtungen für jedes Merkmal</span>
+<span class="sd">    AUSGABE:</span>
+<span class="sd">     - scores: numpy Array mit Produktnummern und gewichteten Scores</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="n">P</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Produktnummern</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">P</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>  <span class="c1"># Merkmale</span>
+
+    <span class="c1"># Normalisierung der Merkmale</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Berechnung der Scores mit einer Schleife</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>  <span class="c1"># Initialisiere ein Array für die Scores</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)):</span>
+            <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>  <span class="c1"># Gewichtetes Merkmal aufsummieren</span>
+
+    <span class="c1"># Kombiniere Produktnummern mit Scores</span>
+    <span class="n">product_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">ids</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">product_scores</span>
+
+<span class="c1"># Beispiel-Daten</span>
+<span class="n">products</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1200</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">1500</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">800</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">1300</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1200</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1400</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">1100</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">1600</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">1100</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># Gewichtungen (für jedes Merkmal)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">])</span>
+
+<span class="c1"># Berechnung der Scores</span>
+<span class="n">product_scores</span> <span class="o">=</span> <span class="n">score_berechnung</span><span class="p">(</span><span class="n">products</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+
+<span class="c1"># Ausgabe der Produktnummern und Scores</span>
+<span class="k">for</span> <span class="n">product</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">product_scores</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Produkt </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">product</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 
