@@ -41,6 +41,7 @@ parts:
       file: content/chapter02_basics/arrays/quiz
 
 
+<<<<<<< Updated upstream
 
 - caption: Python schlauer nutzen
   chapters:
@@ -67,11 +68,21 @@ parts:
       file: content/chapter03_spezialisierung/AI/Programmieren_mit_KI
     - title: Debugging mit KI
       file: content/chapter03_spezialisierung/AI/Debugging_mit_KI
+=======
+- caption: Spezialisierung in Python
+  chapters:
+  - title: Daten
+    file: content/chapter03_spezialisierung/data/data_intro
+    sections: 
+    - title: Command Window
+      file: content/chapter03_spezialisierung/data/result_description
+>>>>>>> Stashed changes
 
 
 
 
 
+<<<<<<< Updated upstream
 
 - caption: Datenverabeitung in Python
   chapters:
@@ -104,3 +115,5 @@ parts:
       file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_table_2
 
 
+=======
+>>>>>>> Stashed changes
