@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Datenaufbereitung in Tabellenform &#8212; Python-Programmierkurs</title>
+    <title>Tabellen aufbauen &#8212; Python-Programmierkurs</title>
   
   
   
@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/working_with_data/organizing_data_in_table';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Datenaufbereitung mit Arrays" href="organizing_data_in_cell_array.html" />
+    <link rel="next" title="Tabellendaten auslesen" href="organizing_data_in_table_2.html" />
     <link rel="prev" title="Mit Daten arbeiten" href="working_with_data_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,18 +189,26 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spezialisierung in Python</span></p>
-<ul class="current nav bd-sidenav">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../functions/dreiecke.html">Funktionen schreiben</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../functions/function_handles.html">Function handles</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="working_with_data_intro.html">Mit Daten arbeiten</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Datenaufbereitung in Tabellenform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="organizing_data_in_cell_array.html">Datenaufbereitung mit Arrays</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../debugging/error_signs.html">Fehleranzeige</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging/analysing_code.html">Fehleranalyse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging/efficiency.html">Vektorisierung</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../AI/KI_intro.html">AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
@@ -210,20 +218,15 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation_2/several_lines_one_plot.html">Plots mit mehrere Vektoren als Eingabe</a></li>
+
+
 <li class="toctree-l2"><a class="reference internal" href="../visualisation_2/3D_plots.html">3D Plots</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../debugging/error_signs.html">Fehleranzeige</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../debugging/analysing_code.html">Fehleranalyse</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../AI/KI_intro.html">AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../vectorisation/vectorisation_intro.html">Vektorisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../vectorisation/efficiency.html">Effizienter werden</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="working_with_data_intro.html">Mit Daten arbeiten</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizing_data_in_table_2.html">Tabellen auslesen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -392,7 +395,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Datenaufbereitung in Tabellenform</h1>
+    <h1>Tabellen aufbauen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -402,9 +405,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellen-erstellen">Tabellen erstellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellen-erstellen-und-erweitern">Tabellen erstellen und erweitern</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existierende-tabellen-zusammenfugen">Existierende Tabellen zusammenfügen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellendaten-auslesen">Tabellendaten auslesen</a></li>
 </ul>
             </nav>
         </div>
@@ -416,36 +418,72 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="datenaufbereitung-in-tabellenform">
-<h1>Datenaufbereitung in Tabellenform<a class="headerlink" href="#datenaufbereitung-in-tabellenform" title="Link to this heading">#</a></h1>
-<p>We often have vectors of related information. If the variables contain information about a set of observations and can be arranged as a table, then we call the data tabular.
-Here you will learn when and how to organize related vectors of data in a table.</p>
-<section id="tabellen-erstellen">
-<h2>Tabellen erstellen<a class="headerlink" href="#tabellen-erstellen" title="Link to this heading">#</a></h2>
-<p>The variables can be different data types, but must have the same number of rows, here 4.</p>
-<p>Bild 1</p>
-<p>To combine the data into a table, each entry should correspond to the same observation. Here the third entry of each variable identifies the 2018 Honda Odyssey, which is a minivan.
-Sometimes you may have tables you want to combine. For instance, you may want to add new cars to your dataset.</p>
-<p>Bild 2</p>
-<p>It would also be useful to attach numeric data about the cars in the fleet.</p>
-<p>Bild 3</p>
-<p>When several variables in your workspace hold data about the same observations, you can use the table function to collect this information into a table.</p>
-<p>eklärendes Bild wie Bild 4</p>
-<p>Use the ‘VariableNames’ property to specify column names. So the following command creates a table with columns named Thought1 and OnSecondThought.</p>
-<p>tbl = table(var1,var2, ‘VariableNames’,{‘Thought1’,’OnSecondThought’})</p>
-<p>In this exercise, you will combine information on several 2018 cars into a single table. Wir haben hier genau so einen Datensatz wie in Bild 1 dargestellt, mit exakt 4 Einträgen.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tabellen-aufbauen">
+<h1>Tabellen aufbauen<a class="headerlink" href="#tabellen-aufbauen" title="Link to this heading">#</a></h1>
+<p>Bei Datensätzen mit unterschiedlichen Datentypen (z. B. Text, Zahlen, Kategorien) stößt <code class="docutils literal notranslate"><span class="pre">numpy</span></code> schnell an seine Grenzen. Das Paket <code class="docutils literal notranslate"><span class="pre">pandas</span></code> bietet hier eine flexible und leistungsstarke Möglichkeit, strukturierte Daten in Tabellenform zu speichern und zu analysieren. Es ermöglicht:</p>
+<ul class="simple">
+<li><p>Eine klare tabellarische Darstellung</p></li>
+<li><p>Unterschiedliche Datentypen in den Spalten</p></li>
+<li><p>Sinnvollte Benennung einzelner Spalten</p></li>
+<li><p>Einfache Filterung, Gruppierung und Transformation von Daten</p></li>
+</ul>
+<section id="tabellen-erstellen-und-erweitern">
+<h2>Tabellen erstellen und erweitern<a class="headerlink" href="#tabellen-erstellen-und-erweitern" title="Link to this heading">#</a></h2>
+<p>Ein <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> ist die zentrale Datenstruktur in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> – vergleichbar mit einer Tabelle in Excel. Jede Spalte kann dabei unterschiedliche Datentypen enthalten (z. B. Zahlen, Texte, Datumswerte), solange jede Spalte die gleiche Anzahl an Einträgen hat.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
-<span class="n">load</span> <span class="n">carInfo</span><span class="o">.</span><span class="n">mat</span>
-<span class="n">whos</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  <span class="c1"># pandas ist eine Bibliothek zur Arbeit mit Tabellen (DataFrames)</span>
+
+<span class="n">veranstaltungen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="c1"># Spaltenname    Liste mit Werten für jede Veranstaltung</span>
+    <span class="s1">&#39;Veranstaltung&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Stochastik I&#39;</span><span class="p">,</span> <span class="s1">&#39;Lineare Algebra I&#39;</span><span class="p">,</span> <span class="s1">&#39;Produktion&#39;</span><span class="p">,</span> <span class="s1">&#39;Ökonometrie&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Typ&#39;</span><span class="p">:</span>           <span class="p">[</span><span class="s1">&#39;Vorlesung&#39;</span><span class="p">,</span> <span class="s1">&#39;Vorlesung&#39;</span><span class="p">,</span> <span class="s1">&#39;Vorlesung&#39;</span><span class="p">,</span> <span class="s1">&#39;Übung&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Raumgröße&#39;</span><span class="p">:</span>     <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+    <span class="c1"># Wichtig: Alle Listen müssen gleich lang sein – jede Zeile ist eine vollständige Beobachtung.</span>
+<span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">veranstaltungen</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Um eine Tabelle zu erstellen, übergibt man eine Sammlung von Spaltennamen und dazugehörigen Daten an <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>. Dabei:</p>
+<ul class="simple">
+<li><p>Gibt man zuerst für jede Spalte einen Namen an, z. B. “Veranstaltung” oder “Raumgröße”,</p></li>
+<li><p>und ordnet diesem Namen eine Liste mit Werten zu – also z. B. alle Veranstaltungsnamen oder die jeweiligen Raumgrößen.</p></li>
+</ul>
+<p>So entsteht eine strukturierte Tabelle, bei der jede Zeile für eine Beobachtung (hier: eine Veranstaltung) steht und jede Spalte eine bestimmte Information über diese Beobachtungen enthält.
+In unserem Beispiel bauen wir eine Tabelle mit Lehrveranstaltungen auf. Jede Zeile steht für eine Veranstaltung. Die Spalten geben den Titel, den Veranstaltungstyp und die Größe des Raums an.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Create a table named fleet containing the data in variables mk, md, yr, tp.</p>
+<p>Reproduzieren Sie die folgende Tabelle</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Fachsemester</p></th>
+<th class="head"><p>Studiengang</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Anna</p></td>
+<td><p>2</p></td>
+<td><p>Wima</p></td>
+</tr>
+<tr class="row-odd"><td><p>Berkan</p></td>
+<td><p>4</p></td>
+<td><p>VWL</p></td>
+</tr>
+<tr class="row-even"><td><p>Clara</p></td>
+<td><p>1</p></td>
+<td><p>Wima</p></td>
+</tr>
+<tr class="row-odd"><td><p>Daniel</p></td>
+<td><p>3</p></td>
+<td><p>BWL</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>und nennen Sie sie <code class="docutils literal notranslate"><span class="pre">studierende</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -456,24 +494,107 @@ Sometimes you may have tables you want to combine. For instance, you may want to
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the table function.  The following syntax creates a table from variables a, b, and c:</p>
-<p>table(a,b,c)</p>
+<p>Nutzen Sie <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code> und übergeben Sie die Spaltennamen als <code class="docutils literal notranslate"><span class="pre">string</span></code> und den Spalteninhalt als <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span><span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="n">mk</span><span class="p">,</span><span class="n">md</span><span class="p">,</span><span class="n">yr</span><span class="p">,</span><span class="n">tp</span><span class="p">);</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tabelle erzeugen</span>
+<span class="n">studierende</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Berkan&#39;</span><span class="p">,</span> <span class="s1">&#39;Clara&#39;</span><span class="p">,</span> <span class="s1">&#39;Daniel&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Fachsemester&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="s1">&#39;Studiengang&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Wima&#39;</span><span class="p">,</span> <span class="s1">&#39;VWL&#39;</span><span class="p">,</span> <span class="s1">&#39;Wima&#39;</span><span class="p">,</span> <span class="s1">&#39;BWL&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Tabelle anzeigen</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">studierende</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>One of the advantages of tables is that each column is a named variable so you and others can understand quickly how the dataset is organized and access the data efficiently.  To leverage this advantage, specify descriptive variable names.</p>
+<p>Wenn Sie eine neue Zeile zu einem bestehenden <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> hinzufügen möchten, können Sie dafür die <code class="docutils literal notranslate"><span class="pre">loc[]</span></code>-Methode verwenden. Dabei geben Sie einen neuen Index an, unter dem die neue Zeile eingefügt werden soll. Die Werte der neuen Zeile müssen in der gleichen Reihenfolge angegeben werden wie die Spalten im DataFrame: <code class="docutils literal notranslate"><span class="pre">veranstaltungen.loc[neue_indexnummer]</span> <span class="pre">=</span> <span class="pre">[wert_spalte1,</span> <span class="pre">wert_spalte2,</span> <span class="pre">...,</span> <span class="pre">wert_spalteN]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neue Zeile ganz unten hinzufügen</span>
+<span class="n">veranstaltungen</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">veranstaltungen</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Vorlesung&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">veranstaltungen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Again, create a table named fleet containing the data in variables mk, md, yr, and tp.  This time give the variables the names:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Make
-Model
-Year
-Type
+<p>Fügen Sie Elif zum Datensatz <code class="docutils literal notranslate"><span class="pre">studierende</span></code> hinzu. Sie ist im 2. Fachsemster ihres VWL Studiums.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Nutzen Sie <code class="docutils literal notranslate"><span class="pre">.loc[neue_indexnummer]</span></code> und übergeben Sie die relevanten Informationen in der richtigen Reihenfolge in einem <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neue Zeile einfügen</span>
+<span class="n">studierende</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">studierende</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Elif&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;VWL&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">studierende</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Wenn Sie eine neue Spalte zu einem bestehenden pandas-DataFrame hinzufügen möchten, können Sie einfach einen neuen Spaltennamen in eckigen Klammern angeben und ihm eine Liste von Werten zuweisen: <code class="docutils literal notranslate"><span class="pre">veranstaltung[&quot;neue_spalte&quot;]</span> <span class="pre">=</span> <span class="pre">[wert1,</span> <span class="pre">wert2,</span> <span class="pre">...,</span> <span class="pre">wertN]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neue Spalte &#39;Gebäude&#39; hinzufügen</span>
+<span class="n">veranstaltungen</span><span class="p">[</span><span class="s1">&#39;Gebäude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;B6&#39;</span><span class="p">,</span> <span class="s1">&#39;B6&#39;</span><span class="p">,</span> <span class="s1">&#39;A3&#39;</span><span class="p">,</span> <span class="s1">&#39;SO&#39;</span><span class="p">,</span> <span class="s1">&#39;A3&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">veranstaltungen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-3 admonition">
+<p class="admonition-title">Aufgabe 1.3</p>
+<p>Erweitern Sie <code class="docutils literal notranslate"><span class="pre">studierende</span></code> um eine neue Spalte namens <code class="docutils literal notranslate"><span class="pre">'Alter'</span></code>. Verwenden Sie dafür die folgenden Altersangaben:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Fachsemester</p></th>
+<th class="head"><p>Studiengang</p></th>
+<th class="head"><p>Alter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Anna</p></td>
+<td><p>2</p></td>
+<td><p>Wima</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>Berkan</p></td>
+<td><p>4</p></td>
+<td><p>VWL</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>Clara</p></td>
+<td><p>1</p></td>
+<td><p>Wima</p></td>
+<td><p>19</p></td>
+</tr>
+<tr class="row-odd"><td><p>Daniel</p></td>
+<td><p>3</p></td>
+<td><p>BWL</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-even"><td><p>Elif</p></td>
+<td><p>2</p></td>
+<td><p>VWL</p></td>
+<td><p>21</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="cell docutils container">
@@ -485,27 +606,14 @@ Type
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the VariableNames name-value pair argument to specify the desired variable names as a cell array of character vectors.</p>
+<p>Nutzen Sie <code class="docutils literal notranslate"><span class="pre">DataFrame_Name[&quot;neue_spalte&quot;]</span> <span class="pre">=</span> <span class="pre">[wert1,</span> <span class="pre">wert2,</span> <span class="pre">...,</span> <span class="pre">wertN]</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="n">mk</span><span class="p">,</span><span class="n">md</span><span class="p">,</span><span class="n">yr</span><span class="p">,</span><span class="n">tp</span><span class="p">,</span><span class="s1">&#39;VariableNames&#39;</span><span class="p">,{</span><span class="s1">&#39;Make&#39;</span> <span class="s1">&#39;Model&#39;</span> <span class="s1">&#39;Year&#39;</span> <span class="s1">&#39;Type&#39;</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-<p>You have created a table containing information about cars in a fleet.</p>
-<p>You can view the properties of the table, including the variable names, by calling the properties with dot notation.</p>
-<p>fleet.Properties</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neue Spalte &#39;Alter&#39; hinzufügen</span>
+<span class="n">studierende</span><span class="p">[</span><span class="s1">&#39;Alter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">studierende</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -513,44 +621,74 @@ Type
 </section>
 <section id="existierende-tabellen-zusammenfugen">
 <h2>Existierende Tabellen zusammenfügen<a class="headerlink" href="#existierende-tabellen-zusammenfugen" title="Link to this heading">#</a></h2>
-<p>Sometimes information is spread across multiple tables. Vertical and horizontal concatenation work the same way as they do with matrices as long as the concatenation is compatible.</p>
-<p>Vertical Concatenation
-For vertical concatenation, each column must have the same name and compatible data types.
-Bild 5</p>
-<p>Horizontal Concatenation
-Each table must have the same number of rows, and each row should correspond to the same observation for horizontal concatenation to make sense
-Bild 6
-These tables do not have the same number of rows.
-The rows in these tables do not correspond to the same observation. The code would run but the resulting table would not make sense.
-Horizontal concatenation makes sense for these tables, but you may want to remove duplicate information after concatenating.
-Bild 7</p>
-<p>Tables may contain information about the same observations, but the rows may be sorted differently. Horizontal concatenation would not cause a syntax error, but may result in mismatched data or columns with redundant information.
-Bild 8
-Here we want to add the weight, length, and width of each car to the corresponding row in fleet.</p>
-<p>You can join tables together with the join function to match corresponding rows using key variables.</p>
-<blockquote>
-<div><blockquote>
-<div><p>newTbl
-= join(tbl1,tbl2,”Keys”,[“Var1” “Var2”])
-Bild 9</p>
-</div></blockquote>
-</div></blockquote>
-<p>The redundant columns of tbl2 are not included in newTbl.</p>
-<p>In this exercise, you will add 2019 cars to the existing 2018 fleet. Ich würde sagen, wir machen hier die gleichen Daten wie in den Bildern angezeigt.</p>
+<p>Manchmal sind Informationen auf mehrere Tabellen verteilt. Das Kombinieren von Tabellen funktioniert ähnlich wie bei Matrizen, solange die Dimensionen und Inhalte kompatibel sind.</p>
+<p>Bei der <strong>vertikalen Verkettung</strong> werden Tabellen untereinandergehängt. Dafür müssen:</p>
+<ul class="simple">
+<li><p>Die Spalten denselben Namen haben.</p></li>
+<li><p>Die Datentypen der Spalten kompatibel sein (z. B. dürfen keine Zahlen mit Text kombiniert werden).</p></li>
+</ul>
+<p>In Pandas funktioniert das mit <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
-<span class="n">load</span> <span class="n">fleet</span><span class="o">.</span><span class="n">mat</span>
-<span class="n">load</span> <span class="n">fleet2019</span><span class="o">.</span><span class="n">mat</span>
-<span class="n">load</span> <span class="n">sizeData</span><span class="o">.</span><span class="n">mat</span>
-<span class="n">whos</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neue Zeilen in einem zweiten DataFrame</span>
+<span class="n">neue_veranstaltungen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Veranstaltung&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Mikroökonomie&#39;</span><span class="p">,</span> <span class="s1">&#39;Numerik&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Typ&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Vorlesung&#39;</span><span class="p">,</span> <span class="s1">&#39;Große Übung&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Raumgröße&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">210</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span>
+    <span class="s1">&#39;Gebäude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SO&#39;</span><span class="p">,</span><span class="s1">&#39;A5&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Kombination durch vertikale Verkettung</span>
+<span class="n">alle_veranstaltungen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">veranstaltungen</span><span class="p">,</span> <span class="n">neue_veranstaltungen</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alle_veranstaltungen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Standardmäßig behält <code class="docutils literal notranslate"><span class="pre">pandas</span></code> die ursprünglichen Indizes bei, was zu doppelten oder nicht fortlaufenden Indizes im Ergebnis führen kann. Um eine saubere, <strong>fortlaufende Nummerierung</strong> zu erhalten, sollte man <code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code> setzen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neue Zeilen in einem zweiten DataFrame</span>
+<span class="n">neue_veranstaltungen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Veranstaltung&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Mikroökonomie&#39;</span><span class="p">,</span> <span class="s1">&#39;Numerik&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Typ&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Vorlesung&#39;</span><span class="p">,</span> <span class="s1">&#39;Große Übung&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Raumgröße&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">210</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span>
+    <span class="s1">&#39;Gebäude&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SO&#39;</span><span class="p">,</span><span class="s1">&#39;A5&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Kombination durch vertikale Verkettung</span>
+<span class="n">alle_veranstaltungen</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">veranstaltungen</span><span class="p">,</span> <span class="n">neue_veranstaltungen</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alle_veranstaltungen</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
-<p>Update the variable fleet so that it contains the cars from the original variable fleet on top of cars from the variable fleet2019.</p>
+<p>Erzeugen Sie einen Datensatz namens <code class="docutils literal notranslate"><span class="pre">alle_studierenden</span></code>, der die Informationen aus <code class="docutils literal notranslate"><span class="pre">studierende</span></code> mit</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Fachsemester</p></th>
+<th class="head"><p>Studiengang</p></th>
+<th class="head"><p>Alter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fatma</p></td>
+<td><p>1</p></td>
+<td><p>Wima</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gustav</p></td>
+<td><p>5</p></td>
+<td><p>VWL</p></td>
+<td><p>25</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>kombiniert.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -561,26 +699,84 @@ Bild 9</p>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use square brackets to concatenate tables just as you would for numeric arrays.</p>
+<p>Nutzen Sie <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> und achten Sie darauf, dass die Spalten denselben Namen haben und die Datentypen kompatibel sind.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span> <span class="o">=</span> <span class="p">[</span><span class="n">fleet</span><span class="p">;</span> <span class="n">fleet2019</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neue_studierende</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Fatma&#39;</span><span class="p">,</span> <span class="s1">&#39;Gustav&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Fachsemester&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="s1">&#39;Studiengang&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Wima&#39;</span><span class="p">,</span> <span class="s1">&#39;VWL&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Alter&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Vertikal zusammenfügen (neue Zeilen)</span>
+<span class="n">alle_studierenden</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">studierende</span><span class="p">,</span> <span class="n">neue_studierende</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">alle_studierenden</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>You would like to append numeric data on the vehicles in your fleet to your table, but the cars in the new set are listed in a different order</p>
+<p>Bei der <strong>horizontalen Verkettung</strong> werden Tabellen nebeneinandergehängt. Dafür gilt:</p>
+<ul class="simple">
+<li><p>Die Tabellen müssen gleich viele Zeilen haben.</p></li>
+<li><p>Jede Zeile muss zur gleichen Beobachtung gehören.</p></li>
+</ul>
+<p>Auch das funktioniert mit <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> und der zusätzlichen Eingabe <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zusätzliche Informationen zu bestehenden Zeilen</span>
+<span class="n">ausstattung</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Technik&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Beamer&#39;</span><span class="p">,</span> <span class="s1">&#39;Tafel&#39;</span><span class="p">,</span> <span class="s1">&#39;Tafel&#39;</span><span class="p">,</span> <span class="s1">&#39;Beamer&#39;</span><span class="p">,</span> <span class="s1">&#39;Beamer&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Fenster&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Kombination durch horizontale Verkettung</span>
+<span class="n">veranstaltungen_mit_technik</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">veranstaltungen</span><span class="p">,</span> <span class="n">ausstattung</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">veranstaltungen_mit_technik</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Achtung</p>
+<p>Die Zeilen müssen in <strong>gleicher Reihenfolge</strong> stehen wie im Original. Sonst können falsche Informationen kombiniert werden.</p>
 </div>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Update the variable fleet so that it includes the numeric data in sizeData so that the weights are associated to the correct cars and there are no redundant columns.</p>
+<p>Erzeugen Sie einen Datensatz namens <code class="docutils literal notranslate"><span class="pre">studierende_mit_anfahrt</span></code>, der die Informationen aus <code class="docutils literal notranslate"><span class="pre">studierende</span></code> mit</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Wohnort</p></th>
+<th class="head"><p>Weg zur Uni</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Anna</p></td>
+<td><p>Frankfurt</p></td>
+<td><p>Zug</p></td>
+</tr>
+<tr class="row-odd"><td><p>Berkan</p></td>
+<td><p>Mannheim</p></td>
+<td><p>zu Fuß</p></td>
+</tr>
+<tr class="row-even"><td><p>Daniel</p></td>
+<td><p>Stuttgart</p></td>
+<td><p>Auto</p></td>
+</tr>
+<tr class="row-odd"><td><p>Elif</p></td>
+<td><p>Mannheim</p></td>
+<td><p>Tram</p></td>
+</tr>
+<tr class="row-even"><td><p>Clara</p></td>
+<td><p>Mannheim</p></td>
+<td><p>Bus</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>kombiniert.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -591,292 +787,21 @@ Bild 9</p>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the join function with key variables Make and Model.</p>
+<p>Nutzen Sie <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> und achten Sie darauf, dass gleich viele Zeilen vorhanden sind und die Zeilen der gleichen Beobachtung zugeordnet werden.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">fleet</span><span class="p">,</span><span class="n">sizeData</span><span class="p">,</span><span class="s2">&quot;Keys&quot;</span><span class="p">,[</span><span class="s2">&quot;Make&quot;</span> <span class="s2">&quot;Model&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-3 admonition">
-<p class="admonition-title">Aufgabe 2.3</p>
-<p>Complete! What is the difference in switching the order of fleet and sizeData in Task 2? Try changing the order of inputs in your code.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-<br>
-</section>
-<section id="tabellendaten-auslesen">
-<h2>Tabellendaten auslesen<a class="headerlink" href="#tabellendaten-auslesen" title="Link to this heading">#</a></h2>
-<p>You will sometimes need to do analysis on a portion of your data. There are two ways to extract data from a table:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Extract a portion of the original table as a table itself.
-Extract the contents of a table. For instance if you have a column of numeric values, you can extract a numeric array.
-</pre></div>
-</div>
-<p>The best choice depends on if you need the structure of a table or a homogeneous data type.
-Bild 10</p>
-<p>Most tables contain more data than you might need for your particular analysis. You may want to take a smaller piece of your data to remove the extraneous information.
-You can index into a table using array indexing with parentheses. Columns can be specified either numerically or by name.
-Bild 11
-As with any array indexing, the result is always the same data type as the original data.</p>
-<p>You can index into a table using the numerical index of the rows you want. Dieser Datensatz ist wieder ähnlich (und wahrscheinlich macht es Sinn immer mit dem gleichen Datensatz zu arbeiten). Wir Haben Spalten Make (das Unternehmen, welches die Autos gemacht hat), Model, Jahr, Typ (SUV, minivan, compact), weight, length and width.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
-<span class="n">load</span> <span class="n">fleet</span><span class="o">.</span><span class="n">mat</span>
-<span class="n">fleet</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-3-1 admonition">
-<p class="admonition-title">Aufgabe 3.1</p>
-<p>Create a variable named smallCars that contains the last four columns of fleet for the cars in row 1 and rows 4 to the end.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>The end keyword can be used to get the last rows or columns when indexing.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">smallCars</span> <span class="o">=</span> <span class="n">fleet</span><span class="p">([</span><span class="mi">1</span> <span class="mi">4</span><span class="p">:</span><span class="n">end</span><span class="p">],</span><span class="n">end</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="n">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>You can specify specific columns by name using a string array.</p>
-<div class="admonition-aufgabe-3-2 admonition">
-<p class="admonition-title">Aufgabe 3.2</p>
-<p>Create a table named sizes that contains the columns of fleet named Weight, Length, and Width.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>You can use the : operator to extract an entire row or column.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sizes</span> <span class="o">=</span> <span class="n">fleet</span><span class="p">(:,[</span><span class="s2">&quot;Weight&quot;</span><span class="p">,</span> <span class="s2">&quot;Length&quot;</span><span class="p">,</span> <span class="s2">&quot;Width&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<p>Text</p>
-<div class="admonition-aufgabe-3-3 admonition">
-<p class="admonition-title">Aufgabe 3.3</p>
-<p>Try creating a table for all of the Toyota cars.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-<p>Extracting from a Single Column Using Dot Notation
-To perform analysis on the data contained in a table, you’ll need to extract the contents from the table before passing it to another function, such as plot.
-You can index using dot notation with the variable name to extract the contents from a table variable.
-variableData = tableName.VariableName</p>
-<p>Bild 12
-The result from dot indexing has the data type of the underlying data.</p>
-<p>Extracting from Multiple Columns Using Curly Braces
-You can also index using curly brackets to extract the contents of multiple columns. You specify the rows and columns using numerical or named indexing.</p>
-<p>variableData = tableName{rowIndices,colIndices}
-The variable rowIndices is a numeric vector. colIndices can be either a numeric vector or string array specifying column names. You can also use logical vectors to specify rows and columns.</p>
-<p>Bild 13
-The result from dot indexing has the data type of the underlying data.
-When extracting from multiple columns, you must be careful to only extract columns with compatible data types.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einbinden des Pakets numpy unter dem Alias &#39;np&#39;</span>
-<span class="n">load</span> <span class="n">fleet</span><span class="o">.</span><span class="n">mat</span>
-<span class="n">fleet</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-aufgabe-3-4 admonition">
-<p class="admonition-title">Aufgabe 3.4</p>
-<p>Create a string variable called models containing the Model column of fleet.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>You can use . indexing to specify the name of the column you want.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="n">fleet</span><span class="o">.</span><span class="n">Model</span>
-</pre></div>
-</div>
-</div>
-<p>Text</p>
-<div class="admonition-aufgabe-3-5 admonition">
-<p class="admonition-title">Aufgabe 3.5</p>
-<p>Create a numeric variable called w containing the Weight column of fleet.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>You can use . indexing to specify the name of the column you want.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">fleet</span><span class="o">.</span><span class="n">Weight</span>
-</pre></div>
-</div>
-</div>
-<p>You can also use . notation to update data in a table using the syntax:</p>
-<p>tbl.Var = updatedColumn
-tbl.Var(2) = updatedValue</p>
-<div class="admonition-aufgabe-3-6 admonition">
-<p class="admonition-title">Aufgabe 3.6</p>
-<p>Convert the data in the Weight column from kilograms to pounds. One kilogram is equal to 2.2046 pounds.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>You can use . indexing to specify the Weight column. Assign the new weights to that column. (The new values should be a little over twice the original values.)</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span><span class="o">.</span><span class="n">Weight</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="mf">2.2046</span>
-</pre></div>
-</div>
-</div>
-<p>You can also use . notation to create a new column in a table using the syntax:</p>
-<p>tbl.newVar = newColumn</p>
-<div class="admonition-aufgabe-3-7 admonition">
-<p class="admonition-title">Aufgabe 3.7</p>
-<p>Add a new column called Area to the table fleet by multiplying each element in the column Length by the corresponding element in the column Width</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Use elementwise multiplication to multiply each element of Length by the corresponding element in the column Width.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fleet</span><span class="o">.</span><span class="n">Area</span> <span class="o">=</span> <span class="n">fleet</span><span class="o">.</span><span class="n">Length</span><span class="o">.*</span><span class="n">fleet</span><span class="o">.</span><span class="n">Width</span>
-</pre></div>
-</div>
-</div>
-<p>You can use curly brackets to extract data from multiple columns.</p>
-<div class="admonition-aufgabe-3-8 admonition">
-<p class="admonition-title">Aufgabe 3.8</p>
-<p>Create a double array called data containing all of the numeric physical properties from the table fleet. Then find the average of each numeric variable using the mean function. Save this to the variable m.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>The physical properties are in the Weight, Length, Width, and Area columns. The mean function will return the average of each column of a numeric array.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">fleet</span><span class="p">{:,</span><span class="n">end</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="n">end</span><span class="p">}</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>Once a column is extracted, you can use it to make logical comparisons. The resulting logical vector can be used to subset the original table.</p>
-<div class="admonition-aufgabe-3-9 admonition">
-<p class="admonition-title">Aufgabe 3.9</p>
-<p>Create a logical vector named idx identifying each of the compact cars. Use idx to create a string array called smallCars containing the makes and models of compact cars.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Create idx by comparing each element of Type to “compact”.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">fleet</span><span class="o">.</span><span class="n">Type</span> <span class="o">==</span> <span class="s2">&quot;compact&quot;</span>
-<span class="n">smallCars</span> <span class="o">=</span> <span class="n">fleet</span><span class="p">{</span><span class="n">idx</span><span class="p">,[</span><span class="s2">&quot;Make&quot;</span> <span class="s2">&quot;Model&quot;</span><span class="p">]}</span>
-</pre></div>
-</div>
-</div>
-<p>The vartype function allows you to select all columns of a specific data type. For instance,</p>
-<p>T{:,vartype(“categorical”)}</p>
-<p>extracts data from all of the categorical columns and outputs a categorical array.</p>
-<div class="admonition-aufgabe-3-10 admonition">
-<p class="admonition-title">Aufgabe 3.10</p>
-<p>Try extracting all of the variables of type string and pass that to the join function to create a list of cars.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Neuer DataFrame mit Zusatzinfos</span>
+<span class="n">zusatzinfos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Berkan&#39;</span><span class="p">,</span> <span class="s1">&#39;Clara&#39;</span><span class="p">,</span> <span class="s1">&#39;Daniel&#39;</span><span class="p">,</span> <span class="s1">&#39;Elif&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Wohnort&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Frankfurt&#39;</span><span class="p">,</span> <span class="s1">&#39;Mannheim&#39;</span><span class="p">,</span> <span class="s1">&#39;Mannheim&#39;</span><span class="p">,</span> <span class="s1">&#39;Stuttgart&#39;</span><span class="p">,</span> <span class="s1">&#39;Mannheim&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Weg zur Uni&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Zug&#39;</span><span class="p">,</span> <span class="s1">&#39;zu Fuß&#39;</span><span class="p">,</span> <span class="s1">&#39;Bus&#39;</span><span class="p">,</span> <span class="s1">&#39;Auto&#39;</span><span class="p">,</span> <span class="s1">&#39;Tram&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Horizontales Zusammenfügen (Spalten werden ergänzt)</span>
+<span class="n">studierende_mit_anfahrt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">studierende</span><span class="p">,</span> <span class="n">zusatzinfos</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">studierende_mit_anfahrt</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -923,11 +848,11 @@ tbl.Var(2) = updatedValue</p>
       </div>
     </a>
     <a class="right-next"
-       href="organizing_data_in_cell_array.html"
+       href="organizing_data_in_table_2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Datenaufbereitung mit Arrays</p>
+        <p class="prev-next-title">Tabellendaten auslesen</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -948,9 +873,8 @@ tbl.Var(2) = updatedValue</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellen-erstellen">Tabellen erstellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellen-erstellen-und-erweitern">Tabellen erstellen und erweitern</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existierende-tabellen-zusammenfugen">Existierende Tabellen zusammenfügen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabellendaten-auslesen">Tabellendaten auslesen</a></li>
 </ul>
   </nav></div>
 

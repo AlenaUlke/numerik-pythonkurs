@@ -1,14 +1,15 @@
-# Visualisierung 2
-In Python gibt es verschiedene Möglichkeiten mehrere Daten oder Zahlwerte in einer einzigen Variable zusammenzufassen. Einige Beispiele dafür sind Listen, Tupel und Arrays.
+# Visualisierung II
 
-In diesen Kapitel werden wir uns primär mit `numpy` Arrays beschäftigen, eine Datenstruktur, die das Paket `numpy` bereitstellt und im Kontext der Numerik diverse Vorteile bietet. Beispielsweise stellt `numpy` eine Großzahl an mathematischen Funktionen und Konstanten als auch Konstrukte der Lineare Algebra wie Matrizen und Vektoren zur Verfügung sowie vieles mehr.
+Im Kapitel [Visualisierung](../../chapter02_basics/visualisierung_intro.md) haben Sie bereits gelernt, wie man mit `matplotlib` grundlegende Plots erstellen kann. In diesem Kapitel gehen wir einen Schritt weiter und zeigen, wie sich Plots individuell anpassen lassen, um Daten besser sichtbar und analysierbar zu machen.
 
-Da Arrays zur Implementierung numerischer Algorithmen ein grundlegendes Programmierwerkzeug sind, müssen Sie sich mit dem Umgang von `numpy` Arrays vertraut machen.
+Der Fokus liegt zunächst auf der Anpassung einzelner Plots durch sogenannte **Keyword-Argumente**, mit denen sich Farbe, Linienart und Punktdarstellung steuern lassen. Darauf aufbauend lernen Sie, wie man mehrere Linien in einem Plot darstellen kann – sei es durch Übergabe mehrerer Vektoren oder ganzer Matrizen – und wie man diese Linien visuell unterscheidbar macht. Außerdem behandeln wir, wie Sie Achsenbeschriftungen und Achsengrenzen individuell festlegen können, um den Plot an Ihre Analysebedürfnisse anzupassen.
+
+Abschließend lernen Sie, wie sich auch drei-dimensionale Daten mit `matplotlib` visualisieren und ebenfalls gezielt gestalten lassen.
 
 ## Lernziele
 
-- Was sind `numpy` Arrays?
-- Wie erstellt man ein `numpy` Array? Welche verschiedenen Methoden gibt es ein `numpy` Array zu erstellen?
-- Wie kann man Informationen wie Größe und Dimension eines `numpy` Arrays auslesen?
-- Wie greift auf man Einträge eines `numpy` Array zu und wie kann man Einträge eines `numpy` Arrays verändern?
-- Wie kann man mit `numpy` Arrays im Sinne von Matrix-Vektor-Operationen rechnen?
+- Wie kann man Plots mit Farben, Linienarten und Punktdarstellungen individuell anpassen?
+- Wie kann man mehrere Linien in einem Plot darstellen – auch aus Matrizen heraus?
+- Wie kann man einzelne Linien visuell voneinander unterscheiden?
+- Wie kann man Achsenbeschriftungen und Achsengrenzen festlegen?
+- Wie kann man dreidimensionale Plots erzeugen und individuell gestalten?

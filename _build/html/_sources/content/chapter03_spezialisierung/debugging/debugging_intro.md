@@ -1,14 +1,16 @@
 # Debugging
-In Python gibt es verschiedene Möglichkeiten mehrere Daten oder Zahlwerte in einer einzigen Variable zusammenzufassen. Einige Beispiele dafür sind Listen, Tupel und Arrays.
 
-In diesen Kapitel werden wir uns primär mit `numpy` Arrays beschäftigen, eine Datenstruktur, die das Paket `numpy` bereitstellt und im Kontext der Numerik diverse Vorteile bietet. Beispielsweise stellt `numpy` eine Großzahl an mathematischen Funktionen und Konstanten als auch Konstrukte der Lineare Algebra wie Matrizen und Vektoren zur Verfügung sowie vieles mehr.
+In diesem Kapitel lernen Sie, wie Sie mit Fehlern im `python`-Code umgehen. Zunächst beschäftigen wir uns mit der Fehlermeldungsausgabe in `python` und den grundlegenden Fehlertypen, insbesondere `SyntaxError` und `RuntimeError`. Sie erfahren, was diese Fehlerarten voneinander unterscheidet, welche typischen Ursachen dahinterstecken und wie man sie anhand von Beispielen erkennen und beheben kann.
 
-Da Arrays zur Implementierung numerischer Algorithmen ein grundlegendes Programmierwerkzeug sind, müssen Sie sich mit dem Umgang von `numpy` Arrays vertraut machen.
+Ein weiterer Fokus liegt auf der strukturierten Fehleranalyse: Wie findet man Fehler in einem bestehenden Code – sei es im eigenen oder im fremden – und wie geht man effizient bei der Korrektur vor? Dazu werden Sie gezielt Übungsbeispiele bearbeiten, in denen Sie vorhandene Fehler aufspüren und beheben.
+
+Im letzten Teil des Kapitels geht es über die bloße Fehlerfreiheit hinaus: Sie lernen, wie man Code effizienter gestaltet – durch sogenanntes Vektorisieren. Ziel ist es, Code so umzuschreiben, dass er weniger Rechenschritte benötigt und schneller ausgeführt wird. Sie lernen dabei, wie man die Laufzeit von `python`-Code misst und welche speziellen Funktionen und Methoden `numpy` bereitstellt, um rechenintensive Aufgaben besonders performant zu lösen.
 
 ## Lernziele
 
-- Was sind `numpy` Arrays?
-- Wie erstellt man ein `numpy` Array? Welche verschiedenen Methoden gibt es ein `numpy` Array zu erstellen?
-- Wie kann man Informationen wie Größe und Dimension eines `numpy` Arrays auslesen?
-- Wie greift auf man Einträge eines `numpy` Array zu und wie kann man Einträge eines `numpy` Arrays verändern?
-- Wie kann man mit `numpy` Arrays im Sinne von Matrix-Vektor-Operationen rechnen?
+- Was sind typische Fehlertypen in Python (`SyntaxError` und `RuntimeError`)?
+- Wie erkennt und behebt man häufige Fehler im Code?
+- Wie analysiert man fremden oder eigenen Code systematisch auf Fehler?
+- Was bedeutet Vektorisieren und warum ist es sinnvoll?
+- Wie misst man die Laufzeit von Code in Python?
+- Welche Mechanismen und Funktionen bietet `numpy` zur Effizienzsteigerung?

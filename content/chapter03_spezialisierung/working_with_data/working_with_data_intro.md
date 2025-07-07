@@ -1,14 +1,17 @@
 # Mit Daten arbeiten
-In Python gibt es verschiedene Möglichkeiten mehrere Daten oder Zahlwerte in einer einzigen Variable zusammenzufassen. Einige Beispiele dafür sind Listen, Tupel und Arrays.
 
-In diesen Kapitel werden wir uns primär mit `numpy` Arrays beschäftigen, eine Datenstruktur, die das Paket `numpy` bereitstellt und im Kontext der Numerik diverse Vorteile bietet. Beispielsweise stellt `numpy` eine Großzahl an mathematischen Funktionen und Konstanten als auch Konstrukte der Lineare Algebra wie Matrizen und Vektoren zur Verfügung sowie vieles mehr.
+In diesem Kapitel lernen Sie mit `pandas` ein neues Werkzeug kennen, das speziell für die Arbeit mit Daten entwickelt wurde. Anders als `numpy`, das sich vor allem für numerische Daten eignet, erlaubt `pandas` auch den Umgang mit nicht-numerischen Werten wie `strings`. Im Mittelpunkt steht dabei die tabellarische Darstellung von Informationen – ähnlich einer Excel-Tabelle.
 
-Da Arrays zur Implementierung numerischer Algorithmen ein grundlegendes Programmierwerkzeug sind, müssen Sie sich mit dem Umgang von `numpy` Arrays vertraut machen.
+Sie lernen zunächst, wie Sie eigene Datentabellen erstellen können, und wie man mit bereits bestehenden Tabellen arbeitet. In beiden Fällen geht es darum, gezielt auf bestimmte Informationen zuzugreifen, relevante Daten herauszufiltern und diese für Ihre Zwecke weiterzuverarbeiten. Dazu gehört z. B. das Zählen von Häufigkeiten, das Berechnen von Durchschnittswerten oder das gezielte Umformen von Daten.
+
+Darüber hinaus erfahren Sie, wie sich Datentabellen erweitern und miteinander kombinieren lassen – ein zentraler Bestandteil datengetriebener Arbeit.
 
 ## Lernziele
 
-- Was sind `numpy` Arrays?
-- Wie erstellt man ein `numpy` Array? Welche verschiedenen Methoden gibt es ein `numpy` Array zu erstellen?
-- Wie kann man Informationen wie Größe und Dimension eines `numpy` Arrays auslesen?
-- Wie greift auf man Einträge eines `numpy` Array zu und wie kann man Einträge eines `numpy` Arrays verändern?
-- Wie kann man mit `numpy` Arrays im Sinne von Matrix-Vektor-Operationen rechnen?
+- Was ist `pandas` und wofür eignet es sich besonders?
+- Wie kann man eigene Datentabellen erstellen?
+- Wie kann man bestehende Datentabellen einlesen und untersuchen?
+- Wie greift man gezielt auf bestimmte Informationen in Tabellen zu?
+- Wie kann man Daten manipulieren, analysieren und zusammenfassen?
+- Wie fügt man neue Informationen zu Tabellen hinzu?
+- Wie kann man mehrere Tabellen sinnvoll zusammenführen?

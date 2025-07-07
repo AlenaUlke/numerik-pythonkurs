@@ -41,7 +41,8 @@ parts:
       file: content/chapter02_basics/arrays/quiz
 
 
-- caption: Spezialisierung in Python
+
+- caption: Python schlauer nutzen
   chapters:
   - title: Funktionen
     file: content/chapter03_spezialisierung/functions/functions_intro
@@ -50,13 +51,30 @@ parts:
       file: content/chapter03_spezialisierung/functions/dreiecke
     - title: Function handles
       file: content/chapter03_spezialisierung/functions/function_handles
-  - title: Mit Daten arbeiten
-    file: content/chapter03_spezialisierung/working_with_data/working_with_data_intro
+  - title: Debugging
+    file: content/chapter03_spezialisierung/debugging/debugging_intro
     sections:
-    - title: Datenaufbereitung in Tabellenform
-      file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_table
-    - title: Datenaufbereitung mit Arrays 
-      file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_cell_array
+    - title: Fehleranzeige
+      file: content/chapter03_spezialisierung/debugging/error_signs
+    - title: Fehleranalyse
+      file: content/chapter03_spezialisierung/debugging/analysing_code
+    - title: Vektorisierung
+      file: content/chapter03_spezialisierung/debugging/efficiency
+  - title: KI
+    file: content/chapter03_spezialisierung/AI/KI_intro
+    sections:
+    - title: Programmieren mit KI
+      file: content/chapter03_spezialisierung/AI/Programmieren_mit_KI
+    - title: Debugging mit KI
+      file: content/chapter03_spezialisierung/AI/Debugging_mit_KI
+
+
+
+
+
+
+- caption: Datenverabeitung in Python
+  chapters:
   - title: Arrays II
     file: content/chapter03_spezialisierung/arrays_2/arrays_2_intro
     sections:
@@ -73,23 +91,16 @@ parts:
     sections:
     - title: Plots individuell gestalten
       file: content/chapter03_spezialisierung/visualisation_2/advanced_2D_plots
+    - title: Mehrfach-Plots
+      file: content/chapter03_spezialisierung/visualisation_2/several_lines_one_plot
     - title: 3D Plots
       file: content/chapter03_spezialisierung/visualisation_2/3D_plots
-  - title: Debugging
-    file: content/chapter03_spezialisierung/debugging/debugging_intro
+  - title: Mit Daten arbeiten
+    file: content/chapter03_spezialisierung/working_with_data/working_with_data_intro
     sections:
-    - title: Fehleranzeige
-      file: content/chapter03_spezialisierung/debugging/error_signs
-    - title: Fehleranalyse
-      file: content/chapter03_spezialisierung/debugging/analysing_code
-  - title: AI
-    file: content/chapter03_spezialisierung/AI/KI_intro
-    sections:
-    - title: Programmieren mit KI
-      file: content/chapter03_spezialisierung/AI/Programmieren_mit_KI
-  - title: Vektorisierung
-    file: content/chapter03_spezialisierung/vectorisation/vectorisation_intro
-    sections:
-    - title: Effizienter werden
-      file: content/chapter03_spezialisierung/vectorisation/efficiency
+    - title: Tabellen aufbauen
+      file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_table
+    - title: Tabellen auslesen
+      file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_table_2
+
 
