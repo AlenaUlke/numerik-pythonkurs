@@ -31,10 +31,8 @@ parts:
     sections: 
     - title: Befehle und Variablen
       file: content/chapter02_basics/befehle/befehle_eingeben
-    - title: Rechenarithmetik und Funktionen
+    - title: Python Bibliotheken und Pakete
       file: content/chapter02_basics/befehle/funktionen_konstanten_verwenden
-    - title: Python Module 
-      file: content/chapter02_basics/befehle/python_module
   - title: Arrays
     file: content/chapter02_basics/arrays/array_intro
     sections: 
@@ -55,10 +53,10 @@ parts:
       file: content/chapter02_basics/visualization/visualization
 #    - title: Datenimportierung
 #      file: content/chapter02_basics/visualization/data_import
-  - title: Funktionen und Ausgaben von Funktionen
+  - title: Funktionen
     file: content/chapter02_basics/functions/functions_intro
     sections: 
-    - title: Ausgaben von Funktionen
+    - title: Funktionsausgaben
       file: content/chapter02_basics/functions/funktionsaufrufe
   - title: Programmierkonstrukte
     file: content/chapter02_basics/programmablaeufe/intro

@@ -17,7 +17,7 @@ der blaue Streifen auf der linken Seite zeigt eine Zelle an. In dieser Zelle kö
 ```
 Jupyter Notebook besitzt einige Tastenkombinationen, die einen bestimmten Befehl ausführen. Wir möchten Ihnen an dieser Stelle eine Übersicht über die wichtigsten **Shortcuts** geben:
 
-```{list-table}
+:::{list-table}
 * - `Shift + Enter`
   - Führt die ausgewählte Zelle aus und wählt anschließend die Zelle darunter aus
 * - `Strg + Enter`
@@ -32,7 +32,7 @@ Jupyter Notebook besitzt einige Tastenkombinationen, die einen bestimmten Befehl
   -  Ändert den Zelltyp zu *Markdown*
 * - `y`
   - Ändert den Zelltyp zu *Code*
-```
+:::
 
 
 Wichtig ist zu bemerken, dass der Befehl immer für die gerade ausgewählte Zelle ausgeführt wird, also die Zelle die am linken Bildrand blau markiert ist. 
