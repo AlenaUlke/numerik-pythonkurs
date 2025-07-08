@@ -37,6 +37,7 @@ launch_buttons:
 sphinx:
   extra_extensions:
     - sphinx_exercise
+    - sphinxcontrib.images
 
 myst_enable_extensions:
   - colon_fence
