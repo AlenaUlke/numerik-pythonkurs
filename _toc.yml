@@ -61,9 +61,9 @@ parts:
   - title: Programmierkonstrukte
     file: content/chapter02_basics/programmablaeufe/intro
     sections: 
-    - title: While-Schleifen
+    - title: While-Schleife
       file: content/chapter02_basics/programmablaeufe/while_loops
-    - title: For-Schleifen
+    - title: For-Schleife
       file: content/chapter02_basics/programmablaeufe/for_loops
-    - title: While-Schleifen
+    - title: Entscheidungsverzweigung
       file: content/chapter02_basics/programmablaeufe/decision_branching
