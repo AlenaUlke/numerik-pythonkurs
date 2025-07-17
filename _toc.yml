@@ -32,7 +32,7 @@ parts:
     - title: Befehle und Variablen
       file: content/chapter02_basics/befehle/befehle_eingeben
     - title: Python Bibliotheken und Pakete
-      file: content/chapter02_basics/befehle/funktionen_konstanten_verwenden
+      file: content/chapter02_basics/befehle/python_pakete
   - title: Arrays
     file: content/chapter02_basics/arrays/array_intro
     sections: 
