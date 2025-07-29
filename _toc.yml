@@ -67,3 +67,62 @@ parts:
       file: content/chapter02_basics/programmablaeufe/for_loops
     - title: Bedingte Anweisungen
       file: content/chapter02_basics/programmablaeufe/decision_branching
+
+      
+- caption: Python schlauer nutzen
+  chapters:
+  - title: Funktionen
+    file: content/chapter03_spezialisierung/functions/functions_intro
+    sections:
+    - title: Funktionen schreiben
+      file: content/chapter03_spezialisierung/functions/dreiecke
+    - title: Function handles
+      file: content/chapter03_spezialisierung/functions/function_handles
+  - title: Debugging
+    file: content/chapter03_spezialisierung/debugging/debugging_intro
+    sections:
+    - title: Fehleranzeige
+      file: content/chapter03_spezialisierung/debugging/error_signs
+    - title: Fehleranalyse
+      file: content/chapter03_spezialisierung/debugging/analysing_code
+    - title: Vektorisierung
+      file: content/chapter03_spezialisierung/debugging/efficiency
+  - title: KI
+    file: content/chapter03_spezialisierung/AI/KI_intro
+    sections:
+    - title: Programmieren mit KI
+      file: content/chapter03_spezialisierung/AI/Programmieren_mit_KI
+    - title: Debugging mit KI
+      file: content/chapter03_spezialisierung/AI/Debugging_mit_KI
+
+
+- caption: Datenverabeitung in Python
+  chapters:
+  - title: Arrays II
+    file: content/chapter03_spezialisierung/arrays_2/arrays_2_intro
+    sections:
+    - title: Arrayerstellung
+      file: content/chapter03_spezialisierung/arrays_2/arrayerstellung
+    - title: Arrays zusammenfügen
+      file: content/chapter03_spezialisierung/arrays_2/concatenating_arrays
+    - title: Arrays umformen
+      file: content/chapter03_spezialisierung/arrays_2/reshaping_arrays
+    - title: Quiz
+      file: content/chapter03_spezialisierung/arrays_2/quiz
+  - title: Visualisierung II
+    file: content/chapter03_spezialisierung/visualisation_2/visualisation_2_intro
+    sections:
+    - title: Plots individuell gestalten
+      file: content/chapter03_spezialisierung/visualisation_2/advanced_2D_plots
+    - title: Mehrfach-Plots
+      file: content/chapter03_spezialisierung/visualisation_2/several_lines_one_plot
+    - title: 3D Plots
+      file: content/chapter03_spezialisierung/visualisation_2/3D_plots
+  - title: Mit Daten arbeiten
+    file: content/chapter03_spezialisierung/working_with_data/working_with_data_intro
+    sections:
+    - title: Tabellen aufbauen
+      file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_table
+    - title: Tabellen auslesen
+      file: content/chapter03_spezialisierung/working_with_data/organizing_data_in_table_2
+
