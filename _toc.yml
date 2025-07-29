@@ -2,18 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: content/chapter01_einfuehrung/vorwort
 
 parts:
-- caption: Minimal Working Example
-  chapters:
-  - file: notebooks
-  - file: markdown-notebooks
-
 - caption: Einführung
   chapters:
-  - title: Vorwort 
-    file: content/chapter01_einfuehrung/vorwort
+# - title: Vorwort 
+#   file: content/chapter01_einfuehrung/vorwort
   - title: Struktur des Kurses
     file: content/chapter01_einfuehrung/kursstruktur
   - title: Infos und Installationsguide
@@ -68,7 +63,7 @@ parts:
     - title: Bedingte Anweisungen
       file: content/chapter02_basics/programmablaeufe/decision_branching
 
-      
+
 - caption: Python schlauer nutzen
   chapters:
   - title: Funktionen
