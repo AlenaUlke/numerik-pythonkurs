@@ -39,8 +39,8 @@ parts:
       file: content/chapter02_basics/arrays/rechnen_mit_arrays
     - title: Logische Indizierung
       file: content/chapter02_basics/arrays/logische_arrays
-    - title: Quiz
-      file: content/chapter02_basics/arrays/quiz
+  #  - title: Quiz
+  #    file: content/chapter02_basics/arrays/quiz
   - title: Datenvisualisierung
     file: content/chapter02_basics/visualization/visualization_intro
     sections: 
@@ -71,8 +71,8 @@ parts:
     sections:
     - title: Funktionen schreiben
       file: content/chapter03_spezialisierung/functions/dreiecke
-    - title: Function handles
-      file: content/chapter03_spezialisierung/functions/function_handles
+  #  - title: Function handles
+  #    file: content/chapter03_spezialisierung/functions/function_handles
   - title: Debugging
     file: content/chapter03_spezialisierung/debugging/debugging_intro
     sections:
@@ -102,8 +102,8 @@ parts:
       file: content/chapter03_spezialisierung/arrays_2/concatenating_arrays
     - title: Arrays umformen
       file: content/chapter03_spezialisierung/arrays_2/reshaping_arrays
-    - title: Quiz
-      file: content/chapter03_spezialisierung/arrays_2/quiz
+  #  - title: Quiz
+  #    file: content/chapter03_spezialisierung/arrays_2/quiz
   - title: Visualisierung II
     file: content/chapter03_spezialisierung/visualisation_2/visualisation_2_intro
     sections:
