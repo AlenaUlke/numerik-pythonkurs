@@ -16,41 +16,34 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-<<<<<<< Updated upstream
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
-=======
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
->>>>>>> Stashed changes
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
@@ -66,6 +59,8 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -77,7 +72,6 @@
     <link rel="prev" title="Arrayerstellung" href="arrayerstellung.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -93,8 +87,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -102,6 +107,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +115,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,8 +132,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -145,7 +150,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../intro.html">
+<a class="navbar-brand logo" href="../../chapter01_einfuehrung/vorwort.html">
   
   
   
@@ -157,29 +162,27 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../intro.html">
-                    Welcome to your Jupyter Book
+                <a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">
+                    Vorwort
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Markdown Notebook</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">Vorwort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
 
@@ -188,56 +191,78 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="array_intro.html">Arrays</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../befehle/befehle_intro.html">Grundlegende Konzepte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../befehle/befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../befehle/python_pakete.html">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="array_intro.html">Arrays I</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Indizierung von Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rechnen_mit_arrays.html">Rechnen mit Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logische_arrays.html">Logische Indizierung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quiz.html">Quiz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../visualization/visualization_intro.html">Visualisierung I</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Daten plotten</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functions/funktionsaufrufe.html">Funktionsaufrufe und -rückgaben</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../functions/funktionen_schreiben.html">Funktionen definieren</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../programmablaeufe/intro.html">Programmierkonstrukte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/while_loops.html">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/decision_branching.html">Bedingte Anweisungen</a></li>
+
+
 </ul>
 </details></li>
 </ul>
-<<<<<<< Updated upstream
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spezialisierung in Python</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/functions/dreiecke.html">Funktionen schreiben</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/functions/function_handles.html">Function handles</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/efficiency.html">Vektorisierung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Datenaufbereitung in Tabellenform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_cell_array.html">Datenaufbereitung mit Arrays</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/quiz.html">Quiz</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/several_lines_one_plot.html">Mehrfach-Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/3D_plots.html">3D Plots</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/AI/KI_intro.html">AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/vectorisation/vectorisation_intro.html">Vektorisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/vectorisation/efficiency.html">Effizienter werden</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table_2.html">Tabellen auslesen</a></li>
 </ul>
 </details></li>
 </ul>
-=======
->>>>>>> Stashed changes
 
     </div>
 </nav></div>
@@ -245,14 +270,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -380,16 +400,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -441,8 +469,8 @@ Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Py
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www4.stat.ncsu.edu/~boos/var.select/diabetes.tab.txt&quot;</span>
 
@@ -484,10 +512,11 @@ Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Py
 <section id="einzelne-arrayelemte-extrahieren">
 <h2>Einzelne Arrayelemte extrahieren<a class="headerlink" href="#einzelne-arrayelemte-extrahieren" title="Link to this heading">#</a></h2>
 <p>Um ein einzelnes Element eines eindimensionalen Array <code class="docutils literal notranslate"><span class="pre">x</span></code> auszulesen (zu vergleichen mit einem <em>Vektor</em>), nutzt man die Syntax <code class="docutils literal notranslate"><span class="pre">x[idx]</span></code>. Möchte man beispielsweise das dritte Element von <code class="docutils literal notranslate"><span class="pre">x</span></code> auslesen, so ist dies mit <code class="docutils literal notranslate"><span class="pre">x[2]</span></code> möglich.</p>
-<p><strong>BILD</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_single_value.jpeg"><img alt="../../../_images/array_single_value.jpeg" src="../../../_images/array_single_value.jpeg" style="width: 75%;" />
+</a>
+</figure>
 <p>Um Elemente aus einem zweidimensional Array <code class="docutils literal notranslate"><span class="pre">A</span></code> auszulesen (zu vergleichen mit einer <em>Matrix</em>), benötigen man zwei Indizes. Der erste gibt die Zeile, der zweite die Spalte an: <code class="docutils literal notranslate"><span class="pre">A[zeile,</span> <span class="pre">spalte]</span></code>. Beispielsweise gibt <code class="docutils literal notranslate"><span class="pre">A[0,</span> <span class="pre">2]</span></code> den Wert in der ersten Zeile und der dritten Spalte zurück.</p>
-<p><strong>BILD</strong></p>
-<p>Beachten Sie: Die Indizierung beginnt bei <span class="math notranslate nohighlight">\(0\)</span>, das bedeute das erste Element wird mit dem Index <span class="math notranslate nohighlight">\(0\)</span> ausgelesen.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
 <p>Speichern Sie das Alter von Patientin 4 also das vierte Element des Arrays <code class="docutils literal notranslate"><span class="pre">alter</span></code> in einer Variablen <code class="docutils literal notranslate"><span class="pre">patient_a</span></code>.</p>
@@ -535,7 +564,10 @@ Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Py
 <p>Python ermöglicht es Ihnen <span class="math notranslate nohighlight">\(-1\)</span> als Index bei Arrays zuverwenden, um auf das letzte Element zugreifen.
 Möchten Sie zum Beispiel auf das letzte Elemente des eindimensionalen Arrays <code class="docutils literal notranslate"><span class="pre">x</span></code> zugreifen, geht dies mit der Syntax <code class="docutils literal notranslate"><span class="pre">x[-1]</span></code>.
 Bei zweidimensionalen Arrays müssen Sie zudem einen zweiten Index angeben. So gibt <code class="docutils literal notranslate"><span class="pre">A[-1,</span> <span class="pre">3]</span></code> beispielsweise den Eintrag in der letzten Zeile und 4. Spalte zurück.</p>
-<p><strong>BILD</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_last_element.jpeg"><img alt="../../../_images/array_last_element.jpeg" src="../../../_images/array_last_element.jpeg" style="width: 75%;" />
+</a>
+</figure>
 <p>Die Verwendung des Index <span class="math notranslate nohighlight">\(-1\)</span> um auf das letzte Element zuzugreifen, ist Teil der allgemeinen Indexierungslogik in Python, bei der negative Indizes verwendet werden, um Elemente von hinten aus zu zählen. Das bedeutet:</p>
 <ul class="simple">
 <li><p><em>Positive Indizes</em> beginnen am Anfang des Arrays und zählen nach rechts: <span class="math notranslate nohighlight">\(0, 1, 2,\ldots\)</span></p></li>
@@ -581,7 +613,10 @@ Bei zweidimensionalen Arrays müssen Sie zudem einen zweiten Index angeben. So g
 <section id="mehre-arrayelemente-extrahieren">
 <h2>Mehre Arrayelemente extrahieren<a class="headerlink" href="#mehre-arrayelemente-extrahieren" title="Link to this heading">#</a></h2>
 <p>Oft benötigt man eine ganze Zeile oder eine ganze Spalte eines zweidimensionales Arrays <code class="docutils literal notranslate"><span class="pre">A</span></code>. In diesem Fall kann der Doppelpunkt-Operator <code class="docutils literal notranslate"><span class="pre">:</span></code> als Index verwenden, was Python als “alle Zeilen” oder “alle Spalten” interpretiert. Zum Beispiel liefert <code class="docutils literal notranslate"><span class="pre">A[0,</span> <span class="pre">:]</span></code> die erste Zeile von <code class="docutils literal notranslate"><span class="pre">A</span></code> und <code class="docutils literal notranslate"><span class="pre">A[:,</span> <span class="pre">1]</span></code> die zweite Spalte von <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
-<p><strong>BILD</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_row_col.jpeg"><img alt="../../../_images/array_row_col.jpeg" src="../../../_images/array_row_col.jpeg" style="width: 75%;" />
+</a>
+</figure>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
 <p>Erstellen Sie einen Spaltenvektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">blutdruck</span></code>, der alle Elemente aus der 3. Spalte des Arrays <code class="docutils literal notranslate"><span class="pre">data</span></code> enthält.</p>
@@ -606,7 +641,10 @@ Bei zweidimensionalen Arrays müssen Sie zudem einen zweiten Index angeben. So g
 <br>
 <p>Sie können den Doppelpunkt-Operator ebenfalls verwenden, um einen Wertebereich anzugeben um so mehrere aufeinanderfolgende Elemente auszulesen.
 Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</span></code> extrahiert das zweite, dritte und vierte Element des Arrays <code class="docutils literal notranslate"><span class="pre">x</span></code>. Der fünfte Wert <code class="docutils literal notranslate"><span class="pre">x[4]</span></code> wird dabei nicht mit ausgelesen. Die Syntax <code class="docutils literal notranslate"><span class="pre">start:end</span></code> ist also als das halboffenes Intervall <span class="math notranslate nohighlight">\([\texttt{start}, \texttt{end})\)</span> zu verstehen.</p>
-<p><strong>BILD</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_indexrange.jpeg"><img alt="../../../_images/array_indexrange.jpeg" src="../../../_images/array_indexrange.jpeg" style="width: 75%;" />
+</a>
+</figure>
 <p>Genauso liefert <code class="docutils literal notranslate"><span class="pre">A[0:3,</span> <span class="pre">2]</span></code> das erste, zweite und dritte Element der dritten Spalte von <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
@@ -648,7 +686,10 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 <br>
 <p>Python stellt außderdem eine komfortable Methode zur Verfügung, um alle Elemente ausgehend von einem Startindex zu extrahieren: <code class="docutils literal notranslate"><span class="pre">x[3:]</span></code>. Dieses Beispiel gibt die Teilmenge der Elemente von <code class="docutils literal notranslate"><span class="pre">x</span></code> beginnend Index <span class="math notranslate nohighlight">\(3\)</span> bis zum Ende des Vektors zurück.</p>
 <p>Umgekehrt gibt der Code <code class="docutils literal notranslate"><span class="pre">x[:4]</span></code> die Teilmenge der Elemente von <code class="docutils literal notranslate"><span class="pre">x</span></code> beginned bei Index <span class="math notranslate nohighlight">\(0\)</span> bis einschließlich Index <span class="math notranslate nohighlight">\(3\)</span>. Das Ende des Wertebereichts ist also wieder als offene Intervallgrenze zu verstehen.</p>
-<p><strong>BILD</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_from_index_to_end.jpeg"><img alt="../../../_images/array_from_index_to_end.jpeg" src="../../../_images/array_from_index_to_end.jpeg" style="width: 75%;" />
+</a>
+</figure>
 <p>Zusammen mit einem weiteren Index funktioniert diese Syntax auch für zweidimensionale Array vollkommen analog.</p>
 <div class="admonition-aufgabe-2-4 admonition">
 <p class="admonition-title">Aufgabe 2.4</p>
@@ -712,10 +753,16 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </section>
 <section id="arraywerte-modifizieren">
 <h2>Arraywerte modifizieren<a class="headerlink" href="#arraywerte-modifizieren" title="Link to this heading">#</a></h2>
-<p>Zum Modifizieren von Arrayelementen kann die gleiche Syntax kann verwendet werden wie um den Wert eines Elements auszulesen. Zum Beispiel ändert <code class="docutils literal notranslate"><span class="pre">x[2]</span> <span class="pre">=</span> <span class="pre">-2</span></code> das dritte Element des eindimensionalen Array <code class="docutils literal notranslate"><span class="pre">x</span></code> von <span class="math notranslate nohighlight">\(0\)</span> zu <span class="math notranslate nohighlight">\(-2\)</span>. Für zweidimensionale Arrays ist das Vorgehen analog. Zum Beispiel ändert <code class="docutils literal notranslate"><span class="pre">A[3,</span> <span class="pre">2]</span> <span class="pre">=</span>&#160; <span class="pre">3</span></code> das Element in der 4. Zeile und 3. Spalte von <span class="math notranslate nohighlight">\(-1\)</span> zu <span class="math notranslate nohighlight">\(3\)</span>.</p>
-<p><strong>BILD</strong></p>
+<p>Zum Modifizieren von Arrayelementen kann die gleiche Syntax kann verwendet werden wie um den Wert eines Elements auszulesen. Zum Beispiel ändert <code class="docutils literal notranslate"><span class="pre">x[2]</span> <span class="pre">=</span> <span class="pre">-2</span></code> das dritte Element des eindimensionalen Array <code class="docutils literal notranslate"><span class="pre">x</span></code> von <span class="math notranslate nohighlight">\(0\)</span> zu <span class="math notranslate nohighlight">\(-2\)</span>. Für zweidimensionale Arrays ist das Vorgehen analog. Zum Beispiel ändert <code class="docutils literal notranslate"><span class="pre">A[2,</span> <span class="pre">3]</span> <span class="pre">=</span>&#160; <span class="pre">42</span></code> das Element in der 3. Zeile und 4. Spalte von <span class="math notranslate nohighlight">\(7\)</span> zu <span class="math notranslate nohighlight">\(42\)</span>.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_modify.jpeg"><img alt="../../../_images/array_modify.jpeg" src="../../../_images/array_modify.jpeg" style="width: 75%;" />
+</a>
+</figure>
 <p>Leider ist beim Eintragen der Patientinnendaten ein Fehler unterlaufen, sodass das Alter von Patentinn <span class="math notranslate nohighlight">\(3\)</span> nicht eingetragen wurde (gekennzeichent durch nan, engl. <strong>N</strong>ot <strong>a N</strong>umber).</p>
-<p><strong>BILD mit NAN</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/vector_nan.jpg"><img alt="../../../_images/vector_nan.jpg" src="../../../_images/vector_nan.jpg" style="width: 60%;" />
+</a>
+</figure>
 <div class="admonition-aufgabe-3-1 admonition">
 <p class="admonition-title">Aufgabe 3.1</p>
 <p>Ändern Sie das dritte Element von <code class="docutils literal notranslate"><span class="pre">alter</span></code> von <code class="docutils literal notranslate"><span class="pre">nan</span></code> zu <span class="math notranslate nohighlight">\(72\)</span>.</p>
@@ -734,13 +781,24 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </div>
 </div>
 <p>Python erlaubt es außerdem auch direkt mehrere Werte aufeinmal zu ändern, genauso wie es möglich ist mehrere Werte aufeinmal auszulesen.</p>
-<p><strong>BILD</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_modify2.jpeg"><img alt="../../../_images/array_modify2.jpeg" src="../../../_images/array_modify2.jpeg" style="width: 75%;" />
+</a>
+</figure>
 <p>Ähnlich wie eine Lücke in den Altersdaten der Patienten, ist auch eine Lücke bei den Blutzuckerwerten zu verzeichnen.</p>
-<p><strong>BILD NAN MATRIX</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/matrix_nan.jpg"><img alt="../../../_images/matrix_nan.jpg" src="../../../_images/matrix_nan.jpg" style="width: 50%;" />
+</a>
+</figure>
 <div class="admonition-aufgabe-3-2 admonition">
 <p class="admonition-title">Aufgabe 3.2</p>
 <p>Erstellen Sie das Array <code class="docutils literal notranslate"><span class="pre">testgruppe_a_werte</span></code> mit den Einträgen</p>
-<p>$<span class="math notranslate nohighlight">\(\begin{pmatrix} 87 &amp; 69 &amp; 85 &amp; 89 &amp; 80 &amp; 68 &amp; 82 \end{pmatrix}\)</span>$.</p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{pmatrix} 
+        87 &amp; 69 &amp; 85 &amp; 89 &amp; 80 &amp; 68 &amp; 82
+    \end{pmatrix}.
+\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -838,8 +896,7 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -899,8 +956,8 @@ By Jacob Heieck, Alena Ulke
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

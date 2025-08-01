@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Funktionsaufrufe &#8212; Python-Programmierkurs</title>
+    <title>Funktionsaufrufe und -rückgaben &#8212; Python-Programmierkurs</title>
   
   
   
@@ -16,35 +16,34 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
@@ -60,16 +59,19 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter02_basics/functions/funktionsaufrufe';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Funktionen aufrufen" href="../programmablaeufe/intro.html" />
-    <link rel="prev" title="Funktionen aufrufen" href="functions_intro.html" />
+    <link rel="next" title="Funktionen definieren" href="funktionen_schreiben.html" />
+    <link rel="prev" title="Funktionen und Funktionsrückgaben" href="functions_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,8 +87,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -94,6 +107,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -101,8 +115,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +132,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -137,7 +150,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../intro.html">
+<a class="navbar-brand logo" href="../../chapter01_einfuehrung/vorwort.html">
   
   
   
@@ -149,29 +162,27 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../intro.html">
-                    Welcome to your Jupyter Book
+                <a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">
+                    Vorwort
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Markdown Notebook</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">Vorwort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
 
@@ -180,30 +191,75 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../arrays/array_intro.html">Arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../befehle/befehle_intro.html">Grundlegende Konzepte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../befehle/befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../befehle/python_pakete.html">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../arrays/array_intro.html">Arrays I</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/indizierung.html">Indizierung von Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/rechnen_mit_arrays.html">Rechnen mit Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/logische_arrays.html">Logische Indizierung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../arrays/quiz.html">Quiz</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../visualization/visualization_intro.html">Datenvisualisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Visualisierung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualization/data_import.html">Datenimportierung</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../visualization/visualization_intro.html">Visualisierung I</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Daten plotten</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="functions_intro.html">Funktionen und Ausgaben von Funktionen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ausgaben von Funktionen</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="functions_intro.html">Funktionen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Funktionsaufrufe und -rückgaben</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="funktionen_schreiben.html">Funktionen definieren</a></li>
+
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../programmablaeufe/intro.html">Programmierkonstrukte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/while_loops.html">While-Schleifen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/for_loops.html">For-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/while_loops.html">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/decision_branching.html">Bedingte Anweisungen</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/decision_branching.html">Entscheidungsverzweigungen</a></li>
 
-
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/efficiency.html">Vektorisierung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/several_lines_one_plot.html">Mehrfach-Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/3D_plots.html">3D Plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table_2.html">Tabellen auslesen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -214,14 +270,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -349,17 +400,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
 </div></div>
       
     </div>
@@ -370,11 +431,21 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Funktionsaufrufe</h1>
+    <h1>Funktionsaufrufe und -rückgaben</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Funktionsaufrufe und -rückgaben</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mehrteilige-funktionsruckgaben">Mehrteilige Funktionsrückgaben</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -384,37 +455,90 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="funktionsaufrufe">
-<h1>Funktionsaufrufe<a class="headerlink" href="#funktionsaufrufe" title="Link to this heading">#</a></h1>
-<p>Sie können die Funktion <code class="docutils literal notranslate"><span class="pre">shape</span></code> auf einen Vektor oder eine Matrix anwenden, um eine einzige Ausgabevariable zu erhalten, die die Arraygröße in einem Zeilenvektor mit zwei Elementen enthält. Beim ersten Element handelt es sich um die Anzahl der Zeilen, während das zweite Element der Anzahl der Spalten entspricht.</p>
-<p><code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">x.shape</span></code></p>
-<div class="admonition-aufgabe-1 admonition">
-<p class="admonition-title">Aufgabe 1</p>
-<p>Erstellen Sie eine Variable mit dem Namen <code class="docutils literal notranslate"><span class="pre">dsize</span></code>, die die Größe der Variablen <code class="docutils literal notranslate"><span class="pre">data</span></code> enthält.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="funktionsaufrufe-und-ruckgaben">
+<h1>Funktionsaufrufe und -rückgaben<a class="headerlink" href="#funktionsaufrufe-und-ruckgaben" title="Link to this heading">#</a></h1>
+<p>Im Kapitel zur <a class="reference internal" href="../arrays/arrayerstellung.html"><span class="std std-doc">Arrayerstellung</span></a> haben Sie bereits kurz die Funktionen <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">ndim</span></code> und <code class="docutils literal notranslate"><span class="pre">size</span></code> kennengelernt, um Größe, Dimension und Anzahl der Elemente eines Arrays auszulesen.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.shape(A)</span></code>: Größe des Arrays <span class="math notranslate nohighlight">\(A\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.ndim(A)</span></code>: Dimension des Arrays <span class="math notranslate nohighlight">\(A\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.size(A)</span></code>: Anzahl der gesamten Elemente des Arrays <span class="math notranslate nohighlight">\(A\)</span></p></li>
+</ul>
+<p>Anhand dieser Funktionen zeigen wir Ihnen wie Sie Funktionsrückgaben speichern und wie Sie mehrteilige Funktionsrückgaben in einzeln Varaiblen aufteilen können.</p>
+<div class="cell tag_thebe-init tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+<span class="n">A_mystery</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<br>
+<p>Sie können die Funktion <code class="docutils literal notranslate"><span class="pre">shape</span></code> auf ein <span class="math notranslate nohighlight">\(n\)</span>-dimensionales Array anwenden, um eine einzige Ausgabevariable zu erhalten, die die Arraygröße in einem <span class="math notranslate nohighlight">\(n\)</span>-Tupel enthält.</p>
+<p>Bei einem eindimensionalen Array entspricht der erste Eintrag der Anzahl der Elemente. Bei einem zweidimensionalem Array handelt es sich beim ersten Element um die Anzahl der Zeilen, während das zweite Element der Anzahl der Spalten entspricht.</p>
+<div class="admonition-aufgabe-1-1 admonition">
+<p class="admonition-title">Aufgabe 1.1</p>
+<p>Erstellen Sie eine Variable mit dem Namen <code class="docutils literal notranslate"><span class="pre">shape_B</span></code>, die die Größe des Arrays <code class="docutils literal notranslate"><span class="pre">B</span></code> enthält.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="c1"># Ihr Code</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">shape</span></code> mit der Variablen <code class="docutils literal notranslate"><span class="pre">data</span></code> als Eingabe.</p>
+<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">shape</span></code> mit der Variablen <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="n">shape_B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <br>
-<p>Sie können von der Funktion <code class="docutils literal notranslate"><span class="pre">shape</span></code> auch zwei Ausgabevariablen anfordern. In diesem Fall enthält jede Variable die Größe einer Dimension des Eingabearrays. Verwenden Sie eckige Klammern (<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>), um mehrere Ausgaben anzufordern.</p>
-<p><code class="docutils literal notranslate"><span class="pre">[xrow,</span> <span class="pre">xcol]</span> <span class="pre">=</span> <span class="pre">x.shape</span></code></p>
-<div class="admonition-aufgabe-2 admonition">
-<p class="admonition-title">Aufgabe 2</p>
-<p>Erstellen Sie die Variablen <code class="docutils literal notranslate"><span class="pre">num_rows</span></code> und <code class="docutils literal notranslate"><span class="pre">num_cols</span></code>, die die Anzahl der Zeilen bzw. der Spalten der Variablen <code class="docutils literal notranslate"><span class="pre">data</span></code> enthalten.</p>
+<div class="admonition-aufgabe-1-2 admonition">
+<p class="admonition-title">Aufgabe 1.2</p>
+<p>Bestimmen Sie die Dimension, die Größe und die Anzahl der Elemente des Arrays <code class="docutils literal notranslate"><span class="pre">A_mystery</span></code>. Was fällt bezüglich der Beziehung zwischen der Größe und der Anzahl der Elemente des Arrays auf?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">A_mystery</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">A_mystery</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">A_mystery</span><span class="p">))</span>
+
+</pre></div>
+</div>
+</div>
+<br>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mehrteilige-funktionsruckgaben">
+<h1>Mehrteilige Funktionsrückgaben<a class="headerlink" href="#mehrteilige-funktionsruckgaben" title="Link to this heading">#</a></h1>
+<p>Sie können von der Funktion <code class="docutils literal notranslate"><span class="pre">shape</span></code> auch mehrere Ausgabevariablen anfordern. In diesem Fall enthält jede Variable die Größe einer Dimension des Eingabearrays.</p>
+<p><code class="docutils literal notranslate"><span class="pre">xrow,</span> <span class="pre">xcol</span> <span class="pre">=</span> <span class="pre">np.shape(A)</span></code></p>
+<p>Trennen Sie die einzelnen Variablen durch Kommata, um mehrere Ausgaben anzufordern.</p>
+<div class="admonition-aufgabe-2-1 admonition">
+<p class="admonition-title">Aufgabe 2.1</p>
+<p>Erstellen Sie die Variablen <code class="docutils literal notranslate"><span class="pre">num_rows</span></code> und <code class="docutils literal notranslate"><span class="pre">num_cols</span></code>, die die Anzahl der Zeilen bzw. der Spalten der Variablen <code class="docutils literal notranslate"><span class="pre">B</span></code> enthalten.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -425,41 +549,43 @@
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">num_row</span><span class="p">,</span> <span class="n">num_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_row</span><span class="p">,</span> <span class="n">num_cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <br>
-<p>Sie können den maximalen Wert eines Vektors und den entsprechenden Indexwert mithilfe der Funktion <code class="docutils literal notranslate"><span class="pre">np.max</span></code> bestimmen. Die erste Ausgabe der Funktion <code class="docutils literal notranslate"><span class="pre">np.max</span></code> ist der maximale Wert des Eingabevektors. Wenn die Funktion mit zwei Ausgaben aufgerufen wurde, ist die zweite Ausgabe der Indexwert.</p>
-<p><code class="docutils literal notranslate"><span class="pre">[xMax,idx]</span> <span class="pre">=</span> <span class="pre">max(x)</span></code></p>
-<div class="admonition-aufgabe-3 admonition">
-<p class="admonition-title">Aufgabe 3</p>
-<p>Erstellen Sie die Variablen <code class="docutils literal notranslate"><span class="pre">vMax</span></code> und <code class="docutils literal notranslate"><span class="pre">ivMax</span></code>, die den maximalen Wert des Vektors <code class="docutils literal notranslate"><span class="pre">v2</span></code> und den entsprechenden Indexwert enthalten.</p>
+<p>Sie können die Eigenwerte und Eigenvektoren einer quadratischen Matrix <span class="math notranslate nohighlight">\(A\)</span> mithilfe der Funktion <code class="docutils literal notranslate"><span class="pre">np.linalg.eig(A)</span></code> bestimmen.</p>
+<p>Die erste Ausgabe der Funktion liefert die Eigenwerte in Form eines Arrays und die zweite Ausgabe die zugehörigen Eigenvektoren in Form eines zweidimensionalen Arrays. Eine Spalte entspricht einem Eigenvektor.</p>
+<div class="admonition-aufgabe-1-3 admonition">
+<p class="admonition-title">Aufgabe 1.3</p>
+<p>Erstellen Sie die Variablen <code class="docutils literal notranslate"><span class="pre">ew_C</span></code> und <code class="docutils literal notranslate"><span class="pre">ev_C</span></code>, die die Eignwerte und die entsprechenden Eigenvektoren von <span class="math notranslate nohighlight">\(B\)</span> enthalten.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+<span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">ew_C</span><span class="p">,</span> <span class="n">ev_C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <br>
-<p>Wenn Sie nur die zweite Ausgabe einer Funktion benötigen, können Sie die erste Ausgabe ignorieren, indem Sie an ihrer Stelle einen Unterstrich (<code class="docutils literal notranslate"><span class="pre">_</span></code>) verwenden.</p>
+<p>Wenn Sie nur eine Ausgabe einer Funktion nicht benötigen, können Sie diese Ausgabe ignorieren, indem Sie an ihrer Stelle einen Unterstrich (<code class="docutils literal notranslate"><span class="pre">_</span></code>) verwenden.</p>
 <p>Beispielsweise können Sie in einer Matrix nur die Anzahl der Spalten bestimmen:</p>
-<p><code class="docutils literal notranslate"><span class="pre">[_,</span> <span class="pre">num_cols]</span> <span class="pre">=</span> <span class="pre">A.shape</span></code></p>
-<div class="admonition-aufgabe-4 admonition">
-<p class="admonition-title">Aufgabe 4</p>
-<p>Erstellen Sie eine Variable mit dem Namen <code class="docutils literal notranslate"><span class="pre">num_rows</span></code>, die die Anzahl der Zeilen der Matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> enthält.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_,</span> <span class="pre">num_cols</span> <span class="pre">=</span> <span class="pre">np.shape(A)</span></code></p>
+<div class="admonition-aufgabe-2-4 admonition">
+<p class="admonition-title">Aufgabe 2.4</p>
+<p>Erstellen Sie eine Variable mit dem Namen <code class="docutils literal notranslate"><span class="pre">num_rows</span></code>, die die Anzahl der Zeilen der Matrix <code class="docutils literal notranslate"><span class="pre">A_mystery</span></code> enthält.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">num_rows</span><span class="p">,</span> <span class="n">_</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_rows</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">A_mystery</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -501,15 +627,15 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Funktionen aufrufen</p>
+        <p class="prev-next-title">Funktionen und Funktionsrückgaben</p>
       </div>
     </a>
     <a class="right-next"
-       href="../programmablaeufe/intro.html"
+       href="funktionen_schreiben.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Funktionen aufrufen</p>
+        <p class="prev-next-title">Funktionen definieren</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -519,6 +645,23 @@
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Funktionsaufrufe und -rückgaben</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mehrteilige-funktionsruckgaben">Mehrteilige Funktionsrückgaben</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -563,8 +706,8 @@ By Jacob Heieck, Alena Ulke
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

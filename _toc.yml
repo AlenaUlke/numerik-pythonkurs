@@ -28,7 +28,8 @@ parts:
       file: content/chapter02_basics/befehle/befehle_eingeben
     - title: Python Bibliotheken und Pakete
       file: content/chapter02_basics/befehle/python_pakete
-  - title: Arrays
+
+  - title: Arrays I
     file: content/chapter02_basics/arrays/array_intro
     sections: 
     - title: Arrayerstellung
@@ -41,18 +42,24 @@ parts:
       file: content/chapter02_basics/arrays/logische_arrays
   #  - title: Quiz
   #    file: content/chapter02_basics/arrays/quiz
-  - title: Datenvisualisierung
+
+  - title: Visualisierung I
     file: content/chapter02_basics/visualization/visualization_intro
     sections: 
-    - title: Visualisierung
+    - title: Daten plotten
       file: content/chapter02_basics/visualization/visualization
 #    - title: Datenimportierung
 #      file: content/chapter02_basics/visualization/data_import
   - title: Funktionen
     file: content/chapter02_basics/functions/functions_intro
-    sections: 
-    - title: Funktionsausgaben
+    sections:
+    - title: Funktionen schreiben
       file: content/chapter02_basics/functions/funktionsaufrufe
+    - title: Funktionen schreiben
+      file: content/chapter02_basics/functions/funktionen_schreiben
+  #  - title: Function handles
+  #    file: content/chapter03_spezialisierung/functions/function_handles
+  
   - title: Programmierkonstrukte
     file: content/chapter02_basics/programmablaeufe/intro
     sections: 
@@ -66,13 +73,6 @@ parts:
 
 - caption: Python schlauer nutzen
   chapters:
-  - title: Funktionen
-    file: content/chapter03_spezialisierung/functions/functions_intro
-    sections:
-    - title: Funktionen schreiben
-      file: content/chapter03_spezialisierung/functions/dreiecke
-  #  - title: Function handles
-  #    file: content/chapter03_spezialisierung/functions/function_handles
   - title: Debugging
     file: content/chapter03_spezialisierung/debugging/debugging_intro
     sections:

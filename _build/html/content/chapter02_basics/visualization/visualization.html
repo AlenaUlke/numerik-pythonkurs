@@ -16,35 +16,34 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
@@ -60,6 +59,8 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -67,11 +68,10 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter02_basics/visualization/visualization';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Datenimportierung" href="data_import.html" />
+    <link rel="next" title="Funktionen und Funktionsrückgaben" href="../functions/functions_intro.html" />
     <link rel="prev" title="Datenvisualisierung" href="visualization_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +87,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -96,6 +107,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +115,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +132,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -139,7 +150,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../intro.html">
+<a class="navbar-brand logo" href="../../chapter01_einfuehrung/vorwort.html">
   
   
   
@@ -151,29 +162,27 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../intro.html">
-                    Welcome to your Jupyter Book
+                <a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">
+                    Vorwort
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Markdown Notebook</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">Vorwort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
 
@@ -182,30 +191,75 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../arrays/array_intro.html">Arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../befehle/befehle_intro.html">Grundlegende Konzepte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../befehle/befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../befehle/python_pakete.html">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../arrays/array_intro.html">Arrays I</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/indizierung.html">Indizierung von Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/rechnen_mit_arrays.html">Rechnen mit Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/logische_arrays.html">Logische Indizierung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../arrays/quiz.html">Quiz</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="visualization_intro.html">Datenvisualisierung</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Visualisierung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_import.html">Datenimportierung</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="visualization_intro.html">Visualisierung I</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Daten plotten</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen und Ausgaben von Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../functions/funktionsaufrufe.html">Ausgaben von Funktionen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functions/funktionsaufrufe.html">Funktionsaufrufe und -rückgaben</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../functions/funktionen_schreiben.html">Funktionen definieren</a></li>
+
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../programmablaeufe/intro.html">Programmierkonstrukte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/while_loops.html">While-Schleifen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/for_loops.html">For-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/while_loops.html">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/decision_branching.html">Bedingte Anweisungen</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/decision_branching.html">Entscheidungsverzweigungen</a></li>
 
-
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/efficiency.html">Vektorisierung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/several_lines_one_plot.html">Mehrfach-Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/3D_plots.html">3D Plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table_2.html">Tabellen auslesen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -216,14 +270,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -351,16 +400,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -402,11 +459,28 @@
 <p>Zur Visualisierung von Daten benutzt man in Python typischerweise das Modul <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> des Pakets <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Daher importieren wir es zu Beginn dieses Kapitels:</p>
 <div class="cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
+</div>
+<p>In diesem Unterkapitel werden Sie mit den eindimensionalen Arrays <code class="docutils literal notranslate"><span class="pre">wochentag</span></code>, <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code>, <code class="docutils literal notranslate"><span class="pre">besuchszahlen_dienstag</span></code> und <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montage_average</span></code> arbeiten. Der folgende, versteckte Code initialisiert sowohl die Arrays automatisch sobald Sie den Live-Code-Modus starten.</p>
+<div class="cell tag_thebe-init tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">uhrzeit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">11.5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">besuchszahlen_montag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">99</span><span class="p">,</span>  <span class="mi">372</span><span class="p">,</span>  <span class="mi">250</span><span class="p">,</span>  <span class="mi">600</span><span class="p">,</span>  <span class="mi">357</span><span class="p">,</span>  <span class="mi">116</span><span class="p">,</span> <span class="mi">23</span><span class="p">])</span>
+<span class="n">besuchszahlen_dienstag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">94</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">424</span><span class="p">,</span> <span class="mi">528</span><span class="p">,</span> <span class="mi">416</span><span class="p">,</span> <span class="mi">284</span><span class="p">,</span> <span class="mi">201</span><span class="p">])</span>
+<span class="n">besuchszahlen_montag_average</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.45</span><span class="p">,</span> <span class="mf">367.32</span><span class="p">,</span> <span class="mf">268.12</span><span class="p">,</span> <span class="mf">620.07</span><span class="p">,</span> <span class="mf">370.34</span><span class="p">,</span> <span class="mf">70.58</span><span class="p">,</span>  <span class="mf">23.56</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</details>
 </div>
 <section id="vektoren-in-einem-diagramm-darstellen">
 <h2>Vektoren in einem Diagramm darstellen<a class="headerlink" href="#vektoren-in-einem-diagramm-darstellen" title="Link to this heading">#</a></h2>
@@ -425,7 +499,7 @@
 <p>Der Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> wird in Python verwendet, um bei der Datenvisualisierung mit <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> das Diagramm anzuzeigen. <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> öffnet ein Fenster (oder zeigt inline in Jupyter-Notebooks) das erstellte Diagramm an. Ohne diesen Befehl bleibt das Diagramm oft verborgen, besonders außerhalb von interaktiven Programmierumgebungen. Sowohl diese Website als auch Jupyther-Notebooks stellen eine interaktive Umgebnung dar. Hier können Sie den Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> also auch weglassen.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Erstellen Sie ein Diagramm mit <code class="docutils literal notranslate"><span class="pre">sample</span></code> auf der x-Achse und <code class="docutils literal notranslate"><span class="pre">mass1</span></code> auf der y-Achse.</p>
+<p>Erstellen Sie ein Diagramm mit <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> auf der x-Achse und <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> auf der y-Achse.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -436,11 +510,11 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Nutzen Sie die Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> und die Variablen <code class="docutils literal notranslate"><span class="pre">sample</span></code> und <code class="docutils literal notranslate"><span class="pre">mass1</span></code> als Eingaben.</p>
+<p>Nutzen Sie die Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> und die Variablen <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> und <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> als Eingaben.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">mass1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -455,7 +529,7 @@
 <p>Weitere Informationen zu den verfügbaren Markersymbolen finden Sie <a class="reference external" href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/marker_reference.html">hier</a> und zu den verfügbaren Linienarten <a class="reference external" href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html">hier</a>.</p>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Erstellen Sie ein Diagramm, in dem <code class="docutils literal notranslate"><span class="pre">mass2</span></code> (y-Achse) im Vergleich zu <code class="docutils literal notranslate"><span class="pre">sample</span></code> (x-Achse) dargestellt wird. Der geplottete Graph soll dabei eine blaue (<code class="docutils literal notranslate"><span class="pre">b</span></code>), gepunktete Linie (<code class="docutils literal notranslate"><span class="pre">:</span></code>) mit sternförmige (<code class="docutils literal notranslate"><span class="pre">*</span></code>) Markierungen sein.</p>
+<p>Erstellen Sie ein Diagramm, in dem <code class="docutils literal notranslate"><span class="pre">besuchszahlen_dienstag</span></code> (y-Achse) im Vergleich zu <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> (x-Achse) dargestellt wird. Der geplottete Graph soll dabei eine blaue (<code class="docutils literal notranslate"><span class="pre">b</span></code>), gepunktete Linie (<code class="docutils literal notranslate"><span class="pre">:</span></code>) mit sternförmige (<code class="docutils literal notranslate"><span class="pre">*</span></code>) Markierungen sein.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -466,7 +540,7 @@
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;b:*&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag</span><span class="p">,</span> <span class="s1">&#39;b:*&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -475,7 +549,7 @@
 <p>Beachten Sie, dass wenn Sie mehrere <code class="docutils literal notranslate"><span class="pre">plot</span></code>-Befehle direkt hintereinander ausführen ohne diese durch den Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> zu trennen, dann werden die Graphen entlang derselben Achsen geplottet in einen gemeinsamen Diagramm dargestellt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span>
 
 <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -505,7 +579,7 @@
 </div>
 <div class="admonition-aufgabe-1-3 admonition">
 <p class="admonition-title">Aufgabe 1.3</p>
-<p>Erstellen Sie ein Diagramm, in dem <code class="docutils literal notranslate"><span class="pre">mass1</span></code> (y-Achse) im Vergleich zu <code class="docutils literal notranslate"><span class="pre">sample</span></code> (x-Achse) dargestellt wird, und verwenden Sie schwarze (<code class="docutils literal notranslate"><span class="pre">k</span></code>), quadratische (<code class="docutils literal notranslate"><span class="pre">s</span></code>) Markierungen ohne Linie. Stellen Sie im derselben Diagramm auch <code class="docutils literal notranslate"><span class="pre">mass2</span></code> (y-Achse) im Vergleich zu <code class="docutils literal notranslate"><span class="pre">sample</span></code> dar. Verwenden Sie dabei blaue (<code class="docutils literal notranslate"><span class="pre">b</span></code>), dreieckige (<code class="docutils literal notranslate"><span class="pre">^</span></code>) Markierungen ohne Linie.</p>
+<p>Erstellen Sie ein Diagramm, in dem <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> (y-Achse) in Bezug zu <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> (x-Achse) dargestellt wird, und verwenden Sie schwarze (<code class="docutils literal notranslate"><span class="pre">k</span></code>), quadratische (<code class="docutils literal notranslate"><span class="pre">s</span></code>) Markierungen ohne Linie. Stellen Sie im derselben Diagramm auch <code class="docutils literal notranslate"><span class="pre">besuchszahlen_dienstag</span></code> (y-Achse) in Bezug zu <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> dar. Verwenden Sie dabei blaue (<code class="docutils literal notranslate"><span class="pre">b</span></code>), dreieckige (<code class="docutils literal notranslate"><span class="pre">^</span></code>) Markierungen ohne Linie.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -517,8 +591,8 @@
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">mass1</span><span class="p">,</span> <span class="s1">&#39;ks&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">mass2</span><span class="p">,</span> <span class="s1">&#39;b^&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag</span><span class="p">,</span> <span class="s1">&#39;ks&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_dienstag</span><span class="p">,</span> <span class="s1">&#39;b^&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -527,12 +601,11 @@
 <p>Wenn Sie der Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> nur einen einzelnen Vektor übergeben um ein Diagramm zuerstellen, verwendet Python die Vektorwerte als Daten für die <span class="math notranslate nohighlight">\(y\)</span>-Achse und setzt die Daten für die <span class="math notranslate nohighlight">\(x\)</span>-Achse auf den Bereich von <span class="math notranslate nohighlight">\(0\)</span> bis <span class="math notranslate nohighlight">\(n-1\)</span>, wobei <span class="math notranslate nohighlight">\(n\)</span> die Anzahl der Elemente im Vektor ist.</p>
 <div class="admonition-aufgabe-1-4 admonition">
 <p class="admonition-title">Aufgabe 1.4</p>
-<p>Stellen Sie den Vektor <code class="docutils literal notranslate"><span class="pre">v</span></code> in einem Diagramm dar.</p>
+<p>Stellen Sie den Vektor <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> in einem Diagramm dar.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -540,7 +613,7 @@
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">besuchszahlen_montag</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -554,7 +627,7 @@
 color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 <div class="admonition-aufgabe-1-5 admonition">
 <p class="admonition-title">Aufgabe 1.5</p>
-<p>Stellen Sie <code class="docutils literal notranslate"><span class="pre">v</span></code> mit einer Linienstärke von 3 in einem Diagramm dar.</p>
+<p>Stellen Sie <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> mit einer Linienstärke von 3 in einem Diagramm dar.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -566,7 +639,7 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">besuchszahlen_montag</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -578,7 +651,7 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 </div>
 <div class="admonition-aufgabe-1-6 admonition">
 <p class="admonition-title">Aufgabe 1.6</p>
-<p>Stellen Sie <code class="docutils literal notranslate"><span class="pre">v</span></code> (y-Achse) im Vergleich zu <code class="docutils literal notranslate"><span class="pre">sample</span></code> (x-Achse) mit roten (<code class="docutils literal notranslate"><span class="pre">r</span></code>), kreisförmigen (<code class="docutils literal notranslate"><span class="pre">o</span></code>) Markierungen und einer durchgezogenen Linie (<code class="docutils literal notranslate"><span class="pre">-</span></code>) in einem Diagramm dar. Verwenden Sie eine Linienstärke von 4.</p>
+<p>Stellen Sie <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> (y-Achse) im Vergleich zu <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> (x-Achse) mit roten (<code class="docutils literal notranslate"><span class="pre">r</span></code>), kreisförmigen (<code class="docutils literal notranslate"><span class="pre">o</span></code>) Markierungen und einer durchgezogenen Linie (<code class="docutils literal notranslate"><span class="pre">-</span></code>) in einem Diagramm dar. Verwenden Sie eine Linienstärke von 4.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -590,7 +663,7 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;r-o&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag</span><span class="p">,</span> <span class="s1">&#39;r-o&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -599,12 +672,11 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 <p>Die Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> erstellt Linien. Python stellt jedoch noch viele weitere Diagrammerstellungsfunktionen zur Verfügung. Eine umfangreiche Übersicht finden Sie <a class="reference external" href="https://matplotlib.org/stable/plot_types/index.html">hier</a>. Für jedes Diagramm stehen andere Anpassungsfunktionen zur Verfügung.</p>
 <div class="admonition-aufgabe-1-6 admonition">
 <p class="admonition-title">Aufgabe 1.6</p>
-<p>Erstellen Sie ein Histogramm von <code class="docutils literal notranslate"><span class="pre">gauss</span></code> mithilfe der Funktion <code class="docutils literal notranslate"><span class="pre">plt.hist</span></code>. Setzen Sie die Farbe auf Grün (<code class="docutils literal notranslate"><span class="pre">green</span></code>) und die Kantenfarbe (<code class="docutils literal notranslate"><span class="pre">edgecolor</span></code>) auf Weiß (<code class="docutils literal notranslate"><span class="pre">white</span></code>)</p>
+<p>Erstellen Sie ein Histogramm von <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag_average</span></code> mithilfe der Funktion <code class="docutils literal notranslate"><span class="pre">plt.hist</span></code>. Setzen Sie die Farbe auf Grün (<code class="docutils literal notranslate"><span class="pre">green</span></code>) und die Kantenfarbe (<code class="docutils literal notranslate"><span class="pre">edgecolor</span></code>) auf Weiß (<code class="docutils literal notranslate"><span class="pre">white</span></code>)</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gauss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="c1"># Ihr Code </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
@@ -612,7 +684,7 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gauss</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">besuchszahlen_montag_average</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -626,12 +698,12 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 </div>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
-<p>Erweitern Sie den vorgegebenen Code, sodass das Diagramm den Titel <code class="docutils literal notranslate"><span class="pre">&quot;Sample</span> <span class="pre">Mass&quot;</span></code> hat.</p>
+<p>Erweitern Sie den vorgegebenen Code, sodass das Diagramm den Titel <code class="docutils literal notranslate"><span class="pre">&quot;Durchschnittliche</span> <span class="pre">Besuchszahlen</span> <span class="pre">am</span> <span class="pre">Montag&quot;</span></code> hat.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag_average</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -639,13 +711,13 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">plt.title</span></code> mit einer Texteingabe. Verwenden Sie <code class="docutils literal notranslate"><span class="pre">&quot;Sample</span> <span class="pre">Mass&quot;</span></code> als Eingabe exakt wie abgebildet. Der Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> zeigt das finale Bild an. Überlegen Sie sich also an welcher Stelle Sie den Befehl <code class="docutils literal notranslate"><span class="pre">plt.title</span></code> platzieren.</p>
+<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">plt.title</span></code> mit einer Texteingabe. Verwenden Sie <code class="docutils literal notranslate"><span class="pre">&quot;Durchschnittliche</span> <span class="pre">Besuchszahlen</span> <span class="pre">am</span> <span class="pre">Montag&quot;</span></code> als Eingabe exakt wie abgebildet. Der Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> zeigt das finale Bild an. Überlegen Sie sich also an welcher Stelle Sie den Befehl <code class="docutils literal notranslate"><span class="pre">plt.title</span></code> platzieren.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sample Mass&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag_average</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Durchschnittliche Besuchszahlen über das Semester&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -657,12 +729,12 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 </div>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Erweitern Sie den vorgegebenen Code, sodass die <span class="math notranslate nohighlight">\(y\)</span>-Achse des Diagramms mit <code class="docutils literal notranslate"><span class="pre">&quot;Mass</span> <span class="pre">(g)&quot;</span></code> beschriftet wird.</p>
+<p>Erweitern Sie den vorgegebenen Code, sodass die <span class="math notranslate nohighlight">\(y\)</span>-Achse des Diagramms mit <code class="docutils literal notranslate"><span class="pre">&quot;durchschnittliche</span> <span class="pre">Besuchszahlen&quot;</span></code> beschriftet wird.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag_average</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -671,8 +743,8 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mass (g)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag_average</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Durchschnittliche Besuchszahlen&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -698,7 +770,7 @@ Schlüsselwort <code class="docutils literal notranslate"><span class="pre">labe
 <p>Sie können das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">label</span></code> verwenden um jedem Diagramm direkt beim Ausführen des <code class="docutils literal notranslate"><span class="pre">plot</span></code>-Befehls einen Namen zuzuweisen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Label A&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Label B&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Label B&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -707,13 +779,13 @@ Schlüsselwort <code class="docutils literal notranslate"><span class="pre">labe
 </div>
 <div class="admonition-aufgabe-2-3 admonition">
 <p class="admonition-title">Aufgabe 2.3</p>
-<p>Die Daten <code class="docutils literal notranslate"><span class="pre">mass1</span></code> stammen aus Experiment A und die Daten <code class="docutils literal notranslate"><span class="pre">mass2</span></code> aus Experiment B. Erweitern Sie den vorgegebenen Code, sodass eine Legende mit den entsprechenden Beschriftungen <code class="docutils literal notranslate"><span class="pre">&quot;Experiment</span> <span class="pre">A&quot;</span></code> und <code class="docutils literal notranslate"><span class="pre">&quot;Experiment</span> <span class="pre">B&quot;</span></code> für das Diagramm erstellt wird.</p>
+<p>Die Daten <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> stammen von einem Montag und die Daten <code class="docutils literal notranslate"><span class="pre">besuchszahlen_dienstag</span></code> von einem Dienstag im Semester. Erweitern Sie den vorgegebenen Code, sodass eine Legende mit den entsprechenden Beschriftungen <code class="docutils literal notranslate"><span class="pre">&quot;Montag&quot;</span></code> und <code class="docutils literal notranslate"><span class="pre">&quot;Dienstag&quot;</span></code> für das Diagramm erstellt wird.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_dienstag</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -723,15 +795,15 @@ Schlüsselwort <code class="docutils literal notranslate"><span class="pre">labe
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Experiment A&quot;</span><span class="p">,</span> <span class="s2">&quot;Experiment B&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_dienstag</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Montag&quot;</span><span class="p">,</span> <span class="s2">&quot;Dienstag&quot;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># Option 2</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Experiment A&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Experiment B&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Montag&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_dienstag</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Dienstag&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -788,11 +860,11 @@ Schlüsselwort <code class="docutils literal notranslate"><span class="pre">labe
       </div>
     </a>
     <a class="right-next"
-       href="data_import.html"
+       href="../functions/functions_intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Datenimportierung</p>
+        <p class="prev-next-title">Funktionen und Funktionsrückgaben</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -803,8 +875,7 @@ Schlüsselwort <code class="docutils literal notranslate"><span class="pre">labe
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -863,8 +934,8 @@ By Jacob Heieck, Alena Ulke
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
