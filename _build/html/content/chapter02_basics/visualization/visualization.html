@@ -446,7 +446,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="visualiserung">
 <h1>Visualiserung<a class="headerlink" href="#visualiserung" title="Link to this heading">#</a></h1>
-<p>Zur Visualisierung von Daten benutzt man in Python typischerweise das Modul <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> des Pakets <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Daher importieren wir es zu Beginn dieses Kapitels:</p>
+<p>Zur Visualisierung von Daten benutzt man in Python typischerweise das Modul <span class="math notranslate nohighlight">\(\texttt{pyplot}\)</span> des Pakets Matplotlib. Daher importieren wir es zu Beginn dieses Kapitels.</p>
 <div class="cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
@@ -455,7 +455,7 @@
 </div>
 </div>
 </div>
-<p>In diesem Unterkapitel werden Sie mit den eindimensionalen Arrays <code class="docutils literal notranslate"><span class="pre">wochentag</span></code>, <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code>, <code class="docutils literal notranslate"><span class="pre">besuchszahlen_dienstag</span></code> und <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montage_average</span></code> arbeiten. Der folgende, versteckte Code initialisiert sowohl die Arrays automatisch sobald Sie den Live-Code-Modus starten.</p>
+<p>In diesem Unterkapitel werden Sie mit den eindimensionalen Arrays <span class="math notranslate nohighlight">\(\texttt{wochentag}\)</span>, <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montag}\)</span>, <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_dienstag}\)</span> und <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montage_average}\)</span> arbeiten. Der folgende, versteckte Code initialisiert die Arrays automatisch, sobald Sie den Live-Code-Modus starten.</p>
 <div class="cell tag_thebe-init tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -474,11 +474,11 @@
 </div>
 <section id="vektoren-in-einem-diagramm-darstellen">
 <h2>Vektoren in einem Diagramm darstellen<a class="headerlink" href="#vektoren-in-einem-diagramm-darstellen" title="Link to this heading">#</a></h2>
-<p>Zwei Vektoren <span class="math notranslate nohighlight">\(x\)</span> und <span class="math notranslate nohighlight">\(y\)</span> derselben Länge können mittels der Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y)</span></code> in einem Diagramm dargestellt werden. Der Vektor <span class="math notranslate nohighlight">\(x\)</span> entspricht dabei <span class="math notranslate nohighlight">\(x\)</span>- und der Vektor <span class="math notranslate nohighlight">\(y\)</span> den <span class="math notranslate nohighlight">\(y\)</span>-Koordinaten des Graphen.</p>
+<p>Zwei Vektoren <span class="math notranslate nohighlight">\(\texttt{x}\)</span> und <span class="math notranslate nohighlight">\(\texttt{y}\)</span> derselben Länge können mittels der Funktion <span class="math notranslate nohighlight">\(\texttt{plt.plot(x, y)}\)</span> in einem Diagramm dargestellt werden. Der Vektor <span class="math notranslate nohighlight">\(\texttt{x}\)</span> entspricht dabei den <span class="math notranslate nohighlight">\(x\)</span>- und der Vektor <span class="math notranslate nohighlight">\(\texttt{y}\)</span> den <span class="math notranslate nohighlight">\(y\)</span>-Koordinaten des Graphen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">2.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -486,10 +486,10 @@
 </div>
 </div>
 </div>
-<p>Der Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> wird in Python verwendet, um bei der Datenvisualisierung mit <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> das Diagramm anzuzeigen. <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> öffnet ein Fenster (oder zeigt inline in Jupyter-Notebooks) das erstellte Diagramm an. Ohne diesen Befehl bleibt das Diagramm oft verborgen, besonders außerhalb von interaktiven Programmierumgebungen. Sowohl diese Website als auch Jupyther-Notebooks stellen eine interaktive Umgebnung dar. Hier können Sie den Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> also auch weglassen.</p>
+<p>Der Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> wird in Python verwendet, um bei der Datenvisualisierung mit Matplotlib das Diagramm anzuzeigen. <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> öffnet ein Fenster mit dem erstellten Diagramm oder zeigt es im Jupyter Notebook. Ohne diesen Befehl bleibt das Diagramm oft verborgen, besonders außerhalb von interaktiven Programmierumgebungen. Sowohl diese Website als auch Jupyther Notebooks stellen eine interaktive Umgebnung dar. Hier können Sie den Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> also auch weglassen.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Erstellen Sie ein Diagramm mit <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> auf der x-Achse und <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> auf der y-Achse.</p>
+<p>Erstellen Sie ein Diagramm mit <span class="math notranslate nohighlight">\(\texttt{uhrzeit}\)</span> auf der <span class="math notranslate nohighlight">\(x\)</span>-Achse und <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montag}\)</span> auf der <span class="math notranslate nohighlight">\(y\)</span>-Achse.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -500,7 +500,7 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Nutzen Sie die Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> und die Variablen <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> und <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> als Eingaben.</p>
+<p>Nutzen Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{plt.plot}\)</span> und die Variablen <span class="math notranslate nohighlight">\(\texttt{uhrzeit}\)</span> und <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montag}\)</span> als Eingaben.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -509,17 +509,16 @@
 </pre></div>
 </div>
 </div>
-<br>
-<p>Sie können unteranderen die Farbe, die Linienart, sowie die Markierung innerhalb eines Diagramms angepassen.</p>
+<p>Sie können unter anderem die Farbe, die Linienart, sowie die Markierung innerhalb eines Diagramms angepassen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r--o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Der obige Befehl erstellt ein Diagramm mit einer roten (<code class="docutils literal notranslate"><span class="pre">r</span></code>), gestrichelten Linie (<code class="docutils literal notranslate"><span class="pre">--</span></code>) mit kreisförmigen Markierungen (<code class="docutils literal notranslate"><span class="pre">o</span></code>).</p>
+<p>Der obige Befehl erstellt ein Diagramm mit einer roten (<span class="math notranslate nohighlight">\(\texttt{r}\)</span>), gestrichelten (<span class="math notranslate nohighlight">\(\texttt{--}\)</span>) Linie mit kreisförmigen Markierungen (<span class="math notranslate nohighlight">\(\texttt{o}\)</span>).</p>
 <p>Weitere Informationen zu den verfügbaren Markersymbolen finden Sie <a class="reference external" href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/marker_reference.html">hier</a> und zu den verfügbaren Linienarten <a class="reference external" href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html">hier</a>.</p>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Erstellen Sie ein Diagramm, in dem <code class="docutils literal notranslate"><span class="pre">besuchszahlen_dienstag</span></code> (y-Achse) im Vergleich zu <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> (x-Achse) dargestellt wird. Der geplottete Graph soll dabei eine blaue (<code class="docutils literal notranslate"><span class="pre">b</span></code>), gepunktete Linie (<code class="docutils literal notranslate"><span class="pre">:</span></code>) mit sternförmige (<code class="docutils literal notranslate"><span class="pre">*</span></code>) Markierungen sein.</p>
+<p>Erstellen Sie ein Diagramm, in dem <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_dienstag}\)</span> (<span class="math notranslate nohighlight">\(y\)</span>-Achse) im Vergleich zu <span class="math notranslate nohighlight">\(\texttt{uhrzeit}\)</span> (<span class="math notranslate nohighlight">\(x\)</span>-Achse) dargestellt wird. Der geplottete Graph soll dabei eine blaue (<span class="math notranslate nohighlight">\(\texttt{b}\)</span>), gepunktete (<span class="math notranslate nohighlight">\(\texttt{:}\)</span>) Linie mit sternförmige (<span class="math notranslate nohighlight">\(\texttt{*}\)</span>) Markierungen sein.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -535,8 +534,7 @@
 </pre></div>
 </div>
 </div>
-<br>
-<p>Beachten Sie, dass wenn Sie mehrere <code class="docutils literal notranslate"><span class="pre">plot</span></code>-Befehle direkt hintereinander ausführen ohne diese durch den Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> zu trennen, dann werden die Graphen entlang derselben Achsen geplottet in einen gemeinsamen Diagramm dargestellt.</p>
+<p>Beachten Sie, dass wenn Sie mehrere <span class="math notranslate nohighlight">\(\texttt{plot}\)</span>-Befehle direkt hintereinander ausführen ohne diese durch den Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> zu trennen, werden die Graphen entlang derselben Achsen geplottet in einen gemeinsamen Diagramm dargestellt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
@@ -552,8 +550,8 @@
 </div>
 </div>
 </div>
-<p>Dieses Verhalten kann gewünscht sein, muss es aber nicht. Um Python mitzuteilen, dass Sie beide Diagramme separat darstellen wollen, können Sie den bereits bekannten Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> verwenden oder den Befehl <code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code>, welcher Python signalisiert, dass das Diagramm in einem neuen Plot mit eigenen Achsen dargestellt werden soll.</p>
-<p>Im besten Fall verwenden Sie beide Befehle, denn <code class="docutils literal notranslate"><span class="pre">plt.figure</span></code> erstellt eine leere Leinwand (außerhalb von interaktiven Programmierumgebungen ein neues Fenster) für die kommenden <code class="docutils literal notranslate"><span class="pre">plot</span></code>-Befehle und der Befehl <code class="docutils literal notranslate"><span class="pre">plt.show</span></code> zeigt die Diagramme schließlich an.</p>
+<p>Dieses Verhalten kann gewünscht sein, muss es aber nicht. Um Python mitzuteilen, dass Sie beide Diagramme separat darstellen wollen, können Sie den bereits bekannten Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> verwenden oder den Befehl <span class="math notranslate nohighlight">\(\texttt{plt.figure()}\)</span>, welcher Python signalisiert, dass das Diagramm in einem neuen Plot mit eigenen Achsen dargestellt werden soll.</p>
+<p>Im besten Fall verwenden Sie beide Befehle, denn <span class="math notranslate nohighlight">\(\texttt{plt.figure}\)</span> erstellt eine leere Leinwand (außerhalb von interaktiven Programmierumgebungen ein neues Fenster) für die kommenden <span class="math notranslate nohighlight">\(\texttt{plot}\)</span>-Befehle und der Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show}\)</span> zeigt die Diagramme schließlich an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>        <span class="c1"># Python erstellt eine neue Figure (= leere Leinwand)</span>
@@ -569,7 +567,7 @@
 </div>
 <div class="admonition-aufgabe-1-3 admonition">
 <p class="admonition-title">Aufgabe 1.3</p>
-<p>Erstellen Sie ein Diagramm, in dem <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> (y-Achse) in Bezug zu <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> (x-Achse) dargestellt wird, und verwenden Sie schwarze (<code class="docutils literal notranslate"><span class="pre">k</span></code>), quadratische (<code class="docutils literal notranslate"><span class="pre">s</span></code>) Markierungen ohne Linie. Stellen Sie im derselben Diagramm auch <code class="docutils literal notranslate"><span class="pre">besuchszahlen_dienstag</span></code> (y-Achse) in Bezug zu <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> dar. Verwenden Sie dabei blaue (<code class="docutils literal notranslate"><span class="pre">b</span></code>), dreieckige (<code class="docutils literal notranslate"><span class="pre">^</span></code>) Markierungen ohne Linie.</p>
+<p>Erstellen Sie ein Diagramm, in dem <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montag}\)</span> (<span class="math notranslate nohighlight">\(y\)</span>-Achse) in Bezug zu <span class="math notranslate nohighlight">\(\texttt{uhrzeit}\)</span> (<span class="math notranslate nohighlight">\(x\)</span>-Achse) dargestellt wird, und verwenden Sie schwarze (<span class="math notranslate nohighlight">\(\texttt{k}\)</span>), quadratische (<span class="math notranslate nohighlight">\(\texttt{s}\)</span>) Markierungen ohne Linie. Stellen Sie im selben Diagramm auch <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_dienstag}\)</span> (<span class="math notranslate nohighlight">\(y\)</span>-Achse) in Bezug zu <span class="math notranslate nohighlight">\(\texttt{uhrzeit}\)</span> dar. Verwenden Sie dabei blaue (<span class="math notranslate nohighlight">\(\texttt{b}\)</span>), dreieckige (<span class="math notranslate nohighlight">\(\texttt{^}\)</span>) Markierungen ohne Linie.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -587,11 +585,10 @@
 </pre></div>
 </div>
 </div>
-<br>
-<p>Wenn Sie der Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> nur einen einzelnen Vektor übergeben um ein Diagramm zuerstellen, verwendet Python die Vektorwerte als Daten für die <span class="math notranslate nohighlight">\(y\)</span>-Achse und setzt die Daten für die <span class="math notranslate nohighlight">\(x\)</span>-Achse auf den Bereich von <span class="math notranslate nohighlight">\(0\)</span> bis <span class="math notranslate nohighlight">\(n-1\)</span>, wobei <span class="math notranslate nohighlight">\(n\)</span> die Anzahl der Elemente im Vektor ist.</p>
+<p>Wenn Sie der Funktion <span class="math notranslate nohighlight">\(\texttt{plt.plot}\)</span> nur einen einzelnen Vektor übergeben um ein Diagramm zu erstellen, verwendet Python die Vektorwerte als Daten für die <span class="math notranslate nohighlight">\(y\)</span>-Achse und setzt die Daten für die <span class="math notranslate nohighlight">\(x\)</span>-Achse auf den Bereich von <span class="math notranslate nohighlight">\(0\)</span> bis <span class="math notranslate nohighlight">\(n-1\)</span>, wobei <span class="math notranslate nohighlight">\(n\)</span> die Anzahl der Elemente im Vektor ist.</p>
 <div class="admonition-aufgabe-1-4 admonition">
 <p class="admonition-title">Aufgabe 1.4</p>
-<p>Stellen Sie den Vektor <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> in einem Diagramm dar.</p>
+<p>Stellen Sie den Vektor <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montag}\)</span> in einem Diagramm dar.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -608,16 +605,14 @@
 </pre></div>
 </div>
 </div>
-<br>
-<p>Wenn Sie die Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> verwenden, können Sie optional Eigenschaften festlegen, indem Sie Name-Wert-Argumente verwenden, welche aus einem Argumentnamen und einem zugeordneten Wert bestehen. Beispielsweise wird mit diesem Befehl eine Linie mit sehr breiter Linienstärke in einem Diagramm dargestellt:</p>
+<p>Wenn Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{plt.plot}\)</span> verwenden, können Sie optional Eigenschaften festlegen, indem Sie Name-Wert-Argumente verwenden, welche aus einem Argumentnamen und einem zugeordneten Wert bestehen. Beispielsweise wird mit diesem Befehl eine Linie mit sehr breiter Linienstärke in einem Diagramm dargestellt:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Weitere Informationen zu verfügbaren Eigenschaften erhalten Sie in der Dokumentation Line Properties (Linieneigenschaften).
-color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
+<p>Weitere Informationen zu verfügbaren Eigenschaften erhalten Sie in der Dokumentation <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html#matplotlib.lines.Line2D">Line Properties</a>.</p>
 <div class="admonition-aufgabe-1-5 admonition">
 <p class="admonition-title">Aufgabe 1.5</p>
-<p>Stellen Sie <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> mit einer Linienstärke von 3 in einem Diagramm dar.</p>
+<p>Stellen Sie <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montag}\)</span> mit einer Linienstärke von <span class="math notranslate nohighlight">\(3\)</span> in einem Diagramm dar.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -634,14 +629,12 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 </pre></div>
 </div>
 </div>
-<br>
-<p>Sie können für die Funktion plot nach der Linienspezifikation Name-Wert-Argumente angeben.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="s2">&quot;ro--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition-aufgabe-1-6 admonition">
 <p class="admonition-title">Aufgabe 1.6</p>
-<p>Stellen Sie <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> (y-Achse) im Vergleich zu <code class="docutils literal notranslate"><span class="pre">uhrzeit</span></code> (x-Achse) mit roten (<code class="docutils literal notranslate"><span class="pre">r</span></code>), kreisförmigen (<code class="docutils literal notranslate"><span class="pre">o</span></code>) Markierungen und einer durchgezogenen Linie (<code class="docutils literal notranslate"><span class="pre">-</span></code>) in einem Diagramm dar. Verwenden Sie eine Linienstärke von 4.</p>
+<p>Stellen Sie <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montag}\)</span> (<span class="math notranslate nohighlight">\(y\)</span>-Achse) im Vergleich zu <span class="math notranslate nohighlight">\(\texttt{uhrzeit}\)</span> (<span class="math notranslate nohighlight">\(x\)</span>-Achse) mit roten (<span class="math notranslate nohighlight">\(\texttt{r}\)</span>), kreisförmigen (<span class="math notranslate nohighlight">\(\texttt{o}\)</span>) Markierungen und einer durchgezogenen Linie (<span class="math notranslate nohighlight">\(\texttt{-}\)</span>) in einem Diagramm dar. Verwenden Sie eine Linienstärke von <span class="math notranslate nohighlight">\(4\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -658,11 +651,10 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 </pre></div>
 </div>
 </div>
-<br>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> erstellt Linien. Python stellt jedoch noch viele weitere Diagrammerstellungsfunktionen zur Verfügung. Eine umfangreiche Übersicht finden Sie <a class="reference external" href="https://matplotlib.org/stable/plot_types/index.html">hier</a>. Für jedes Diagramm stehen andere Anpassungsfunktionen zur Verfügung.</p>
+<p>Die Funktion <span class="math notranslate nohighlight">\(\texttt{plt.plot}\)</span> erstellt Linien. Python stellt jedoch noch viele weitere Diagrammerstellungsfunktionen zur Verfügung. Eine umfangreiche Übersicht finden Sie <a class="reference external" href="https://matplotlib.org/stable/plot_types/index.html">hier</a>. Für jedes Diagramm stehen andere Anpassungsfunktionen zur Verfügung.</p>
 <div class="admonition-aufgabe-1-6 admonition">
 <p class="admonition-title">Aufgabe 1.6</p>
-<p>Erstellen Sie ein Histogramm von <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag_average</span></code> mithilfe der Funktion <code class="docutils literal notranslate"><span class="pre">plt.hist</span></code>. Setzen Sie die Farbe auf Grün (<code class="docutils literal notranslate"><span class="pre">green</span></code>) und die Kantenfarbe (<code class="docutils literal notranslate"><span class="pre">edgecolor</span></code>) auf Weiß (<code class="docutils literal notranslate"><span class="pre">white</span></code>)</p>
+<p>Erstellen Sie ein Histogramm von <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montag_average}\)</span> mithilfe der Funktion <span class="math notranslate nohighlight">\(\texttt{plt.hist}\)</span>. Setzen Sie die Farbe auf Grün (<span class="math notranslate nohighlight">\(\texttt{green}\)</span>) und die Kantenfarbe (<span class="math notranslate nohighlight">\(\texttt{edgecolor}\)</span>) auf Weiß (<span class="math notranslate nohighlight">\(\texttt{white}\)</span>)</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -682,13 +674,13 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 </section>
 <section id="beschriftungen-von-diagrammen">
 <h2>Beschriftungen von Diagrammen<a class="headerlink" href="#beschriftungen-von-diagrammen" title="Link to this heading">#</a></h2>
-<p>Sie können Diagrammen Beschriftungen hinzufügen, indem Sie Diagrammanmerkungsfunktionen wie <code class="docutils literal notranslate"><span class="pre">plt.title</span></code> verwenden. Für diese Funktionen müssen Sie Text eingeben. In Python wird Text in Anführungszeichen (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) gesetzt.</p>
+<p>Sie können Diagrammen Beschriftungen hinzufügen, indem Sie Diagrammanmerkungsfunktionen wie <span class="math notranslate nohighlight">\(\texttt{plt.title}\)</span> verwenden. Für diese Funktionen müssen Sie Text eingeben. In Python wird Text in Anführungszeichen (<span class="math notranslate nohighlight">\(\texttt{&quot;}\)</span>) gesetzt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plot Titel&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
-<p>Erweitern Sie den vorgegebenen Code, sodass das Diagramm den Titel <code class="docutils literal notranslate"><span class="pre">&quot;Durchschnittliche</span> <span class="pre">Besuchszahlen</span> <span class="pre">am</span> <span class="pre">Montag&quot;</span></code> hat.</p>
+<p>Erweitern Sie den vorgegebenen Code, sodass das Diagramm den Titel <span class="math notranslate nohighlight">\(\texttt{&quot;Durchschnittliche Besuchszahlen am Montag&quot;}\)</span> hat.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -701,25 +693,24 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">plt.title</span></code> mit einer Texteingabe. Verwenden Sie <code class="docutils literal notranslate"><span class="pre">&quot;Durchschnittliche</span> <span class="pre">Besuchszahlen</span> <span class="pre">am</span> <span class="pre">Montag&quot;</span></code> als Eingabe exakt wie abgebildet. Der Befehl <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> zeigt das finale Bild an. Überlegen Sie sich also an welcher Stelle Sie den Befehl <code class="docutils literal notranslate"><span class="pre">plt.title</span></code> platzieren.</p>
+<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{plt.title}\)</span> mit einer Texteingabe. Verwenden Sie <span class="math notranslate nohighlight">\(\texttt{&quot;Durchschnittliche Besuchszahlen am Montag&quot;}\)</span> als Eingabe. Der Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> zeigt das finale Bild an. Überlegen Sie sich also an welcher Stelle Sie den Befehl <span class="math notranslate nohighlight">\(\texttt{plt.title}\)</span> platzieren.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag_average</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Durchschnittliche Besuchszahlen über das Semester&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Durchschnittliche Besuchszahlen am Montag&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<br>
-<p>Sie können Beschriftungen zu Ihren Achsen hinzufügen, indem Sie die Funktionen <code class="docutils literal notranslate"><span class="pre">xlabel</span></code> und <code class="docutils literal notranslate"><span class="pre">ylabel</span></code> verwenden.</p>
+<p>Sie können Beschriftungen zu Ihren Achsen hinzufügen, indem Sie die Funktionen <span class="math notranslate nohighlight">\(\texttt{xlabel}\)</span> und <span class="math notranslate nohighlight">\(\texttt{ylabel}\)</span> verwenden.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Label der y-Achse&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Erweitern Sie den vorgegebenen Code, sodass die <span class="math notranslate nohighlight">\(y\)</span>-Achse des Diagramms mit <code class="docutils literal notranslate"><span class="pre">&quot;durchschnittliche</span> <span class="pre">Besuchszahlen&quot;</span></code> beschriftet wird.</p>
+<p>Erweitern Sie den vorgegebenen Code, sodass die <span class="math notranslate nohighlight">\(y\)</span>-Achse des Diagramms mit <span class="math notranslate nohighlight">\(\texttt{&quot;durchschnittliche Besuchszahlen&quot;}\)</span> beschriftet wird.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -739,13 +730,12 @@ color=’red’, marker=’o’, linestyle=’dashed’, linewidth=3</p>
 </pre></div>
 </div>
 </div>
-<br>
 <p>Wenn Sie in einem Diagramm mehrere Daten darstellen, ist es sinnvoll eine Legende zu verwenden. Um eine Legende zu erstellen stehen Ihnen zwei, äquivalente Möglichkeiten zur Verfügung.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
-Funktion <code class="docutils literal notranslate"><span class="pre">plt.legend</span></code></label><div class="sd-tab-content docutils">
-<p>Sie könnnen die Funktion <code class="docutils literal notranslate"><span class="pre">plt.legend([&quot;Label</span> <span class="pre">A&quot;,</span> <span class="pre">&quot;Label</span> <span class="pre">B&quot;])</span></code> verwenden, um in Ihrem Diagramm eine Legende hinzufügen.</p>
+Funktion <span class="math notranslate nohighlight">\(\texttt{plt.legend}\)</span></label><div class="sd-tab-content docutils">
+<p>Sie könnnen die Funktion <span class="math notranslate nohighlight">\(\texttt{plt.legend([&quot;Label A&quot;, &quot;Label B&quot;])}\)</span> verwenden, um in Ihrem Diagramm eine Legende hinzufügen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
@@ -756,8 +746,8 @@ Funktion <code class="docutils literal notranslate"><span class="pre">plt.legend
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
-Schlüsselwort <code class="docutils literal notranslate"><span class="pre">label</span></code></label><div class="sd-tab-content docutils">
-<p>Sie können das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">label</span></code> verwenden um jedem Diagramm direkt beim Ausführen des <code class="docutils literal notranslate"><span class="pre">plot</span></code>-Befehls einen Namen zuzuweisen.</p>
+Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{label}\)</span></label><div class="sd-tab-content docutils">
+<p>Sie können das Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{label}\)</span> verwenden um jedem Diagramm direkt beim Ausführen des <span class="math notranslate nohighlight">\(\texttt{plot}\)</span>-Befehls einen Namen zuzuweisen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Label A&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Label B&quot;</span><span class="p">)</span>
@@ -769,7 +759,7 @@ Schlüsselwort <code class="docutils literal notranslate"><span class="pre">labe
 </div>
 <div class="admonition-aufgabe-2-3 admonition">
 <p class="admonition-title">Aufgabe 2.3</p>
-<p>Die Daten <code class="docutils literal notranslate"><span class="pre">besuchszahlen_montag</span></code> stammen von einem Montag und die Daten <code class="docutils literal notranslate"><span class="pre">besuchszahlen_dienstag</span></code> von einem Dienstag im Semester. Erweitern Sie den vorgegebenen Code, sodass eine Legende mit den entsprechenden Beschriftungen <code class="docutils literal notranslate"><span class="pre">&quot;Montag&quot;</span></code> und <code class="docutils literal notranslate"><span class="pre">&quot;Dienstag&quot;</span></code> für das Diagramm erstellt wird.</p>
+<p>Die Daten <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_montag}\)</span> stammen von einem Montag und die Daten <span class="math notranslate nohighlight">\(\texttt{besuchszahlen_dienstag}\)</span> von einem Dienstag im Semester. Erweitern Sie den vorgegebenen Code, sodass eine Legende mit den entsprechenden Beschriftungen <span class="math notranslate nohighlight">\(\texttt{&quot;Montag&quot;}\)</span> und <span class="math notranslate nohighlight">\(\texttt{&quot;Dienstag&quot;}\)</span> für das Diagramm erstellt wird.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -799,8 +789,7 @@ Schlüsselwort <code class="docutils literal notranslate"><span class="pre">labe
 </pre></div>
 </div>
 </div>
-<br>
-<p>Sie können den Wert einer Variablen in Diagrammanmerkungen verwenden, indem Sie dem Text eine Variable hinzufügen. Die Funktion <code class="docutils literal notranslate"><span class="pre">str</span></code> wandelt dabei einen Zahlwert in Text um.</p>
+<p>Sie können den Wert einer Variablen in Diagrammanmerkungen verwenden, indem Sie dem Text eine Variable hinzufügen. Die Funktion <span class="math notranslate nohighlight">\(\texttt{str}\)</span> wandelt dabei einen Zahlwert in Text um.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sample &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; Data&quot;</span><span class="p">)</span>

@@ -544,7 +544,7 @@
 </pre></div>
 </div>
 </div>
-<p>Ebenso wie alle Elemente eines Arrays mit einem Skalar addiert oder subtrahiert werden können, können auch alle Elemente mit einem Skalar multiplizieren oder durch einen Skalar dividieren werden:</p>
+<p>Ebenso wie alle Elemente eines Arrays mit einem Skalar addiert oder subtrahiert werden können, können auch alle Elemente mit einem Skalar multiplizieren oder durch einen Skalar dividieren werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
@@ -556,7 +556,9 @@
 </div>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Skalieren Sie jedes Element von <span class="math notranslate nohighlight">\(\texttt{v}\)</span> mit <span class="math notranslate nohighlight">\(3\)</span> und speichern Sie das Ergebnis in einer Variablen mit dem Namen <span class="math notranslate nohighlight">\(\texttt{w2}\)</span>.</p>
+<p>Skalieren Sie jedes Element von <span class="math notranslate nohighlight">\(\texttt{v} = \begin{pmatrix}
+-4 &amp; 9 &amp; 4 &amp; 0
+\end{pmatrix}^T\)</span> mit <span class="math notranslate nohighlight">\(3\)</span> und speichern Sie das Ergebnis in einer Variable mit dem Namen <span class="math notranslate nohighlight">\(\texttt{w2}\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -571,7 +573,7 @@
 </pre></div>
 </div>
 </div>
-<p>Genauso können wie eine Array und ein Skalar miteinander addiert werden können, können auch zwei Arrays <span class="math notranslate nohighlight">\(\texttt{x}\)</span> und <span class="math notranslate nohighlight">\(\texttt{y}\)</span> derselben Größen addiert werden:</p>
+<p>Genauso wie eine Array und ein Skalar miteinander addiert werden können, können auch zwei Arrays <span class="math notranslate nohighlight">\(\texttt{x}\)</span> und <span class="math notranslate nohighlight">\(\texttt{y}\)</span> derselben Größen addiert werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
@@ -586,7 +588,11 @@
 </div>
 <div class="admonition-aufgabe-1-3 admonition">
 <p class="admonition-title">Aufgabe 1.3</p>
-<p>Erstellen Sie einen Vektor <span class="math notranslate nohighlight">\(\texttt{v_sum}\)</span>, der die Summe der Vektoren <span class="math notranslate nohighlight">\(\texttt{v1}\)</span> und <span class="math notranslate nohighlight">\(\texttt{v2}\)</span> ist.</p>
+<p>Erstellen Sie einen Vektor <span class="math notranslate nohighlight">\(\texttt{v_sum}\)</span>, der die Summe der Vektoren <span class="math notranslate nohighlight">\(\texttt{v1} = \begin{pmatrix}
+7 &amp; 4 &amp; 6 &amp; 9 &amp; 2 &amp; 6
+\end{pmatrix}^T\)</span> und <span class="math notranslate nohighlight">\(\texttt{v1} = \begin{pmatrix}
+10 &amp; 10 &amp; 7 &amp; 4 &amp; 3 &amp; 7
+\end{pmatrix}^T\)</span> ist.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -618,7 +624,7 @@
 </pre></div>
 </div>
 </div>
-<p>Der Operator <span class="math notranslate nohighlight">\(\texttt{*}\)</span> führt für zwei Arrays gleicher Größe die elementweise Multiplikation aus, indem er die entsprechenden Elemente eintragsweise miteinander multipliziert:</p>
+<p>Der Operator <span class="math notranslate nohighlight">\(\texttt{*}\)</span> führt für zwei Arrays gleicher Größe die elementweise Multiplikation aus, indem er die entsprechenden Elemente eintragsweise miteinander multipliziert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
@@ -632,7 +638,11 @@
 </div>
 <div class="admonition-aufgabe-1-5 admonition">
 <p class="admonition-title">Aufgabe 1.5</p>
-<p>Erstellen Sie eine Variable mit dem Namen <span class="math notranslate nohighlight">\(\texttt{w_mult}\)</span>, die das elementweise Produkt von <span class="math notranslate nohighlight">\(\texttt{v1}\)</span> und <span class="math notranslate nohighlight">\(\texttt{v2}\)</span> und eine Variable <span class="math notranslate nohighlight">\(\texttt{w_div}\)</span>, die den Quotienten von <span class="math notranslate nohighlight">\(\texttt{v1}\)</span> und <span class="math notranslate nohighlight">\(\texttt{v2}\)</span> enthält.</p>
+<p>Erstellen Sie eine Variable mit dem Namen <span class="math notranslate nohighlight">\(\texttt{w_mult}\)</span>, die das elementweise Produkt von <span class="math notranslate nohighlight">\(\texttt{v1} = \begin{pmatrix}
+7 &amp; 4 &amp; 6 &amp; 9 &amp; 2 &amp; 6
+\end{pmatrix}^T\)</span> und <span class="math notranslate nohighlight">\(\texttt{v1} = \begin{pmatrix}
+10 &amp; 10 &amp; 7 &amp; 4 &amp; 3 &amp; 7
+\end{pmatrix}^T\)</span> und eine Variable <span class="math notranslate nohighlight">\(\texttt{w_div}\)</span>, die den Quotienten von <span class="math notranslate nohighlight">\(\texttt{v1}\)</span> und <span class="math notranslate nohighlight">\(\texttt{v2}\)</span> enthält.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,10 +661,12 @@
 </section>
 <section id="funktionen-auf-arrays-anwenden">
 <h2>Funktionen auf Arrays anwenden<a class="headerlink" href="#funktionen-auf-arrays-anwenden" title="Link to this heading">#</a></h2>
-<p>Das Paket NumPy stellt grundlegende statistische Funktion zur Verfügung, die Sie auf ein Arrays anwenden können, um eine einzelne Ausgabe zu erhalten. Zum Beispiel können Sie mit Hilfe der Funktion <span class="math notranslate nohighlight">\(\texttt{np.min()}\)</span> den minimalen Wert eines Vektors <span class="math notranslate nohighlight">\(\texttt{x}\)</span> bestimmen: <span class="math notranslate nohighlight">\(\texttt{x_min = np.min(x)}\)</span>.</p>
+<p>Das Paket NumPy stellt grundlegende statistische Funktion zur Verfügung, die Sie auf ein Arrays anwenden können. Zum Beispiel können Sie mit Hilfe der Funktion <span class="math notranslate nohighlight">\(\texttt{np.min()}\)</span> den minimalen Wert eines Vektors <span class="math notranslate nohighlight">\(\texttt{x}\)</span> bestimmen: <span class="math notranslate nohighlight">\(\texttt{x_min = np.min(x)}\)</span>.</p>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
-<p>Erstellen Sie die Variable <span class="math notranslate nohighlight">\(\texttt{v_min}\)</span>, die den minimalen Wert des Vektors <span class="math notranslate nohighlight">\(\texttt{v_sum}\)</span> enthält.</p>
+<p>Erstellen Sie die Variable <span class="math notranslate nohighlight">\(\texttt{v_min}\)</span>, die den minimalen Wert des Vektors <span class="math notranslate nohighlight">\(\texttt{v_sum} = \begin{pmatrix}
+17 &amp; 14 &amp; 13 &amp; 13 &amp; 5 &amp; 13
+\end{pmatrix}^T\)</span> enthält.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -673,7 +685,9 @@
 <span class="math notranslate nohighlight">\(\texttt{x_sqrt = np.sqrt(x)}\)</span>.</p>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.round}\)</span>, um eine Variable mit dem Namen <span class="math notranslate nohighlight">\(\texttt{v_round}\)</span> zu erstellen, die die gerundeten Elemente von <span class="math notranslate nohighlight">\(\texttt{v_sum_half}\)</span> enthält.</p>
+<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.round}\)</span>, um eine Variable mit dem Namen <span class="math notranslate nohighlight">\(\texttt{v_round}\)</span> zu erstellen, die die gerundeten Elemente von <span class="math notranslate nohighlight">\(\texttt{v_sum_half} = \begin{pmatrix}
+8.5 &amp; 7 &amp; 6.5 &amp; 6.5 &amp; 2.5 &amp; 6.5
+\end{pmatrix}^T\)</span> enthält.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -688,16 +702,69 @@
 </pre></div>
 </div>
 </div>
+<div class="warning admonition">
+<p class="admonition-title">Achtung</p>
+<p>Handelt es sich um eine Zahl mit Nachkommastelle <span class="math notranslate nohighlight">\(0.5\)</span>, dann rundet <span class="math notranslate nohighlight">\(\texttt{np.round}\)</span> auf die nächste geraden Zahl. Das heißt:</p>
+<ul class="simple">
+<li><p>1.5 → 2.0</p></li>
+<li><p>2.5 → 2.0 (weil 2 gerade ist, 3 aber nicht)</p></li>
+<li><p>3.5 → 4.0</p></li>
+</ul>
+</div>
+<p>Es folgt eine Übersicht mit einigen geläufigen Funktionen, die auf Vektoren angewendet werden können.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Beschreibung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.min(x)}\)</span></p></td>
+<td><p>Gibt den kleinsten Wert im Array zurück.</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.max(x)}\)</span></p></td>
+<td><p>Gibt den größten Wert im Array zurück.</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.argmin(x)}\)</span></p></td>
+<td><p>Gibt den Index des kleinsten Werts im Array zurück.</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.argmax(x)}\)</span></p></td>
+<td><p>Gibt den Index des größten Werts im Array zurück.</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.sqrt(x)}\)</span></p></td>
+<td><p>Gibt ein Array mit den Quadratwurzeln der Elemente zurück.</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.abs(x)}\)</span></p></td>
+<td><p>Gibt ein Array mit den Absolutbeträgen der Elemente zurück.</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.round(x)}\)</span></p></td>
+<td><p>Rundet jedes Element.</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.sum(x)}\)</span></p></td>
+<td><p>Gibt die Summe aller Elemente zurück.</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.mean(x)}\)</span></p></td>
+<td><p>Gibt den Mittelwert der Elemente zurück.</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.std(x)}\)</span></p></td>
+<td><p>Gibt die Standardabweichung der Werte im Array zurück.</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.sort(x)}\)</span></p></td>
+<td><p>Gibt ein sortiertes Array zurück (aufsteigend).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="operationen-zwischen-arrays-unterschiedlicher-dimension">
 <h2>Operationen zwischen Arrays unterschiedlicher Dimension<a class="headerlink" href="#operationen-zwischen-arrays-unterschiedlicher-dimension" title="Link to this heading">#</a></h2>
-<p>Eine der bekanntesten Rechenoperationen zwischen zwei verschieden dimensionalen Arrays ist die <em>Matrix-Vektor-Multiplikation</em>. NumPy bietet zwei Möglichkeiten diese Auszuführen: die Funktion <span class="math notranslate nohighlight">\(\texttt{np.dot()}\)</span> und den Operator <span class="math notranslate nohighlight">\(\texttt{&#64;}\)</span>. Beide liefern jedoch dasselbe Ergebnis.</p>
+<p>Eine der bekanntesten Rechenoperationen zwischen zwei verschieden dimensionalen Arrays ist die <em>Matrix-Vektor-Multiplikation</em>. NumPy bietet zwei Möglichkeiten diese Auszuführen: die Funktion <span class="math notranslate nohighlight">\(\texttt{np.dot()}\)</span> und den Operator <span class="math notranslate nohighlight">\(&#64;\)</span>. Beide liefern jedoch dasselbe Ergebnis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -709,8 +776,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mf">.9</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># Ihr Code </span>
 </pre></div>
@@ -726,43 +793,14 @@
 </pre></div>
 </div>
 </div>
-<p>Mit der gleichen Syntax kann auch das Produkt <span class="math notranslate nohighlight">\(\texttt{x} \cdot \texttt{A}\)</span> berechnet werden. Python warnt Sie an dieser also nicht zwingend, sollten Sie die Eingabe einmal versehentlich vertauschen!</p>
+<p>Mit der gleichen Syntax kann auch das Produkt <span class="math notranslate nohighlight">\(\texttt{x}^T \cdot \texttt{A}\)</span> berechnet werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">A</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">@</span> <span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Bisher haben Arrayoperationen mit folgenden Elementen durchgeführt:</p>
-<ul class="simple">
-<li><p>mit zwei Arrays derselben Größe,</p></li>
-<li><p>mit einem Skalar und einem Array,</p></li>
-<li><p>mit einem zweidimensionalen und einem eindimensionalem Array.</p></li>
-</ul>
-<p>Es gibt aber noch weitere kompatible Größen und Dimension wie zum Beispiel:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
-
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">]])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Die Operation funktioniert nicht nur für den Operator <span class="math notranslate nohighlight">\(\texttt{+}\)</span> sondern auch für die Operatoren <span class="math notranslate nohighlight">\(\texttt{-}\)</span>, <span class="math notranslate nohighlight">\(\texttt{*}\)</span> und <span class="math notranslate nohighlight">\(\texttt{/}\)</span>.</p>
-<div class="admonition-zusatzaufgabe admonition">
-<p class="admonition-title">Zusatzaufgabe</p>
-<p>Machen Sie sich klar welche Dimension und welche Größe die involvierten Arrays haben. Wie entstehen die Elemente von <span class="math notranslate nohighlight">\(\texttt{x1}\)</span> und <span class="math notranslate nohighlight">\(\texttt{x2}\)</span> aus den Elementen der Matrix und des Vektors? Wie sieht das Ganze für <span class="math notranslate nohighlight">\(\texttt{y}\)</span> aus?</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
@@ -770,21 +808,23 @@
 </section>
 <section id="exkurs-transponieren-eines-arrays">
 <h2>Exkurs: Transponieren eines Arrays<a class="headerlink" href="#exkurs-transponieren-eines-arrays" title="Link to this heading">#</a></h2>
-<p>Ihre innere Mathematikerin wird bei der Matrix-Vektor-Multiplikation vielleicht kurz stutzig geworden sein. Schließlich muss <span class="math notranslate nohighlight">\(x\)</span> ein Spaltenvektor sein damit das Produkt <span class="math notranslate nohighlight">\(\texttt{A} \cdot \texttt{x}\)</span> wohldefiniert ist und ein Zeilenvektor, damit <span class="math notranslate nohighlight">\(\texttt{x} \cdot \texttt{A}\)</span> wohldefiniert ist. Das Ausführen von <span class="math notranslate nohighlight">\(\texttt{A &#64; x}\)</span> und <span class="math notranslate nohighlight">\(\texttt{x &#64; A}\)</span> funktioniert für eine quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> allerdings in beiden Fällen problemlos.
+<p>Ihre innere Mathematikerin wird bei der Matrix-Vektor-Multiplikation vielleicht kurz stutzig geworden sein. Schließlich muss <span class="math notranslate nohighlight">\(\texttt{x}\)</span> ein Spaltenvektor sein damit das Produkt <span class="math notranslate nohighlight">\(\texttt{A} \cdot \texttt{x}\)</span> wohldefiniert ist und ein Zeilenvektor, damit <span class="math notranslate nohighlight">\(\texttt{x} \cdot \texttt{A}\)</span> wohldefiniert ist. Das Ausführen von <span class="math notranslate nohighlight">\(\texttt{A}\ &#64;\ \texttt{x}\)</span> und <span class="math notranslate nohighlight">\(\texttt{x}\ &#64;\ \texttt{A}\)</span> funktioniert für eine quadratische Matrix <span class="math notranslate nohighlight">\(\texttt{A}\)</span> allerdings in beiden Fällen problemlos.
 An dieser Stelle interpretiert NumPy das Array <span class="math notranslate nohighlight">\(\texttt{x}\)</span> dynamisch entweder als Zeilen- oder Spaltenvektor.</p>
-<p>Für <span class="math notranslate nohighlight">\(\texttt{A &#64; x}\)</span> ist lediglich wichtig, dass die <strong>Spaltenanzahl</strong> von <span class="math notranslate nohighlight">\(\texttt{A}\)</span> gleich der Länge von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> ist und für
-<span class="math notranslate nohighlight">\(\texttt{x &#64; A}\)</span>, dass die <strong>Zeilennanzahl</strong> von <span class="math notranslate nohighlight">\(\texttt{A}\)</span> gleich der Länge von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> ist. Der Ergebnisvektor ist in beiden Fällen wieder ein eindimensionales Array der entsprechenden Länge.</p>
-<p>Im Folgenden erklären wir Ihnen Sie ein eindimensionales Array in einen <em>echten</em> Zeilen- oder Spaltenvektor überführt. Dabei wird aus dem eindimensionalen Array ein zweidimensionales, sodass wir tatsächlich von Zeilen und Spalten sprechen können.</p>
+<p>Für <span class="math notranslate nohighlight">\(\texttt{A}\ &#64;\ \texttt{x}\)</span> ist lediglich wichtig, dass die <strong>Spaltenanzahl</strong> von <span class="math notranslate nohighlight">\(\texttt{A}\)</span> gleich der Länge von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> ist und für
+<span class="math notranslate nohighlight">\(\texttt{x}\ &#64;\ \texttt{A}\)</span>, dass die <strong>Zeilennanzahl</strong> von <span class="math notranslate nohighlight">\(\texttt{A}\)</span> gleich der Länge von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> ist. Der Ergebnisvektor ist in beiden Fällen wieder ein eindimensionales Array der entsprechenden Länge.</p>
+<p>Im Folgenden erklären wir Ihnen, wie Sie ein eindimensionales Array in einen <em>echten</em> Zeilen- oder Spaltenvektor überführt. Dabei wird aus dem eindimensionalen Array ein zweidimensionales, sodass wir tatsächlich von Zeilen und Spalten sprechen können.</p>
 <section id="umwandlung-in-einen-spaltenvektor">
 <h3>Umwandlung in einen Spaltenvektor<a class="headerlink" href="#umwandlung-in-einen-spaltenvektor" title="Link to this heading">#</a></h3>
-<p>Ein eindimensionales Array <span class="math notranslate nohighlight">\(\texttt{x}\)</span> kann mittels <span class="math notranslate nohighlight">\(\texttt{reshape}\)</span> direkt in einen Spaltenvektor, das heißt ein zweidimensionales Array der Größe <span class="math notranslate nohighlight">\((n, 1)\)</span> überführt werden:</p>
+<p>Ein eindimensionales Array <span class="math notranslate nohighlight">\(\texttt{x}\)</span> kann mittels <span class="math notranslate nohighlight">\(\texttt{reshape}\)</span> direkt in einen Spaltenvektor, das heißt ein zweidimensionales Array der Größe <span class="math notranslate nohighlight">\((n, 1)\)</span>, überführt werden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nparray</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="c1"># Vektor der Dimension 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="c1"># Vektor der Dimension 1</span>
 
 <span class="c1"># Spaltenvektor der Dimension 2 und Größe (3, 1)</span>
 <span class="n">spaltenvektor</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x als Spaltenvektor:&quot;</span><span class="p">,</span> <span class="n">spaltenvektor</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x als Spaltenvektor = </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">spaltenvektor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x als Spaltenvektor Dimension:&quot;</span><span class="p">,</span> <span class="n">spaltenvektor</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -886,12 +926,14 @@ An dieser Stelle interpretiert NumPy das Array <span class="math notranslate noh
 </div>
 </div>
 </div>
-<br>
 <p>Selbstverständlich können Sie mit den Methoden aus <a class="reference internal" href="arrayerstellung.html"><span class="std std-doc">Lektion zur Arrayerstellung</span></a> auch direkt Zeilen- und Spaltenvektoren erzeugen. Zum Beispiel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># Spaltenvektor mit 5 Einträgen</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># Zeilenvektor mit 4 Einträgen</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

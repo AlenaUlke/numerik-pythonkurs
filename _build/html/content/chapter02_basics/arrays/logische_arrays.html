@@ -437,34 +437,17 @@
 <h1>Logische Indizierung<a class="headerlink" href="#logische-indizierung" title="Link to this heading">#</a></h1>
 <p>In Python können Sie zwei Werte miteinander vergleichen. Dazu stehen Ihnen die folgenden relationalen Operatoren zur Verfügung:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (echt größer),</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> (echt kleiner),</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (größer gleich),</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> (kleiner gleich),</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> (gleich),</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> (ungleich)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{&gt;}\)</span> (echt größer),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{&lt;}\)</span> (echt kleiner),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{&gt;=}\)</span> (größer gleich),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{&lt;=}\)</span> (kleiner gleich),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{==}\)</span> (gleich),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{!=}\)</span> (ungleich).</p></li>
 </ul>
-<p>Das Ergebnis eines Vergleichs ist entweder <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<div class="cell tag_thebe-init tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-<div class="admonition-aufgabe-1 admonition">
-<p class="admonition-title">Aufgabe 1</p>
-<p>Testen Sie, ob <span class="math notranslate nohighlight">\(\pi\)</span> kleiner als <span class="math notranslate nohighlight">\(4\)</span> ist, indem Sie den relationalen Operator <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> verwenden. Weisen Sie die Ausgabe einer Variablen mit dem Namen <code class="docutils literal notranslate"><span class="pre">x</span></code> zu. Die Konstante <span class="math notranslate nohighlight">\(\pi\)</span> ist in Python durch <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> gegeben.</p>
+<p>Das Ergebnis eines Vergleichs ist entweder <span class="math notranslate nohighlight">\(\texttt{True}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{False}\)</span>. <span class="math notranslate nohighlight">\(\texttt{True}\)</span> bedeutet dabei, dass die Vergleichsbedingung erfüllt ist, während <span class="math notranslate nohighlight">\(\texttt{False}\)</span> bedeutet, dass sie <strong>nicht</strong> erfüllt ist.</p>
+<div class="admonition-aufgabe-1-1 admonition">
+<p class="admonition-title">Aufgabe 1.1</p>
+<p>Testen Sie, ob <span class="math notranslate nohighlight">\(\pi\)</span> kleiner als <span class="math notranslate nohighlight">\(4\)</span> ist, indem Sie den relationalen Operator <span class="math notranslate nohighlight">\(\texttt{&lt;}\)</span> verwenden. Weisen Sie die Ausgabe einer Variablen mit dem Namen <span class="math notranslate nohighlight">\(\texttt{x}\)</span> zu. Die Konstante <span class="math notranslate nohighlight">\(\pi\)</span> ist in Python durch <span class="math notranslate nohighlight">\(\texttt{np.pi}\)</span> gegeben.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -475,11 +458,11 @@
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie den Operator <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> mit zwei Skalaren. Beispiel: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">5</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>.</p>
+<p>Verwenden Sie den Operator <span class="math notranslate nohighlight">\(\texttt{&lt;}\)</span> mit zwei Skalaren. Beispiel: <span class="math notranslate nohighlight">\(\texttt{a} = 5 &lt; 10\)</span>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">&lt;</span> <span class="mi">4</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">&lt;</span> <span class="mi">4</span>
 </pre></div>
 </div>
 </div>
@@ -492,9 +475,54 @@
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-2 admonition">
-<p class="admonition-title">Aufgabe 2</p>
-<p>Prüfen Sie, ob das Array <code class="docutils literal notranslate"><span class="pre">v</span></code> Elemente kleiner oder gleich als <span class="math notranslate nohighlight">\(5\)</span> enthält. Weisen Sie die Ausgabe einer Variablen mit dem Namen <code class="docutils literal notranslate"><span class="pre">v_le_5</span></code> zu.</p>
+<p>Der folgende versteckte Code, der automatisch ausgeführt wird wenn Sie den Live-Code-Modus starten, erzeugt die Vektoren</p>
+<p><span class="math notranslate nohighlight">\(
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ 
+\texttt{v} =
+\begin{pmatrix}
+-4 \\
+9 \\
+4 \\
+0 \\
+-3 \\
+-4 \\
+8
+\end{pmatrix}
+\quad \text{und} \quad
+\texttt{w} =
+\begin{pmatrix}
+22 \\
+10 \\
+10 \\
+23 \\
+20 \\
+3 \\
+7
+\end{pmatrix}.
+\)</span></p>
+<p>Die kommenden Aufgaben basieren auf diesen Vektoren und trainieren den Umgang mit relationalen Operatoren.</p>
+<div class="cell tag_hide-cell tag_thebe-init docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="admonition-aufgabe-1-2 admonition">
+<p class="admonition-title">Aufgabe 1.2</p>
+<p>Prüfen Sie, ob das Array <span class="math notranslate nohighlight">\(\texttt{v} = \begin{pmatrix}
+-4 &amp; 9 &amp; 4 &amp; 0 &amp; -3 &amp; -4 &amp; 8
+\end{pmatrix}^T\)</span> Elemente kleiner oder gleich als <span class="math notranslate nohighlight">\(5\)</span> enthält. Weisen Sie die Ausgabe einer Variablen mit dem Namen <span class="math notranslate nohighlight">\(\texttt{v_le_5}\)</span> zu.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,7 +537,7 @@
 </pre></div>
 </div>
 </div>
-<p>Sie können ein logisches Array als Arrayindex verwenden, sodass Python die Arrayelemente extrahiert, für die der entsprechende Index <code class="docutils literal notranslate"><span class="pre">True</span></code> ist. In diesem Beispiel werden alle Elemente von <code class="docutils literal notranslate"><span class="pre">x</span></code> extrahiert, die größer als <span class="math notranslate nohighlight">\(6\)</span> sind.</p>
+<p>Sie können ein logisches Array als Arrayindex verwenden, sodass Python die Arrayelemente extrahiert, für die der entsprechende Index <span class="math notranslate nohighlight">\(\texttt{True}\)</span> ist. In diesem Beispiel werden alle Elemente von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> extrahiert, die größer als <span class="math notranslate nohighlight">\(6\)</span> sind.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">]</span>
@@ -518,9 +546,11 @@
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-3 admonition">
-<p class="admonition-title">Aufgabe 3</p>
-<p>Erstellen Sie eine Variable <code class="docutils literal notranslate"><span class="pre">v_kl_4</span></code>, die alle Elemente von <code class="docutils literal notranslate"><span class="pre">v</span></code> enthält, die kleiner als <span class="math notranslate nohighlight">\(4\)</span> sind</p>
+<div class="admonition-aufgabe-1-3 admonition">
+<p class="admonition-title">Aufgabe 1.3</p>
+<p>Erstellen Sie eine Variable <span class="math notranslate nohighlight">\(\texttt{v_kl_4}\)</span>, die alle Elemente von  <span class="math notranslate nohighlight">\(\texttt{v} = \begin{pmatrix}
+-4 &amp; 9 &amp; 4 &amp; 0 &amp; -3 &amp; -4 &amp; 8
+\end{pmatrix}^T\)</span> enthält, die kleiner als <span class="math notranslate nohighlight">\(4\)</span> sind</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,9 +576,13 @@
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-4 admonition">
-<p class="admonition-title">Aufgabe 4</p>
-<p>Erstellen Sie eine Variable <code class="docutils literal notranslate"><span class="pre">z</span></code>, die die Elemente von <code class="docutils literal notranslate"><span class="pre">w</span></code> enthält, die den Positionen entsprechen, an denen <code class="docutils literal notranslate"><span class="pre">v</span></code> kleiner als <span class="math notranslate nohighlight">\(4\)</span> ist.</p>
+<div class="admonition-aufgabe-1-4 admonition">
+<p class="admonition-title">Aufgabe 1.4</p>
+<p>Erstellen Sie eine Variable <span class="math notranslate nohighlight">\(\texttt{z}\)</span>, die die Elemente von  <span class="math notranslate nohighlight">\(\texttt{w} = \begin{pmatrix}
+22 &amp; 10 &amp; 10 &amp; 23 &amp; 20 &amp; 3 &amp; 7
+\end{pmatrix}^T\)</span> enthält, die den Positionen entsprechen, an denen  <span class="math notranslate nohighlight">\(\texttt{v} = \begin{pmatrix}
+-4 &amp; 9 &amp; 4 &amp; 0 &amp; -3 &amp; -4 &amp; 8
+\end{pmatrix}^T\)</span> kleiner als <span class="math notranslate nohighlight">\(4\)</span> ist.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -563,10 +597,12 @@
 </pre></div>
 </div>
 </div>
-<p>Sie können die logische Indizierung verwenden, um Werte in einem Array neu zuzuweisen. Um beispielsweise im Array <code class="docutils literal notranslate"><span class="pre">x</span></code> alle Werte gleich <span class="math notranslate nohighlight">\(999\)</span> durch den Wert <span class="math notranslate nohighlight">\(1\)</span> zu ersetzen, verwenden Sie diese Syntax: <code class="docutils literal notranslate"><span class="pre">x[x</span> <span class="pre">==</span> <span class="pre">999]</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
-<div class="admonition-aufgabe-5 admonition">
-<p class="admonition-title">Aufgabe 5</p>
-<p>Ändern Sie <code class="docutils literal notranslate"><span class="pre">v</span></code> so, dass alle Werte kleiner als <span class="math notranslate nohighlight">\(4\)</span> durch den Wert <span class="math notranslate nohighlight">\(0\)</span> ersetzt werden.</p>
+<p>Sie können die logische Indizierung verwenden, um Werte in einem Array neu zuzuweisen. Um beispielsweise im Array <span class="math notranslate nohighlight">\(\texttt{x}\)</span> alle Werte gleich <span class="math notranslate nohighlight">\(999\)</span> durch den Wert <span class="math notranslate nohighlight">\(1\)</span> zu ersetzen, verwenden Sie diese Syntax: <span class="math notranslate nohighlight">\(\texttt{x[x == 999] = 1}\)</span>.</p>
+<div class="admonition-aufgabe-1-5 admonition">
+<p class="admonition-title">Aufgabe 1.5</p>
+<p>Ändern Sie  <span class="math notranslate nohighlight">\(\texttt{v} = \begin{pmatrix}
+-4 &amp; 9 &amp; 4 &amp; 0 &amp; -3 &amp; -4 &amp; 8
+\end{pmatrix}^T\)</span> so, dass alle Werte kleiner als <span class="math notranslate nohighlight">\(4\)</span> durch den Wert <span class="math notranslate nohighlight">\(0\)</span> ersetzt werden.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,8 +617,7 @@
 </pre></div>
 </div>
 </div>
-<p>Wie in der Mathematik können Sie logische Vergleiche mit UND (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) und ODER (<code class="docutils literal notranslate"><span class="pre">|</span></code>) kombinieren.</p>
-<p>Zum Suchen nach Werten größer als <span class="math notranslate nohighlight">\(3\)</span> und kleiner als <span class="math notranslate nohighlight">\(13\)</span> verwenden Sie <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. Beispiel:</p>
+<p>Wie in der Mathematik können Sie logische Vergleiche mit UND (<span class="math notranslate nohighlight">\(\texttt{&amp;}\)</span>) und ODER (<span class="math notranslate nohighlight">\(\texttt{|}\)</span>) kombinieren. Zum Suchen nach Werten größer als <span class="math notranslate nohighlight">\(3\)</span> und kleiner als <span class="math notranslate nohighlight">\(13\)</span> verwenden Sie <span class="math notranslate nohighlight">\(\texttt{&amp;}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">)]</span>
@@ -591,7 +626,7 @@
 </div>
 </div>
 </div>
-<p>Zum Suchen nach Werten größer als <span class="math notranslate nohighlight">\(3\)</span> oder kleiner als <span class="math notranslate nohighlight">\(13\)</span> verwenden Sie <code class="docutils literal notranslate"><span class="pre">|</span></code>. Beispiel:</p>
+<p>Zum Suchen nach Werten größer als <span class="math notranslate nohighlight">\(3\)</span> oder kleiner als <span class="math notranslate nohighlight">\(13\)</span> verwenden Sie <span class="math notranslate nohighlight">\(\texttt{|}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">)]</span>
@@ -602,7 +637,9 @@
 </div>
 <div class="admonition-zusatzaufgabe admonition">
 <p class="admonition-title">Zusatzaufgabe</p>
-<p>Extrahieren Sie, die Werte in <code class="docutils literal notranslate"><span class="pre">w</span></code>, die zwischen <span class="math notranslate nohighlight">\(10\)</span> und <span class="math notranslate nohighlight">\(20\)</span> liegen.</p>
+<p>Extrahieren Sie, die Werte in <span class="math notranslate nohighlight">\(\texttt{w} = \begin{pmatrix}
+22 &amp; 10 &amp; 10 &amp; 23 &amp; 20 &amp; 3 &amp; 7
+\end{pmatrix}^T\)</span>, die zwischen <span class="math notranslate nohighlight">\(10\)</span> und <span class="math notranslate nohighlight">\(20\)</span> liegen.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
