@@ -38,6 +38,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
   <!-- So that users can add custom icons -->
@@ -60,13 +62,15 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/visualisation_2/advanced_2D_plots';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Plots mit mehrere Vektoren als Eingabe" href="several_lines_one_plot.html" />
-    <link rel="prev" title="Visualisierung 2" href="visualisation_2_intro.html" />
+    <link rel="next" title="Mehrfach-Plots" href="several_lines_one_plot.html" />
+    <link rel="prev" title="Visualisierung II" href="visualisation_2_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -137,7 +141,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../intro.html">
+<a class="navbar-brand logo" href="../../chapter01_einfuehrung/vorwort.html">
   
   
   
@@ -159,19 +163,13 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../intro.html">
-                    Welcome to your Jupyter Book
+                <a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">
+                    Vorwort
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Markdown Notebook</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">Vorwort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
 
@@ -180,12 +178,39 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/befehle/befehle_intro.html">Grundlegende Konzepte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/befehle/befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/befehle/python_pakete.html">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/arrays/array_intro.html">Arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/indizierung.html">Indizierung von Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/rechnen_mit_arrays.html">Rechnen mit Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/logische_arrays.html">Logische Indizierung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/quiz.html">Quiz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/visualization/visualization_intro.html">Datenvisualisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/visualization/visualization.html">Visualisierung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/functions/funktionsaufrufe.html">Funktionsaufrufe und -rückgaben</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/programmablaeufe/intro.html">Programmierkonstrukte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/programmablaeufe/while_loops.html">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/programmablaeufe/for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/programmablaeufe/decision_branching.html">Bedingte Anweisungen</a></li>
+
+
 </ul>
 </details></li>
 </ul>
@@ -202,8 +227,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../debugging/efficiency.html">Vektorisierung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../AI/KI_intro.html">AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
 </ul>
 </details></li>
 </ul>
@@ -218,9 +244,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="visualisation_2_intro.html">Visualisierung II</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Plots individuell gestalten</a></li>
-<li class="toctree-l2"><a class="reference internal" href="several_lines_one_plot.html">Plots mit mehrere Vektoren als Eingabe</a></li>
-
-
+<li class="toctree-l2"><a class="reference internal" href="several_lines_one_plot.html">Mehrfach-Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3D_plots.html">3D Plots</a></li>
 </ul>
 </details></li>
@@ -419,7 +443,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="plots-individuell-gestalten">
 <h1>Plots individuell gestalten<a class="headerlink" href="#plots-individuell-gestalten" title="Link to this heading">#</a></h1>
-<p>Im vorherigen Kapitel zur <a class="reference internal" href="#../../chapter02_basics/visualization.ipynb"><span class="xref myst">Visualisierung</span></a> haben Sie bereits grundlegende Plots mit <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> erstellt und die wichtigsten Elemente eines Diagramms kennengelernt – etwa Achsen, Linien und einfache Beschriftungen. In diesem Kapitel vertiefen wir Ihre Kenntnisse und zeigen Ihnen, wie Sie Plots gezielt anpassen können, um Informationen klarer darzustellen und die Lesbarkeit Ihrer Grafiken zu verbessern.</p>
+<p>Im vorherigen Kapitel zur <a class="reference internal" href="../../chapter02_basics/visualization/visualization.html"><span class="std std-doc">Visualisierung</span></a> haben Sie bereits grundlegende Plots mit <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> erstellt und die wichtigsten Elemente eines Diagramms kennengelernt – etwa Achsen, Linien und einfache Beschriftungen. In diesem Kapitel vertiefen wir Ihre Kenntnisse und zeigen Ihnen, wie Sie Plots gezielt anpassen können, um Informationen klarer darzustellen und die Lesbarkeit Ihrer Grafiken zu verbessern.</p>
 <p>Insbesondere lernen Sie, wie Sie zentrale Eigenschaften von Linien und anderen Plot-Elementen direkt beim Aufruf der Plot-Funktion festlegen. Dies ist hilfreich, um etwa die Linienbreite, Farbe oder den Linienstil präzise zu steuern.</p>
 <section id="eigenschaften-des-plots-anpassen">
 <h2>Eigenschaften des Plots anpassen<a class="headerlink" href="#eigenschaften-des-plots-anpassen" title="Link to this heading">#</a></h2>
@@ -453,7 +477,12 @@
 <p>Auf diese Weise können Sie viele Details Ihrer Visualisierungen direkt beim Erstellen des Plots festlegen – ohne nachträgliche Bearbeitungsschritte.</p>
 <p>Um die individuellen Gestaltungsmöglichkeiten von Plots zu üben, verwenden wir einen realen Datensatz, der öffentlich von der Plattform <a href="https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv">Our World in Data</a> bereitgestellt wird. Er enthält umfassende Informationen über den Energieverbrauch verschiedener Länder – unter anderem auch über den prozentualen Anteil erneuerbarer Energien am Gesamtenergieverbrauch.</p>
 <p>Wir betrachten fünf Länder: <strong>Deutschland, USA, China, Norwegen und Brasilien</strong>, und analysieren den Zeitraum ab dem Jahr 1990.</p>
-<div class="cell docutils container">
+<div class="cell tag_thebe-init tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -482,6 +511,7 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Hinweis</p>
@@ -877,7 +907,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Visualisierung 2</p>
+        <p class="prev-next-title">Visualisierung II</p>
       </div>
     </a>
     <a class="right-next"
@@ -885,7 +915,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Plots mit mehrere Vektoren als Eingabe</p>
+        <p class="prev-next-title">Mehrfach-Plots</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -34,16 +34,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-<<<<<<< Updated upstream
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
-=======
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
->>>>>>> Stashed changes
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=b8171b4a" />
   
   <!-- So that users can add custom icons -->
@@ -66,6 +62,8 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter01_einfuehrung/kursstruktur';</script>
@@ -143,7 +141,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../intro.html">
+<a class="navbar-brand logo" href="vorwort.html">
   
   
   
@@ -165,19 +163,13 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
-                    Welcome to your Jupyter Book
+                <a class="reference internal" href="vorwort.html">
+                    Vorwort
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../markdown-notebooks.html">Markdown Notebook</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="vorwort.html">Vorwort</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Struktur des Kurses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installationsguide.html">Infos zu Python</a></li>
 
@@ -186,6 +178,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02_basics/befehle/befehle_intro.html">Grundlegende Konzepte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/befehle/befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/befehle/python_pakete.html">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02_basics/arrays/array_intro.html">Arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/arrays/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/arrays/indizierung.html">Indizierung von Arrays</a></li>
@@ -194,43 +196,64 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/arrays/quiz.html">Quiz</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02_basics/visualization/visualization_intro.html">Datenvisualisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/visualization/visualization.html">Visualisierung</a></li>
 </ul>
-<<<<<<< Updated upstream
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spezialisierung in Python</span></p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02_basics/functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/functions/funktionsaufrufe.html">Funktionsaufrufe und -rückgaben</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter02_basics/programmablaeufe/intro.html">Programmierkonstrukte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/programmablaeufe/while_loops.html">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/programmablaeufe/for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter02_basics/programmablaeufe/decision_branching.html">Bedingte Anweisungen</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03_spezialisierung/functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/functions/dreiecke.html">Funktionen schreiben</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/functions/function_handles.html">Function handles</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Datenaufbereitung in Tabellenform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/working_with_data/organizing_data_in_cell_array.html">Datenaufbereitung mit Arrays</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/debugging/efficiency.html">Vektorisierung</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03_spezialisierung/AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03_spezialisierung/arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/arrays_2/quiz.html">Quiz</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03_spezialisierung/visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/visualisation_2/several_lines_one_plot.html">Mehrfach-Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/visualisation_2/3D_plots.html">3D Plots</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03_spezialisierung/vectorisation/vectorisation_intro.html">Vektorisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/vectorisation/efficiency.html">Effizienter werden</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter03_spezialisierung/working_with_data/organizing_data_in_table_2.html">Tabellen auslesen</a></li>
 </ul>
 </details></li>
 </ul>
-=======
->>>>>>> Stashed changes
 
     </div>
 </nav></div>
@@ -379,98 +402,102 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="struktur-des-kurses">
 <h1>Struktur des Kurses<a class="headerlink" href="#struktur-des-kurses" title="Link to this heading">#</a></h1>
-<p>Willkommen zum Überblick über den Programmierkurs! In diesem Dokument finden Sie eine detaillierte Aufstellung der Kursstruktur, die Ihnen einen klaren Überblick über die Themen und Lerninhalte der einzelnen Wochen bietet. Die Kurse sind so geplant, dass Ihnen schrittweise die Grundlagen sowie fortgeschrittene Konzepte der Programmierung vermittelt werden.</p>
-<p>Der Kurs ist in verschiedene Kapitel unterteilt. Zu Beginn (Grundlagen in Python) fokussieren wir uns auf die Grundlagen, bevor wir uns zu vertiefenden Konzepten (Spezialisierung in Python) vorarbeiten. Sie erhalten zu jedem der 12 Kurseinheiten eine Übersicht, welche Kapitel an dem jeweiligen Tag relevant sind. Zudem bieten wir die ersten 10 Kurse eine zu diesem Kurs externe Datei an, in der sich zusätzliche Übungen zu dem behandelten Stoff befinden. Des Weiteren findet sich nach jedem Kapitel ein Quiz, welches Sie zum Festigen des Gelernten und zur Vorbereitung auf die Klausur nutzen können.</p>
-<p>Das Dokument dient als Leitfaden, um Ihnen zu zeigen, welche Themen in welcher Woche behandelt werden. So haben Sie jederzeit einen klaren Fahrplan, der Ihnen hilft, den Überblick zu behalten und sich auf die jeweiligen Inhalte vorzubereiten.</p>
-<p>Viel Spaß und Erfolg beim Lernen!</p>
+<p>Willkommen zum Überblick über den Programmierkurs!</p>
+<p>In diesem Dokument finden Sie eine strukturierte Übersicht über den Aufbau des Kurses. Sie erfahren, welche Themen und Lerninhalte in den einzelnen Wochen behandelt werden und wie der Kurs didaktisch aufgebaut ist. Ziel ist es, Ihnen Schritt für Schritt sowohl grundlegende als auch weiterführende Konzepte der Programmierung zu vermitteln.</p>
+<p>Der Kurs gliedert sich in mehrere Kapitel und insgesamt 12 Kurseinheiten. Zu Beginn (Grundlagen in Python) fokussieren wir uns auf die Grundlagen, bevor wir uns zu vertiefenden Konzepten (Python schlauer nutzen und Datenverarbeitung in Python) vorarbeiten. Für jede der 12 Kurseinheiten erhalten Sie eine klare Zuordnung, welche Kapitel jeweils behandelt werden. Für die ersten zehn Einheiten stellen wir Ihnen zusätzlich externe Übungsdateien zur Verfügung, mit denen Sie den Stoff eigenständig vertiefen können.</p>
+<p>Dieses Dokument dient als Ihr persönlicher Fahrplan durch den Kurs: Es zeigt Ihnen auf einen Blick, wann welche Inhalte behandelt werden, und unterstützt Sie dabei, stets den Überblick zu behalten.</p>
+<p>Wir wünschen Ihnen viel Freude und Erfolg beim Lernen!</p>
 <ul class="simple">
 <li><p>Vorbearbeitung:</p>
 <ul>
-<li><p>Einführung - Vorwort</p></li>
+<li><p>Vorwort</p></li>
 <li><p>Einführung - Struktur des Kurses</p></li>
 <li><p>Einführung - Infos zu Python</p></li>
 </ul>
 </li>
-<li><p>Kurs 1:</p>
+<li><p>Kurseinheit 1:</p>
 <ul>
-<li><p>Einführung - Funktionsweise von Jupyter Books</p></li>
-<li><p>Einführung - Funktionsweise von Jupyter Notebooks</p></li>
-<li><p>Grundlagen von Python - Befehle</p></li>
+<li><p>Einführung - Wie nutzt man dieses Jupyterbook?</p></li>
+<li><p>Einführung - Wie nutzt man Jupyter Notebooks?</p></li>
+<li><p>Grundlagen von Python - Grundlegende Konzepte - Befehle</p></li>
+<li><p>Grundlagen von Python - Grundlegende Konzepte - Python Pakete</p></li>
 <li><p>Übungen zu Woche 1 (Uebung_01.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 2:</p>
+<li><p>Kurseinheit 2:</p>
 <ul>
-<li><p>Grundlagen von Python - Vektoren und Matrizen - Arrayerstellung</p></li>
-<li><p>Grundlagen von Python - Vektoren und Matrizen - Indizierung und Ändern von Arrays</p></li>
-<li><p>Grundlagen von Python - Vektoren und Matrizen - Arrayberechnung</p></li>
+<li><p>Grundlagen von Python - Arrays I - Arrayerstellung</p></li>
+<li><p>Grundlagen von Python - Arrays I - Indizierung von Arrays</p></li>
+<li><p>Grundlagen von Python - Arrays I - Rechnen mit Arrays</p></li>
 <li><p>Übungen zu Woche 2 (Uebung_02.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 3:</p>
+<li><p>Kurseinheit 3:</p>
 <ul>
-<li><p>Grundlagen von Python - Vektoren und Matrizen - Logische Arrays</p></li>
-<li><p>Grundlagen von Python - Visualisierung - Funktionsaufrufe</p></li>
+<li><p>Grundlagen von Python - Arrays I - Logische Indizierung</p></li>
+<li><p>Grundlagen von Python - Visualisierung I - Daten plotten</p></li>
 <li><p>Übungen zu Woche 3 (Uebung_03.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 4:</p>
+<li><p>Kurseinheit 4:</p>
 <ul>
-<li><p>Grundlagen von Python - Visualisierung - Diagramme</p></li>
-<li><p>Grundlagen von Python - Visualisierung - Datenimport</p></li>
-<li><p>Grundlagen von Python - Programmabläufe - While-Schleifen</p></li>
+<li><p>Grundlagen von Python - Funktionen - Funktionsaufrufe und -rückgaben</p></li>
+<li><p>Grundlagen von Python - Funktionen - Funktionen schreiben</p></li>
+<li><p>Grundlagen von Python - Programmierkonstrukte - While-Schleifen</p></li>
 <li><p>Übungen zu Woche 4 (Uebung_04.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 5:</p>
+<li><p>Kurseinheit 5:</p>
 <ul>
-<li><p>Grundlagen von Python - Programmabläufe - For-Schleifen</p></li>
-<li><p>Grundlagen von Python - Programmabläufe - Entscheidungsverzweigungen</p></li>
-<li><p>Grundlagen von Python - Programmabläufe - Funktionen</p></li>
+<li><p>Grundlagen von Python - Programmierkonstrukte - For-Schleifen</p></li>
+<li><p>Grundlagen von Python - Programmierkonstrukte - Bedingte Anweisungen</p></li>
 <li><p>Übungen zu Woche 5 (Uebung_05.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 6:</p>
+<li><p>Kurseinheit 6:</p>
 <ul>
-<li><p>Grundlagen von Python - Programmabläufe - Function handles</p></li>
-<li><p>Spezialisierung in Python - Aufbereitung - Darstellung der Ausgabe</p></li>
+<li><p>Python schlauer nutzen - Debugging - Fehleranzeige</p></li>
+<li><p>Python schlauer nutzen - Debugging - Fehleranalyse</p></li>
+<li><p>Python schlauer nutzen - Debugging - Vektorisierung</p></li>
 <li><p>Übungen zu Woche 6 (Uebung_06.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 7:</p>
+<li><p>Kurseinheit 7:</p>
 <ul>
-<li><p>Spezialisierung in Python - Aufbereitung - Fehlersuche</p></li>
-<li><p>Spezialisierung in Python - Aufbereitung - Datenstrukturierung</p></li>
+<li><p>Python schlauer nutzen - KI - Programmieren mit KI</p></li>
+<li><p>Python schlauer nutzen - KI - Debugging mit KI</p></li>
 <li><p>Übungen zu Woche 7 (Uebung_07.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 8:</p>
+<li><p>Kurseinheit 8:</p>
 <ul>
-<li><p>Spezialisierung in Python - Aufbereitung - Datenstrukturierung</p></li>
-<li><p>Spezialisierung in Python - Vertiefung - Arrayerstellung</p></li>
-<li><p>Spezialisierung in Python - Vertiefung - Arraymanipulation</p></li>
+<li><p>Datenverarbeitung in Python - Arrays II - Arrayerstellung</p></li>
+<li><p>Datenverarbeitung in Python - Arrays II - Arrays zusammenfügen</p></li>
+<li><p>Datenverarbeitung in Python - Arrays II - Arrays umformen</p></li>
 <li><p>Übungen zu Woche 8 (Uebung_08.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 9:</p>
+<li><p>Kurseinheit 9:</p>
 <ul>
-<li><p>Spezialisierung in Python - Vertiefung - Diagramme</p></li>
-<li><p>Spezialisierung in Python - Vertiefung - Vektorisierung</p></li>
+<li><p>Datenverarbeitung in Python - Visualisierung II - Plots individuell gestalten</p></li>
+<li><p>Datenverarbeitung in Python - Visualisierung II - Mehrfach-Plots</p></li>
+<li><p>Datenverarbeitung in Python - Visualisierung II - 3D Plots</p></li>
 <li><p>Übungen zu Woche 9 (Uebung_09.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 10:</p>
+<li><p>Kurseinheit 10:</p>
 <ul>
-<li><p>Spezialisierung in Python - Vertiefung - Diagramme</p></li>
+<li><p>Datenverarbeitung in Python - Mit Daten arbeiten - Tabellen aufbauen</p></li>
+<li><p>Datenverarbeitung in Python - Mit Daten arbeiten - Tabellen auslesen</p></li>
 <li><p>Übungen zu Woche 10 (Uebung_10.ipynb)</p></li>
 </ul>
 </li>
-<li><p>Kurs 11:</p>
+<li><p>Kurseinheit 11:</p>
 <ul>
 <li><p>Abschlussprojekt</p></li>
 </ul>
 </li>
-<li><p>Kurs 12:</p>
+<li><p>Kurseinheit 12:</p>
 <ul>
 <li><p>Abschlussprojekt</p></li>
 </ul>

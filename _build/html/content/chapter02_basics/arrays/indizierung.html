@@ -34,16 +34,12 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-<<<<<<< Updated upstream
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
-=======
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
->>>>>>> Stashed changes
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
   <!-- So that users can add custom icons -->
@@ -66,6 +62,8 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -145,7 +143,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../intro.html">
+<a class="navbar-brand logo" href="../../chapter01_einfuehrung/vorwort.html">
   
   
   
@@ -167,19 +165,13 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../intro.html">
-                    Welcome to your Jupyter Book
+                <a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">
+                    Vorwort
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Markdown Notebook</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">Vorwort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
 
@@ -188,6 +180,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../befehle/befehle_intro.html">Grundlegende Konzepte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../befehle/befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../befehle/python_pakete.html">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="array_intro.html">Arrays</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Indizierung von Arrays</a></li>
@@ -196,20 +198,45 @@
 <li class="toctree-l2"><a class="reference internal" href="quiz.html">Quiz</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../visualization/visualization_intro.html">Datenvisualisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Visualisierung</a></li>
 </ul>
-<<<<<<< Updated upstream
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spezialisierung in Python</span></p>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functions/funktionsaufrufe.html">Funktionsaufrufe und -rückgaben</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../programmablaeufe/intro.html">Programmierkonstrukte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/while_loops.html">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/decision_branching.html">Bedingte Anweisungen</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/functions/dreiecke.html">Funktionen schreiben</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/functions/function_handles.html">Function handles</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Datenaufbereitung in Tabellenform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_cell_array.html">Datenaufbereitung mit Arrays</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/efficiency.html">Vektorisierung</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
@@ -219,25 +246,16 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/several_lines_one_plot.html">Mehrfach-Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/3D_plots.html">3D Plots</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/AI/KI_intro.html">AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/vectorisation/vectorisation_intro.html">Vektorisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/vectorisation/efficiency.html">Effizienter werden</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table_2.html">Tabellen auslesen</a></li>
 </ul>
 </details></li>
 </ul>
-=======
->>>>>>> Stashed changes
 
     </div>
 </nav></div>
@@ -433,7 +451,7 @@
 Der erste Schritt ist das Zugreifen oder Verweisen auf Elemente eines Arrays, auch Indizierung genannt.
 Die Indizierung erlaubt es, Elemente eines Arrays auszulesen oder zu verändern.
 Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Python beginnt die Indizierung bei <span class="math notranslate nohighlight">\(0\)</span>, das bedeutet das erste Element hat den Index <span class="math notranslate nohighlight">\(0\)</span>, das zweite den Index <span class="math notranslate nohighlight">\(1\)</span>, das dritte den Index <span class="math notranslate nohighlight">\(2\)</span> und so weiter.</p>
-<p>In diesem Unterkapitel werden Sie mit dem eindimensionalen Array <code class="docutils literal notranslate"><span class="pre">alter</span></code> und zweidimensionalem Array <code class="docutils literal notranslate"><span class="pre">data</span></code> arbeiten. Der folgende, versteckte Code initialisiert sowohl <code class="docutils literal notranslate"><span class="pre">alter</span></code> als auch <code class="docutils literal notranslate"><span class="pre">data</span></code> automatisch sobald Sie den Live-Code-Modus starten.</p>
+<p>In diesem Unterkapitel werden Sie mit dem eindimensionalen Array <span class="math notranslate nohighlight">\(\texttt{alter}\)</span> und zweidimensionalem Array <span class="math notranslate nohighlight">\(\texttt{data}\)</span> arbeiten. Der folgende, versteckte Code initialisiert sowohl <span class="math notranslate nohighlight">\(\texttt{alter}\)</span> als auch <span class="math notranslate nohighlight">\(\texttt{data}\)</span> automatisch sobald Sie den Live-Code-Modus starten.</p>
 <div class="cell tag_thebe-init tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -459,7 +477,7 @@ Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Py
 </div>
 </details>
 </div>
-<p>In <code class="docutils literal notranslate"><span class="pre">data</span></code> sind Daten von 15 verschiedenen Diabetespatientinnen hinterlegt. Eine Zeile entspricht einem oder einer Patienten/in und eine Spalte den verschiedene Daten, die erhoben worden sind. Es stehen folgende Daten zur Verfügung:</p>
+<p>In <span class="math notranslate nohighlight">\(\texttt{data}\)</span> sind Daten von 15 verschiedenen Diabetespatientinnen hinterlegt. Eine Zeile entspricht einem oder einer Patienten/in und eine Spalte den verschiedene Daten, die erhoben worden sind. Es stehen folgende Daten zur Verfügung:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <tbody>
 <tr class="row-odd"><td><p>Spalte 0</p></td>
@@ -480,17 +498,17 @@ Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Py
 </tbody>
 </table>
 </div>
-<p>In <code class="docutils literal notranslate"><span class="pre">alter</span></code> ist das Alter der Patientinnen in Jahren hinterlegt.</p>
+<p>In <span class="math notranslate nohighlight">\(\texttt{alter}\)</span> ist das Alter der Patientinnen in Jahren hinterlegt.</p>
 <section id="einzelne-arrayelemte-extrahieren">
 <h2>Einzelne Arrayelemte extrahieren<a class="headerlink" href="#einzelne-arrayelemte-extrahieren" title="Link to this heading">#</a></h2>
-<p>Um ein einzelnes Element eines eindimensionalen Array <code class="docutils literal notranslate"><span class="pre">x</span></code> auszulesen (zu vergleichen mit einem <em>Vektor</em>), nutzt man die Syntax <code class="docutils literal notranslate"><span class="pre">x[idx]</span></code>. Möchte man beispielsweise das dritte Element von <code class="docutils literal notranslate"><span class="pre">x</span></code> auslesen, so ist dies mit <code class="docutils literal notranslate"><span class="pre">x[2]</span></code> möglich.</p>
-<p><strong>BILD</strong></p>
-<p>Um Elemente aus einem zweidimensional Array <code class="docutils literal notranslate"><span class="pre">A</span></code> auszulesen (zu vergleichen mit einer <em>Matrix</em>), benötigen man zwei Indizes. Der erste gibt die Zeile, der zweite die Spalte an: <code class="docutils literal notranslate"><span class="pre">A[zeile,</span> <span class="pre">spalte]</span></code>. Beispielsweise gibt <code class="docutils literal notranslate"><span class="pre">A[0,</span> <span class="pre">2]</span></code> den Wert in der ersten Zeile und der dritten Spalte zurück.</p>
-<p><strong>BILD</strong></p>
-<p>Beachten Sie: Die Indizierung beginnt bei <span class="math notranslate nohighlight">\(0\)</span>, das bedeute das erste Element wird mit dem Index <span class="math notranslate nohighlight">\(0\)</span> ausgelesen.</p>
+<p>Um ein einzelnes Element eines eindimensionalen Arrays <span class="math notranslate nohighlight">\(\texttt{x}\)</span> auszulesen (zu vergleichen mit einem <em>Vektor</em>), nutzt man die Syntax <span class="math notranslate nohighlight">\(\texttt{x[idx]}\)</span>. Möchte man beispielsweise das dritte Element von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> auslesen, so ist dies mit <span class="math notranslate nohighlight">\(\texttt{x[2]}\)</span> möglich.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_single_value.jpeg"><img alt="../../../_images/array_single_value.jpeg" src="../../../_images/array_single_value.jpeg" style="width: 75%;" /></a>
+</figure>
+<p>Um Elemente aus einem zweidimensional Array <span class="math notranslate nohighlight">\(\texttt{A}\)</span> auszulesen (zu vergleichen mit einer <em>Matrix</em>), benötigen man zwei Indizes. Der erste gibt die Zeile, der zweite die Spalte an: <span class="math notranslate nohighlight">\(\texttt{A[zeile, spalte]}\)</span>. Beispielsweise gibt <span class="math notranslate nohighlight">\(\texttt{A[0, 2]}\)</span> den Wert in der ersten Zeile und der dritten Spalte zurück.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Speichern Sie das Alter von Patientin 4 also das vierte Element des Arrays <code class="docutils literal notranslate"><span class="pre">alter</span></code> in einer Variablen <code class="docutils literal notranslate"><span class="pre">patient_a</span></code>.</p>
+<p>Speichern Sie das Alter von Patientin 4, also das vierte Element des Arrays <span class="math notranslate nohighlight">\(\texttt{alter}\)</span>, in einer Variable <span class="math notranslate nohighlight">\(\texttt{patient_a}\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -501,7 +519,7 @@ Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Py
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Beachten Sie, dass in Python die Indizierung bei <span class="math notranslate nohighlight">\(0\)</span> beginnt. Verwenden Sie <code class="docutils literal notranslate"><span class="pre">[]</span></code> zur Indizierung in <code class="docutils literal notranslate"><span class="pre">alter</span></code>.</p>
+<p>Beachten Sie, dass in Python die Indizierung bei <span class="math notranslate nohighlight">\(0\)</span> beginnt. Verwenden Sie <span class="math notranslate nohighlight">\([]\)</span> zur Indizierung in <span class="math notranslate nohighlight">\(\texttt{alter}\)</span>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -509,10 +527,9 @@ Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Py
 </pre></div>
 </div>
 </div>
-<br>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Speichern Sie ebenfalls den BMI von Patientin 4 also das Element in der vierten Zeile und zweiten Spalte des Arrays <code class="docutils literal notranslate"><span class="pre">data</span></code> in einer Variablen <code class="docutils literal notranslate"><span class="pre">patient4_bmi</span></code>.</p>
+<p>Speichern Sie ebenfalls den BMI von Patientin 4 also das Element in der vierten Zeile und zweiten Spalte des Arrays <span class="math notranslate nohighlight">\(\texttt{data}\)</span> in einer Variablen <span class="math notranslate nohighlight">\(\texttt{patient4_bmi}\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -523,7 +540,7 @@ Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Py
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Beachten Sie, dass in Python die Indizierung bei <span class="math notranslate nohighlight">\(0\)</span> beginnt. Verwenden Sie <span class="math notranslate nohighlight">\(1\)</span> und <span class="math notranslate nohighlight">\(3\)</span> zur Indizierung in <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<p>Beachten Sie, dass in Python die Indizierung bei <span class="math notranslate nohighlight">\(0\)</span> beginnt. Verwenden Sie <span class="math notranslate nohighlight">\(1\)</span> und <span class="math notranslate nohighlight">\(3\)</span> zur Indizierung in <span class="math notranslate nohighlight">\(\texttt{data}\)</span>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -531,19 +548,20 @@ Die Position eines Wertes innerhalb eines Arrays nennt man <em>Index</em>. In Py
 </pre></div>
 </div>
 </div>
-<br>
-<p>Python ermöglicht es Ihnen <span class="math notranslate nohighlight">\(-1\)</span> als Index bei Arrays zuverwenden, um auf das letzte Element zugreifen.
-Möchten Sie zum Beispiel auf das letzte Elemente des eindimensionalen Arrays <code class="docutils literal notranslate"><span class="pre">x</span></code> zugreifen, geht dies mit der Syntax <code class="docutils literal notranslate"><span class="pre">x[-1]</span></code>.
-Bei zweidimensionalen Arrays müssen Sie zudem einen zweiten Index angeben. So gibt <code class="docutils literal notranslate"><span class="pre">A[-1,</span> <span class="pre">3]</span></code> beispielsweise den Eintrag in der letzten Zeile und 4. Spalte zurück.</p>
-<p><strong>BILD</strong></p>
-<p>Die Verwendung des Index <span class="math notranslate nohighlight">\(-1\)</span> um auf das letzte Element zuzugreifen, ist Teil der allgemeinen Indexierungslogik in Python, bei der negative Indizes verwendet werden, um Elemente von hinten aus zu zählen. Das bedeutet:</p>
+<p>Python ermöglicht es Ihnen <span class="math notranslate nohighlight">\(-1\)</span> als Index bei Arrays zu verwenden, um auf das letzte Element zuzugreifen.
+Möchten Sie zum Beispiel auf das letzte Elemente des eindimensionalen Arrays <span class="math notranslate nohighlight">\(\texttt{x}\)</span> zugreifen, geht dies mit der Syntax <span class="math notranslate nohighlight">\(\texttt{x[-1]}\)</span>.
+Bei zweidimensionalen Arrays müssen Sie zudem einen zweiten Index angeben. So gibt <span class="math notranslate nohighlight">\(\texttt{A[-1, 3]}\)</span> beispielsweise den Eintrag in der letzten Zeile und 4. Spalte zurück.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_last_element.jpeg"><img alt="../../../_images/array_last_element.jpeg" src="../../../_images/array_last_element.jpeg" style="width: 75%;" /></a>
+</figure>
+<p>Die Verwendung des Index <span class="math notranslate nohighlight">\(-1\)</span>, um auf das letzte Element zuzugreifen, ist Teil der allgemeinen Indexierungslogik in Python, bei der negative Indizes verwendet werden, um Elemente von hinten aus zu zählen. Das bedeutet:</p>
 <ul class="simple">
 <li><p><em>Positive Indizes</em> beginnen am Anfang des Arrays und zählen nach rechts: <span class="math notranslate nohighlight">\(0, 1, 2,\ldots\)</span></p></li>
 <li><p><em>Negative Indizes</em> beginnen am Ende des Arrays und zählen nach links: <span class="math notranslate nohighlight">\(-1, -2, -3,\ldots\)</span></p></li>
 </ul>
 <div class="admonition-aufgabe-1-3 admonition">
 <p class="admonition-title">Aufgabe 1.3</p>
-<p>Extrahieren Sie den Wert in der 2. Zeile und der letzten Spalte von <code class="docutils literal notranslate"><span class="pre">data</span></code>, indem Sie die Syntax <code class="docutils literal notranslate"><span class="pre">-1</span></code> verwenden. Weisen Sie anschließend diesen Wert einer Variablen mit dem Namen <code class="docutils literal notranslate"><span class="pre">patient3_blutzucker</span></code> zu.</p>
+<p>Extrahieren Sie den Wert in der 8. Zeile und der letzten Spalte von <span class="math notranslate nohighlight">\(\texttt{data}\)</span>, indem Sie die Syntax <span class="math notranslate nohighlight">\(-1\)</span> verwenden. Weisen Sie anschließend diesen Wert einer Variablen mit dem Namen <span class="math notranslate nohighlight">\(\texttt{patient8_blutzucker}\)</span> zu.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -554,14 +572,13 @@ Bei zweidimensionalen Arrays müssen Sie zudem einen zweiten Index angeben. So g
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">patient2_blutzucker</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">patient8_blutzucker</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<br>
 <div class="admonition-aufgabe-1-4 admonition">
 <p class="admonition-title">Aufgabe 1.4</p>
-<p>Erstellen Sie eine Variable <code class="docutils literal notranslate"><span class="pre">patient_b_alter</span></code>, die das Alter der vorletzten Patentin, also das vorletzte Element von <code class="docutils literal notranslate"><span class="pre">alter</span></code> enthält. Nutzen Sie negative Indizes!</p>
+<p>Erstellen Sie eine Variable <span class="math notranslate nohighlight">\(\texttt{patient_b_alter}\)</span>, die das Alter der vorletzten Patentin, also das vorletzte Element von <span class="math notranslate nohighlight">\(\texttt{alter}\)</span> enthält. Nutzen Sie negative Indizes!</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -576,15 +593,16 @@ Bei zweidimensionalen Arrays müssen Sie zudem einen zweiten Index angeben. So g
 </pre></div>
 </div>
 </div>
-<br>
 </section>
 <section id="mehre-arrayelemente-extrahieren">
 <h2>Mehre Arrayelemente extrahieren<a class="headerlink" href="#mehre-arrayelemente-extrahieren" title="Link to this heading">#</a></h2>
-<p>Oft benötigt man eine ganze Zeile oder eine ganze Spalte eines zweidimensionales Arrays <code class="docutils literal notranslate"><span class="pre">A</span></code>. In diesem Fall kann der Doppelpunkt-Operator <code class="docutils literal notranslate"><span class="pre">:</span></code> als Index verwenden, was Python als “alle Zeilen” oder “alle Spalten” interpretiert. Zum Beispiel liefert <code class="docutils literal notranslate"><span class="pre">A[0,</span> <span class="pre">:]</span></code> die erste Zeile von <code class="docutils literal notranslate"><span class="pre">A</span></code> und <code class="docutils literal notranslate"><span class="pre">A[:,</span> <span class="pre">1]</span></code> die zweite Spalte von <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
-<p><strong>BILD</strong></p>
+<p>Oft benötigt man eine ganze Zeile oder eine ganze Spalte eines zweidimensionales Arrays <span class="math notranslate nohighlight">\(\texttt{A}\)</span>. In diesem Fall kann der Doppelpunkt-Operator <span class="math notranslate nohighlight">\(\texttt{:}\)</span> als Index verwenden, was Python als “alle Zeilen” oder “alle Spalten” interpretiert. Zum Beispiel liefert <span class="math notranslate nohighlight">\(\texttt{A[0, :]}\)</span> die erste Zeile von <span class="math notranslate nohighlight">\(\texttt{A}\)</span> und <span class="math notranslate nohighlight">\(\texttt{A[:, 1]}\)</span> die zweite Spalte von <span class="math notranslate nohighlight">\(\texttt{A}\)</span>.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_row_col.jpeg"><img alt="../../../_images/array_row_col.jpeg" src="../../../_images/array_row_col.jpeg" style="width: 75%;" /></a>
+</figure>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
-<p>Erstellen Sie einen Spaltenvektor mit dem Namen <code class="docutils literal notranslate"><span class="pre">blutdruck</span></code>, der alle Elemente aus der 3. Spalte des Arrays <code class="docutils literal notranslate"><span class="pre">data</span></code> enthält.</p>
+<p>Erstellen Sie einen Spaltenvektor mit dem Namen <span class="math notranslate nohighlight">\(\texttt{blutdruck}\)</span>, der alle Elemente aus der 3. Spalte des Arrays <span class="math notranslate nohighlight">\(\texttt{data}\)</span> enthält.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -595,7 +613,7 @@ Bei zweidimensionalen Arrays müssen Sie zudem einen zweiten Index angeben. So g
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie den Operator <code class="docutils literal notranslate"><span class="pre">:</span></code> als ersten Index. Mit diesem Operator werden alle Zeilen extrahiert. Verwenden Sie <span class="math notranslate nohighlight">\(2\)</span> als zweiten Index. Dieser Index gibt die dritte Spalte an.</p>
+<p>Verwenden Sie den Operator <span class="math notranslate nohighlight">\(\texttt{:}\)</span> als ersten Index. Mit diesem Operator werden alle Zeilen extrahiert. Verwenden Sie <span class="math notranslate nohighlight">\(2\)</span> als zweiten Index. Dieser Index gibt die dritte Spalte an.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -603,14 +621,15 @@ Bei zweidimensionalen Arrays müssen Sie zudem einen zweiten Index angeben. So g
 </pre></div>
 </div>
 </div>
-<br>
-<p>Sie können den Doppelpunkt-Operator ebenfalls verwenden, um einen Wertebereich anzugeben um so mehrere aufeinanderfolgende Elemente auszulesen.
-Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</span></code> extrahiert das zweite, dritte und vierte Element des Arrays <code class="docutils literal notranslate"><span class="pre">x</span></code>. Der fünfte Wert <code class="docutils literal notranslate"><span class="pre">x[4]</span></code> wird dabei nicht mit ausgelesen. Die Syntax <code class="docutils literal notranslate"><span class="pre">start:end</span></code> ist also als das halboffenes Intervall <span class="math notranslate nohighlight">\([\texttt{start}, \texttt{end})\)</span> zu verstehen.</p>
-<p><strong>BILD</strong></p>
-<p>Genauso liefert <code class="docutils literal notranslate"><span class="pre">A[0:3,</span> <span class="pre">2]</span></code> das erste, zweite und dritte Element der dritten Spalte von <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+<p>Sie können den Doppelpunkt-Operator ebenfalls verwenden, um einen Wertebereich anzugeben und so mehrere aufeinanderfolgende Elemente auszulesen.
+Der Code <span class="math notranslate nohighlight">\(\texttt{x[1:4]}\)</span> extrahiert das zweite, dritte und vierte Element des Arrays <span class="math notranslate nohighlight">\(\texttt{x}\)</span>. Der fünfte Wert <span class="math notranslate nohighlight">\(\texttt{x[4]}\)</span> wird dabei nicht mit ausgelesen. Die Syntax <span class="math notranslate nohighlight">\(\texttt{start:end}\)</span> ist also als das halboffenes Intervall <span class="math notranslate nohighlight">\([\texttt{start}, \texttt{end})\)</span> zu verstehen.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_indexrange.jpeg"><img alt="../../../_images/array_indexrange.jpeg" src="../../../_images/array_indexrange.jpeg" style="width: 75%;" /></a>
+</figure>
+<p>Genauso liefert <span class="math notranslate nohighlight">\(\texttt{A[0:3, 2]}\)</span> das erste, zweite und dritte Element der dritten Spalte von <span class="math notranslate nohighlight">\(\texttt{A}\)</span>.</p>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Extrahieren Sie aus dem eindimensionalen Array <code class="docutils literal notranslate"><span class="pre">alter</span></code> das der Patienten 5 bis 12 und speichern Sie das Ergebnis in der Variablen <code class="docutils literal notranslate"><span class="pre">teilgruppe_alter</span></code>.</p>
+<p>Extrahieren Sie aus dem eindimensionalen Array <span class="math notranslate nohighlight">\(\texttt{alter}\)</span> das Alter der Patienten 5 bis 12 und speichern Sie das Ergebnis in der Variable <span class="math notranslate nohighlight">\(\texttt{teilgruppe_alter}\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -621,15 +640,13 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># sollte (15, 5) liefern</span>
-<span class="n">teilgruppe_alter</span> <span class="o">=</span> <span class="n">alter</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">teilgruppe_alter</span> <span class="o">=</span> <span class="n">alter</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<br>
 <div class="admonition-aufgabe-2-3 admonition">
 <p class="admonition-title">Aufgabe 2.3</p>
-<p>Erstellen Sie die Variable <code class="docutils literal notranslate"><span class="pre">blutwerte</span></code>, die die letzten beiden Spalten von <code class="docutils literal notranslate"><span class="pre">data</span></code> enthält.</p>
+<p>Erstellen Sie die Variable <span class="math notranslate nohighlight">\(\texttt{blutwerte}\)</span>, die die letzten beiden Spalten von <span class="math notranslate nohighlight">\(\texttt{data}\)</span> enthält.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -645,14 +662,15 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </pre></div>
 </div>
 </div>
-<br>
-<p>Python stellt außderdem eine komfortable Methode zur Verfügung, um alle Elemente ausgehend von einem Startindex zu extrahieren: <code class="docutils literal notranslate"><span class="pre">x[3:]</span></code>. Dieses Beispiel gibt die Teilmenge der Elemente von <code class="docutils literal notranslate"><span class="pre">x</span></code> beginnend Index <span class="math notranslate nohighlight">\(3\)</span> bis zum Ende des Vektors zurück.</p>
-<p>Umgekehrt gibt der Code <code class="docutils literal notranslate"><span class="pre">x[:4]</span></code> die Teilmenge der Elemente von <code class="docutils literal notranslate"><span class="pre">x</span></code> beginned bei Index <span class="math notranslate nohighlight">\(0\)</span> bis einschließlich Index <span class="math notranslate nohighlight">\(3\)</span>. Das Ende des Wertebereichts ist also wieder als offene Intervallgrenze zu verstehen.</p>
-<p><strong>BILD</strong></p>
+<p>Python stellt außderdem eine komfortable Methode zur Verfügung, um alle Elemente ausgehend von einem Startindex zu extrahieren. Das Beispiel <span class="math notranslate nohighlight">\(\texttt{x[3:]}\)</span> gibt die Teilmenge der Elemente von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> beginnend beim Index <span class="math notranslate nohighlight">\(3\)</span> bis zum Ende des Vektors zurück.</p>
+<p>Umgekehrt gibt der Code <span class="math notranslate nohighlight">\(\texttt{x[:4]}\)</span> die Teilmenge der Elemente von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> beginned bei Index <span class="math notranslate nohighlight">\(0\)</span> bis einschließlich Index <span class="math notranslate nohighlight">\(3\)</span>. Das Ende des Wertebereichs ist also wieder als offene Intervallgrenze zu verstehen.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_from_index_to_end.jpeg"><img alt="../../../_images/array_from_index_to_end.jpeg" src="../../../_images/array_from_index_to_end.jpeg" style="width: 75%;" /></a>
+</figure>
 <p>Zusammen mit einem weiteren Index funktioniert diese Syntax auch für zweidimensionale Array vollkommen analog.</p>
 <div class="admonition-aufgabe-2-4 admonition">
 <p class="admonition-title">Aufgabe 2.4</p>
-<p>Erstellen Sie eine Array mit dem Namen <code class="docutils literal notranslate"><span class="pre">testgruppe_a</span></code>, welches alle Daten der ersten sieben Patientinnen, sprich die ersten 7 Zeilen und allte Spalten des Array <code class="docutils literal notranslate"><span class="pre">data</span></code> enthält.</p>
+<p>Erstellen Sie eine Array mit dem Namen <span class="math notranslate nohighlight">\(\texttt{testgruppe_a}\)</span>, welches alle Daten der ersten sieben Patientinnen, sprich die ersten 7 Zeilen, und allen Spalten des Arrays <span class="math notranslate nohighlight">\(\texttt{data}\)</span> enthält.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -670,11 +688,10 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </pre></div>
 </div>
 </div>
-<br>
 <div class="admonition-zusatzaufgabe admonition">
 <p class="admonition-title">Zusatzaufgabe</p>
-<p>Bei Indizes kann es sich auch um nicht aufeinanderfolgende Zahlen handeln. Beispielsweise können Sie zum Extrahieren der ersten, dritten und sechsten Elemente von <code class="docutils literal notranslate"><span class="pre">alter</span></code> den Index <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">5]</span></code> verwenden.</p>
-<p>Aber Achtung: Hier ist es wichtig, dass Sie die eckigen Klammern um die Indizes <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">2,</span> <span class="pre">5</span></code> beim Einsetzen nicht vergessen!</p>
+<p>Bei Indizes kann es sich auch um nicht aufeinanderfolgende Zahlen handeln. Beispielsweise können Sie zum Extrahieren der ersten, dritten und sechsten Elemente von <span class="math notranslate nohighlight">\(\texttt{alter}\)</span> den Index <span class="math notranslate nohighlight">\(\texttt{[0, 3, 5]}\)</span> verwenden.</p>
+<p>Aber Achtung: Hier ist es wichtig, dass Sie die eckigen Klammern um die Indizes <span class="math notranslate nohighlight">\(0, 3, 5\)</span> beim Einsetzen nicht vergessen!</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -683,28 +700,27 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </div>
 </div>
 </div>
-<br>
 <p><strong>Zusammenfassung</strong></p>
-<p>In Python beginnt die Indizierung bei <span class="math notranslate nohighlight">\(0\)</span> anstatt bei <span class="math notranslate nohighlight">\(1\)</span>. Bei Angabe von Indexbereichen mittels <code class="docutils literal notranslate"><span class="pre">:</span></code> ist die rechte Intervalgrenze offen, das heißt <code class="docutils literal notranslate"><span class="pre">i:j</span></code> umfasst die Indizes <span class="math notranslate nohighlight">\([i, j)\)</span>.</p>
+<p>In Python beginnt die Indizierung bei <span class="math notranslate nohighlight">\(0\)</span> anstatt bei <span class="math notranslate nohighlight">\(1\)</span>. Bei Angabe von Indexbereichen mittels <span class="math notranslate nohighlight">\(\texttt{:}\)</span> ist die rechte Intervalgrenze offen, das heißt <span class="math notranslate nohighlight">\(\texttt{i:j}\)</span> umfasst die Indizes <span class="math notranslate nohighlight">\(\texttt{[i, j)}\)</span>.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <tbody>
 <tr class="row-odd"><td><p>einzelnes Element</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x[idx]</span></code> oder <code class="docutils literal notranslate"><span class="pre">A[zeile,</span> <span class="pre">spalte]</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{x[idx]}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{A[zeile, spalte]}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>letztes Element</p></td>
-<td><p><span class="math notranslate nohighlight">\(\{\)</span><code class="docutils literal notranslate"><span class="pre">idx</span></code>, <code class="docutils literal notranslate"><span class="pre">zeile</span></code>, <code class="docutils literal notranslate"><span class="pre">spalte</span></code><span class="math notranslate nohighlight">\(\} = -1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{\texttt{idx}, \texttt{zeile}, \texttt{spalte}\} = -1\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>alle Zeilen bzw. Spalten</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">A[:,</span> <span class="pre">spalte]</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">A[zeile,</span> <span class="pre">:]</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{A[:, spalte]}\)</span> bzw. <span class="math notranslate nohighlight">\(\texttt{A[zeile, :]}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>alle Werte ab Index <span class="math notranslate nohighlight">\(i\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">i:</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{i:}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>alle Werte bis Index <span class="math notranslate nohighlight">\(i\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">:(i+1)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{:(i+1)}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p>alle Werte zwischen Index <span class="math notranslate nohighlight">\(i\)</span> und <span class="math notranslate nohighlight">\(j\)</span></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">i:(j+1)</span></code></p></td>
+<tr class="row-even"><td><p>alle Werte zwischen Index <span class="math notranslate nohighlight">\(\texttt{i}\)</span> und <span class="math notranslate nohighlight">\(\texttt{j}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{i:(j+1)}\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -712,13 +728,17 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </section>
 <section id="arraywerte-modifizieren">
 <h2>Arraywerte modifizieren<a class="headerlink" href="#arraywerte-modifizieren" title="Link to this heading">#</a></h2>
-<p>Zum Modifizieren von Arrayelementen kann die gleiche Syntax kann verwendet werden wie um den Wert eines Elements auszulesen. Zum Beispiel ändert <code class="docutils literal notranslate"><span class="pre">x[2]</span> <span class="pre">=</span> <span class="pre">-2</span></code> das dritte Element des eindimensionalen Array <code class="docutils literal notranslate"><span class="pre">x</span></code> von <span class="math notranslate nohighlight">\(0\)</span> zu <span class="math notranslate nohighlight">\(-2\)</span>. Für zweidimensionale Arrays ist das Vorgehen analog. Zum Beispiel ändert <code class="docutils literal notranslate"><span class="pre">A[3,</span> <span class="pre">2]</span> <span class="pre">=</span>&#160; <span class="pre">3</span></code> das Element in der 4. Zeile und 3. Spalte von <span class="math notranslate nohighlight">\(-1\)</span> zu <span class="math notranslate nohighlight">\(3\)</span>.</p>
-<p><strong>BILD</strong></p>
+<p>Zum Modifizieren von Arrayelementen kann die gleiche Syntax verwendet werden wie beim Elemente auslesen. Zum Beispiel ändert <span class="math notranslate nohighlight">\(\texttt{x[2] = -2}\)</span> das dritte Element des eindimensionalen Array <span class="math notranslate nohighlight">\(\texttt{x}\)</span> von <span class="math notranslate nohighlight">\(0\)</span> zu <span class="math notranslate nohighlight">\(-2\)</span>. Für zweidimensionale Arrays ist das Vorgehen analog. Das Beispiel <span class="math notranslate nohighlight">\(\texttt{A[2, 3] =  42}\)</span> ändert das Element in der 3. Zeile und 4. Spalte von <span class="math notranslate nohighlight">\(7\)</span> zu <span class="math notranslate nohighlight">\(42\)</span>.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_modify.jpeg"><img alt="../../../_images/array_modify.jpeg" src="../../../_images/array_modify.jpeg" style="width: 75%;" /></a>
+</figure>
 <p>Leider ist beim Eintragen der Patientinnendaten ein Fehler unterlaufen, sodass das Alter von Patentinn <span class="math notranslate nohighlight">\(3\)</span> nicht eingetragen wurde (gekennzeichent durch nan, engl. <strong>N</strong>ot <strong>a N</strong>umber).</p>
-<p><strong>BILD mit NAN</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/vector_nan.jpg"><img alt="../../../_images/vector_nan.jpg" src="../../../_images/vector_nan.jpg" style="width: 60%;" /></a>
+</figure>
 <div class="admonition-aufgabe-3-1 admonition">
 <p class="admonition-title">Aufgabe 3.1</p>
-<p>Ändern Sie das dritte Element von <code class="docutils literal notranslate"><span class="pre">alter</span></code> von <code class="docutils literal notranslate"><span class="pre">nan</span></code> zu <span class="math notranslate nohighlight">\(72\)</span>.</p>
+<p>Ändern Sie das dritte Element von <span class="math notranslate nohighlight">\(\texttt{alter}\)</span> von <span class="math notranslate nohighlight">\(\texttt{nan}\)</span> zu <span class="math notranslate nohighlight">\(72\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -733,14 +753,23 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </pre></div>
 </div>
 </div>
-<p>Python erlaubt es außerdem auch direkt mehrere Werte aufeinmal zu ändern, genauso wie es möglich ist mehrere Werte aufeinmal auszulesen.</p>
-<p><strong>BILD</strong></p>
+<p>Python erlaubt es außerdem auch direkt mehrere Werte auf einmal zu ändern, genauso wie es möglich ist mehrere Werte auf einmal auszulesen.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/array_modify2.jpeg"><img alt="../../../_images/array_modify2.jpeg" src="../../../_images/array_modify2.jpeg" style="width: 75%;" /></a>
+</figure>
 <p>Ähnlich wie eine Lücke in den Altersdaten der Patienten, ist auch eine Lücke bei den Blutzuckerwerten zu verzeichnen.</p>
-<p><strong>BILD NAN MATRIX</strong></p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/matrix_nan.jpg"><img alt="../../../_images/matrix_nan.jpg" src="../../../_images/matrix_nan.jpg" style="width: 50%;" /></a>
+</figure>
 <div class="admonition-aufgabe-3-2 admonition">
 <p class="admonition-title">Aufgabe 3.2</p>
-<p>Erstellen Sie das Array <code class="docutils literal notranslate"><span class="pre">testgruppe_a_werte</span></code> mit den Einträgen</p>
-<p>$<span class="math notranslate nohighlight">\(\begin{pmatrix} 87 &amp; 69 &amp; 85 &amp; 89 &amp; 80 &amp; 68 &amp; 82 \end{pmatrix}\)</span>$.</p>
+<p>Erstellen Sie das Array <span class="math notranslate nohighlight">\(\texttt{testgruppe_a_werte}\)</span> mit den Einträgen</p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{pmatrix} 
+        87 &amp; 69 &amp; 85 &amp; 89 &amp; 80 &amp; 68 &amp; 82
+    \end{pmatrix}.
+\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -755,10 +784,9 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </pre></div>
 </div>
 </div>
-<br>
 <div class="admonition-aufgabe-3-3 admonition">
 <p class="admonition-title">Aufgabe 3.3</p>
-<p>Tragen Sie die Blutzuckerwerte der Testgruppe A nach, indem Sie den ersten 7 Einträge der letzen Spalten des Arrays <code class="docutils literal notranslate"><span class="pre">data</span></code> das Array <code class="docutils literal notranslate"><span class="pre">testgruppe_a_werte</span></code> zu weisen.</p>
+<p>Tragen Sie die Blutzuckerwerte der Testgruppe A nach, indem Sie den ersten <span class="math notranslate nohighlight">\(7\)</span> Einträge der letzen Spalten des Arrays <span class="math notranslate nohighlight">\(\texttt{data}\)</span> das Array <span class="math notranslate nohighlight">\(\texttt{testgruppe_a_werte}\)</span> zu weisen.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -769,7 +797,7 @@ Der Code <code class="docutils literal notranslate"><span class="pre">x[1:4]</sp
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Greifen Sie zuerst auf die Einträge in der letzten Spalte und den ersten sieben Zeilen in <code class="docutils literal notranslate"><span class="pre">data</span></code> zu. Nutzen Sie anschließen den Zuweisungsoperator <code class="docutils literal notranslate"><span class="pre">=</span></code> zusammen mit <code class="docutils literal notranslate"><span class="pre">testgruppe_a_werte</span></code>.</p>
+<p>Greifen Sie zuerst auf die Einträge in der letzten Spalte und den ersten sieben Zeilen in <span class="math notranslate nohighlight">\(\texttt{data}\)</span> zu. Nutzen Sie anschließen den Zuweisungsoperator <span class="math notranslate nohighlight">\(\texttt{=}\)</span> zusammen mit <span class="math notranslate nohighlight">\(\texttt{testgruppe_a_werte}\)</span>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>

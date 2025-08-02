@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Entscheidungsverzweigungen &#8212; Python-Programmierkurs</title>
+    <title>Bedingte Anweisungen &#8212; Python-Programmierkurs</title>
   
   
   
@@ -34,10 +34,12 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
   <!-- So that users can add custom icons -->
@@ -60,6 +62,8 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -67,6 +71,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter02_basics/programmablaeufe/decision_branching';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Funktionen" href="../../chapter03_spezialisierung/functions/functions_intro.html" />
     <link rel="prev" title="For-Schleifen" href="for_loops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -138,7 +143,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../intro.html">
+<a class="navbar-brand logo" href="../../chapter01_einfuehrung/vorwort.html">
   
   
   
@@ -160,19 +165,13 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../intro.html">
-                    Welcome to your Jupyter Book
+                <a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">
+                    Vorwort
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Markdown Notebook</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">Vorwort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
 
@@ -181,6 +180,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../befehle/befehle_intro.html">Grundlegende Konzepte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../befehle/befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../befehle/python_pakete.html">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../arrays/array_intro.html">Arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/indizierung.html">Indizierung von Arrays</a></li>
@@ -191,20 +200,59 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../visualization/visualization_intro.html">Datenvisualisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Visualisierung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualization/data_import.html">Datenimportierung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen und Ausgaben von Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../functions/funktionsaufrufe.html">Ausgaben von Funktionen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functions/funktionsaufrufe.html">Funktionsaufrufe und -rückgaben</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Programmierkonstrukte</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="while_loops.html">While-Schleifen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="for_loops.html">For-Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="while_loops.html">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Bedingte Anweisungen</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Entscheidungsverzweigungen</a></li>
 
-
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/functions/dreiecke.html">Funktionen schreiben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/functions/function_handles.html">Function handles</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/efficiency.html">Vektorisierung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/quiz.html">Quiz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/several_lines_one_plot.html">Mehrfach-Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/3D_plots.html">3D Plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table_2.html">Tabellen auslesen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -373,7 +421,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Entscheidungsverzweigungen</h1>
+    <h1>Bedingte Anweisungen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,14 +431,16 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entscheidungsverzweigungen</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else">if-else</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elseif-else-income-tax">if-elseif-else (Income Tax)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gasoline-prices">Gasoline Prices</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Bedingte Anweisungen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-anweisung">if-elif-else-Anweisung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-anweisung">if-Anweisung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-anweisung">if-else-Anweisung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">if-elif-else-Anweisung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-einkommenssteuer">Beispiel - Einkommenssteuer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-erneuerbare-energien">Beispiel - Erneuerbare Energien</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#switch">Switch</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#match-anweisung">match-Anweisung</a></li>
 </ul>
 
             </nav>
@@ -403,294 +453,651 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="entscheidungsverzweigungen">
-<h1>Entscheidungsverzweigungen<a class="headerlink" href="#entscheidungsverzweigungen" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="bedingte-anweisungen">
+<h1>Bedingte Anweisungen<a class="headerlink" href="#bedingte-anweisungen" title="Link to this heading">#</a></h1>
+<p>Das Konzept von bedingten Anweisungen begenen uns im Alltag ständig.
+Zum Beispiel richten sich die Parkgebühren in einem Parkhaus meist nach der Parkdauer – es sei denn, Sie stehen länger als 24 Stunden im Parkhaus, dann zahlen Sie oft einen festen Tagestarif.
+Oder Sie planen einen Besuch in der Mannheimer Kunsthalle.
+Welches Ticket für Sie das günstigste ist, hängt von Ihrer Lebenssituation ab und ob Sie Ihren Besuch alleine oder als Gruppe planen. Vielleicht besuchen Sie die Kunsthalle aber auch am ersten Mittwoch im Monat nach 18 Uhr – dann ist der Eintritt kostenlos.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/kunsthalle_preise_quer.jpeg"><img alt="Img 1" src="../../../_images/kunsthalle_preise_quer.jpeg" style="width: 95%;" /></a>
+</figure>
+<p>All diese Entscheidungen hängen von bestimmten Bedingungen ab. Genau solche Situationen lassen sich in der Programmierung mit bedingten Anweisungen abbilden. Diese erlauben es, je nach Situation unterschiedliche Anweisungen auszuführen.</p>
+<p>In Python können solche Entscheidungsprozesse mit <span class="math notranslate nohighlight">\(\texttt{if}\)</span>, <span class="math notranslate nohighlight">\(\texttt{else}\)</span> und <span class="math notranslate nohighlight">\(\texttt{elif}\)</span> umgesetzt werden. Für endlich viele, klar definierte Fälle (z.B. bei Menüauswahlen) gibt es zusätzlich die sogenannte switch-Anweisungen, welche in Python durch das Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{match}\)</span> codiert ist.</p>
+<div class="warning admonition">
+<p class="admonition-title">Bemerkung</p>
+<p>Mit bedingten Anweisungen lässt sich also steuern, welcher Programmcode ausgeführt wird, je nachdem ob eine Bedingung wahr oder falsch ist.</p>
+</div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="if">
-<h1>if<a class="headerlink" href="#if" title="Link to this heading">#</a></h1>
-<p>In der ersten Aufgaben sollen Sie zunächst nur ein if-Statement verwenden.</p>
-<p>First you will practice a single if statement. This is useful when you want to execute code only under a certain condition.</p>
-<p>Bild if pap</p>
-<p>Auf das Schlüsselwort if folgt immer eine Bedingung, die entweder zu <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> ausgewertet werden kann. Der Code, der ausgeführt werden soll, wenn die Bedingung wahr ist, wird durch ein Leerzeichen oder Tab eingerückt.</p>
-<p>Der Code nach dem Schlüsselwort if, wird eingerückt (Leerzeichen oder Tab) und wird nur ausgeführt, wenn die Bedingung wahr ist.</p>
-<p>Each if statement must be followed by a condition that evaluates to true or false. The code between the if and end keywords is executed only when the condition is true.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">rand</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1"># wird nur ausgeführt, wenn x &gt; 0.5</span>
-</pre></div>
-</div>
-<div class="admonition-aufgabe-1 admonition">
-<p class="admonition-title">Aufgabe 1</p>
-<p>Modifizieren Sie den Code so, dass der Variablen <code class="docutils literal notranslate"><span class="pre">B</span></code> der Wert <span class="math notranslate nohighlight">\(1\)</span> zugewiesen wird, wenn <code class="docutils literal notranslate"><span class="pre">A</span></code> größer als 1 ist.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># to test code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Create an if statement. The condition is whether A is greater than 1, A &gt; 1. Then, the code to execute if that statement evaluates to true is B = 1.</p>
-<p>if condition
-code
-end</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<section id="if-else">
-<h2>if-else<a class="headerlink" href="#if-else" title="Link to this heading">#</a></h2>
-<p>You may want to execute some other code if the condition is not met. To do this, you can use the else keyword</p>
-<p>Bild If else pap</p>
-<p>x = rand;
-if x &gt; 0.5
-y = 3;
-else
-y = 4;
-end</p>
-<div class="admonition-aufgabe-2 admonition">
-<p class="admonition-title">Aufgabe 2</p>
-<p>Try modifying the script so that when the if condition is not satisfied, the script will set the variable B to 0.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<p>For more resources on if if-elseif-else, refer to the documentation.</p>
-</section>
-<section id="if-elseif-else-income-tax">
-<h2>if-elseif-else (Income Tax)<a class="headerlink" href="#if-elseif-else-income-tax" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="if-elif-else-anweisung">
+<h1>if-elif-else-Anweisung<a class="headerlink" href="#if-elif-else-anweisung" title="Link to this heading">#</a></h1>
+<p>Bevor Sie die vollständige Struktur von if-elif-else-Anweisungen kennenlernen, tasten wir uns schrittweise heran und beginnen zunächst mit einfachen if-Anweisungen.</p>
+<section id="if-anweisung">
+<h2>if-Anweisung<a class="headerlink" href="#if-anweisung" title="Link to this heading">#</a></h2>
+<p>In Python hat ein if-Anweisung die folgende Syntax:</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_syntax.jpeg"><img alt="Img 1" src="../../../_images/if_syntax.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Auf das Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{if}\)</span> folgt immer eine Bedingung, die entweder zu <span class="math notranslate nohighlight">\(\texttt{True}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{False}\)</span> ausgewertet werden kann. Der Codeblock, der ausgeführt werden soll, wenn die Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> wahr ist, wird durch den Doppelpunkt <span class="math notranslate nohighlight">\(\texttt{:}\)</span> eingeleitet und durch ein Leerzeichen oder Tab unterhalb des Schlüsselwortes eingerückt. Der Code <span class="math notranslate nohighlight">\(\texttt{another}\)</span> <span class="math notranslate nohighlight">\(\texttt{statement 1, 2}\)</span> wird unabhängig vom Wahrheitsgehalt der Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> ausgeführt.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
-Aufgabe 2.1</label><div class="sd-tab-content docutils">
-<p>Passen Sie den Code so an, dass wenn Einkommen kleiner als 9275 ist (<code class="docutils literal notranslate"><span class="pre">income</span> <span class="pre">&lt;</span> <span class="pre">9275</span></code>), dann wir die Besteuerungsrate auf 0.1  <code class="docutils literal notranslate"><span class="pre">topRate</span> <span class="pre">=</span> <span class="pre">0.1</span></code> gesetzt und andernfalls auf <code class="docutils literal notranslate"><span class="pre">topRate=0.15</span></code>.</p>
+Bedingung ist wahr</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_true.jpeg"><img alt="Img 1" src="../../../_images/if_true.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird mit <span class="math notranslate nohighlight">\(x=1\)</span> initialisiert und die Variable <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da <span class="math notranslate nohighlight">\(x &gt; 0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> zu <span class="math notranslate nohighlight">\(y = 4 + 3 = 7\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{7}{2} = 3.5\)</span>.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
-Aufgabe 2.2</label><div class="sd-tab-content docutils">
-<p>Further modify the script so that:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>When income &lt; 9275 ⇒ topRate = 0.10
-When 9275 &lt;= income &lt; 37650 ⇒ topRate = 0.15
-When income &gt;= 37650 ⇒ topRate = 0.25
-</pre></div>
+Bedingung ist falsch</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_false.jpeg"><img alt="Img 1" src="../../../_images/if_false.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird nun mit <span class="math notranslate nohighlight">\(x=-2\)</span> initialisiert und die Variable <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da jetzt <span class="math notranslate nohighlight">\(x \le  0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> nicht verändert und somit gilt <span class="math notranslate nohighlight">\(z = \frac{4}{2} = 2\)</span>.</p>
 </div>
 </div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
-Aufgabe 2.3</label><div class="sd-tab-content docutils">
-<p>Further modify the script so that:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>When income &lt; 9275 ⇒ topRate = 0.10
-When 9275 &lt;= income &lt; 37650 ⇒ topRate = 0.15
-When 37650 &lt;= income &lt; 91150 ⇒ topRate = 0.25
-When income &gt;= 91150 ⇒ topRate = 0.28
-</pre></div>
-</div>
-</div>
+<div class="admonition-aufgabe-1-1 admonition">
+<p class="admonition-title">Aufgabe 1.1</p>
+<p>Modifizieren Sie den Code so, dass der Variablen <span class="math notranslate nohighlight">\(B\)</span> der Wert <span class="math notranslate nohighlight">\(1\)</span> zugewiesen wird, wenn <span class="math notranslate nohighlight">\(A\)</span> größer als <span class="math notranslate nohighlight">\(1\)</span> ist.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">income</span> <span class="o">=</span> <span class="n">randi</span><span class="p">(</span><span class="mf">5e5</span><span class="p">)</span> <span class="c1"># sets up task</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># um Code zu testen</span>
+
+<span class="c1"># Ihr Code</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the if-else construct.</p>
-<p>if a &lt; b
-c = a;
-else
-c = b;
-end</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<p>If the condition after the if statement evaluates to false, you can use elseif to check another condition. Multiple elseif blocks may be added. If they all evaluate to false, then the else block is evaluated.</p>
-<p>if condition1
-code
-elseif condition2
-code
-elseif condition3
-code
-else
-code
-end</p>
-<div class="admonition-aufgabe-1b admonition">
-<p class="admonition-title">Aufgabe 1b</p>
-<p>Further modify the script so that:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>When income &lt; 9275 ⇒ topRate = 0.10
-When 9275 &lt;= income &lt; 37650 ⇒ topRate = 0.15
-When income &gt;= 37650 ⇒ topRate = 0.25
+<p>Verwenden Sie eine if-Anweisung. Die Bedingung dabei ist, dass wenn <span class="math notranslate nohighlight">\(a &gt; 1\)</span> gilt, soll der Code <span class="math notranslate nohighlight">\(\texttt{b = 1}\)</span> ausgeführt werden.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">code</span>
 </pre></div>
 </div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
-<div class="admonition-aufgabe-1c admonition">
-<p class="admonition-title">Aufgabe 1c</p>
-<p>Further modify the script so that:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>When income &lt; 9275 ⇒ topRate = 0.10
-When 9275 &lt;= income &lt; 37650 ⇒ topRate = 0.15
-When 37650 &lt;= income &lt; 91150 ⇒ topRate = 0.25
-When income &gt;= 91150 ⇒ topRate = 0.28
-</pre></div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<p>Weiter Übung alle Gehaltsklassen</p>
 </section>
-<section id="gasoline-prices">
-<h2>Gasoline Prices<a class="headerlink" href="#gasoline-prices" title="Link to this heading">#</a></h2>
-<p>When you ask for user input, you may want to communicate information to the user based on the input they provided. In this practice, you will use an if-elseif statement to notify the user if they selected an invalid country or if the selected country has missing data.</p>
-<div class="admonition-aufgabe-3 admonition">
-<p class="admonition-title">Aufgabe 3</p>
-<p>Check if the country specified in ctry is one for which there is data (e.g. if there is a true value in idx). If not, use the following code to issue the error message saved in errMsg.</p>
-<p>error(errMsg)</p>
+<section id="if-else-anweisung">
+<h2>if-else-Anweisung<a class="headerlink" href="#if-else-anweisung" title="Link to this heading">#</a></h2>
+<p>Oft möchte man auch festlegen, welcher Code ausgeführt werden soll, wenn die Bedingung nicht erfüllt ist.
+Für diesen Zweck stellt Python das Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{else}\)</span> zur Verfügung. Es ermöglicht, einen alternativen Codeblock zu definieren, der dann ausgeführt wird, wenn die zugehörige if-Bedingung verletzt ist.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_else_syntax.jpeg"><img alt="Img 1" src="../../../_images/if_else_syntax.jpeg" style="width: 60%;" /></a>
+</figure>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Bedingung ist wahr</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_else_true.jpeg"><img alt="Img 1" src="../../../_images/if_else_true.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird mit <span class="math notranslate nohighlight">\(x=1\)</span> initialisiert und die Variable <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da <span class="math notranslate nohighlight">\(x &gt; 0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> zu <span class="math notranslate nohighlight">\(y = 4 + 3 = 7\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{7}{2} = 3.5\)</span>.</p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Bedingung ist falsch</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_else_false.jpeg"><img alt="Img 1" src="../../../_images/if_else_false.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird nun mit <span class="math notranslate nohighlight">\(x=-2\)</span> initialisiert und die Variable <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da jetzt <span class="math notranslate nohighlight">\(x \le  0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> nun zu <span class="math notranslate nohighlight">\( y = 2 \cdot 4 = 8\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{8}{2} = 4\)</span>.</p>
+</div>
+</div>
+<div class="admonition-aufgabe-1-2 admonition">
+<p class="admonition-title">Aufgabe 1.2</p>
+<p>Passen Sie Ihren Code von Aufgabe 1.1 so an, dass wenn die Bedingung <span class="math notranslate nohighlight">\(a &gt; 1\)</span> nicht erfüllt ist, dann wird <span class="math notranslate nohighlight">\(b\)</span> auf <span class="math notranslate nohighlight">\(0\)</span> gesetzt.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">load</span> <span class="n">gPrices</span>
-<span class="n">whos</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># um Code zu testen</span>
+
+<span class="c1"># Ihr Code</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span> 
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>if-elif-else-Anweisung<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Wenn die Bedingung nach der if-Anweisung als falsch bewertet wird, kann mit <span class="math notranslate nohighlight">\(\texttt{elif}\)</span> (kurz für <span class="math notranslate nohighlight">\(\texttt{else if}\)</span>) eine weitere Bedingung geprüft werden. Es können beliebig viele elif-Blöcke ergänzt werden. Wenn keine der Bedingungen zutrifft, wird der else-Block ausgeführt. Auf diese Weise lässt sich steuern, welcher Code abhängig von unterschiedlichen Situationen ausgeführt wird.</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_elif_else_syntax.jpeg"><img alt="Img 1" src="../../../_images/if_elif_else_syntax.jpeg" style="width: 60%;" /></a>
+</figure>
+<div class="warning admonition">
+<p class="admonition-title">Achtung</p>
+<p>Sobald eine der Bedingungen in einem if-elif-else Statment erfüllt ist, wird nur der zugehörige Codeblock ausgeführt. Alle nachfolgenden Bedingungen werden ignoriert – selbst wenn sie ebenfalls wahr sind.</p>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+if Bedingung ist wahr</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_elif_true1.jpeg"><img alt="Img 1" src="../../../_images/if_elif_true1.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird mit <span class="math notranslate nohighlight">\(x=1\)</span> initialisiert und <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da <span class="math notranslate nohighlight">\(x &gt; 0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> zu <span class="math notranslate nohighlight">\(y = 4 + 3 = 7\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{7}{2} = 3.5\)</span>.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+elif Bedingung ist wahr</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_elif_true2.jpeg"><img alt="Img 1" src="../../../_images/if_elif_true2.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird nun mit <span class="math notranslate nohighlight">\(x=-2\)</span> initialisiert und <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Es gilt <span class="math notranslate nohighlight">\(x \le  0\)</span>. Da jedoch <span class="math notranslate nohighlight">\( x &lt; - 1\)</span>, wird <span class="math notranslate nohighlight">\(y\)</span> nun zu <span class="math notranslate nohighlight">\( y = 2 * 4 = 8\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{8}{2} = 4\)</span>.</p>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+if und elif Bedingung sind falsch</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/if_elif_false.jpeg"><img alt="Img 1" src="../../../_images/if_elif_false.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird nun mit <span class="math notranslate nohighlight">\(x=-0.5\)</span> initialisiert und  <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da jetzt sowohl <span class="math notranslate nohighlight">\(x \le  0\)</span> als auch <span class="math notranslate nohighlight">\(x  \ge -1 \)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> nun zu <span class="math notranslate nohighlight">\( y = 4 - 2 = 2\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{2}{2} = 1\)</span>.</p>
+</div>
+</div>
+<div class="admonition-aufgabe-1-3 admonition">
+<p class="admonition-title">Aufgabe 1.3</p>
+<p>Passen Sie Ihren Code von Aufgabe 1.1 so an, dass wenn die Bedingung <span class="math notranslate nohighlight">\(a &gt; 1\)</span> nicht erfüllt ist, aber <span class="math notranslate nohighlight">\( a &lt; 0\)</span> dann wird <span class="math notranslate nohighlight">\(b\)</span> auf <span class="math notranslate nohighlight">\(0\)</span> gesetzt. Ansonsten wird <span class="math notranslate nohighlight">\(b\)</span> auf <span class="math notranslate nohighlight">\(\frac{a}{2}\)</span> gesetzt.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># um Code zu testen</span>
+
+<span class="c1"># Ihr Code</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">else</span><span class="p">:</span> 
+  <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-4 admonition">
+<p class="admonition-title">Aufgabe 1.4</p>
+<p>Erweitern Sie Ihren Code von Aufgabe 1.1 so, dass wenn <span class="math notranslate nohighlight">\(a &gt; 1\)</span> erfüllt ist, aber zusätzlich <span class="math notranslate nohighlight">\( a &lt; 4\)</span> gilt, dann wird <span class="math notranslate nohighlight">\(b\)</span> auf <span class="math notranslate nohighlight">\(4\)</span> gesetzt. Gilt <span class="math notranslate nohighlight">\(a \le 1\)</span>, wird <span class="math notranslate nohighlight">\(b\)</span> auf <span class="math notranslate nohighlight">\(1\)</span> gesetzt und ansonsten auf <span class="math notranslate nohighlight">\(-2\)</span>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># um Code zu testen</span>
+
+<span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie entweder eine verschachteltes if-else-Anweisung oder eine einfache if-elif-else-Anweisung. Das logische <em>und</em> (<span class="math notranslate nohighlight">\(\wedge\)</span>) ist in Python durch <span class="math notranslate nohighlight">\(\texttt{&amp;}\)</span> gegeben.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Option 1</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+
+  <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="k">else</span><span class="p">:</span> 
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Option 2</span>
+<span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">a</span> <span class="o">&amp;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="k">else</span><span class="p">:</span> 
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<br>
+</section>
+<section id="beispiel-einkommenssteuer">
+<h2>Beispiel - Einkommenssteuer<a class="headerlink" href="#beispiel-einkommenssteuer" title="Link to this heading">#</a></h2>
+<p>In Deutschland ist die Einkommensteuer progressiv, das heißt: Je mehr Sie verdienen, desto höher ist der Steuersatz. Die tatsächliche Berechnung ist recht komplex, aber zur Veranschaulichung reicht ein stark vereinfachtes Modell:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Zone</p></th>
+<th class="head"><p>Einkommen (in Euro)</p></th>
+<th class="head"><p>Steuersatz</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span> bis <span class="math notranslate nohighlight">\(12096\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0 \%\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(12097\)</span> bis <span class="math notranslate nohighlight">\(17443\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(14 \%\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(17444\)</span> bis <span class="math notranslate nohighlight">\(68480\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(23.97 \%\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><span class="math notranslate nohighlight">\(68481\)</span> bis <span class="math notranslate nohighlight">\(277825\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(42 \%\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>ab <span class="math notranslate nohighlight">\(277826\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(45 \%\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Je nach Höhe Ihres Einkommens soll Ihr Programm nun automatisch den passenden Steuersatz wählen und den Steuerbetrag berechnen.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Aufgabe 2.1</label><div class="sd-tab-content docutils">
+<p>Passen Sie den Code so an, dass wenn <span class="math notranslate nohighlight">\(\texttt{einkommen}\)</span> kleiner gleich als <span class="math notranslate nohighlight">\(12096\)</span> ist, dann wird <span class="math notranslate nohighlight">\(\texttt{steuersatz}\)</span> auf <span class="math notranslate nohighlight">\(0\)</span> gesetzt und andernfalls auf <span class="math notranslate nohighlight">\(0.14\)</span>.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Aufgabe 2.2</label><div class="sd-tab-content docutils">
+<p>Erweitern Sie Ihren Code, so dass nun auch Zone 2 korrekt besteuert wird, sprich:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lrlrl}
+    &amp; \texttt{einkommen} &amp; \le 12096 &amp; \Rightarrow &amp; \texttt{steuersatz} = 0, \\
+    12096 &lt; &amp; \texttt{einkommen} &amp; \le 17443 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.14, \\
+    &amp; \texttt{einkommen} &amp; \ge 17444 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.2397.
+\end{array}
+\end{split}\]</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Aufgabe 2.3</label><div class="sd-tab-content docutils">
+<p>Erweitern Sie Ihren Code, so dass nun auch Zone 3 korrekt besteuert wird, sprich:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lrlrl}
+    &amp; \texttt{einkommen} &amp; \le 12096 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0, \\
+    12096 &lt; &amp; \texttt{einkommen} &amp; \le 17443 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.14, \\
+    17433 &lt; &amp; \texttt{einkommen} &amp; \ge 68480 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.2397, \\
+    &amp; \texttt{einkommen} &amp; \ge 68481 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.42.
+\end{array}
+\end{split}\]</div>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Aufgabe 2.4</label><div class="sd-tab-content docutils">
+<p>Erweitern Sie Ihren Code, so dass alle Zonen korrekt besteuert werden. Außdem soll Ihr Code den Steuerbetrag, also <span class="math notranslate nohighlight">\(\texttt{einkommen} \cdot \texttt{steuersatz}\)</span> ausgeben.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># zufälliges Einkommen generieren</span>
+<span class="n">einkommen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span> 
+
+<span class="c1"># Ihr Code </span>
+<span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einkommen:&quot;</span><span class="p">,</span> <span class="n">einkommen</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Steuersatz:&quot;</span><span class="p">,</span> <span class="n">steuersatz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie eine if-else-Anweisung der Form:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">s1</span>
+<span class="k">else</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung A2.1</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">12096</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung A2.2</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">12096</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">17443</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.2397</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung A2.3</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">12096</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">17443</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+<span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">68480</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.2397</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.42</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung A2.4</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">12096</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">17443</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+<span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">68480</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.2397</span>
+<span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">277825</span><span class="p">:</span>
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.42</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.45</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Steuerbetrag:&quot;</span><span class="p">,</span> <span class="n">einkommen</span> <span class="o">*</span> <span class="n">steuersatz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="beispiel-erneuerbare-energien">
+<h2>Beispiel - Erneuerbare Energien<a class="headerlink" href="#beispiel-erneuerbare-energien" title="Link to this heading">#</a></h2>
+<p>An dieser Stellen wollen wir nochmal den Anteil erneuerbarer Energien am Gesamtenergieverbrauch für verschiedene Länder graphisch darstellen. Den Datensatz haben Sie bereits im Kapitel zu <a class="reference internal" href="for_loops.html"><span class="std std-doc">for Schleifen</span></a> kennengelernt. Die gegebenen Daten sind:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\texttt{years}\)</span> - NumPy-Array, welches die Jahre 2005 bis 2023 enthält</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{countries}\)</span> - NumPy-Array, welche die verschiedenen Länder enthält</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{data}\)</span> - NumPy-Array, welches die Daten zum Anteil erneuerbarer Energien der Länder enthält. Eine Zeile entspricht einem Jahr, eine Spalte einem Land.</p></li>
+</ul>
+<div class="cell tag_thebe-init tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Datenquelle</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="c1"># Auswahlparameter</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;China&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Norway&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Brazil&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Italy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;France&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Netherlands&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Sweden&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Switzerland&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Belgium&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="s2">&quot;renewables_share_energy&quot;</span>
+
+<span class="c1"># Daten filtern und auf relevante Spalten reduzieren</span>
+<span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">countries</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2005</span><span class="p">)]</span>
+<span class="n">df_pivot</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">variable</span><span class="p">)</span>
+
+<span class="c1"># Nur vollständige Zeilen und relevante Länder</span>
+<span class="n">df_selected</span> <span class="o">=</span> <span class="n">df_pivot</span><span class="p">[</span><span class="n">countries</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Jahr als eigene Spalte</span>
+<span class="n">df_selected_with_years</span> <span class="o">=</span> <span class="n">df_selected</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_selected_with_years</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">df_selected</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="c1"># Umwandeln in NumPy-Array</span>
+<span class="n">years</span> <span class="o">=</span> <span class="n">df_selected_with_years</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">df_selected_with_years</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[:,</span> <span class="mi">1</span><span class="p">:]</span>
+<span class="n">data</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">years</span><span class="p">)),</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Allerdings wollen wir nun, der Nutzerin basierend auf ihren Eingaben, eine Rückmeldung geben. In dieser Übung sollen Sie die Nutzerin informieren, falls keine Daten für das gewählte Land vorliegen oder Werte im Datensatz des Landes fehlen.</p>
+<p><strong>Fehlende Datensätze für Länder</strong></p>
+<p>Um zu überprüfen, ob ein bestimmtes Element – in diesem Fall ein Land – überhaupt im Datensatz enthalten ist, können Sie den Operator <span class="math notranslate nohighlight">\(\texttt{in}\)</span> verwenden. Damit lässt sich feststellen, ob ein gesuchtes Element in einem Array vorkommt. Der Ausdruck <span class="math notranslate nohighlight">\(\texttt{x in array}\)</span> liefert einen Wahrheitswert (<span class="math notranslate nohighlight">\(\texttt{True}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{False}\)</span>) und gibt somit lediglich an, ob das Element enthalten ist – nicht wo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obstkorb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;Apfel&quot;</span><span class="p">,</span> <span class="s2">&quot;Banane&quot;</span><span class="p">,</span> <span class="s2">&quot;Kiwi&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ananas&quot;</span> <span class="ow">in</span> <span class="n">obstkorb</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kiwi&quot;</span> <span class="ow">in</span> <span class="n">obstkorb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Analog können Sie mit dem Operator <span class="math notranslate nohighlight">\(\texttt{not in}\)</span> prüfen ob ein Element <strong>nicht</strong> in einem Array enthalten ist.</p>
+<p><strong>Fehlende Werte in den Daten eines Landes</strong></p>
+<p>Im Kontext der <a class="reference internal" href="../arrays/logische_arrays.html"><span class="std std-doc">logischen Indizierung</span></a> haben Sie bereits gelernt, wie man prüft, ob Elemente eines Arrays einen bestimmten Wert besitzen – zum Beispiel mit <span class="math notranslate nohighlight">\(\texttt{x == 5}\)</span>. Dies liefert ein logisches Array, das an jeder Stelle angibt, ob die Bedingung erfüllt ist oder nicht.
+Für fehlende Werte (<span class="math notranslate nohighlight">\(\texttt{nan}\)</span>) funktioniert ein direkter Vergleich wie <span class="math notranslate nohighlight">\(\texttt{x == np.nan}\)</span>  oder <span class="math notranslate nohighlight">\(\texttt{np.nan in x}\)</span> jedoch nicht – dieser liefert immer <span class="math notranslate nohighlight">\(\texttt{False}\)</span>. Verwenden Sie stattdessen die Funktion <span class="math notranslate nohighlight">\(\texttt{np.isnan()}\)</span>, um ein logisches Array zu erzeugen, das markiert, welche Einträge <span class="math notranslate nohighlight">\(\texttt{nan}\)</span> sind.</p>
+<p>Wenn Sie prüfen möchten, ob mindestens ein Eintrag in einem Array <span class="math notranslate nohighlight">\(\texttt{nan}\)</span> ist, können Sie zusätzlich die Funktion <span class="math notranslate nohighlight">\(\texttt{any()}\)</span> einsetzen. Diese gibt <span class="math notranslate nohighlight">\(\texttt{True}\)</span> zurück, sobald mindestens ein <span class="math notranslate nohighlight">\(\texttt{True}\)</span>-Wert im Array enthalten ist.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Aufgabe 3.1</label><div class="sd-tab-content docutils">
+<p>Prüfen Sie ob für das Land <span class="math notranslate nohighlight">\(\texttt{ctry}\)</span> überhaupt ein Datensatz existiert, das heißt ob <span class="math notranslate nohighlight">\(\texttt{ctry}\)</span> ein Element von <span class="math notranslate nohighlight">\(\texttt{countries}\)</span> ist. Falls nicht, geben Sie eine Fehlermeldung mit <span class="math notranslate nohighlight">\(\texttt{raise Exception(errMsg)}\)</span> aus.
+Testen Sie Ihren Code für <span class="math notranslate nohighlight">\(\texttt{&quot;Canada&quot;}\)</span>.</p>
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Aufgabe 3.2</label><div class="sd-tab-content docutils">
+<p>Prüfen Sie on Werte in den Daten zum Anteil erneuerbarer Energien eines Landes fehlen (<span class="math notranslate nohighlight">\(\texttt{nan}\)</span>-Werte). Falls ja, soll die Warnmeldung <span class="math notranslate nohighlight">\(\texttt{warnMsg}\)</span> als Warnung mit <span class="math notranslate nohighlight">\(\texttt{print()}\)</span> ausgegeben werden. Testen Sie Ihren Code für <span class="math notranslate nohighlight">\(\texttt{ctry = &quot;Norway&quot;}\)</span>.</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
 <span class="n">ctry</span> <span class="o">=</span> <span class="s2">&quot;Canada&quot;</span>
 
-<span class="n">idx</span> <span class="o">=</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">ctry</span><span class="p">,</span><span class="n">countries</span><span class="p">);</span>
-<span class="n">ctryPrices</span> <span class="o">=</span> <span class="n">prices</span><span class="p">(:,</span><span class="n">idx</span><span class="p">)</span>
+<span class="n">warnMsg</span> <span class="o">=</span> <span class="s2">&quot;Es fehlen einzelne Datenpunkte für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span>
+<span class="n">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Daten für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot; fehlen!&quot;</span>
 
-<span class="n">errMsg</span> <span class="o">=</span> <span class="s2">&quot;No data available for &quot;</span> <span class="o">+</span> <span class="n">ctry</span><span class="p">;</span>
-<span class="n">warnMsg</span> <span class="o">=</span> <span class="s2">&quot;Missing values in price data for &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">;</span>
+<span class="c1"># Ihr Code</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">my_ctry</span><span class="p">)</span>
+<span class="n">ctry_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="n">Year</span><span class="p">,</span><span class="n">ctryPrices</span><span class="p">,</span><span class="s2">&quot;o-&quot;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot; Gas Prices&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">ctry_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Jahre&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Anteil erneuerbarer Energien (%)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Use the if construct around the error to check if there is a true value in idx. To check for any true value, use the any function on idx. Then use ~ to find if there are not any true values in idx.</p>
-<p>if condition
-error(errMsg)
-end</p>
+<p class="admonition-title">Hinweis A3.1</p>
+<p>Verwenden Sie eine if-else-Anweisung und prüfen Sie ob <span class="math notranslate nohighlight">\(\texttt{ctry}\)</span> (k)ein Element von <span class="math notranslate nohighlight">\(\texttt{countries}\)</span> ist. <span class="math notranslate nohighlight">\(\texttt{raise Exception()}\)</span> führt automatisch zum Programmabbruch.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">code</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">errMsg</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<p class="admonition-title">Lösung A3.1</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ctry</span> <span class="o">=</span> <span class="s2">&quot;Canada&quot;</span>
+
+<span class="n">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Daten für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot; fehlen!&quot;</span>
+<span class="n">warnMsg</span> <span class="o">=</span> <span class="s2">&quot;Es fehlen einzelne Datenpunkte für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span>
+
+<span class="k">if</span> <span class="n">ctry</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">my_ctry</span><span class="p">)</span>
+    <span class="n">ctry_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">ctry_data</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Jahre&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Anteil erneuerbarer Energien (%)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">errMsg</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<p>You can change the input to Australia and run the script and see a plot of the Australian gas prices. However, there is a missing value, NaN, in the prices. It would be good to issue a warning message to the user if there is any missing data in the plot.</p>
-<p>if condition1
-code
-elseif condition2
-morecode
-end</p>
-<div class="admonition-aufgabe-3 admonition">
-<p class="admonition-title">Aufgabe 3</p>
-<p>After checking that the selected country is valid, use an elseif to check if there are any missing values (NaN values) in the country’s gas prices, ctryPrices. If there are, use the following code to issue the text in warnMsg as a warning message.</p>
-<p>warning(warnMsg)</p>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<p class="admonition-title">Lösung A3.2</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ctry</span> <span class="o">=</span> <span class="s2">&quot;Norway&quot;</span>
+
+<span class="n">warnMsg</span> <span class="o">=</span> <span class="s2">&quot;Es fehlen einzelne Datenpunkte für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span>
+<span class="n">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Daten für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot; fehlen!&quot;</span>
+
+<span class="k">if</span> <span class="n">ctry</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ctry</span><span class="p">)</span>
+    <span class="n">ctry_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ctry_data</span><span class="p">))):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">warnMsg</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">ctry_data</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Jahre&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Anteil erneuerbarer Energien (%)&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">errMsg</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<br>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="switch">
-<h1>Switch<a class="headerlink" href="#switch" title="Link to this heading">#</a></h1>
-<p>Where there are a finite number of discrete possibilities, you can use the switch-case
-construction.</p>
-<p>switch x
-case 1
-disp(“x is 1”)
-case 2
-disp(“x is 2”)
-otherwise
-disp(“x is neither 1 nor 2”)
-end</p>
-<div class="admonition-aufgabe-3 admonition">
-<p class="admonition-title">Aufgabe 3</p>
-<p>Modify the script so that:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>when dayNum is 1 or 7 ⇒ dayName is &quot;Weekend&quot;
-when dayNum is 2 ⇒ dayName is &quot;Monday&quot;
-when dayNum is 3 ⇒ dayName is &quot;Tuesday&quot;
-when dayNum is 4 ⇒ dayName is &quot;Wednesday&quot;
-when dayNum is 5 ⇒ dayName is &quot;Thursday&quot;
-when dayNum is 6 ⇒ dayName is &quot;Friday&quot;
+<section class="tex2jax_ignore mathjax_ignore" id="match-anweisung">
+<h1>match-Anweisung<a class="headerlink" href="#match-anweisung" title="Link to this heading">#</a></h1>
+<p>Eine match-Anweisung erlaubt es, eine Variable oder einen Ausdruck mit mehreren vordefinierten Fällen zu vergleichen und je nach Ergebnis unterschiedlichen Code auszuführen. Es ist besonders dann hilfreich, wenn man einen Ausdruck gegen endlich viele Werte prüfen möchte. In anderen Programmiersprachen wie C, C++ oder Matlab spricht man stattdessen von switch-Anweisungen. Diese werden - anders als in Python - mit dem Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{switch}\)</span> eingeleitet. In Syntax in Python ist wie folgt:</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/switch_syntax.jpeg"><img alt="Img 1" src="../../../_images/switch_syntax.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Auf das Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{match}\)</span>  folgt der Ausdruck <span class="math notranslate nohighlight">\(\texttt{var}\)</span>, dessen Wert mit den definierten Fällen verglichen wird. Die sogenannte <em>match-Fälle</em> werden dann von oben nach unten geprüft. Das heißt, es wird überprüft ob, der Wert des Ausdrucks <span class="math notranslate nohighlight">\(\texttt{var}\)</span> und der Wert des Falls <strong>gleich</strong> sind. Ist dies der Fall, wird der zugehörige Codeblock ausgeführt.</p>
+<p>Falls keiner der Fälle zutrifft, wird der default-Fall ausgeführt. Dieser wird durch einen Unterstrich (<span class="math notranslate nohighlight">\(\texttt{_}\)</span>) gekennzeichnet und entspricht dem „sonst“-Fall bei mathematischen Fallunterscheidungen.
+Wichtig: Der default-Fall (<span class="math notranslate nohighlight">\(\texttt{_}\)</span>) muss stets als letzter Fall angegeben werden, da Python die Fälle von oben nach unten prüft und den ersten passenden Fall ausführt – alle weiteren werden dann ignoriert.</p>
+<p>Das match-Anweisung lässt sich äquivalent als eine if-elif-else-Anweisung schreiben. Es bietet jedoch eine kompaktere und besser lesbare Struktur, besonders wenn viele verschiedene Fälle unterschieden werden müssen.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-13" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+match-Anweisung</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">match</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = 1&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = 2&quot;</span><span class="p">)</span>
+    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x ist weder 1 noch 2.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Use the switch-case construct. In the following code:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>when dayNum = 2 ⇒ dayName = &quot;Monday&quot;
-when dayNum = 3 ⇒ dayName = &quot;Tuesday&quot;
-when dayNum = 4 ⇒ dayName = &quot;Wednesday&quot;
-when dayNum = 5 ⇒ dayName = &quot;Thursday&quot;
-when dayNum = 6 ⇒ dayName = &quot;Friday&quot;
-otherwise ⇒ dayName = &quot;Weekend&quot;
+<input id="sd-tab-item-14" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+if-elif-else-Anweisung</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = 1&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = 2&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x ist weder 1 noch 2.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You will use dayNum for a and dayName for b.</p>
-<p>switch a
-case 1
-b = 1;
-case 2
-b = 9;
-otherwise
-b = 4;
-end</p>
+</div>
+</div>
+<div class="admonition-aufgabe-4 admonition">
+<p class="admonition-title">Aufgabe 4</p>
+<p>Überprüfen Sie welchen Wert die Variable <span class="math notranslate nohighlight">\(\texttt{tag_nr}\)</span> hat und speichern Sie entsprechend den korrekten Wochentag in der Variable <span class="math notranslate nohighlight">\(\texttt{wochentag}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{array}{rlrl}
+        \texttt{tag_nr} &amp; = 1 &amp; \Rightarrow &amp; \texttt{wochentag} = \text{Montag}, \\
+        \texttt{tag_nr} &amp; = 2 &amp; \Rightarrow &amp; \texttt{wochentag} = \text{Dienstag}, \\
+        \texttt{tag_nr} &amp; = 3 &amp; \Rightarrow &amp; \texttt{wochentag} = \text{Mittwoch}, \\
+        \texttt{tag_nr} &amp; = 4 &amp; \Rightarrow &amp; \texttt{wochentag} = \text{Donnerstag}, \\
+        \texttt{tag_nr} &amp; = 5 &amp; \Rightarrow &amp; \texttt{wochentag} = \text{Freitag}, \\
+        \texttt{tag_nr} &amp; \in \{6, 7 \} &amp; \Rightarrow &amp; \texttt{wochentag} = \text{Wochenende}.
+    \end{array}
+\end{split}\]</div>
+<p>Ergänzen Sie dafür den nachfolgenden Code.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dayNum</span> <span class="o">=</span> <span class="n">randi</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tag_nr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Ihr Code </span>
+<span class="n">wochentag</span> <span class="o">=</span> <span class="s2">&quot;Montag&quot;</span>
+<span class="n">wochentag</span> <span class="o">=</span> <span class="s2">&quot;Dienstag&quot;</span>
+<span class="c1">#Ihr Code </span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es ist der&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tag_nr</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Tag der Woche. Also ist &quot;</span> <span class="o">+</span> <span class="n">wochentag</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
 </div>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Use the for construct.</p>
-<p>for k = 3:n
-code
-end</p>
+<p>Verwenden Sie eine match-Anweisung, wobei Sie <span class="math notranslate nohighlight">\(\texttt{var}\)</span> durch die Variable <span class="math notranslate nohighlight">\(\texttt{tag_nr}\)</span> ersetzen.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dsize</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">match</span> <span class="n">tag_nr</span><span class="p">:</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">wochentag</span> <span class="o">=</span> <span class="s2">&quot;Montag&quot;</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">wochentag</span> <span class="o">=</span> <span class="s2">&quot;Dienstag&quot;</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">wochentag</span> <span class="o">=</span> <span class="s2">&quot;Mittwoch&quot;</span>
+    <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">wochentag</span> <span class="o">=</span> <span class="s2">&quot;Donnerstag&quot;</span>
+    <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">wochentag</span> <span class="o">=</span> <span class="s2">&quot;Freitag&quot;</span>
+    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+        <span class="n">wochentag</span> <span class="o">=</span> <span class="s2">&quot;Wochenende&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es ist der&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tag_nr</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Tag der Woche. Also ist &quot;</span> <span class="o">+</span> <span class="n">wochentag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Try a different value of n to see the effect of changing the looping variable.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -732,6 +1139,15 @@ end</p>
         <p class="prev-next-title">For-Schleifen</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../../chapter03_spezialisierung/functions/functions_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Funktionen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -749,14 +1165,16 @@ end</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entscheidungsverzweigungen</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else">if-else</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elseif-else-income-tax">if-elseif-else (Income Tax)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gasoline-prices">Gasoline Prices</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Bedingte Anweisungen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-anweisung">if-elif-else-Anweisung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-anweisung">if-Anweisung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-anweisung">if-else-Anweisung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">if-elif-else-Anweisung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-einkommenssteuer">Beispiel - Einkommenssteuer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-erneuerbare-energien">Beispiel - Erneuerbare Energien</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#switch">Switch</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#match-anweisung">match-Anweisung</a></li>
 </ul>
 
   </nav></div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>While-Schleifen &#8212; Python-Programmierkurs</title>
+    <title>while-Schleifen &#8212; Python-Programmierkurs</title>
   
   
   
@@ -34,10 +34,12 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
   <!-- So that users can add custom icons -->
@@ -60,6 +62,8 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -68,7 +72,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="For-Schleifen" href="for_loops.html" />
-    <link rel="prev" title="Funktionen aufrufen" href="intro.html" />
+    <link rel="prev" title="Programmierkonstrukte" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -139,7 +143,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../intro.html">
+<a class="navbar-brand logo" href="../../chapter01_einfuehrung/vorwort.html">
   
   
   
@@ -161,19 +165,13 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../intro.html">
-                    Welcome to your Jupyter Book
+                <a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">
+                    Vorwort
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Minimal Working Example</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Markdown Notebook</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">Vorwort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
 
@@ -182,6 +180,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../befehle/befehle_intro.html">Grundlegende Konzepte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../befehle/befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../befehle/python_pakete.html">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../arrays/array_intro.html">Arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/arrayerstellung.html">Arrayerstellung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../arrays/indizierung.html">Indizierung von Arrays</a></li>
@@ -192,20 +200,59 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../visualization/visualization_intro.html">Datenvisualisierung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Visualisierung</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../visualization/data_import.html">Datenimportierung</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen und Ausgaben von Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../functions/funktionsaufrufe.html">Ausgaben von Funktionen</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functions/funktionsaufrufe.html">Funktionsaufrufe und -rückgaben</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Programmierkonstrukte</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">While-Schleifen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="for_loops.html">For-Schleifen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decision_branching.html">Bedingte Anweisungen</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="decision_branching.html">Entscheidungsverzweigungen</a></li>
 
-
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/functions/dreiecke.html">Funktionen schreiben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/functions/function_handles.html">Function handles</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/error_signs.html">Fehleranzeige</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/efficiency.html">Vektorisierung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/quiz.html">Quiz</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/advanced_2D_plots.html">Plots individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/several_lines_one_plot.html">Mehrfach-Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/3D_plots.html">3D Plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Mit Daten arbeiten</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table_2.html">Tabellen auslesen</a></li>
 </ul>
 </details></li>
 </ul>
@@ -374,7 +421,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>While-Schleifen</h1>
+    <h1>while-Schleifen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,7 +431,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-syntax">Die Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-code-beispiel">Ein Code-Beispiel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endlosschleifen">Endlosschleifen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-1-maschienengenauigkeit">Aufgabe 1 - Maschienengenauigkeit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-2-best-of-five">Aufgabe 2 - Best-of-Five</a></li>
@@ -400,53 +448,37 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="while-schleifen">
-<h1>While-Schleifen<a class="headerlink" href="#while-schleifen" title="Link to this heading">#</a></h1>
-<p>Motivation: Anfang von Mensch-Ärgere-Dich-Nicht.</p>
-<p>Lets play a game. How fas t can we get around a board game board? We’ll start at position one, roll the die, and move forward that number of spaces. We keep rolling until we have gone all the way around the whole board.</p>
-<p>Lets see how we can simulate this game in Python. A foor loop can repeat a task, like rolling the die and advancing the position. But foor loops execute a fixed number of times
-Will five rounds be enough to win the game? Ten? Twnty?</p>
-<p>How do we know how many times we need to roll the die? We dont. This is where a while loop comes in. A while loop repeatedly executes a chunk of code while a condition is true. For example, here its checking if the current position is less then the total number of squares.  When the condition changes to false it stops.</p>
-<p>Basically as long as the current position hasnt reached the end of the board, we keep rolling the die and mocing forward. Once we have made it to the end, the conditin changes and the loop stops repeating.</p>
-<p>If you know exactly how many time you need your code to be repeated, use  a for loop. But if you want it repeated until some condition changes, use a while loop.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">currentPos</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">for</span> <span class="n">roll</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="err">?</span><span class="p">):</span> <span class="c1"># currentPos &lt; finalSq</span>
-    <span class="n">die</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-
-    <span class="n">currentPos</span> <span class="o">+=</span> <span class="n">die</span>
-</pre></div>
+<h1>while-Schleifen<a class="headerlink" href="#while-schleifen" title="Link to this heading">#</a></h1>
+<p>Wir wollen Ihnen die Idee hinter einer while-Schleife zunächst anhand folgendem Szenario näherbringen:</p>
+<center>
+   Wie schnell können Sie ein Spielbrett umrunden?
+</center>
+<br>
+<p>Sie starten auf Feld Eins, würfeln und ziehen vorwärts. Dann würfeln Sie erneut – und das so lange, bis Sie das Spielbrett vollständig umrundet haben. Aber woher wissen Sie wie viele Würfe nötig sind? Reichen zehn? Zwanzig? Das wissen Sie nicht im Voraus.</p>
+<p>Genau hier kommt die while-Schleife ins Spiel: Sie wiederholt einen Codeblock, hier das Würfeln, so lange, wie eine Bedingung erfüllt ist. In unserem Beispiel ist die Bedingung: <em>Spielbrett noch nicht umrundet</em>. Solange das zutrifft, wird der Codeblock weiter ausgeführt. Es wird also weiter gewürfelt. Erst wenn die Bedingung nicht mehr erfüllt ist, das heißt wenn Sie eine Runde geschafft haben, hören Sie auf und endet die Schleife automatisch.</p>
+<p>In manchen Situationen genügt es also nicht, eine Anweisung eine festgelegte Anzahl von Malen auszuführen. Stattdessen ist es notwendig einen Codeblock so lange wiederholen, bis eine bestimmte Bedingung erfüllt ist – unabhängig davon, wie oft das geschieht.
+Im Kontext der Numerik kommen while-Schleifen häufig dann zum Einsatz, wenn Sie einen Algorithmus so lange wiederholen wollen bis das Ergebnis eine gewünschte Genauigkeit erreicht hat.</p>
+<div class="warning admonition">
+<p class="admonition-title">Bemerkung</p>
+<p>Wenn Code wiederholt solange wiederholt werden soll bis eine bestimmte Bedingung erfüllt ist, verwenden Sie eine while-Schleife.</p>
 </div>
-<section id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">#</a></h2>
-<p>Eine while-Schleife hat die folgende Struktur:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
-    <span class="n">statement</span> <span class="mi">1</span>
-    <span class="n">statement</span> <span class="mi">2</span>
-    <span class="n">statement</span> <span class="mi">3</span>
-    <span class="o">...</span>
-
-<span class="n">another</span> <span class="n">statement</span> <span class="mi">1</span>
-<span class="n">another</span> <span class="n">statement</span> <span class="mi">2</span>
-<span class="o">...</span>
-</pre></div>
-</div>
-<p>Der Code <code class="docutils literal notranslate"><span class="pre">statement</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">...</span></code> wird ausgeführt solange die Bedingung <code class="docutils literal notranslate"><span class="pre">condition</span></code> wahr, also <code class="docutils literal notranslate"><span class="pre">True</span></code> ist. Es ist an dieser Stelle wichtig, den Code unterhalb des Schlüsselworts <code class="docutils literal notranslate"><span class="pre">while</span></code> einzurücken, zum Beispiel durch ein Leerzeichen oder ein Tab, da dies Python signalisiert, dass der Code nur ausgeführt werden soll, wenn die Bedingung wahr ist. Der Code <code class="docutils literal notranslate"><span class="pre">another</span> <span class="pre">statement</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">...</span></code> wir unabhänging von dem Wahrheitsgehalt der Bedingung <code class="docutils literal notranslate"><span class="pre">condition</span></code> aus geführt, denn dieser Code gehört nicht zum Schleifenrumpf.</p>
-<p>Angenommen wir wollen für ein festes <span class="math notranslate nohighlight">\(x\)</span> die natürliche Zahl <span class="math notranslate nohighlight">\(n\)</span> zu bestimmen so, dass <span class="math notranslate nohighlight">\(y = \frac{x}{2^n}\)</span> kleiner als <span class="math notranslate nohighlight">\(1\)</span> ist. Sie können eine while-Schleife schreiben und <span class="math notranslate nohighlight">\(x\)</span> durch <span class="math notranslate nohighlight">\(2^n\)</span>  im Body der Schleife teilen solange der Quotient größer als <span class="math notranslate nohighlight">\(1\)</span> ist.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">x</span> <span class="c1"># x / 2^0</span>
-<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-</div>
+<section id="die-syntax">
+<h2>Die Syntax<a class="headerlink" href="#die-syntax" title="Link to this heading">#</a></h2>
+<p>Eine while-Schleife hat in Python folgende Struktur:</p>
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/while_loop_structure2.jpeg"><img alt="Img 1" src="../../../_images/while_loop_structure2.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Der Code im Schleifenrumpf wird ausgeführt solange die Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> wahr, also <span class="math notranslate nohighlight">\(\texttt{True}\)</span> ist. Der Doppelpunkt <span class="math notranslate nohighlight">\(\texttt{:}\)</span> leitet den Schleifenrumpf ein. Es ist an dieser Stelle wichtig, den Code unterhalb des Schlüsselworts <span class="math notranslate nohighlight">\(\texttt{while}\)</span> einzurücken, zum Beispiel durch ein Leerzeichen oder ein Tab, da dies Python signalisiert, dass der Code nur ausgeführt werden soll, wenn die Bedingung wahr ist. Der Code <span class="math notranslate nohighlight">\(\texttt{another statement 1, 2,...}\)</span> wird unabhänging von dem Wahrheitsgehalt der Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> ausgeführt, denn dieser Code gehört nicht zum Schleifenrumpf.</p>
+</section>
+<section id="ein-code-beispiel">
+<h2>Ein Code-Beispiel<a class="headerlink" href="#ein-code-beispiel" title="Link to this heading">#</a></h2>
+<p>Angenommen Sie wollen für ein festes <span class="math notranslate nohighlight">\(x\)</span> die natürliche Zahl <span class="math notranslate nohighlight">\(n\)</span> zu bestimmen so, dass <span class="math notranslate nohighlight">\(y = \frac{x}{2^n}\)</span> kleiner als <span class="math notranslate nohighlight">\(1\)</span> ist. Dann können Sie eine while-Schleife schreiben und im Schleifenrumpf solange <span class="math notranslate nohighlight">\(x\)</span> durch <span class="math notranslate nohighlight">\(2^n\)</span> teilen bis der Quotient kleiner als <span class="math notranslate nohighlight">\(1\)</span> ist.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
 1</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/pic1.jpg"><img alt="Img 1" src="../../../_images/pic1.jpg" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/while_loop_example1.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example1.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Die Variable <span class="math notranslate nohighlight">\(n\)</span> wird mit <span class="math notranslate nohighlight">\(n=0\)</span> initialisiert. Außderdem wird die Variable <span class="math notranslate nohighlight">\(y\)</span> erstellt und mit <span class="math notranslate nohighlight">\( y = \frac{x}{2^0} = x\)</span> initialisiert, um Zwischenrechnungen zu speichern.</p>
 </div>
@@ -454,31 +486,31 @@ Will five rounds be enough to win the game? Ten? Twnty?</p>
 <label class="sd-tab-label" for="sd-tab-item-1">
 2</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/pic1.jpg"><img alt="Img 1" src="../../../_images/pic1.jpg" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/while_loop_example2.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example2.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Zu Beginn der while-Schleife wir die Bedingung <span class="math notranslate nohighlight">\( y &gt; 1\)</span>, also <span class="math notranslate nohighlight">\( \frac{x}{2^n} &gt; 1\)</span> ausgewertet.</p>
+<p>Zu Beginn der while-Schleife wird die Bedingung <span class="math notranslate nohighlight">\( y &gt; 1\)</span>, also <span class="math notranslate nohighlight">\( \frac{x}{2^n} &gt; 1\)</span> ausgewertet.</p>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 3</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/pic1.jpg"><img alt="Img 1" src="../../../_images/pic1.jpg" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/while_loop_example3a.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example3a.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Da die Bedingung erfüllt ist, wird der Schleifenrumpf ausgeführt. Daher wird <span class="math notranslate nohighlight">\(y\)</span> verändert und <span class="math notranslate nohighlight">\(n\)</span> um <span class="math notranslate nohighlight">\(1\)</span> erhöht.</p>
+<p>Da die Bedingung erfüllt ist, wird der Schleifenrumpf ausgeführt. Daher wird <span class="math notranslate nohighlight">\(y\)</span> verändert und anschließend <span class="math notranslate nohighlight">\(n\)</span> um <span class="math notranslate nohighlight">\(1\)</span> erhöht. Es gilt <span class="math notranslate nohighlight">\(2^0 = 1\)</span>, so dass sich der Wert für <span class="math notranslate nohighlight">\(y\)</span> in diesem Fall gar nicht verändert.</p>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 4</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/pic1.jpg"><img alt="Img 1" src="../../../_images/pic1.jpg" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/while_loop_example5.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example5.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Die Bedingung <span class="math notranslate nohighlight">\(y &gt; 1\)</span> wir erneut mit dem gerade geupdateten <span class="math notranslate nohighlight">\(y\)</span> überprüft.</p>
+<p>Die Bedingung <span class="math notranslate nohighlight">\(y &gt; 1\)</span> wird erneut mit dem gerade geupdateten <span class="math notranslate nohighlight">\(y\)</span> überprüft.</p>
 </div>
 <input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-4">
 5</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/pic1.jpg"><img alt="Img 1" src="../../../_images/pic1.jpg" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/while_loop_example6.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example6.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Da die Bedingung immer noch erfüllt ist, wird der Schleifenrumpf erneut ausgeführt.</p>
 </div>
@@ -486,22 +518,75 @@ Will five rounds be enough to win the game? Ten? Twnty?</p>
 <label class="sd-tab-label" for="sd-tab-item-5">
 6</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/pic1.jpg"><img alt="Img 1" src="../../../_images/pic1.jpg" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/while_loop_example7.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example7.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Dieses Prozedere wiederholt sich bis <span class="math notranslate nohighlight">\(n=6\)</span>. Denn dann gilt <span class="math notranslate nohighlight">\(y &lt; 1\)</span> und somit ist die Bedingung <span class="math notranslate nohighlight">\(y &gt; 1\)</span> falsch und die Schleife bricht ab.</p>
+<p>Die Bedingung <span class="math notranslate nohighlight">\(y &gt; 1\)</span> wir erneut mit dem gerade geupdateten <span class="math notranslate nohighlight">\(y\)</span> überprüft.</p>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+7</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/while_loop_example8.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example8.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Auch im nächsten Schritt ist die Bedingung immer noch erfüllt und Schleifenrumpf wird wieder ausgeführt.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+8</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../../_images/while_loop_example11.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example11.jpeg" style="width: 60%;" /></a>
+</figure>
+<p>Dieses Prozedere wiederholt sich bis <span class="math notranslate nohighlight">\(n=7\)</span>. Denn dann gilt <span class="math notranslate nohighlight">\(y &lt; 1\)</span> und somit ist die Bedingung <span class="math notranslate nohighlight">\(y &gt; 1\)</span> falsch und die Schleife bricht ab.</p>
 </div>
 </div>
 </section>
 <section id="endlosschleifen">
 <h2>Endlosschleifen<a class="headerlink" href="#endlosschleifen" title="Link to this heading">#</a></h2>
-<p>A common problem when writing code with while-loops is the creation of infinite loops. This usually happens if the variables involved in condition are not updated in the statements block. However, even if they are updated, it is possible that condition will never evaluate as false.</p>
-<p>The following code is meant to count the number of times 10 must be divided in half until it is less than one. However, both are infinite loops.</p>
-<p>Gegenmaßnahme: Interrupt in Notebook, Strg+C in Python nicht-interaktiv, “restart&amp;run all” mit while condition auskommentierenhier.</p>
+<p>Ein häufiger Fehler beim Arbeiten mit while-Schleifen ist die Entstehung sogenannter <em>Endlosschleifen</em>. Das bedeutet, dass der Schleifenrumpf nie endet und das Programm sich „aufhängt“ oder dauerhaft weiterläuft.
+Das passiert vor allem dann, wenn:</p>
+<ul class="simple">
+<li><p>Die Bedingung nie auf <span class="math notranslate nohighlight">\(\texttt{False}\)</span> gesetzt wird, weil sich die beteiligten Variablen innerhalb des Schleifenrumpfs nicht verändern.</p></li>
+<li><p>Selbst wenn die Variable im Schleifenrumpf verändert werden, kann es dennoch passieren, dass die Bedingung nie als <span class="math notranslate nohighlight">\(\texttt{False}\)</span> ausgewertet wird.</p></li>
+</ul>
+<p>Der folgende Code soll ausgeben, wie oft 10 halbiert werden muss, bis das Ergebnis kleiner als 1 ist. Beide Beispiel sind jedoch Endlosschleifen.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Beispiel 1</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">while</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+   <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+   <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="n">n</span>
+</pre></div>
+</div>
+<p>Die Variable <span class="math notranslate nohighlight">\(r\)</span> wird innerhalb des Schleifenrumpfs nicht verändert. Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird verändert, da aber stets <span class="math notranslate nohighlight">\(r = 10\)</span> gilt, bricht die Schleife nie ab.</p>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Beispiel 2</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">while</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+   <span class="n">r</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="n">n</span>  
+</pre></div>
+</div>
+<p>Die Variable <span class="math notranslate nohighlight">\(n\)</span> wird innerhalb des Schleifenrumpf nicht erhört, wodurch die Variable <span class="math notranslate nohighlight">\(r=10\)</span> konstant bleibt. Die Schleife bricht wieder niemals ab.</p>
+</div>
+</div>
+<p>Was also tun, wenn Sie versehentlich eine Endlosschleife erzeugt und ausgeführt haben?</p>
+<ul class="simple">
+<li><p>In einem Jupyter Notebook können Sie einfach auf den <strong>Stopp</strong> Button klicken.</p></li>
+<li><p>In diesem Jupyter Book, kommentieren Sie am besten die while-Schleife aus und klicken auf den Button <strong>restart</strong> oder <strong>restart &amp; run all</strong>.</p></li>
+<li><p>In einem Python-Terminal beendet die Tastenkombination <strong>Strg + C</strong> den laufenden Code.</p></li>
+</ul>
 </section>
 <section id="aufgabe-1-maschienengenauigkeit">
 <h2>Aufgabe 1 - Maschienengenauigkeit<a class="headerlink" href="#aufgabe-1-maschienengenauigkeit" title="Link to this heading">#</a></h2>
 <p>Computer sind nicht in der Lage Zahlen beliebiger Genauigkeit darzustellen und zu speichern. Daher werden nur eine bestimmte, festgelegte Anzahl an Dezimalstellen gespeichert. Wenn zum Beispiel maximal zwei Dezimalstellen gespeichert werden, dann sind die Zahlen <span class="math notranslate nohighlight">\(0.001\)</span> und <span class="math notranslate nohighlight">\(0.008\)</span> beide “gleich” Null.</p>
-<p>Was ist der größte Wert für <span class="math notranslate nohighlight">\(\varepsilon\)</span>, sodass Python nicht zwischen <span class="math notranslate nohighlight">\(1\)</span> und <span class="math notranslate nohighlight">\(1 + \varepsilon\)</span> unterscheiden kann?</p>
+<p>Es stellt sich also die Frage was der größte Wert für <span class="math notranslate nohighlight">\(\varepsilon\)</span> ist, sodass Python zwischen <span class="math notranslate nohighlight">\(1\)</span> und <span class="math notranslate nohighlight">\(1 + \varepsilon\)</span> nicht mehr unterscheiden kann?</p>
 <div class="admonition-aufgabe-1 admonition">
 <p class="admonition-title">Aufgabe 1</p>
 <p>Modifizieren Sie den nachfolgenden Code so, dass <span class="math notranslate nohighlight">\(\varepsilon\)</span> so lange halbiert wird bis für Python <span class="math notranslate nohighlight">\(1 + \varepsilon\)</span> gleich <span class="math notranslate nohighlight">\(1\)</span> ist.</p>
@@ -516,7 +601,7 @@ Will five rounds be enough to win the game? Ten? Twnty?</p>
 <span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">epsilon</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is the same as &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; ist das gleiche wie &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -528,7 +613,7 @@ Will five rounds be enough to win the game? Ten? Twnty?</p>
     <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>Iteriren Sie so lange bis <span class="math notranslate nohighlight">\(y\)</span> (also <span class="math notranslate nohighlight">\( 1 + \varepsilon\)</span>) ungleich <span class="math notranslate nohighlight">\(x\)</span> (also <span class="math notranslate nohighlight">\(1\)</span>) ist. Die Python-Syntax für den logischen Operator <span class="math notranslate nohighlight">\(\neq\)</span> ist <code class="docutils literal notranslate"><span class="pre">!=</span></code>.</p>
+<p>Iterieren Sie so lange bis <span class="math notranslate nohighlight">\(y\)</span> (also <span class="math notranslate nohighlight">\( 1 + \varepsilon\)</span>) ungleich <span class="math notranslate nohighlight">\(x\)</span> (also <span class="math notranslate nohighlight">\(1\)</span>) ist. Die Python-Syntax für den logischen Operator <span class="math notranslate nohighlight">\(\neq\)</span> ist <span class="math notranslate nohighlight">\(\texttt{!=}\)</span>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -540,17 +625,17 @@ Will five rounds be enough to win the game? Ten? Twnty?</p>
     <span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon</span> <span class="o">/</span> <span class="mi">2</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">epsilon</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is the same as &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; ist das gleiche wie &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<p>Numerische Werte werden in Python standardmäßig im Datentyp <code class="docutils literal notranslate"><span class="pre">double</span></code> dargestellt. Ein Skalar benötigt dabei 64 Bit Speicherplatz, was 16 Dezimalstellen entspricht.
+<p>Numerische Werte werden in Python standardmäßig im Datentyp <span class="math notranslate nohighlight">\(\texttt{double}\)</span> dargestellt. Ein Skalar benötigt dabei 64 Bit Speicherplatz, was 16 Dezimalstellen entspricht.
 Beachten Sie, dass <span class="math notranslate nohighlight">\(\varepsilon\)</span> in der Größenordnung von <span class="math notranslate nohighlight">\(10^{-16}\)</span> liegt.</p>
 </section>
 <section id="aufgabe-2-best-of-five">
 <h2>Aufgabe 2 - Best-of-Five<a class="headerlink" href="#aufgabe-2-best-of-five" title="Link to this heading">#</a></h2>
 <p>Um bei einem Spiel mit der Gewinnregel „best out of five“ müssen Sie nur drei Runden gewinnen. Ein Sieger kann in drei, vier oder fünf Runden ermittelt werden, und Sie wissen vorab nicht wie viele Runden Sie brauchen werden.
-Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<span class="math notranslate nohighlight">\(1\)</span> für Team A und <span class="math notranslate nohighlight">\(2\)</span> für Team B). Dann werden die bisherigen Gesamtsiege für jedes Team in <code class="docutils literal notranslate"><span class="pre">teamA</span></code> und <code class="docutils literal notranslate"><span class="pre">teamB</span></code> gespeichert.</p>
+Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<span class="math notranslate nohighlight">\(1\)</span> für Team A und <span class="math notranslate nohighlight">\(2\)</span> für Team B). Dann werden die bisherigen Gesamtsiege für jedes Team in <span class="math notranslate nohighlight">\(\texttt{teamA}\)</span> und <span class="math notranslate nohighlight">\(\texttt{teamB}\)</span> gespeichert.</p>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
 <p>Modifizieren Sie den Code so, dass dieser so lange ausgeführt wird, bis entweder Team A oder Team B drei Spiele gewonnen hat.</p>
@@ -562,11 +647,11 @@ Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<sp
 <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">teamA</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">teamB</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">outcome</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ergebnis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
-<span class="n">outcome</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">teamA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outcome</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">teamB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outcome</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">ergebnis</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">teamA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ergebnis</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">teamB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ergebnis</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>  
 <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
@@ -574,7 +659,7 @@ Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<sp
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Überprüfen Sie ob sowohl Team A als auch Team B bisher weniger als dreimal gewonnen hat. Ein Möglichkeit ist das Maximum von <code class="docutils literal notranslate"><span class="pre">teamA</span></code> und <code class="docutils literal notranslate"><span class="pre">teamB</span></code> zu betrachten (<code class="docutils literal notranslate"><span class="pre">np.max([teamA,</span> <span class="pre">teamB])</span> <span class="pre">&lt;</span> <span class="pre">3</span></code>).</p>
+<p>Überprüfen Sie ob sowohl Team A als auch Team B bisher weniger als dreimal gewonnen hat. Ein Möglichkeit ist das Maximum von <span class="math notranslate nohighlight">\(\texttt{teamA}\)</span> und <span class="math notranslate nohighlight">\(\texttt{teamB}\)</span> zu betrachten (<span class="math notranslate nohighlight">\(\texttt{np.max([teamA, teamB]) &lt; 3}\)</span>).</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -583,13 +668,13 @@ Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<sp
 <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">teamA</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">teamB</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">outcome</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ergebnis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">teamA</span><span class="p">,</span> <span class="n">teamB</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="n">outcome</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">ergebnis</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     
-    <span class="n">teamA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outcome</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">teamB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outcome</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">teamA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ergebnis</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">teamB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ergebnis</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
     
     <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
@@ -598,11 +683,11 @@ Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<sp
 <br>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Wer hat gewonnen? Geben Sie mithilfe eines If-Else-Statements am Ende des Codes aus ob Team A oder Team B gewonnen hat und wie viele Runde es bis zum Sieg gebraucht hat.</p>
+<p>Wer hat gewonnen? Ergänzen am Ende des Codes ein If-Else-Statements, welches ausgibt ob Team A oder Team B gewonnen hat und wie viele Runde das Gewinnerteam bis zum Sieg gebraucht hat.</p>
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Sollten Sie mit If-Else-Statements noch nicht vertraut sein, verweisen wir Sie auf diese <a class="reference internal" href="decision_branching.html"><span class="std std-doc">Lektion</span></a>.</p>
+<p>Details zum If-Else-Statements finden Sie in diesem <a class="reference internal" href="decision_branching.html"><span class="std std-doc">Kapitel</span></a>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -611,13 +696,13 @@ Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<sp
 <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">teamA</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">teamB</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">outcome</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ergebnis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">teamA</span><span class="p">,</span> <span class="n">teamB</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="n">outcome</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">ergebnis</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     
-    <span class="n">teamA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outcome</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">teamB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outcome</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">teamA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ergebnis</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">teamB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ergebnis</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
     
     <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
 
@@ -668,7 +753,7 @@ Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<sp
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Funktionen aufrufen</p>
+        <p class="prev-next-title">Programmierkonstrukte</p>
       </div>
     </a>
     <a class="right-next"
@@ -697,7 +782,8 @@ Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<sp
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-syntax">Die Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-code-beispiel">Ein Code-Beispiel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endlosschleifen">Endlosschleifen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-1-maschienengenauigkeit">Aufgabe 1 - Maschienengenauigkeit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-2-best-of-five">Aufgabe 2 - Best-of-Five</a></li>
