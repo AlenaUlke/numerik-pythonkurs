@@ -434,8 +434,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-syntax">Die Syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-code-beispiel">Ein Code-Beispiel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endlosschleifen">Endlosschleifen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorzeitiges-beenden-einer-schleife">Vorzeitiges Beenden einer Schleife</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-1-maschienengenauigkeit">Aufgabe 1 - Maschienengenauigkeit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-1-maschinengenauigkeit">Aufgabe 1 - Maschinengenauigkeit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-2-best-of-five">Aufgabe 2 - Best-of-Five</a></li>
 </ul>
             </nav>
@@ -450,17 +449,17 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="while-schleifen">
 <h1>while-Schleifen<a class="headerlink" href="#while-schleifen" title="Link to this heading">#</a></h1>
-<p>Wir wollen Ihnen die Idee hinter einer while-Schleife zunächst anhand folgendem Szenario näherbringen:</p>
-<center>
-   Wie schnell können Sie ein Spielbrett umrunden?
-</center>
-<p>Sie starten auf Feld Eins, würfeln und ziehen vorwärts. Dann würfeln Sie erneut – und das so lange, bis Sie das Spielbrett vollständig umrundet haben. Aber woher wissen Sie wie viele Würfe nötig sind? Reichen zehn? Zwanzig? Das wissen Sie nicht im Voraus.</p>
+<p>Um die Idee einer while-Schleife zu motivieren, möchten wir uns zunächst mit der Frage</p>
+<p style="text-align: center; font-weight: bold;">
+  Wie schnell können Sie ein Spielbrett mit 40 Feldern umrunden?
+</p>
+<p>auseinandersetzen. Angenommen Sie starten auf Feld Eins, würfeln und ziehen vorwärts. Dann würfeln Sie erneut – und das so lange, bis Sie das Spielbrett vollständig umrundet haben. Wie viele Würfe brauchen Sie wohl, um einmal ganz herumzukommen? Genügen zehn? Oder eher zwanzig?</p>
 <p>Genau hier kommt die while-Schleife ins Spiel: Sie wiederholt einen Codeblock, hier das Würfeln, so lange, wie eine Bedingung erfüllt ist. In unserem Beispiel ist die Bedingung: <em>Spielbrett noch nicht umrundet</em>. Solange das zutrifft, wird der Codeblock weiter ausgeführt. Es wird also weiter gewürfelt. Erst wenn die Bedingung nicht mehr erfüllt ist, das heißt wenn Sie eine Runde geschafft haben, hören Sie auf und endet die Schleife automatisch.</p>
-<p>In manchen Situationen genügt es also nicht, eine Anweisung eine festgelegte Anzahl von Malen auszuführen. Stattdessen ist es notwendig einen Codeblock so lange wiederholen, bis eine bestimmte Bedingung erfüllt ist – unabhängig davon, wie oft das geschieht.
+<p>In manchen Situationen genügt es also nicht, eine Anweisung eine festgelegte Anzahl von Malen auszuführen. Stattdessen ist es notwendig einen Codeblock so lange zu wiederholen, bis eine bestimmte Bedingung erfüllt ist – unabhängig davon, wie oft das geschieht.
 Im Kontext der Numerik kommen while-Schleifen häufig dann zum Einsatz, wenn Sie einen Algorithmus so lange wiederholen wollen bis das Ergebnis eine gewünschte Genauigkeit erreicht hat.</p>
 <div class="warning admonition">
 <p class="admonition-title">Bemerkung</p>
-<p>Wenn Code wiederholt solange wiederholt werden soll bis eine bestimmte Bedingung erfüllt ist, verwenden Sie eine while-Schleife.</p>
+<p>Wenn Code solange wiederholt werden soll bis eine bestimmte Bedingung erfüllt ist, verwenden Sie eine while-Schleife.</p>
 </div>
 <section id="die-syntax">
 <h2>Die Syntax<a class="headerlink" href="#die-syntax" title="Link to this heading">#</a></h2>
@@ -468,11 +467,11 @@ Im Kontext der Numerik kommen while-Schleifen häufig dann zum Einsatz, wenn Sie
 <figure class="center align-default">
 <a class="reference internal image-reference" href="../../../_images/while_loop_structure2.jpeg"><img alt="Img 1" src="../../../_images/while_loop_structure2.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Der Code im Schleifenrumpf wird ausgeführt solange die Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> wahr, also <span class="math notranslate nohighlight">\(\texttt{True}\)</span> ist. Der Doppelpunkt <span class="math notranslate nohighlight">\(\texttt{:}\)</span> leitet den Schleifenrumpf ein. Es ist an dieser Stelle wichtig, den Code unterhalb des Schlüsselworts <span class="math notranslate nohighlight">\(\texttt{while}\)</span> einzurücken, zum Beispiel durch ein Leerzeichen oder ein Tab, da dies Python signalisiert, dass der Code nur ausgeführt werden soll, wenn die Bedingung wahr ist. Der Code <span class="math notranslate nohighlight">\(\texttt{another statement 1, 2,...}\)</span> wird unabhänging von dem Wahrheitsgehalt der Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> ausgeführt, denn dieser Code gehört nicht zum Schleifenrumpf.</p>
+<p>Der Code im Schleifenrumpf wird ausgeführt solange die Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> wahr, also <span class="math notranslate nohighlight">\(\texttt{True}\)</span>, ist. Der Doppelpunkt <span class="math notranslate nohighlight">\(\texttt{:}\)</span> leitet den Schleifenrumpf ein. Es ist an dieser Stelle wichtig, den Code unterhalb des Schlüsselworts <span class="math notranslate nohighlight">\(\texttt{while}\)</span> einzurücken, zum Beispiel durch ein Leerzeichen oder ein Tab, da dies Python signalisiert, dass der Code nur ausgeführt werden soll, wenn die Bedingung wahr ist. Der Code <span class="math notranslate nohighlight">\(\texttt{another statement 1, 2, ...}\)</span> wird unabhängig vom Wahrheitsgehalt der Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> außerhalb der Schleife ausgeführt, denn er gehört nicht zum Schleifenrumpf. Er wird erst dann ausgeführt, nachdem die Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> zum ersten Mal den Wert <span class="math notranslate nohighlight">\(\texttt{False}\)</span> annimmt und die Schleife somit beendet ist.</p>
 </section>
 <section id="ein-code-beispiel">
 <h2>Ein Code-Beispiel<a class="headerlink" href="#ein-code-beispiel" title="Link to this heading">#</a></h2>
-<p>Angenommen Sie wollen für ein festes <span class="math notranslate nohighlight">\(\texttt{x}\)</span> die natürliche Zahl <span class="math notranslate nohighlight">\(n\)</span> zu bestimmen so, dass <span class="math notranslate nohighlight">\(\texttt{y} = \frac{\texttt{x}}{2^n}\)</span> kleiner als <span class="math notranslate nohighlight">\(1\)</span> ist. Dann können Sie eine while-Schleife schreiben und im Schleifenrumpf solange <span class="math notranslate nohighlight">\(\texttt{x}\)</span> durch <span class="math notranslate nohighlight">\(2^n\)</span> teilen bis der Quotient kleiner als <span class="math notranslate nohighlight">\(1\)</span> ist.</p>
+<p>Angenommen Sie wollen für ein festes <span class="math notranslate nohighlight">\(\texttt{x}\)</span> die kleinste natürliche Zahl <span class="math notranslate nohighlight">\(n\)</span> bestimmen, sodass <span class="math notranslate nohighlight">\(\texttt{y} = \frac{\texttt{x}}{2^n}\)</span> kleiner als <span class="math notranslate nohighlight">\(1\)</span> ist. Dazu können Sie eine while-Schleife schreiben und im Schleifenrumpf solange <span class="math notranslate nohighlight">\(\texttt{x}\)</span> durch <span class="math notranslate nohighlight">\(2^n\)</span> teilen bis der Quotient kleiner als <span class="math notranslate nohighlight">\(1\)</span> ist.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
@@ -480,7 +479,7 @@ Im Kontext der Numerik kommen while-Schleifen häufig dann zum Einsatz, wenn Sie
 <figure class="center align-default">
 <a class="reference internal image-reference" href="../../../_images/while_loop_example1.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example1.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Die Variable <span class="math notranslate nohighlight">\(n\)</span> wird mit <span class="math notranslate nohighlight">\(n=0\)</span> initialisiert. Außderdem wird die Variable <span class="math notranslate nohighlight">\(\texttt{y}\)</span> erstellt und mit <span class="math notranslate nohighlight">\( \texttt{y} = \frac{\texttt{x}}{2^0} = \texttt{x}\)</span> initialisiert, um Zwischenrechnungen zu speichern.</p>
+<p>Die Variable <span class="math notranslate nohighlight">\(n\)</span> wird mit <span class="math notranslate nohighlight">\(n=0\)</span> initialisiert. Außderdem wird die Variable <span class="math notranslate nohighlight">\(\texttt{y}\)</span> erstellt und mit <span class="math notranslate nohighlight">\( \texttt{y} = \texttt{x}\)</span> initialisiert.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
@@ -496,7 +495,7 @@ Im Kontext der Numerik kommen while-Schleifen häufig dann zum Einsatz, wenn Sie
 <figure class="center align-default">
 <a class="reference internal image-reference" href="../../../_images/while_loop_example3a.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example3a.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Da die Bedingung erfüllt ist, wird der Schleifenrumpf ausgeführt. Daher wird <span class="math notranslate nohighlight">\(\texttt{y}\)</span> verändert und anschließend <span class="math notranslate nohighlight">\(n\)</span> um <span class="math notranslate nohighlight">\(1\)</span> erhöht. Es gilt <span class="math notranslate nohighlight">\(2^0 = 1\)</span>, so dass sich der Wert für <span class="math notranslate nohighlight">\(\texttt{y}\)</span> in diesem Fall gar nicht verändert.</p>
+<p>Da die Bedingung erfüllt ist, wird der Schleifenrumpf ausgeführt. Daher wird <span class="math notranslate nohighlight">\(\texttt{y}\)</span> verändert und anschließend <span class="math notranslate nohighlight">\(n\)</span> um <span class="math notranslate nohighlight">\(1\)</span> erhöht. Es gilt <span class="math notranslate nohighlight">\(2^0 = 1\)</span>, sodass der Wert für <span class="math notranslate nohighlight">\(\texttt{y}\)</span> gleich bleibt.</p>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
@@ -504,7 +503,7 @@ Im Kontext der Numerik kommen while-Schleifen häufig dann zum Einsatz, wenn Sie
 <figure class="center align-default">
 <a class="reference internal image-reference" href="../../../_images/while_loop_example5.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example5.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Die Bedingung <span class="math notranslate nohighlight">\(\texttt{y} &gt; 1\)</span> wird erneut mit dem gerade geupdateten <span class="math notranslate nohighlight">\(\texttt{y}\)</span> überprüft.</p>
+<p>Die Bedingung <span class="math notranslate nohighlight">\(\texttt{y} &gt; 1\)</span> wird erneut mit dem gerade neu berechneten <span class="math notranslate nohighlight">\(\texttt{y}\)</span> überprüft.</p>
 </div>
 <input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-4">
@@ -520,7 +519,7 @@ Im Kontext der Numerik kommen while-Schleifen häufig dann zum Einsatz, wenn Sie
 <figure class="center align-default">
 <a class="reference internal image-reference" href="../../../_images/while_loop_example7.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example7.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Die Bedingung <span class="math notranslate nohighlight">\(\texttt{y} &gt; 1\)</span> wir erneut mit dem gerade geupdateten <span class="math notranslate nohighlight">\(\texttt{y}\)</span> überprüft.</p>
+<p>Die Bedingung <span class="math notranslate nohighlight">\(\texttt{y} &gt; 1\)</span> wir erneut mit dem gerade neu berechneten <span class="math notranslate nohighlight">\(\texttt{y}\)</span> überprüft.</p>
 </div>
 <input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-6">
@@ -536,7 +535,7 @@ Im Kontext der Numerik kommen while-Schleifen häufig dann zum Einsatz, wenn Sie
 <figure class="center align-default">
 <a class="reference internal image-reference" href="../../../_images/while_loop_example11.jpeg"><img alt="Img 1" src="../../../_images/while_loop_example11.jpeg" style="width: 60%;" /></a>
 </figure>
-<p>Dieses Prozedere wiederholt sich bis <span class="math notranslate nohighlight">\(n=7\)</span>. Denn dann gilt <span class="math notranslate nohighlight">\(\texttt{y} &lt; 1\)</span> und somit ist die Bedingung <span class="math notranslate nohighlight">\(\texttt{y} &gt; 1\)</span> falsch und die Schleife bricht ab.</p>
+<p>Dieses Prozedere wiederholt sich bis <span class="math notranslate nohighlight">\(n=7\)</span>. Denn dann gilt <span class="math notranslate nohighlight">\(\texttt{y} &lt; 1\)</span> und somit ist die Bedingung <span class="math notranslate nohighlight">\(\texttt{y} &gt; 1\)</span> falsch und die Schleife bricht ab. Erst an diesem Punkt wird der Code ausgeführt, der uneingerückt nach der while-Schleife steht.</p>
 </div>
 </div>
 </section>
@@ -583,86 +582,9 @@ Beispiel 2</label><div class="sd-tab-content docutils">
 <li><p>In einem Python-Terminal beendet die Tastenkombination <strong>Strg + C</strong> den laufenden Code.</p></li>
 </ul>
 </section>
-<section id="vorzeitiges-beenden-einer-schleife">
-<h2>Vorzeitiges Beenden einer Schleife<a class="headerlink" href="#vorzeitiges-beenden-einer-schleife" title="Link to this heading">#</a></h2>
-<p>kurzer einführender text.</p>
-<ul class="simple">
-<li><p>break: Beendet die aktuelle for- oder while-Schleife sofort.</p></li>
-<li><p>return: Beendet die Ausführung einer Funktion sofort und gibt optional ein Ergebnis zurück.</p></li>
-<li><p>continue: Überspringt den restlichen Code des aktuellen Schleifendurchlaufs und fährt mit dem nächsten Durchlauf fort.</p></li>
-</ul>
-<p>Beispiel:
-Ein Spieler würfelt so lange, bis die Summe aller Augenzahlen den Wert 21 überschreitet.
-Falls er zwischendurch eine 6 würfelt, endet das Spiel sofort, und er bekommt 21 Punkte.
-Ansonsten erhält er als Punktzahl die aktuelle Summe minus 21.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">kumulative_augensumme</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
-    <span class="n">wurf_aug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wurf: </span><span class="si">{</span><span class="n">wurf_aug</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="n">wurf_aug</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="n">punktzahl</span> <span class="o">=</span> <span class="mi">21</span>
-        <span class="k">break</span>
-    
-    <span class="n">kumulative_augensumme</span> <span class="o">+=</span> <span class="n">wurf_aug</span>
-
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># Diese Zeile wird nur ausgeführt, wenn die Schleife **nicht** durch break verlassen wurde</span>
-    <span class="n">punktzahl</span> <span class="o">=</span> <span class="n">kumulative_augensumme</span> <span class="o">-</span> <span class="mi">21</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punktzahl:&quot;</span><span class="p">,</span> <span class="n">punktzahl</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wurf: 4
-Wurf: 2
-Wurf: 5
-Wurf: 4
-Wurf: 3
-Wurf: 4
-Punktzahl: 1
-</pre></div>
-</div>
-</div>
-</div>
-<p>Oder Alternativ mit <span class="math notranslate nohighlight">\(\texttt{return}\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wuerfelspiel</span><span class="p">():</span>
-    <span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">while</span> <span class="n">kumulative_augensumme</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
-        <span class="n">wurf_aug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wurf: </span><span class="si">{</span><span class="n">wurf_aug</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        
-        <span class="k">if</span> <span class="n">wurf_aug</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mi">21</span>
-        
-        <span class="n">kumulative_augensumme</span> <span class="o">+=</span> <span class="n">wurf_aug</span>
-
-    <span class="k">return</span> <span class="n">kumulative_augensumme</span> <span class="o">-</span> <span class="mi">21</span>
-
-<span class="c1"># Spiel starten</span>
-<span class="n">punktzahl</span> <span class="o">=</span> <span class="n">wuerfelspiel</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punktzahl:&quot;</span><span class="p">,</span> <span class="n">punktzahl</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wurf: 6
-Punktzahl: 21
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="aufgabe-1-maschienengenauigkeit">
-<h2>Aufgabe 1 - Maschienengenauigkeit<a class="headerlink" href="#aufgabe-1-maschienengenauigkeit" title="Link to this heading">#</a></h2>
-<p>Computer sind nicht in der Lage Zahlen beliebiger Genauigkeit darzustellen und zu speichern. Daher werden nur eine bestimmte, festgelegte Anzahl an Dezimalstellen gespeichert. Wenn zum Beispiel maximal zwei Dezimalstellen gespeichert werden, dann sind die Zahlen <span class="math notranslate nohighlight">\(0.001\)</span> und <span class="math notranslate nohighlight">\(0.008\)</span> beide “gleich” Null.</p>
+<section id="aufgabe-1-maschinengenauigkeit">
+<h2>Aufgabe 1 - Maschinengenauigkeit<a class="headerlink" href="#aufgabe-1-maschinengenauigkeit" title="Link to this heading">#</a></h2>
+<p>Computer sind nicht in der Lage Zahlen beliebig genau darzustellen und zu speichern. Daher werden nur eine bestimmte, festgelegte Anzahl an Dezimalstellen gespeichert. Wenn zum Beispiel maximal zwei Dezimalstellen gespeichert werden, dann sind die Zahlen <span class="math notranslate nohighlight">\(0.001\)</span> und <span class="math notranslate nohighlight">\(0.008\)</span> für den Computer beide “gleich” Null.</p>
 <p>Es stellt sich also die Frage was der größte Wert für <span class="math notranslate nohighlight">\(\varepsilon\)</span> ist, sodass Python zwischen <span class="math notranslate nohighlight">\(1\)</span> und <span class="math notranslate nohighlight">\(1 + \varepsilon\)</span> nicht mehr unterscheiden kann?</p>
 <div class="admonition-aufgabe-1 admonition">
 <p class="admonition-title">Aufgabe 1</p>
@@ -674,7 +596,6 @@ Punktzahl: 21
 <span class="n">epsilon</span> <span class="o">=</span> <span class="n">x</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">epsilon</span>
 
-
 <span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">epsilon</span>
 
@@ -685,12 +606,7 @@ Punktzahl: 21
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Nutzen Sie eine while-Schleife. Der folgende Code wird ausgeführt bis <span class="math notranslate nohighlight">\(\texttt{k} &gt; 5\)</span>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>Iterieren Sie so lange bis <span class="math notranslate nohighlight">\(\texttt{y}\)</span> (also <span class="math notranslate nohighlight">\( 1 + \varepsilon\)</span>) ungleich <span class="math notranslate nohighlight">\(\texttt{x}\)</span> (also <span class="math notranslate nohighlight">\(1\)</span>) ist. Die Python-Syntax für den logischen Operator <span class="math notranslate nohighlight">\(\neq\)</span> ist <span class="math notranslate nohighlight">\(\texttt{!=}\)</span>.</p>
+<p>Nutzen Sie eine while-Schleife. Iterieren Sie so lange bis <span class="math notranslate nohighlight">\(\texttt{y}\)</span> (also <span class="math notranslate nohighlight">\( 1 + \varepsilon\)</span>) gleich <span class="math notranslate nohighlight">\(\texttt{x}\)</span> (also <span class="math notranslate nohighlight">\(1\)</span>) ist. Die Python-Syntax für den logischen Operator <span class="math notranslate nohighlight">\(\neq\)</span> ist <span class="math notranslate nohighlight">\(\texttt{!=}\)</span>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -712,7 +628,7 @@ Beachten Sie, dass <span class="math notranslate nohighlight">\(\varepsilon\)</s
 <section id="aufgabe-2-best-of-five">
 <h2>Aufgabe 2 - Best-of-Five<a class="headerlink" href="#aufgabe-2-best-of-five" title="Link to this heading">#</a></h2>
 <p>Um bei einem Spiel mit der Gewinnregel „best out of five“ müssen Sie nur drei Runden gewinnen. Ein Sieger kann in drei, vier oder fünf Runden ermittelt werden, und Sie wissen vorab nicht wie viele Runden Sie brauchen werden.
-Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<span class="math notranslate nohighlight">\(1\)</span> für Team A und <span class="math notranslate nohighlight">\(2\)</span> für Team B). Dann werden die bisherigen Gesamtsiege für jedes Team in <span class="math notranslate nohighlight">\(\texttt{teamA}\)</span> und <span class="math notranslate nohighlight">\(\texttt{teamB}\)</span> gespeichert.</p>
+Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<span class="math notranslate nohighlight">\(1\)</span> für Team A und <span class="math notranslate nohighlight">\(2\)</span> für Team B). Die bisherigen Gesamtsiege für jedes Team werden in <span class="math notranslate nohighlight">\(\texttt{teamA}\)</span> und <span class="math notranslate nohighlight">\(\texttt{teamB}\)</span> gespeichert. Mit <span class="math notranslate nohighlight">\(\texttt{np.random.randint(1,3)}\)</span> wird zufällig die Zahl <span class="math notranslate nohighlight">\(1\)</span> (Team A gewinnt) oder <span class="math notranslate nohighlight">\(2\)</span> (Team B gewinnt) generiert.</p>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
 <p>Modifizieren Sie den Code so, dass dieser so lange ausgeführt wird, bis entweder Team A oder Team B drei Spiele gewonnen hat.</p>
@@ -736,7 +652,7 @@ Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<sp
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Überprüfen Sie ob sowohl Team A als auch Team B bisher weniger als dreimal gewonnen hat. Ein Möglichkeit ist das Maximum von <span class="math notranslate nohighlight">\(\texttt{teamA}\)</span> und <span class="math notranslate nohighlight">\(\texttt{teamB}\)</span> zu betrachten (<span class="math notranslate nohighlight">\(\texttt{np.max([teamA, teamB]) &lt; 3}\)</span>).</p>
+<p>Überprüfen Sie ob sowohl Team A als auch Team B bisher weniger als dreimal gewonnen hat. Eine Möglichkeit ist das Maximum von <span class="math notranslate nohighlight">\(\texttt{teamA}\)</span> und <span class="math notranslate nohighlight">\(\texttt{teamB}\)</span> zu betrachten (<span class="math notranslate nohighlight">\(\texttt{np.max([teamA, teamB]) &lt; 3}\)</span>).</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -828,8 +744,7 @@ Der nachfolgende Code modelliert eine Runde, indem er einen Sieger bestimmt (<sp
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-syntax">Die Syntax</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-code-beispiel">Ein Code-Beispiel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endlosschleifen">Endlosschleifen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorzeitiges-beenden-einer-schleife">Vorzeitiges Beenden einer Schleife</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-1-maschienengenauigkeit">Aufgabe 1 - Maschienengenauigkeit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-1-maschinengenauigkeit">Aufgabe 1 - Maschinengenauigkeit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgabe-2-best-of-five">Aufgabe 2 - Best-of-Five</a></li>
 </ul>
   </nav></div>
