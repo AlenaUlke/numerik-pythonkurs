@@ -4,7 +4,7 @@ Im Kapitel [Arrays](../../chapter02_basics/arrays/arrayerstellung.ipynb) haben S
 
 Der Hauptfokus liegt dabei auf dem Zusammenführen und Umformen von bereits existierenden Matrizen. Insbesondere wird es Ihnen so möglich sein, Daten für ihre Zwecke anzupassen. Dazu reicht weiterhin das Paket NumPy aus, welche einige Funktionen bereitstellt.  
 
-## Lernziele
+## Lernziele 
 
 - Wiederholen der gelernten Methoden aus dem Kapitel [Arrays](../../chapter02_basics/arrays/arrayerstellung.ipynb).
 - Welche Matrizen kann man mit NumPy erzeugen ohne Sie händisch eingeben zu müssen?

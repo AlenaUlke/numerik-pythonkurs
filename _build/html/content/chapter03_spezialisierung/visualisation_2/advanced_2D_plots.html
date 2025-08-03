@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Plots individuell gestalten &#8212; Python-Programmierkurs</title>
+    <title>Graphiken individuell gestalten &#8212; Python-Programmierkurs</title>
   
   
   
@@ -16,34 +16,36 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css?v=5c84f910" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
@@ -59,7 +61,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -68,10 +70,11 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/visualisation_2/advanced_2D_plots';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Mehrfach-Plots" href="several_lines_one_plot.html" />
+    <link rel="next" title="Diagramme mit mehreren Graphen" href="several_lines_one_plot.html" />
     <link rel="prev" title="Visualisierung II" href="visualisation_2_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,19 +90,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -107,7 +99,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -115,8 +106,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -132,7 +123,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -162,15 +154,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -400,24 +388,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -431,7 +411,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Plots individuell gestalten</h1>
+    <h1>Graphiken individuell gestalten</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -441,7 +421,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-des-plots-anpassen">Eigenschaften des Plots anpassen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#texttt-plt-plot-eigenschaften-anpassen"><span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Eigenschaften anpassen</a></li>
 </ul>
             </nav>
         </div>
@@ -453,27 +433,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="plots-individuell-gestalten">
-<h1>Plots individuell gestalten<a class="headerlink" href="#plots-individuell-gestalten" title="Link to this heading">#</a></h1>
-<p>Im vorherigen Kapitel zur <a class="reference internal" href="../../chapter02_basics/visualization/visualization.html"><span class="std std-doc">Visualisierung</span></a> haben Sie bereits grundlegende Plots mit <span class="math notranslate nohighlight">\(\texttt{matplotlib}\)</span> erstellt und die wichtigsten Elemente eines Diagramms kennengelernt – etwa Achsen, Linien und einfache Beschriftungen. In diesem Kapitel vertiefen Sie Ihre Kenntnisse und wir zeigen Ihnen, wie Sie Plots gezielt anpassen können, um Informationen klarer darzustellen und die Lesbarkeit Ihrer Grafiken zu verbessern.</p>
-<p>Insbesondere lernen Sie, wie Sie zentrale Eigenschaften von Linien und anderen Plot-Elementen direkt beim Aufruf der Plot-Funktion festlegen. Dies ist hilfreich, um etwa die Linienbreite, Farbe oder den Linienstil präzise zu steuern.</p>
-<section id="eigenschaften-des-plots-anpassen">
-<h2>Eigenschaften des Plots anpassen<a class="headerlink" href="#eigenschaften-des-plots-anpassen" title="Link to this heading">#</a></h2>
-<p>Viele Eigenschaften von Plotelementen können direkt über optionale Argumente an die Plot-Funktion (und ähnliche Funktionen) übergeben werden. Der allgemeine Aufbau ist wie folgt:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="graphiken-individuell-gestalten">
+<h1>Graphiken individuell gestalten<a class="headerlink" href="#graphiken-individuell-gestalten" title="Link to this heading">#</a></h1>
+<p>Im vorherigen Kapitel zur <a class="reference internal" href="../../chapter02_basics/visualization/visualization.html"><span class="std std-doc">Visualisierung</span></a> haben Sie bereits die Grundlagen kennengelernt um mit Matplotlib Diagramme und Graphiken in Python zu erstellt. Außderdem haben Sie bereits die wichtigsten Elemente eines Diagramms kennengelernt – etwa Achsen, Linien und einfache Beschriftungen. In diesem Kapitel vertiefen Sie Ihre Kenntnisse und wir zeigen Ihnen, wie Sie Plots gezielt anpassen können, um Informationen klarer darzustellen und die Lesbarkeit Ihrer Grafiken zu verbessern.</p>
+<p>Insbesondere lernen Sie, wie Sie zentrale Eigenschaften von Linien und anderen Diagramm-Elementen direkt beim Aufruf der <span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Funktion festlegen. Dies ist hilfreich, um etwa die Linienbreite, Farbe oder den Linienstil anzupassen.</p>
+<section id="texttt-plt-plot-eigenschaften-anpassen">
+<h2><span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Eigenschaften anpassen<a class="headerlink" href="#texttt-plt-plot-eigenschaften-anpassen" title="Link to this heading">#</a></h2>
+<p>Viele Eigenschaften von Diagramm-Elementen können direkt über optionale Argumente an die <span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Funktion (und ähnliche Funktionen) übergeben werden. Der allgemeine Aufbau ist wie folgt:</p>
 <div class="math notranslate nohighlight">
 \[
 \texttt{plt.plot(x, y, Property1=Value1, Property2=Value2, ...)}.
 \]</div>
-<p>Dabei handelt es sich bei <span class="math notranslate nohighlight">\(\texttt{Property1}\)</span> und $<span class="math notranslate nohighlight">\(\texttt{Property2}\)</span> um sogenannte <em>Keyword-Argumente</em>, also benannte Parameter. Die Eigenschaftsnamen (wie z. B. <span class="math notranslate nohighlight">\(\texttt{linewidth}\)</span>) werden als Schlüssel angegeben, die zugehörigen Werte können entweder Zahlen oder Strings sein abhängig von der Eigenschaft.</p>
+<p>Dabei handelt es sich bei <span class="math notranslate nohighlight">\(\texttt{Property1}\)</span> und <span class="math notranslate nohighlight">\(\texttt{Property2}\)</span> um sogenannte <em>Keyword-Argumente</em>, also benannte Parameter. Die Eigenschaftsnamen (wie z. B. <span class="math notranslate nohighlight">\(\texttt{linewidth}\)</span>) werden als Schlüssel angegeben und die zugehörigen Werte werden direkt mit übergeben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sinuskurve mit individuellen Eigenschaften&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;sin(x)&quot;</span><span class="p">)</span>
@@ -489,10 +470,8 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\texttt{linestyle='--'}\)</span>: Die Linie erscheint gestrichelt.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\texttt{color='red'}\)</span>: Die Farbe der Linie wird auf Rot gesetzt.</p></li>
 </ul>
-<p>Auf diese Weise können Sie viele Details Ihrer Visualisierungen direkt beim Erstellen des Plots festlegen.</p>
-<p><strong>Hier ist was zu tun</strong></p>
-<p>Um die individuellen Gestaltungsmöglichkeiten von Plots zu üben, verwenden wir einen realen Datensatz, der öffentlich von der Plattform <a href="https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv">Our World in Data</a> bereitgestellt wird. Er enthält umfassende Informationen über den Energieverbrauch verschiedener Länder – unter anderem auch über den prozentualen Anteil erneuerbarer Energien am Gesamtenergieverbrauch.</p>
-<p>Wir betrachten fünf Länder: <strong>Deutschland, USA, China, Norwegen und Brasilien</strong>, und analysieren den Zeitraum ab dem Jahr 1990.</p>
+<p>Auf diese Weise können Sie viele Details Ihrer Visualisierungen direkt beim Erstellen des Diagramms festlegen.</p>
+<p>Wie auch im Kapitel zu <a class="reference internal" href="../../chapter02_basics/programmablaeufe/for_loops.html"><span class="std std-doc">for-Schleifen</span></a> verwenden wir wieder den realen Datensatz zum Energieverbrauch verschiedener Länder der Platform <a class="reference external" href="https://ourworldindata.org/">Our World in Data</a>. Wir sind dabei primär an der Entwicklung des prozentualen Anteils erneuerbarer Energien am Gesamtenergieverbrauch interessiert.</p>
 <div class="cell tag_thebe-init tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -500,8 +479,8 @@ document.write(`
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Datenquelle</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv&quot;</span>
@@ -529,14 +508,14 @@ document.write(`
 </div>
 </details>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Sie müssen an dieser Stelle <strong>nicht im Detail verstehen</strong>, wie die Daten im Hintergrund verarbeitet und vorbereitet wurden. Wichtig ist lediglich, dass Sie ein Gefühl für die <strong>Struktur</strong> der erzeugten Daten entwickeln – denn mit genau diesen Daten werden wir im Folgenden individuelle Plots erstellen und gestalten.</p>
-</div>
-<p>Dieser Code extrahiert den <strong>prozentualen Anteil erneuerbarer Energien am Gesamtenergieverbrauch</strong> für die fünf ausgewählten Länder ab dem Jahr 1990. Die Daten werden in ein <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Array überführt, der wie folgt aufgebaut ist:</p>
+<p>Auch hier gilt wieder: Sie müssen die Aufbereitung der Rohdaten nicht nachvollziehen. Es ist nur wichtig, das Sie mit den Daten arbeiten können. Wir betrachten die Entwicklung von fünf Länder, Deutschland, USA, China, Norwegen und Brasilien, über den Zeitraum 1990 bis 2023. Allerdings haben die Ihnen zur Verfügung gestellten Daten im Vergleich zum Kapitel zu <a class="reference external" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">for-Schleifen</a> eine leicht andere Struktur.</p>
 <ul class="simple">
-<li><p><strong>Spalte 0</strong>: Jahr</p></li>
-<li><p><strong>Spalte 1–5</strong>: Anteil erneuerbarer Energien in Prozent für Deutschland, USA, China, Norwegen und Brasilien (in genau dieser Reihenfolge)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{data_array}\)</span>: Numpy-Array, der Größe <span class="math notranslate nohighlight">\( 33 \times 6\)</span>, wobei</p>
+<ul>
+<li><p>die Spalte 0 die Jahres Zahlen enthält, und</p></li>
+<li><p>die Spalten 1 bis 5 den Anteil erneuerbarer Energien in Prozent für Deutschland, USA, China, Norwegen und Brasilien (in genau dieser Reihenfolge) enthalten.</p></li>
+</ul>
+</li>
 </ul>
 <p>Um ein Gefühl für den Aufbau des Datensatzes zu bekommen, können Sie sich beispielhaft die ersten fünf Zeilen des Arrays anzeigen lassen.</p>
 <div class="cell docutils container">
@@ -550,8 +529,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Diese Struktur erlaubt uns, die Entwicklung der erneuerbaren Energien über die Jahre hinweg länderübergreifend zu analysieren und zu vergleichen.</p>
-<p>Nun visualisieren wir exemplarisch die Daten für Deutschland.</p>
+<p>Das Ziel ist es die Entwicklung der erneuerbaren Energien über die Jahre hinweg länderübergreifend zu analysieren und zu vergleichen.
+Wir visulaisieren zu nächst exemplarisch die Daten für Deutschland.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einfacher Plot mit Markern für die Datenpunkte</span>
@@ -569,11 +548,11 @@ document.write(`
 <img alt="../../../_images/7c96d37cb90795eaf8392e0e4c9d8c0920131e24b13da0a6b1da61a41d4c48f3.png" src="../../../_images/7c96d37cb90795eaf8392e0e4c9d8c0920131e24b13da0a6b1da61a41d4c48f3.png" />
 </div>
 </div>
-<p>In diesem Plot wurde zusätzlich ein <strong>Marker</strong> gesetzt, der die einzelnen Datenpunkte durch kleine Kreise sichtbar macht (<code class="docutils literal notranslate"><span class="pre">marker='o'</span></code>). Das hilft dabei, die zugrunde liegenden Messwerte klarer zu erkennen.</p>
-<p>In den folgenden Aufgaben lernen Sie, wie Sie das Erscheinungsbild des Plots Schritt für Schritt individuell anpassen können.</p>
+<p>In dieser Graphik wurde zusätzlich ein <em>Marker</em> gesetzt, der die einzelnen Datenpunkte durch kleine Kreise sichtbar macht (<span class="math notranslate nohighlight">\(\texttt{marker='o'}\)</span>). Das hilft dabei, die zugrunde liegenden Messwerte klarer zu erkennen.</p>
+<p>In den folgenden Aufgaben lernen Sie, wie Sie das Erscheinungsbild der Graphik Schritt für Schritt individuell anpassen können.</p>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Wiederholen Sie den Plot-Befehl aus dem vorherigen Abschnitt und verwenden Sie dabei eine durchgezogene Linie mit runden Markierungen. Achten Sie diesmal darauf, dass die die Größe der Markierungen (<code class="docutils literal notranslate"><span class="pre">markesize</span></code>) 10 entspricht.</p>
+<p>Wiederholen Sie den <span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Befehl aus dem vorherigen Abschnitt und verwenden Sie dabei eine durchgezogene Linie mit runden Markierungen. Achten Sie diesmal darauf, dass die die Größe der Markierungen (<span class="math notranslate nohighlight">\(\texttt{markersize})\)</span> 10 entspricht.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -584,7 +563,12 @@ document.write(`
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Die Größe der Markierungen kann über das Argument <code class="docutils literal notranslate"><span class="pre">markersize</span></code> gesteuert werden: <code class="docutils literal notranslate"><span class="pre">plot(x,</span> <span class="pre">y,</span> <span class="pre">markersize=10)</span></code>.</p>
+<p>Sie können mehrere Eigenschaften gleichzeitig setzen, indem Sie mehrere Paare von Eigenschaftsnamen und Werten angeben:</p>
+<div class="math notranslate nohighlight">
+\[
+\texttt{plot(x, y, marker='o', linestyle='-', markersize=50)}.
+\]</div>
+<p>Die Größe der Markierungen kann über das Argument <span class="math notranslate nohighlight">\(\texttt{markersize}\)</span> gesteuert werden.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -599,7 +583,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<p>Wie Sie sehen, lassen sich <strong>mehrere Darstellungsoptionen gleichzeitig</strong> angeben, indem Sie jeweils ein Paar aus Eigenschaftsname und -wert übergeben. Dabei gelten folgende Regeln:</p>
+<p>Wie Sie sehen, lassen sich mehrere Darstellungsoptionen gleichzeitig angeben, indem Sie jeweils ein Paar aus Eigenschaftsname und -wert übergeben. Dabei gelten folgende Regeln:</p>
 <ul class="simple">
 <li><p>Die Eigenschaften können in beliebiger Reihenfolge angegeben werden.</p></li>
 <li><p>Auf jeden Eigenschaftsnamen muss unmittelbar der zugehörige Wert folgen.</p></li>
@@ -607,7 +591,7 @@ document.write(`
 </ul>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Stellen Sie die Daten mit einer durchgezogenen Linie, runden Markierungen der Größe 10 und einer blauen Füllfarbe der Marker dar. Verwenden Sie dazu die <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code>-Eigenschaft.</p>
+<p>Stellen Sie die Daten mit einer durchgezogenen Linie, runden Markierungen der Größe 10 und einer blauen Füllfarbe der Marker dar. Verwenden Sie dazu die <span class="math notranslate nohighlight">\(\texttt{markerfacecolor}\)</span>-Eigenschaft.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -615,10 +599,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Sie können mehrere Eigenschaften gleichzeitig setzen, indem Sie mehrere Paare von Eigenschaftsnamen und Werten angeben: <code class="docutils literal notranslate"><span class="pre">plot(x,</span> <span class="pre">y,</span> <span class="pre">marker='o',</span> <span class="pre">linestyle='-',</span> <span class="pre">markersize=10,</span> <span class="pre">markerfacecolor='g')</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -635,17 +615,22 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> können Sie also eine Vielzahl an Darstellungsoptionen für Ihre Plots anpassen – nicht nur durch <code class="docutils literal notranslate"><span class="pre">marker</span></code>, <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> und <code class="docutils literal notranslate"><span class="pre">color</span></code>, sondern auch durch zusätzliche Eigenschaften.</p>
+<p>Sie können also eine Vielzahl an Darstellungsoptionen anpassen – nicht nur durch <span class="math notranslate nohighlight">\(\texttt{marker}\)</span>, <span class="math notranslate nohighlight">\(\texttt{linestyle}\)</span> und <span class="math notranslate nohighlight">\(\texttt{color}\)</span>, sondern auch weitere Eigenschaften.</p>
 <p>Besonders häufig verwendete Optionen für Linienplots sind:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code>: Dicke der Linie und der Markerränder</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">markersize</span></code>: Größe der Markersymbole</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">markeredgecolor</span></code>: Farbe des Markerrands</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code>: Farbe des Markerinnenbereichs</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{linewidth}\)</span>: Dicke der Linie und der Markerränder</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{markersize}\)</span>: Größe der Markersymbole</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{markeredgecolor}\)</span>: Farbe des Markerrands</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{markerfacecolor}\)</span>: Farbe des Markerinneren</p></li>
 </ul>
-<p>Verschiedene Diagrammtypen und Objekte in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> besitzen jeweils unterschiedliche Eigenschaften, die angepasst werden können. Anstatt sich alle verfügbaren Optionen einzuprägen, empfiehlt es sich, bei Bedarf einen Blick in die offizielle Dokumentation zu werfen: <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html">Matplotlib Line2D properties</a>.</p>
+<p>Verschiedene Diagrammtypen und Objekte besitzen jeweils unterschiedliche Eigenschaften, die angepasst werden können. Anstatt sich alle verfügbaren Optionen einzuprägen, empfiehlt es sich, bei Bedarf einen Blick in die offizielle Dokumentation zu werfen:<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html">Matplotlib Line2D properties</a>.</p>
 <p>Als praktische Hilfe finden Sie hier außerdem eine kompakte Übersicht über die wichtigsten Darstellungsoptionen, die Sie bereits kennengelernt haben – ergänzt um weitere häufig genutzte Einstellungen.</p>
 <div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+<col style="width: 25.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Eigenschaft</p></th>
 <th class="head"><p>Beschreibung</p></th>
@@ -653,61 +638,60 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">color</span></code></span></p></td>
-<td><p>Linienfarbe (z. B. <code class="docutils literal notranslate"><span class="pre">'r'</span></code> für rot, <code class="docutils literal notranslate"><span class="pre">'b'</span></code> für blau, <code class="docutils literal notranslate"><span class="pre">'g'</span></code> für grün)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">color='g'</span></code></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{color}\)</span></p></td>
+<td><p>Linienfarbe (z. B. <span class="math notranslate nohighlight">\(\texttt{r}\)</span> für rot, <span class="math notranslate nohighlight">\(\texttt{b}\)</span> für blau, <span class="math notranslate nohighlight">\(\texttt{g}\)</span> für grün)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{color='g'}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">marker</span></code></span></p></td>
-<td><p>Markersymbol (z. B. <code class="docutils literal notranslate"><span class="pre">'o'</span></code> für Kreis, <code class="docutils literal notranslate"><span class="pre">'s'</span></code> für Quadrat, <code class="docutils literal notranslate"><span class="pre">'x'</span></code> für Kreuz)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">marker='o'</span></code></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{marker}\)</span></p></td>
+<td><p>Markersymbol (z. B. <span class="math notranslate nohighlight">\(\texttt{o}\)</span> für Kreis, <span class="math notranslate nohighlight">\(\texttt{s}\)</span> für Quadrat, <span class="math notranslate nohighlight">\(\texttt{x}\)</span> für Kreuz)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{marker='o'}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">markersize</span></code></span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{markersize}\)</span></p></td>
 <td><p>Größe der Marker</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">markersize=10</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{markersize=10}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code></span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{markerfacecolor}\)</span></p></td>
 <td><p>Füllfarbe der Marker</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">markerfacecolor='green'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{markerfacecolor='green'}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">markeredgecolor</span></code></span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{markeredgecolor}\)</span></p></td>
 <td><p>Randfarbe der Marker</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">markeredgecolor='black'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{markeredgecolor='black'}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">linewidth</span></code></span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{linewidth}\)</span></p></td>
 <td><p>Dicke der Linie und Markerränder</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">linewidth=2.5</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{linewidth=2.5}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">linestyle</span></code></span></p></td>
-<td><p>Linienstil (z. B. <code class="docutils literal notranslate"><span class="pre">'-'</span></code>, <code class="docutils literal notranslate"><span class="pre">'--'</span></code>, <code class="docutils literal notranslate"><span class="pre">':'</span></code>, <code class="docutils literal notranslate"><span class="pre">'-.'</span></code>)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">linestyle='--'</span></code></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{linestyle}\)</span></p></td>
+<td><p>Linienstil (z. B. <span class="math notranslate nohighlight">\(\texttt{-}\)</span>, <span class="math notranslate nohighlight">\(\texttt{--}\)</span>, <span class="math notranslate nohighlight">\(\texttt{:}\)</span>, <span class="math notranslate nohighlight">\(\texttt{-.}\)</span>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{linestyle='--'}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">label</span></code></span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{label}\)</span></p></td>
 <td><p>Legendentext für diese Linie</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">label='Deutschland'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{label='Deutschland'}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">alpha</span></code></span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{alpha}\)</span></p></td>
 <td><p>Transparenz (zwischen 0 und 1)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">alpha=0.7</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{alpha=0.7}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">visible</span></code></span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{visible}\)</span></p></td>
 <td><p>Blendet die Linie aus, ohne sie zu löschen</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">visible=False</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{visible=False}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="no-wrap"><code class="docutils literal notranslate"><span class="pre">dash_capstyle</span></code></span></p></td>
-<td><p>Form der Enden gestrichelter Linien (<code class="docutils literal notranslate"><span class="pre">'butt'</span></code>, <code class="docutils literal notranslate"><span class="pre">'round'</span></code>, <code class="docutils literal notranslate"><span class="pre">'projecting'</span></code>)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dash_capstyle='round'</span></code></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{dash_capstyle}\)</span></p></td>
+<td><p>Form der Enden gestrichelter Linien (<span class="math notranslate nohighlight">\(\texttt{butt}\)</span>, <span class="math notranslate nohighlight">\(\texttt{round}\)</span>, <span class="math notranslate nohighlight">\(\texttt{projecting}\)</span>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{dash_capstyle='round'}\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="admonition-aufgabe-1-3 admonition">
 <p class="admonition-title">Aufgabe 1.3</p>
-<p>Nutzen Sie den folgenden Plot als Ausgangspunkt und passen Sie ihn durch gezielte Verwendung von <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>-Eigenschaften an. Ziel ist es, ein besseres Gefühl für die vielfältigen Gestaltungsmöglichkeiten von Linienplots in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> zu entwickeln.:::</p>
+<p>Nutzen Sie das folgende Diagramm als Ausgangspunkt und passen Sie es durch gezielte Verwendung von <span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Eigenschaften an. Ziel ist es, ein besseres Gefühl für die vielfältigen Gestaltungsmöglichkeiten von Linienplots zu entwickeln.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einfacher Plot mit Markern für die Datenpunkte</span>
-<span class="c1"># Probieren Sie unterschiedliche Eigenschaften aus und schauen Sie, wie sich der Plot verändert</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Anteil erneuerbarer Energien in Deutschland seit 1990&#39;</span><span class="p">)</span>
@@ -719,12 +703,14 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Nutzen Sie die obige Tabelle sowie die Verlinkung zur Dokumentation als Nachschlagehilfe.</p>
-</div>
-<p>Gerade bei der Darstellung mehrerer Kurven oder beim Hervorheben wichtiger Informationen spielt die Farbwahl eine zentrale Rolle. Farben machen Unterschiede sichtbar, lenken den Blick und helfen, Zusammenhänge auf einen Blick zu erfassen. Deshalb schauen wir uns nun gezielt die Farbangaben in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> an. Für acht häufig verwendete Farben können Sie entweder den <strong>vollständigen Farbnamen</strong> oder eine <strong>einzelne Buchstabe</strong> verwenden:</p>
+<p>Bei der Darstellung mehrerer Graphen ist es wichtig die Graphen auch farblich zu unterscheiden - ähnlich wie beim Hervorheben wichtiger Informationen.
+Farben machen Unterschiede sichtbar und helfen Zusammenhänge auf einen Blick zu erfassen. Deshalb schauen wir uns nun die Farbangaben in Matplotlib an. Für acht häufig verwendete Farben können Sie entweder den vollständigen Farbnamen oder einen einzelne Buchstabe verwenden:</p>
 <div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+<col style="width: 25.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Farbe</p></th>
 <th class="head"><p>Name</p></th>
@@ -733,41 +719,41 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Rot</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'red'</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'r'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{red}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{r}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Grün</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'green'</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'g'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{green}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{g}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Blau</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'blue'</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'b'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{blue}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{b}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Schwarz</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'black'</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'k'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{black}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{k}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Magenta</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'magenta'</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'m'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{magenta}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{m}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Gelb</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'yellow'</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'y'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{yellow}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{y}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>Cyan</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'cyan'</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'c'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{cyan}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{c}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>Weiß</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'white'</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'w'</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{white}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{w}\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Diese Farbangaben können sowohl für <code class="docutils literal notranslate"><span class="pre">color</span></code> als auch für <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code> und <code class="docutils literal notranslate"><span class="pre">markeredgecolor</span></code> verwendet werden.</p>
+<p>Diese Farbangaben können sowohl für <span class="math notranslate nohighlight">\(\texttt{color}\)</span> als auch für <span class="math notranslate nohighlight">\(\texttt{markerfacecolor}\)</span> und <span class="math notranslate nohighlight">\(\texttt{markeredgecolor}\)</span> verwendet werden.</p>
 <div class="admonition-aufgabe-1-4 admonition">
 <p class="admonition-title">Aufgabe 1.4</p>
 <p>Stellen Sie die Daten aus Aufgabe 1.3 erneut dar – diesmal mit einer schwarzen Linie.</p>
@@ -781,7 +767,7 @@ document.write(`
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Die Linienfarbe lässt sich entweder mit Farbnamen wie <code class="docutils literal notranslate"><span class="pre">'black'</span></code> oder mit Kurzformen wie <code class="docutils literal notranslate"><span class="pre">'k'</span></code> festlegen. Beide Varianten sind gültig.</p>
+<p>Die Linienfarbe lässt sich entweder mit Farbnamen wie <span class="math notranslate nohighlight">\(\texttt{'black'}\)</span> oder mit Kurzformen wie <span class="math notranslate nohighlight">\(\texttt{'k'}\)</span> festlegen.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -795,11 +781,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<p>Neben den acht Grundfarben können Sie auch aus über zehn Millionen weiteren Farben wählen, indem Sie sogenannte <strong>RGB-Farbwerte</strong> angeben. Ein RGB-Wert besteht aus drei Zahlen zwischen <strong>0 und 1</strong>, die den <strong>Anteil von Rot, Grün und Blau</strong> in der gewünschten Farbe bestimmen.</p>
-<p>Um eine Farbe auf diese Weise festzulegen, übergeben Sie ein Tupel mit drei Werten an das benannte Argument <code class="docutils literal notranslate"><span class="pre">color</span></code>, z. B. <code class="docutils literal notranslate"><span class="pre">color=(0.5,</span> <span class="pre">0.6,</span> <span class="pre">0)</span></code>.</p>
+<p>Neben den acht Grundfarben können Sie auch aus über zehn Millionen weiteren Farben wählen, indem Sie sogenannte <em>RGB-Farbwerte</em> angeben. Ein RGB-Wert besteht aus drei Zahlen zwischen 0 und 1, die den <em>Anteil von Rot, Grün und Blau</em> in der gewünschten Farbe bestimmen.
+Um eine Farbe auf diese Weise festzulegen, übergeben Sie ein Tupel mit drei Werten an das Argument <span class="math notranslate nohighlight">\(\texttt{color}\)</span>, zum Beispiel
+$<span class="math notranslate nohighlight">\(\texttt{color=(0.5, 0.6, 0)}.\)</span>$</p>
 <div class="admonition-aufgabe-1-5 admonition">
 <p class="admonition-title">Aufgabe 1.5</p>
-<p>Stellen Sie die Daten erneut dar – diesmal mit einer benutzerdefinierten Farbe, die durch das RGB-Tupel <code class="docutils literal notranslate"><span class="pre">(0.5,</span> <span class="pre">0.6,</span> <span class="pre">0)</span></code> definiert ist.</p>
+<p>Stellen Sie die Daten aus Aufgabe 1.3 erneut dar, aber diesmal mit einer benutzerdefinierten Farbe, die durch das RGB-Tupel <span class="math notranslate nohighlight">\((0.5, 0.6, 0)\)</span> definiert ist.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -810,7 +797,11 @@ document.write(`
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>RGB-Farben bestehen aus drei Werten zwischen 0 und 1. Verwenden Sie die folgende Syntax, um eine Farbe per RGB anzugeben: <code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">color=(0.2,</span> <span class="pre">0.2,</span> <span class="pre">0.2))</span></code>.</p>
+<p>RGB-Farben bestehen aus drei Werten zwischen 0 und 1. Verwenden Sie die folgende Syntax, um eine Farbe per RGB anzugeben:</p>
+<div class="math notranslate nohighlight">
+\[
+\texttt{plt.plot(x, y, color=(0.2, 0.2, 0.2))}.
+\]</div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -824,10 +815,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<p>Farben lassen sich in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> sowohl über <strong>Abkürzungen</strong> wie <code class="docutils literal notranslate"><span class="pre">'r'</span></code> oder über ein <strong>RGB-Tupel</strong> angegeben. Beide Varianten können für verschiedene Farbeigenschaften kombiniert werden.</p>
+<p>Farben lassen sich sowohl über Abkürzungen wie <span class="math notranslate nohighlight">\(\texttt{'r'}\)</span> oder über ein RGB-Tupel angegeben. Beide Varianten können für verschiedene Farbeigenschaften kombiniert werden.</p>
 <div class="admonition-aufgabe-1-6 admonition">
 <p class="admonition-title">Aufgabe 1.6</p>
-<p>Stellen Sie die Daten so dar, dass eine durchgezogene Linie mit der Farbe <code class="docutils literal notranslate"><span class="pre">(0.6,</span> <span class="pre">0.2,</span> <span class="pre">0.8)</span></code> verwendet wird und die Kreis-Marker eine Randfarbe in Cyan haben.</p>
+<p>Stellen Sie die Daten so dar, dass eine durchgezogene Linie mit der Farbe <span class="math notranslate nohighlight">\(\texttt{(0.6, 0.2, 0.8)}\)</span> verwendet wird und die Kreis-Marker eine Randfarbe in Cyan haben.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -838,7 +829,7 @@ document.write(`
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Nutzen Sie <code class="docutils literal notranslate"><span class="pre">'o-'</span></code> für eine durchgezogene Linie mit Kreis-Markern. Die Linienfarbe setzen Sie über <code class="docutils literal notranslate"><span class="pre">color</span></code>, die Randfarbe der Marker über <code class="docutils literal notranslate"><span class="pre">markeredgecolor</span></code>.</p>
+<p>Nutzen Sie <span class="math notranslate nohighlight">\(\texttt{'o-'}\)</span> für eine durchgezogene Linie mit Kreis-Markern. Die Linienfarbe setzen Sie über <span class="math notranslate nohighlight">\(\texttt{color}\)</span>, die Randfarbe der Marker über <span class="math notranslate nohighlight">\(\texttt{markeredgecolor}\)</span>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -854,10 +845,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<p>Im letzten Plot hatten Linie und Markerrand unterschiedliche Farben. Kann man auch die Innenfarbe der Marker verändern?</p>
+<p>Im letzten Diagramm hatten Linie und Markerrand unterschiedliche Farben. Kann man auch die Innenfarbe der Marker verändern?</p>
 <div class="admonition-aufgabe-1-7 admonition">
 <p class="admonition-title">Aufgabe 1.7</p>
-<p>Stellen Sie die Daten erneut wie in Aufgabe 1.6 dar. Verwenden Sie diesmal das Argument <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code> anstelle von <code class="docutils literal notranslate"><span class="pre">markeredgecolor</span></code>.</p>
+<p>Stellen Sie die Daten erneut wie in Aufgabe 1.6 dar. Verwenden Sie diesmal das Argument <span class="math notranslate nohighlight">\(\texttt{markerfacecolor}\)</span> anstelle von <span class="math notranslate nohighlight">\(\texttt{markeredgecolor}\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -868,7 +859,7 @@ document.write(`
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Ersetzen Sie <code class="docutils literal notranslate"><span class="pre">markeredgecolor</span></code> durch <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code>, um die Innenfläche der Marker zu färben.</p>
+<p>Ersetzen Sie <span class="math notranslate nohighlight">\(\texttt{markeredgecolor}\)</span> durch <span class="math notranslate nohighlight">\(\texttt{markerfacecolor}\)</span>, um die Innenfläche der Marker zu färben.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -931,7 +922,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mehrfach-Plots</p>
+        <p class="prev-next-title">Diagramme mit mehreren Graphen</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -942,7 +933,8 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -951,7 +943,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-des-plots-anpassen">Eigenschaften des Plots anpassen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#texttt-plt-plot-eigenschaften-anpassen"><span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Eigenschaften anpassen</a></li>
 </ul>
   </nav></div>
 
@@ -1000,8 +992,8 @@ By Jacob Heieck, Alena Ulke
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -113,7 +113,7 @@ parts:
       file: content/chapter03_spezialisierung/visualisation_2/several_lines_one_plot
     - title: 3D Plots
       file: content/chapter03_spezialisierung/visualisation_2/3D_plots
-  - title: Mit Daten arbeiten
+  - title: Datenaufbereitung
     file: content/chapter03_spezialisierung/working_with_data/working_with_data_intro
     sections:
     - title: Tabellen aufbauen
