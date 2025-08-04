@@ -80,8 +80,13 @@ parts:
       file: content/chapter03_spezialisierung/debugging/error_signs
     - title: Fehleranalyse
       file: content/chapter03_spezialisierung/debugging/analysing_code
+
+  - title: Effizienter Code
+    file: content/chapter03_spezialisierung/vektorisierung/intro
+    sections:
     - title: Vektorisierung
-      file: content/chapter03_spezialisierung/debugging/efficiency
+      file: content/chapter03_spezialisierung/vektorisierung/efficiency
+
   - title: KI
     file: content/chapter03_spezialisierung/AI/KI_intro
     sections:
