@@ -426,7 +426,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-der-matrix-und-vektor-funktionen">Übersicht der Matrix- und Vektor-Funktionen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellen-von-vektoren">Erstellen von Vektoren</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-strukturierten-matrizen">Erstellung von strukturierten Matrizen</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-zufallsmatrizen">Erstellung von Zufallsmatrizen</a></li>
 </ul>
 </li>
@@ -443,7 +442,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="arrayerstellung">
 <h1>Arrayerstellung<a class="headerlink" href="#arrayerstellung" title="Link to this heading">#</a></h1>
-<p>Im vorangegangenen Kapitel zur <a class="reference internal" href="../../chapter02_basics/arrays/arrayerstellung.html"><span class="std std-doc">Arrayserstellung</span></a> haben Sie bereits einige Möglichkeiten kennengelernt, um Arrays zu erzeugen. Insbesondere Methoden zur manuellen Arrayerstellung, Erstellung von Vektoren mit gleichmäßigen Abständen und Arrayerstellung mit Hilfe von Funktionen.</p>
+<p>In den <a class="reference internal" href="../../chapter02_basics/arrays/arrayerstellung.html"><span class="std std-doc">Grundlagen zur Arrayserstellung</span></a> haben Sie bereits einige Möglichkeiten kennengelernt, um Arrays zu erzeugen. Insbesondere Methoden zur manuellen Arrayerstellung, Erstellung von Vektoren mit gleichmäßigen Abständen und Arrayerstellung mit Hilfe von Funktionen.</p>
 <p>In diesem Kapitel sollen Sie die gelernten Aspekte wiederholen, um diese elementaren Operationen zu festigen und im nächten Kapitel zu vertiefen.</p>
 <section id="manuelle-arrayerstellung">
 <h2>Manuelle Arrayerstellung<a class="headerlink" href="#manuelle-arrayerstellung" title="Link to this heading">#</a></h2>
@@ -504,6 +503,7 @@
 </section>
 <section id="vektoren-mit-werten-in-gleichmaszigen-abstanden">
 <h2>Vektoren mit Werten in gleichmäßigen Abständen<a class="headerlink" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden" title="Link to this heading">#</a></h2>
+<p><span style="color:red"> Hier bitte nochmal drübergucken. Entweder Widerholung entfernen oder nicht die Matrix A als einleitendens Beispiel nehmen.</span></p>
 <p>Die erste Spalte von <span class="math notranslate nohighlight">\(A\)</span> kann mit Hilfe von in NumPy enthaltenen Funktionen erzeugt werden, statt sie manuell einzutippen. Die Aufgaben dieses Abschnitts sollen zur Wiederholung dieser Funktionen gelten.</p>
 <div class="admonition-aufgabe-2-1 admonition">
 <p class="admonition-title">Aufgabe 2.1</p>
@@ -558,7 +558,7 @@
 </div>
 <div class="admonition-aufgabe-2-3 admonition">
 <p class="admonition-title">Aufgabe 2.3</p>
-<p>Erstellen Sie den Vektor <span class="math notranslate nohighlight">\(\texttt{x_pi}\)</span>, welcher bei <span class="math notranslate nohighlight">\(-\pi\)</span> startet, bei <span class="math notranslate nohighlight">\(3\pi\)</span> endet und <span class="math notranslate nohighlight">\(50\)</span> Elemente enthält.</p>
+<p>Erstellen Sie den Vektor <span class="math notranslate nohighlight">\(\texttt{x_pi}\)</span>, welcher ein <span class="math notranslate nohighlight">\(-\pi\)</span> startet, bei <span class="math notranslate nohighlight">\(3\pi\)</span> endet. Der Vektor soll <span class="math notranslate nohighlight">\(50\)</span> Elemente enthalten und der Abstand zwischen zwei benachbarten Einträgen soll konstant sein.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -578,7 +578,9 @@
 </pre></div>
 </div>
 </div>
-<p>Die Funktionen <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.linspace}\)</span>, sind sehr nützliche Funktionen, um eine regelmäßige Zahlenfolgen zu erzeugen. Was erwarten Sie, wenn Sie die Funktion dazu zwingen nur einen Wert auszugeben? Bevor sie die nächste Aufgabe bearbeiten, stellen Sie eine Vermutung auf, wie das Ergebnis aussehen wird. Stimmt Ihre Vermutung mit der tatsächlichen Ausgabe überein?</p>
+<p>Die Funktionen <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.linspace}\)</span>, sind sehr nützliche Funktionen, um eine regelmäßige Zahlenfolgen zu erzeugen.</p>
+<p><span style="color:red"> Ich verstehe die nachfolgende Frage nicht. Was ist das Ziel/die Intention? Genauso Aufgabe 2.4.</span></p>
+<p>Was erwarten Sie, wenn Sie die Funktion dazu zwingen nur einen Wert auszugeben? Bevor sie die nächste Aufgabe bearbeiten, stellen Sie eine Vermutung auf, wie das Ergebnis aussehen wird. Stimmt Ihre Vermutung mit der tatsächlichen Ausgabe überein?</p>
 <div class="admonition-aufgabe-2-4 admonition">
 <p class="admonition-title">Aufgabe 2.4</p>
 <p>Erstellen Sie mit <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> einen Vektor <span class="math notranslate nohighlight">\(\texttt{x_arange_1element}\)</span>, dessen Elemente bei <span class="math notranslate nohighlight">\(0\)</span> beginnen, bei <span class="math notranslate nohighlight">\(10\)</span> enden und jeweils durch einen Abstand von <span class="math notranslate nohighlight">\(15\)</span> getrennt sind.</p>
@@ -600,12 +602,11 @@
 </pre></div>
 </div>
 </div>
-<br>
 </section>
 <section id="arrayerstellung-mittels-funktionen">
 <h2>Arrayerstellung mittels Funktionen<a class="headerlink" href="#arrayerstellung-mittels-funktionen" title="Link to this heading">#</a></h2>
-<p>Um Matrizen mit gewisser Struktur zu erzeugen, haben Sie bereits einige Methoden kennengelernt. Insbesondere begegnet uns in der Mathematik oft die Einheitsmatrix. Auch für sie existiert in NumPy bereits ein Befehl. Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> erstellt man eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale Einheitsmatrix.</p>
-<p>Versuchen Sie sich durch die erste Aufgabe dieses Abschnittes mit den bereits bekannten Methoden und der <span class="math notranslate nohighlight">\(\texttt{np.eye}\)</span> Funktion vertraut zu machen.</p>
+<p>Um Matrizen mit gewisser Struktur zu erzeugen, haben Sie bereits einige Methoden kennengelernt, zum Beispiel <span class="math notranslate nohighlight">\(\texttt{np.zeros()}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.ones()}\)</span>. In der Numerik benötigen wir häufig die Einhheitsmatrix sowie Diagonal- und Dreieckmatrizen. Auch für solche Matrizen stellt NumPy entsprechende Funktionen zur Erstellung bereit. Wir beginnen mit der Einheitsmatrix.
+Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> erstellt man eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale Einheitsmatrix.</p>
 <div class="admonition-aufgabe-3-1 admonition">
 <p class="admonition-title">Aufgabe 3.1</p>
 <p>Erstellen Sie die <span class="math notranslate nohighlight">\((4 \times 4)\)</span> Matrix <span class="math notranslate nohighlight">\(\texttt{A_nur5}\)</span>, bei der jeder Eintrag die Zahl <span class="math notranslate nohighlight">\(5\)</span> ist. Berechnen Sie anschließend mit Hilfe der erstellten Matrix <span class="math notranslate nohighlight">\(\texttt{A_nur5}\)</span>, die Matrix <span class="math notranslate nohighlight">\(\texttt{A_nur45}\)</span>, bei der alle Einträge <span class="math notranslate nohighlight">\(5\)</span> sind außer die Diagonaleinträge. Diese enthalten den Wert <span class="math notranslate nohighlight">\(4\)</span>.</p>
@@ -629,11 +630,10 @@
 </pre></div>
 </div>
 </div>
-<p>Neben den Ihnen bereits bekannten Funktionen, enthält NumPy viele weitere Funktionen. Dazu gehört <span class="math notranslate nohighlight">\(\texttt{np.diag}\)</span>. Der Code <span class="math notranslate nohighlight">\(\texttt{np.diag([1, 2, 3])}\)</span> erstellt eine <span class="math notranslate nohighlight">\((3 \times 3)\)</span> Diagonalmatrix, mit den Einträgen <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span> und <span class="math notranslate nohighlight">\(3\)</span> auf der Diagonalen.</p>
+<p>Nun schauen wir uns Diagonalmatrizen an. Diese können Sie in NumPy mit dem Befehl <span class="math notranslate nohighlight">\(\texttt{np.diag}\)</span> erzeugen. Der Code <span class="math notranslate nohighlight">\(\texttt{np.diag([1, 2, 3])}\)</span> erstellt eine <span class="math notranslate nohighlight">\((3 \times 3)\)</span> Diagonalmatrix, mit den Einträgen <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span> und <span class="math notranslate nohighlight">\(3\)</span> auf der Diagonalen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erstellt eine 3 x 3 Diagonalmatrix mit Diagonalelemente 1, 2, 3</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
@@ -660,10 +660,6 @@
 </div>
 </div>
 </div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie <span class="math notranslate nohighlight">\(\texttt{np.diag}\)</span> mit der passenden Eingabevariablen.</p>
-</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_diagonal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -671,11 +667,14 @@
 </pre></div>
 </div>
 </div>
-<p>Zudem gibt es Methoden obere und untere Dreiecksmatrizen zu erzeugen. Dazu erstellt <span class="math notranslate nohighlight">\(\texttt{np.tri(n)}\)</span> eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale untere Dreiecksmatrix mit <span class="math notranslate nohighlight">\(1\)</span> auf und unterhalb der Diagonalen. Der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.triu(A)}\)</span> transformiert eine quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine obere Dreiecksmatrix, indem er alle Einträge unterhalb der Diagonalen auf <span class="math notranslate nohighlight">\(0\)</span> setzt. Analog transformiert  <span class="math notranslate nohighlight">\(\texttt{np.tril(A)}\)</span> die quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine untere Dreiecksmatrix.</p>
+<p>Zudem gibt es Methoden obere und untere Dreiecksmatrizen zu erzeugen. Die FUnktion <span class="math notranslate nohighlight">\(\texttt{np.tri(n)}\)</span> erstellt eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale untere Dreiecksmatrix mit <span class="math notranslate nohighlight">\(1\)</span> auf und unterhalb der Diagonalen. Der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.triu(A)}\)</span> transformiert eine quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine obere Dreiecksmatrix, indem er alle Einträge unterhalb der Diagonalen auf <span class="math notranslate nohighlight">\(0\)</span> setzt. Analog transformiert die Funktion <span class="math notranslate nohighlight">\(\texttt{np.tril(A)}\)</span> die quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine untere Dreiecksmatrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># erstellt die Matrix aus Aufgabe 3.1</span>
-<span class="n">A_untere_dreieck</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tril</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># löscht alle Einträge oberhalb der Diagonalen</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Matrix aus A3.1</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
+
+<span class="c1"># löscht alle Einträge oberhalb der Diagonalen</span>
+<span class="n">A_untere_dreieck</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tril</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">A_untere_dreieck</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -714,7 +713,7 @@
 </pre></div>
 </div>
 </div>
-<p>Sie haben außerdem Funktionen kennengelernt, die verwendet werden, um Matrizen mit Zufallszahlen zu generieren. Dazu kennen Sie den Befehl  <span class="math notranslate nohighlight">\(\texttt{np.random.rand}\)</span>. Dieser generiert gleichverteilte Zufallszahlen im Intervall <span class="math notranslate nohighlight">\([0,1]\)</span>. Zudem existiert die Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.randn}\)</span>, welche standardnormalverteilte Zufallszahlen erzeugt. Zum Beispiel der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.random.randn(3,2)}\)</span> erstellt eine <span class="math notranslate nohighlight">\((3 \times 2)\)</span> Matrix mit standardnormalverteilten Einträgen.</p>
+<p>Neben Funktionen, die strukturierte Matrizen erzeugen, gibt es auch Funktionen, die Matrizen mit zufälligen Einträgen erstellen. Eine solche Funktion haben Sie bereits bei den Grundlagen zur Arrayserstellung kennen gelernt: <span class="math notranslate nohighlight">\(\texttt{np.random.rand}\)</span>. Diese Funktion generiert gleichverteilte Zufallszahlen im Intervall <span class="math notranslate nohighlight">\([0,1]\)</span>. Zudem existiert die Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.randn}\)</span>, welche standardnormalverteilte Zufallszahlen erzeugt. Zum Beispiel der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.random.randn(3,2)}\)</span> erstellt eine <span class="math notranslate nohighlight">\((3 \times 2)\)</span> Matrix mit standardnormalverteilten Einträgen.</p>
 <div class="admonition-aufgabe-3-4 admonition">
 <p class="admonition-title">Aufgabe 3.4</p>
 <p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix  <span class="math notranslate nohighlight">\(\texttt{A_uniform}\)</span>, die zufällig gleichverteilte Einträge zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> annimmt, sowie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix  <span class="math notranslate nohighlight">\(\texttt{A_normal}\)</span>, die standardnormalverteilte Zufallszahlen beinhaltet. Vergleichen Sie die maximalen Einträge beider Matrizen.</p>
@@ -739,10 +738,15 @@
 </pre></div>
 </div>
 </div>
-<p>Für manche Anwendung möchte man zufällige ganze Zahlen erzeugen. Auch dafür bietet NumPy eine Funktion an. Sie heißt  <span class="math notranslate nohighlight">\(\texttt{np.random.randint}\)</span> und hat 3 Eingabeparameter:  <span class="math notranslate nohighlight">\(\texttt{np.random.randint(min_wert, max_wert, size)}\)</span>. Die Funktion gibt nun eine Matrix der Größe  <span class="math notranslate nohighlight">\(\texttt{size}\)</span> aus, welche gleichmäßig verteilte ganze Zahlen aus dem Intervall <span class="math notranslate nohighlight">\([\texttt{min_wert},\texttt{max_wert})\)</span> als Einträge besitzt. Der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.random.randint(0, 10, (2,3))}\)</span> erzeugt eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix, die nur ganze Zahlen zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(9\)</span> annimmt. Beachten Sie auch hier wieder, dass die obere Grenze, die man angibt nicht angenommen wird.</p>
+<p>Für manche Anwendung möchte man zufällige ganze Zahlen erzeugen. Auch dafür bietet NumPy eine Funktion: die Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.randint}\)</span>, welche 3 Eingabeparameter hat:</p>
+<div class="math notranslate nohighlight">
+\[
+\texttt{np.random.randint(min_wert, max_wert, size)}
+\]</div>
+<p>Die Funktion gibt nun ein Array der Größe  <span class="math notranslate nohighlight">\(\texttt{size}\)</span> aus, welche gleichmäßig verteilte ganze Zahlen aus dem Intervall <span class="math notranslate nohighlight">\([\texttt{min_wert},\texttt{max_wert})\)</span> als Einträge besitzt. Der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.random.randint(0, 10, (2,3))}\)</span> erzeugt eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix, die nur ganze Zahlen zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(9\)</span> annimmt. Beachten Sie auch hier wieder, dass die obere Grenze, die man angibt nicht angenommen wird.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_randint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># erzeugt 2 x 3 Matrix, die nur ganze Zahlen zwischen 0 und 9 annimmt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_randint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A_randint</span><span class="p">)</span> 
 </pre></div>
 </div>
@@ -759,10 +763,6 @@
 </div>
 </div>
 </div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie die Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.randint}\)</span>, um die Matrix zu erzeugen. Nutzen Sie anschließend  <span class="math notranslate nohighlight">\(\texttt{.max()}\)</span>, um den maximalen Wert zu extrahieren.</p>
-</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_ganzzahlig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
@@ -770,13 +770,13 @@
 </pre></div>
 </div>
 </div>
-<p>Möchten Sie Zahlen innerhalb des Intervalls <span class="math notranslate nohighlight">\([\texttt{min_wert},\texttt{max_wert})\)</span> erzeugen, die nicht zwingend ganzzahlig sind, so können Sie auf die bereits bekannte Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.rand}\)</span> zurückgreifen. Dabei müssen die so erzeugten Zufallszahlen geeignet skaliert werden. Dies erreichen sie mit Hilfe der Tansformation</p>
+<p>Möchten Sie Zahlen innerhalb des Intervalls <span class="math notranslate nohighlight">\([\texttt{min_wert},\texttt{max_wert})\)</span> erzeugen, die nicht zwingend ganzzahlig sind, können Sie auf die bereits bekannte Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.rand}\)</span> zurückgreifen. Dabei müssen die so erzeugten Zufallszahlen geeignet skaliert werden. Dies erreichen sie mit Hilfe der Tansformation</p>
 <div class="math notranslate nohighlight">
 \[\texttt{min_wert + (max_wert - min_wert) * np.random.rand(m,n)}.\]</div>
-<p>Der Code  <span class="math notranslate nohighlight">\(\texttt{4 + (12 - 4) * np.random.rand(3,2)}\)</span> erzeugt eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix, die beliebige rationale Zahlen zwischen <span class="math notranslate nohighlight">\(4\)</span> und <span class="math notranslate nohighlight">\(12\)</span> annimmt.</p>
+<p>Der Code  <span class="math notranslate nohighlight">\(\texttt{4 + (12 - 4) * np.random.rand(3,2)}\)</span> erzeugt eine <span class="math notranslate nohighlight">\((3 \times 2)\)</span> Matrix, die beliebige rationale Zahlen zwischen <span class="math notranslate nohighlight">\(4\)</span> und <span class="math notranslate nohighlight">\(12\)</span> annimmt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erzeugt 2 x 3 Matrix mit beliebigen rationalen Zahlen zwischen 4 und 12</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erzeugt 3 x 2 Matrix mit beliebigen rationalen Zahlen zwischen 4 und 12</span>
 <span class="n">A_rational</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="p">(</span><span class="mi">12</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">A_rational</span><span class="p">)</span>
@@ -806,10 +806,10 @@
 </pre></div>
 </div>
 </div>
-<p>Nach einem ähnlichen Vorgehen können Sie normalverteilte Zufallszahlen mit Erwartungsert <span class="math notranslate nohighlight">\(\texttt{nu}\)</span> und Standardabweichung <span class="math notranslate nohighlight">\(\texttt{sigma}\)</span> generieren. Dazu verwenden wir erneut <span class="math notranslate nohighlight">\(\texttt{np.random.randn}\)</span> und skalieren es nach dem Muster</p>
+<p>Nach einem ähnlichen Vorgehen können Sie normalverteilte Zufallszahlen mit Erwartungsert <span class="math notranslate nohighlight">\(\texttt{nu}\)</span> und Standardabweichung <span class="math notranslate nohighlight">\(\texttt{sigma}\)</span> generieren. Dazu verwenden wir erneut <span class="math notranslate nohighlight">\(\texttt{np.random.randn}\)</span> und skalieren mit der folgenden Transformation:</p>
 <div class="math notranslate nohighlight">
 \[\texttt{nu + sigma * np.random.randn(m,n)}.\]</div>
-<p>Der Code <span class="math notranslate nohighlight">\(\texttt{-1 + 3 * np.random.randn(3,2)}\)</span> erzeugt eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix, die normalverteilte Zahlen mit Erwartungswert <span class="math notranslate nohighlight">\(-1\)</span> und Standardabweichung <span class="math notranslate nohighlight">\(3\)</span> annimmt.</p>
+<p>Der Code <span class="math notranslate nohighlight">\(\texttt{-1 + 3 * np.random.randn(3,2)}\)</span> erzeugt eine <span class="math notranslate nohighlight">\((3 \times 2)\)</span> Matrix, die normalverteilte Zahlen mit Erwartungswert <span class="math notranslate nohighlight">\(-1\)</span> und Standardabweichung <span class="math notranslate nohighlight">\(3\)</span> annimmt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erzeugt 2 x 3 Matrix mit normalverteilte Zahlen zwischen mit Erwartungswert -1 und Standardabweichung 3</span>
@@ -831,10 +831,6 @@
 </div>
 </div>
 </div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.random.randn}\)</span> und skalieren Sie diese geeignet, um die Matrix zu erzeugen. Nutzen Sie anschließend <span class="math notranslate nohighlight">\(\texttt{.max()}\)</span>, um den maximalen Wert zu extrahieren.</p>
-</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_normal2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
@@ -845,7 +841,7 @@
 </section>
 <section id="ubersicht-der-matrix-und-vektor-funktionen">
 <h2>Übersicht der Matrix- und Vektor-Funktionen<a class="headerlink" href="#ubersicht-der-matrix-und-vektor-funktionen" title="Link to this heading">#</a></h2>
-<p>Abschließend möchten wir Ihnen noch eine grobe Übersicht über die Funktionen zum Erzeugen von Matrizen und Vektoren geben. Dabei haben wir die Liste um ein paar nützliche Befehle erweitert, die wir in diesem Kurs nicht explizit ansprechen, die aber durchaus von Nutzen sein können.</p>
+<p>Abschließend möchten wir Ihnen noch eine grobe Übersicht über die Funktionen zum Erzeugen von Matrizen und Vektoren geben. Dabei haben wir die Liste um ein paar nützliche Befehle erweitert, die wir in diesem Kurs nicht explizit verwenden, die aber durchaus von Nutzen sein können.</p>
 <section id="erstellen-von-vektoren">
 <h3>Erstellen von Vektoren<a class="headerlink" href="#erstellen-von-vektoren" title="Link to this heading">#</a></h3>
 <div class="full-width docutils">
@@ -859,23 +855,22 @@
 <tbody>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.arange(start, stop, step)}\)</span></p></td>
 <td><p>Erzeugt Werte von <span class="math notranslate nohighlight">\(\texttt{start}\)</span> bis <span class="math notranslate nohighlight">\(\texttt{stop}\)</span> mit einer Schrittweite von <span class="math notranslate nohighlight">\(\texttt{step}\)</span>.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.arange(0, 5, 1)}\)</span>  <span class="math notranslate nohighlight">\(\rightarrow \texttt{[0, 1, 2, 3, 4]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.arange(0, 5, 1)}\)</span>  <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0. &amp; 1. &amp; 2. &amp;. 3. &amp; 4. \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.linspace(start, stop, num)}\)</span></p></td>
 <td><p>Erzeugt gleichmäßig verteilte Zahlen zwischen <span class="math notranslate nohighlight">\(\texttt{start}\)</span> und <span class="math notranslate nohighlight">\(\texttt{stop}\)</span>.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.linspace(0, 1, 5)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \texttt{[0., 0.25, 0.5, 0.75, 1.]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.linspace(0, 1, 5)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0. &amp; 0.25 &amp; 0.5 &amp; 0.75 &amp; 1. \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.logspace(start, stop, num)}\)</span></p></td>
-<td><p>Erzeugt logarithmisch verteilte Zahlen zwischen <span class="math notranslate nohighlight">\(\texttt{10**start}\)</span> und <span class="math notranslate nohighlight">\(\texttt{10**stop}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.logspace(0, 2, 5)}\)</span>  <span class="math notranslate nohighlight">\(\rightarrow \texttt{[1., 3.162, 10., 31.62, 100.]}\)</span></p></td>
+<td><p>Erzeugt logarithmisch verteilte Zahlen zwischen <span class="math notranslate nohighlight">\(\texttt{10^\text{start}}\)</span> und <span class="math notranslate nohighlight">\(\texttt{10^\text{stop}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.logspace(0, 2, 5)}\)</span>  <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1. &amp; 3.162 &amp; 10. &amp; 31.62 &amp; 100. \end{bmatrix}\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</section>
-<section id="erstellung-von-strukturierten-matrizen">
-<h3>Erstellung von strukturierten Matrizen<a class="headerlink" href="#erstellung-von-strukturierten-matrizen" title="Link to this heading">#</a></h3>
+<div class="docutils">
+<h3 class="rubric" id="erstellung-von-strukturierten-matrizen">Erstellung von strukturierten Matrizen</h3>
 <div class="full-width docutils">
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -887,38 +882,39 @@
 <tbody>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.zeros(shape)}\)</span></p></td>
 <td><p>Erstellt eine Matrix der Form <span class="math notranslate nohighlight">\(\texttt{shape}\)</span>, die nur Nullen enthält.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.zeros((2,3))}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \texttt{[[0., 0., 0.], [0., 0., 0.]]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.zeros((2,3))}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0. &amp; 0. &amp; 0. \\ 0. &amp; 0. &amp; 0. \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.ones(shape)}\)</span></p></td>
 <td><p>Erstellt eine Matrix der Form <span class="math notranslate nohighlight">\(\texttt{shape}\)</span>, die nur Einsen enthält.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.ones((2,3))}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \texttt{[[1., 1., 1.], [1., 1., 1.]]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.ones((2,3))}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1. &amp; 1. &amp; 1. \\ 1. &amp; 1. &amp; 1. \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.full(shape, w)}\)</span></p></td>
 <td><p>Erstellt eine Matrix, die mit einem angegebenen Wert <span class="math notranslate nohighlight">\(\texttt{w}\)</span> gefüllt ist.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.full((2,3), 7)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \texttt{[[7, 7, 7], [7, 7, 7]]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.full((2,3), 7)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 7 &amp; 7 &amp; 7 \\ 7 &amp; 7 &amp; 7 \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.eye(N)}\)</span></p></td>
 <td><p>Erstellt eine Identitätsmatrix der Größe <span class="math notranslate nohighlight">\(\texttt{N}\)</span>.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.eye(3)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \texttt{[[1., 0., 0.], [0., 1., 0.], [0., 0., 1.]]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.eye(3)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1. &amp; 0. &amp; 0. \\ 0. &amp; 1. &amp; 0. \\ 0. &amp; 0. &amp; 1. \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.diag(v)}\)</span></p></td>
 <td><p>Erstellt eine diagonale Matrix mit den Elementen von <span class="math notranslate nohighlight">\(\texttt{v}\)</span>.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.diag([1, 2, 3])}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \texttt{[[1, 0, 0], [0, 2, 0], [0, 0, 3]]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.diag([1, 2, 3])}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 3 \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.tri(N)}\)</span></p></td>
 <td><p>Erstellt eine untere Dreiecksmatrix der Größe <span class="math notranslate nohighlight">\(\texttt{N}\)</span> mit Einsen unterhalb der Diagonalen.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.tri(3)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \texttt{[[1., 0., 0.], [1., 1., 0.], [1., 1., 1.]]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.tri(3)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1. &amp; 0. &amp; 0. \\ 1. &amp; 1. &amp; 0. \\ 1. &amp; 1. &amp; 1. \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.triu(A)}\)</span></p></td>
 <td><p>Erstellt eine obere Dreiecksmatrix, indem alle Werte unter der Diagonalen von <span class="math notranslate nohighlight">\(\texttt{A}\)</span> auf Null gesetzt werden.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.triu([[1,2,3],[4,5,6],[7,8,9]])}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \texttt{[[1, 2, 3], [0, 5, 6], [0, 0, 9]]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.triu([[1,2,3],[4,5,6],[7,8,9]])}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 5 &amp; 6 \\ 0 &amp; 0 &amp; 9 \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.tril(A)}\)</span></p></td>
 <td><p>Erstellt eine untere Dreiecksmatrix, indem alle Werte oberhalb der Diagonalen von <span class="math notranslate nohighlight">\(\texttt{A}\)</span> auf Null gesetzt werden.</p></td>
-<td><p><span class="math notranslate nohighlight">\(\texttt{np.tril([[1,2,3],[4,5,6],[7,8,9]])}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \texttt{[[1, 0, 0], [4, 5, 0], [7, 8, 9]]}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.tril([[1,2,3],[4,5,6],[7,8,9]])}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 4 &amp; 5 &amp; 0 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </section>
@@ -941,22 +937,22 @@
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.random.rand(d0,d1)}\)</span></p></td>
 <td><p>Erzeugt eine <span class="math notranslate nohighlight">\((d0 \times d1)\)</span> Matrix mit Zufallswerten gleichmäßig verteilt zwischen 0 und 1.</p></td>
 <td><p><span class="math notranslate nohighlight">\(\texttt{np.random.rand(2,3)}\)</span><br />
-<span class="math notranslate nohighlight">\( \rightarrow \begin{bmatrix} 0.840228 &amp; 0.466983 &amp; 0.156066 \\  0.771374 &amp; 0.634024 &amp; 0.530364 \end{bmatrix}\)</span></p></td>
+<span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0.840228 &amp; 0.466983 &amp; 0.156066 \\ 0.771374 &amp; 0.634024 &amp; 0.530364 \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.random.randn(d0,d1)}\)</span></p></td>
 <td><p>Erzeugt eine <span class="math notranslate nohighlight">\((d0 \times d1)\)</span> Matrix mit Zufallswerten aus einer Standardnormalverteilung.</p></td>
 <td><p><span class="math notranslate nohighlight">\(\texttt{np.random.randn(2,3)}\)</span><br />
-<span class="math notranslate nohighlight">\( \rightarrow \texttt{[[ 0.389413, -0.923499,  0.037768], [-0.714868, -1.67741,  -2.08224 ]]}\)</span></p></td>
+<span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0.389413 &amp; -0.923499 &amp; 0.037768 \\ -0.714868 &amp; -1.67741 &amp; -2.08224 \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.random.randint(l,h,size)}\)</span></p></td>
 <td><p>Erzeugt eine Matrix der Form <span class="math notranslate nohighlight">\(\texttt{size}\)</span> mit ganzzahligen Zufallswerten zwischen <span class="math notranslate nohighlight">\(\texttt{l}\)</span> und <span class="math notranslate nohighlight">\(\texttt{h}\)</span>.</p></td>
 <td><p><span class="math notranslate nohighlight">\(\texttt{np.random.randint(0,10,(2,3))}\)</span><br />
-<span class="math notranslate nohighlight">\( \rightarrow \texttt{[[3, 3, 9], [1, 6, 3]]}\)</span></p></td>
+<span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 3 &amp; 3 &amp; 9 \\ 1 &amp; 6 &amp; 3 \end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.random.choice(v,size)}\)</span></p></td>
-<td><p>Erzeugt eine Matrix der Form <span class="math notranslate nohighlight">\(\texttt{size}\)</span> mit Einträgen zufällig aus dem  Array <span class="math notranslate nohighlight">\(\texttt{v}\)</span>.</p></td>
+<td><p>Erzeugt eine Matrix der Form <span class="math notranslate nohighlight">\(\texttt{size}\)</span> mit Einträgen zufällig aus dem Array <span class="math notranslate nohighlight">\(\texttt{v}\)</span>.</p></td>
 <td><p><span class="math notranslate nohighlight">\(\texttt{np.random.choice([1,2,3,4],(2,3))}\)</span><br />
-<span class="math notranslate nohighlight">\(\rightarrow \texttt{[[3, 4, 2], [2, 2, 1]]}\)</span></p></td>
+<span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 3 &amp; 4 &amp; 2 \\ 2 &amp; 2 &amp; 1 \end{bmatrix}\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -1036,7 +1032,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-der-matrix-und-vektor-funktionen">Übersicht der Matrix- und Vektor-Funktionen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellen-von-vektoren">Erstellen von Vektoren</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-strukturierten-matrizen">Erstellung von strukturierten Matrizen</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-zufallsmatrizen">Erstellung von Zufallsmatrizen</a></li>
 </ul>
 </li>
