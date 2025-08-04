@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Python-Programmierkurs
-author: Jacob Heieck, Alena Ulke 
-logo: img/Logo_UMA.png
+title: Python Programmierkurs
+author: Jacob Heieck, Alena Ulke
+logo: Logo_UMA.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

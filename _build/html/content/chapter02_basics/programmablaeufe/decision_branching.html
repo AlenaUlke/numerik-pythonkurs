@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Bedingte Anweisungen &#8212; Python-Programmierkurs</title>
+    <title>Bedingte Anweisungen &#8212; Python Programmierkurs</title>
   
   
   
@@ -16,34 +16,36 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css?v=5c84f910" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
@@ -59,7 +61,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -72,6 +74,7 @@
     <link rel="prev" title="For-Schleifen" href="for_loops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,19 +90,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -107,7 +99,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -115,8 +106,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -132,7 +123,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +148,23 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../../_static/Logo_UMA.png" class="logo__image only-light" alt="Python Programmierkurs - Home"/>
+    <img src="../../../_static/Logo_UMA.png" class="logo__image only-dark pst-js-only" alt="Python Programmierkurs - Home"/>
   
-    <p class="title logo__title">Python-Programmierkurs</p>
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -184,7 +178,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Infos zu Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
@@ -236,7 +230,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehleranalyse</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/vektorisierung/intro.html">Effizienter Programmieren</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/vektorisierung/intro.html">Effizienter Code</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/vektorisierung/efficiency.html">Vektorisierung</a></li>
 </ul>
 </details></li>
@@ -403,24 +397,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -473,8 +459,7 @@ Zum Beispiel richten sich die Parkgebühren in einem Parkhaus meist nach der Par
 Oder Sie planen einen Besuch in der Mannheimer Kunsthalle.
 Welches Ticket für Sie das günstigste ist, hängt von Ihrer Lebenssituation ab und ob Sie Ihren Besuch alleine oder als Gruppe planen. Vielleicht besuchen Sie die Kunsthalle aber auch am ersten Mittwoch im Monat nach 18 Uhr – dann ist der Eintritt kostenlos.</p>
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/kunsthalle_preise_quer.jpeg"><img alt="Img 1" src="../../../_images/kunsthalle_preise_quer.jpeg" style="width: 95%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/kunsthalle_preise_quer.jpeg"><img alt="Img 1" src="../../../_images/kunsthalle_preise_quer.jpeg" style="width: 95%;" /></a>
 </figure>
 <p>All diese Entscheidungen hängen von bestimmten Bedingungen ab. Genau solche Situationen lassen sich in der Programmierung mit bedingten Anweisungen abbilden. Diese erlauben es, je nach Situation unterschiedliche Anweisungen auszuführen.</p>
 <p>In Python können solche Entscheidungsprozesse mit <span class="math notranslate nohighlight">\(\texttt{if}\)</span>, <span class="math notranslate nohighlight">\(\texttt{else}\)</span> und <span class="math notranslate nohighlight">\(\texttt{elif}\)</span> umgesetzt werden. Für endlich viele, klar definierte Fälle (z.B. bei Menüauswahlen) gibt es zusätzlich die sogenannte switch-Anweisungen, welche in Python durch das Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{match}\)</span> codiert ist.</p>
@@ -490,8 +475,7 @@ Welches Ticket für Sie das günstigste ist, hängt von Ihrer Lebenssituation ab
 <h2>if-Anweisung<a class="headerlink" href="#if-anweisung" title="Link to this heading">#</a></h2>
 <p>In Python hat ein if-Anweisung die folgende Syntax:</p>
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_syntax.jpeg"><img alt="Img 1" src="../../../_images/if_syntax.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_syntax.jpeg"><img alt="Img 1" src="../../../_images/if_syntax.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Auf das Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{if}\)</span> folgt immer eine Bedingung, die entweder zu <span class="math notranslate nohighlight">\(\texttt{True}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{False}\)</span> ausgewertet werden kann. Der Codeblock, der ausgeführt werden soll, wenn die Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> wahr ist, wird durch den Doppelpunkt <span class="math notranslate nohighlight">\(\texttt{:}\)</span> eingeleitet und durch ein Leerzeichen oder Tab unterhalb des Schlüsselwortes eingerückt. Der Code <span class="math notranslate nohighlight">\(\texttt{another}\)</span> <span class="math notranslate nohighlight">\(\texttt{statement 1, 2}\)</span> wird unabhängig vom Wahrheitsgehalt der Bedingung <span class="math notranslate nohighlight">\(\texttt{condition}\)</span> ausgeführt.</p>
 <div class="sd-tab-set docutils">
@@ -499,8 +483,7 @@ Welches Ticket für Sie das günstigste ist, hängt von Ihrer Lebenssituation ab
 <label class="sd-tab-label" for="sd-tab-item-0">
 Bedingung ist wahr</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_true.jpeg"><img alt="Img 1" src="../../../_images/if_true.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_true.jpeg"><img alt="Img 1" src="../../../_images/if_true.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird mit <span class="math notranslate nohighlight">\(x=1\)</span> initialisiert und die Variable <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da <span class="math notranslate nohighlight">\(x &gt; 0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> zu <span class="math notranslate nohighlight">\(y = 4 + 3 = 7\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{7}{2} = 3.5\)</span>.</p>
 </div>
@@ -508,8 +491,7 @@ Bedingung ist wahr</label><div class="sd-tab-content docutils">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Bedingung ist falsch</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_false.jpeg"><img alt="Img 1" src="../../../_images/if_false.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_false.jpeg"><img alt="Img 1" src="../../../_images/if_false.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird nun mit <span class="math notranslate nohighlight">\(x=-2\)</span> initialisiert und die Variable <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da jetzt <span class="math notranslate nohighlight">\(x \le  0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> nicht verändert und somit gilt <span class="math notranslate nohighlight">\(z = \frac{4}{2} = 2\)</span>.</p>
 </div>
@@ -520,7 +502,7 @@ Bedingung ist falsch</label><div class="sd-tab-content docutils">
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># um Code zu testen</span>
 
@@ -551,16 +533,14 @@ Bedingung ist falsch</label><div class="sd-tab-content docutils">
 <p>Oft möchte man auch festlegen, welcher Code ausgeführt werden soll, wenn die Bedingung nicht erfüllt ist.
 Für diesen Zweck stellt Python das Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{else}\)</span> zur Verfügung. Es ermöglicht, einen alternativen Codeblock zu definieren, der dann ausgeführt wird, wenn die zugehörige if-Bedingung verletzt ist.</p>
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_else_syntax.jpeg"><img alt="Img 1" src="../../../_images/if_else_syntax.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_else_syntax.jpeg"><img alt="Img 1" src="../../../_images/if_else_syntax.jpeg" style="width: 60%;" /></a>
 </figure>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 Bedingung ist wahr</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_else_true.jpeg"><img alt="Img 1" src="../../../_images/if_else_true.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_else_true.jpeg"><img alt="Img 1" src="../../../_images/if_else_true.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird mit <span class="math notranslate nohighlight">\(x=1\)</span> initialisiert und die Variable <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da <span class="math notranslate nohighlight">\(x &gt; 0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> zu <span class="math notranslate nohighlight">\(y = 4 + 3 = 7\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{7}{2} = 3.5\)</span>.</p>
 </div>
@@ -568,8 +548,7 @@ Bedingung ist wahr</label><div class="sd-tab-content docutils">
 <label class="sd-tab-label" for="sd-tab-item-3">
 Bedingung ist falsch</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_else_false.jpeg"><img alt="Img 1" src="../../../_images/if_else_false.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_else_false.jpeg"><img alt="Img 1" src="../../../_images/if_else_false.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird nun mit <span class="math notranslate nohighlight">\(x=-2\)</span> initialisiert und die Variable <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da jetzt <span class="math notranslate nohighlight">\(x \le  0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> nun zu <span class="math notranslate nohighlight">\( y = 2 \cdot 4 = 8\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{8}{2} = 4\)</span>.</p>
 </div>
@@ -603,8 +582,7 @@ Bedingung ist falsch</label><div class="sd-tab-content docutils">
 <h2>if-elif-else-Anweisung<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Wenn die Bedingung nach der if-Anweisung als falsch bewertet wird, kann mit <span class="math notranslate nohighlight">\(\texttt{elif}\)</span> (kurz für <span class="math notranslate nohighlight">\(\texttt{else if}\)</span>) eine weitere Bedingung geprüft werden. Es können beliebig viele elif-Blöcke ergänzt werden. Wenn keine der Bedingungen zutrifft, wird der else-Block ausgeführt. Auf diese Weise lässt sich steuern, welcher Code abhängig von unterschiedlichen Situationen ausgeführt wird.</p>
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_elif_else_syntax.jpeg"><img alt="Img 1" src="../../../_images/if_elif_else_syntax.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_elif_else_syntax.jpeg"><img alt="Img 1" src="../../../_images/if_elif_else_syntax.jpeg" style="width: 60%;" /></a>
 </figure>
 <div class="warning admonition">
 <p class="admonition-title">Achtung</p>
@@ -615,8 +593,7 @@ Bedingung ist falsch</label><div class="sd-tab-content docutils">
 <label class="sd-tab-label" for="sd-tab-item-4">
 if Bedingung ist wahr</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_elif_true1.jpeg"><img alt="Img 1" src="../../../_images/if_elif_true1.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_elif_true1.jpeg"><img alt="Img 1" src="../../../_images/if_elif_true1.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird mit <span class="math notranslate nohighlight">\(x=1\)</span> initialisiert und <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da <span class="math notranslate nohighlight">\(x &gt; 0\)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> zu <span class="math notranslate nohighlight">\(y = 4 + 3 = 7\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{7}{2} = 3.5\)</span>.</p>
 </div>
@@ -624,8 +601,7 @@ if Bedingung ist wahr</label><div class="sd-tab-content docutils">
 <label class="sd-tab-label" for="sd-tab-item-5">
 elif Bedingung ist wahr</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_elif_true2.jpeg"><img alt="Img 1" src="../../../_images/if_elif_true2.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_elif_true2.jpeg"><img alt="Img 1" src="../../../_images/if_elif_true2.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird nun mit <span class="math notranslate nohighlight">\(x=-2\)</span> initialisiert und <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Es gilt <span class="math notranslate nohighlight">\(x \le  0\)</span>. Da jedoch <span class="math notranslate nohighlight">\( x &lt; - 1\)</span>, wird <span class="math notranslate nohighlight">\(y\)</span> nun zu <span class="math notranslate nohighlight">\( y = 2 * 4 = 8\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{8}{2} = 4\)</span>.</p>
 </div>
@@ -633,8 +609,7 @@ elif Bedingung ist wahr</label><div class="sd-tab-content docutils">
 <label class="sd-tab-label" for="sd-tab-item-6">
 if und elif Bedingung sind falsch</label><div class="sd-tab-content docutils">
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/if_elif_false.jpeg"><img alt="Img 1" src="../../../_images/if_elif_false.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/if_elif_false.jpeg"><img alt="Img 1" src="../../../_images/if_elif_false.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Die Variable <span class="math notranslate nohighlight">\(x\)</span> wird nun mit <span class="math notranslate nohighlight">\(x=-0.5\)</span> initialisiert und  <span class="math notranslate nohighlight">\(y\)</span> mit <span class="math notranslate nohighlight">\(y=4\)</span>. Da jetzt sowohl <span class="math notranslate nohighlight">\(x \le  0\)</span> als auch <span class="math notranslate nohighlight">\(x  \ge -1 \)</span> gilt, wird <span class="math notranslate nohighlight">\(y\)</span> nun zu <span class="math notranslate nohighlight">\( y = 4 - 2 = 2\)</span> und somit gilt <span class="math notranslate nohighlight">\(z = \frac{2}{2} = 1\)</span>.</p>
 </div>
@@ -782,7 +757,7 @@ Aufgabe 2.4</label><div class="sd-tab-content docutils">
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># zufälliges Einkommen generieren</span>
 <span class="n">einkommen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span> 
@@ -873,8 +848,8 @@ Aufgabe 2.4</label><div class="sd-tab-content docutils">
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Datenquelle</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv&quot;</span>
@@ -950,8 +925,8 @@ Aufgabe 3.2</label><div class="sd-tab-content docutils">
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">ctry</span> <span class="o">=</span> <span class="s2">&quot;Canada&quot;</span>
 
@@ -1035,8 +1010,7 @@ Aufgabe 3.2</label><div class="sd-tab-content docutils">
 <h1>match-Anweisung<a class="headerlink" href="#match-anweisung" title="Link to this heading">#</a></h1>
 <p>Eine match-Anweisung erlaubt es, eine Variable oder einen Ausdruck mit mehreren vordefinierten Fällen zu vergleichen und je nach Ergebnis unterschiedlichen Code auszuführen. Es ist besonders dann hilfreich, wenn man einen Ausdruck gegen endlich viele Werte prüfen möchte. In anderen Programmiersprachen wie C, C++ oder Matlab spricht man stattdessen von switch-Anweisungen. Diese werden - anders als in Python - mit dem Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{switch}\)</span> eingeleitet. In Syntax in Python ist wie folgt:</p>
 <figure class="center align-default">
-<a class="reference internal image-reference" href="../../../_images/switch_syntax.jpeg"><img alt="Img 1" src="../../../_images/switch_syntax.jpeg" style="width: 60%;" />
-</a>
+<a class="reference internal image-reference" href="../../../_images/switch_syntax.jpeg"><img alt="Img 1" src="../../../_images/switch_syntax.jpeg" style="width: 60%;" /></a>
 </figure>
 <p>Auf das Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{match}\)</span>  folgt der Ausdruck <span class="math notranslate nohighlight">\(\texttt{var}\)</span>, dessen Wert mit den definierten Fällen verglichen wird. Die sogenannte <em>match-Fälle</em> werden dann von oben nach unten geprüft. Das heißt, es wird überprüft ob, der Wert des Ausdrucks <span class="math notranslate nohighlight">\(\texttt{var}\)</span> und der Wert des Falls <strong>gleich</strong> sind. Ist dies der Fall, wird der zugehörige Codeblock ausgeführt.</p>
 <p>Falls keiner der Fälle zutrifft, wird der default-Fall ausgeführt. Dieser wird durch einen Unterstrich (<span class="math notranslate nohighlight">\(\texttt{_}\)</span>) gekennzeichnet und entspricht dem „sonst“-Fall bei mathematischen Fallunterscheidungen.
@@ -1180,7 +1154,8 @@ if-elif-else-Anweisung</label><div class="sd-tab-content docutils">
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1214,7 +1189,7 @@ if-elif-else-Anweisung</label><div class="sd-tab-content docutils">
   <div class="footer-item">
     
 <p class="component-author">
-By Jacob Heieck, Alena Ulke
+By <a href="https://www.wim.uni-mannheim.de/goettlich/team/reseachers/jacob-heieck/"">Jacob Heieck,</a> Alena Ulke
 </p>
 
   </div>
@@ -1248,8 +1223,8 @@ By Jacob Heieck, Alena Ulke
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

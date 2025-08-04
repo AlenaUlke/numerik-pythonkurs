@@ -1,5 +1,5 @@
 (python-infos)= 
-# Infos zu Python
+# Installationsguide
 
 ```{figure} img/python-logo.png
     :figclass: margin

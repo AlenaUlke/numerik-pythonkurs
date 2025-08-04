@@ -11,7 +11,7 @@ parts:
 #   file: content/chapter01_einfuehrung/vorwort
   - title: Struktur des Kurses
     file: content/chapter01_einfuehrung/kursstruktur
-  - title: Infos und Installationsguide
+  - title: Installationsguide
     file: content/chapter01_einfuehrung/installationsguide
   - title: Wie nutzt man dieses Jupyterbook?
     file: content/chapter01_einfuehrung/funktionsweise_jupyter_book
