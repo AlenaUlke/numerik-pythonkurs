@@ -76,9 +76,9 @@ parts:
   - title: Debugging
     file: content/chapter03_spezialisierung/debugging/debugging_intro
     sections:
-    - title: Fehleranzeige
+    - title: Fehlermeldungen
       file: content/chapter03_spezialisierung/debugging/error_signs
-    - title: Fehleranalyse
+    - title: Fehlersuche
       file: content/chapter03_spezialisierung/debugging/analysing_code
 
   - title: Effizienter Code
@@ -109,15 +109,17 @@ parts:
       file: content/chapter03_spezialisierung/arrays_2/reshaping_arrays
   #  - title: Quiz
   #    file: content/chapter03_spezialisierung/arrays_2/quiz
+
   - title: Visualisierung II
     file: content/chapter03_spezialisierung/visualisation_2/visualisation_2_intro
     sections:
-    - title: Plots individuell gestalten
+    - title: Graphiken individuell gestalten
       file: content/chapter03_spezialisierung/visualisation_2/advanced_2D_plots
-    - title: Mehrfach-Plots
+    - title: Diagramme mit mehreren Graphen
       file: content/chapter03_spezialisierung/visualisation_2/several_lines_one_plot
-    - title: 3D Plots
+    - title: 3D Graphiken
       file: content/chapter03_spezialisierung/visualisation_2/3D_plots
+
   - title: Datenaufbereitung
     file: content/chapter03_spezialisierung/working_with_data/working_with_data_intro
     sections:
