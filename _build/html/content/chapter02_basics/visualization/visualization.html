@@ -213,6 +213,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/decision_branching.html">Bedingte Anweisungen</a></li>
 
 
+
 </ul>
 </details></li>
 </ul>
@@ -431,7 +432,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-in-einem-diagramm-darstellen">Vektoren in einem Diagramm darstellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-in-einem-diagramm-plot-darstellen">Vektoren in einem Diagramm/Plot darstellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beschriftungen-von-diagrammen">Beschriftungen von Diagrammen</a></li>
 </ul>
             </nav>
@@ -472,9 +473,9 @@
 </div>
 </details>
 </div>
-<section id="vektoren-in-einem-diagramm-darstellen">
-<h2>Vektoren in einem Diagramm darstellen<a class="headerlink" href="#vektoren-in-einem-diagramm-darstellen" title="Link to this heading">#</a></h2>
-<p>Zwei Vektoren <span class="math notranslate nohighlight">\(\texttt{x}\)</span> und <span class="math notranslate nohighlight">\(\texttt{y}\)</span> derselben Länge können mittels der Funktion <span class="math notranslate nohighlight">\(\texttt{plt.plot(x, y)}\)</span> in einem Diagramm dargestellt werden. Der Vektor <span class="math notranslate nohighlight">\(\texttt{x}\)</span> entspricht dabei den <span class="math notranslate nohighlight">\(x\)</span>- und der Vektor <span class="math notranslate nohighlight">\(\texttt{y}\)</span> den <span class="math notranslate nohighlight">\(y\)</span>-Koordinaten des Graphen.</p>
+<section id="vektoren-in-einem-diagramm-plot-darstellen">
+<h2>Vektoren in einem Diagramm/Plot darstellen<a class="headerlink" href="#vektoren-in-einem-diagramm-plot-darstellen" title="Link to this heading">#</a></h2>
+<p>Zwei Vektoren <span class="math notranslate nohighlight">\(\texttt{x}\)</span> und <span class="math notranslate nohighlight">\(\texttt{y}\)</span> derselben Länge können mittels der Funktion <span class="math notranslate nohighlight">\(\texttt{plt.plot(x, y)}\)</span> in einem Diagramm/Plot dargestellt werden. Der Vektor <span class="math notranslate nohighlight">\(\texttt{x}\)</span> entspricht dabei den <span class="math notranslate nohighlight">\(x\)</span>- und der Vektor <span class="math notranslate nohighlight">\(\texttt{y}\)</span> den <span class="math notranslate nohighlight">\(y\)</span>-Koordinaten des Graphen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">2.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
@@ -509,7 +510,7 @@
 </pre></div>
 </div>
 </div>
-<p>Sie können unter anderem die Farbe, die Linienart, sowie die Markierung innerhalb eines Diagramms angepassen.</p>
+<p>Sie können unter anderem die Farbe, die Linienart, sowie die Markierung innerhalb eines Plots angepassen.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r--o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -550,7 +551,7 @@
 </div>
 </div>
 </div>
-<p>Dieses Verhalten kann gewünscht sein, muss es aber nicht. Um Python mitzuteilen, dass Sie beide Diagramme separat darstellen wollen, können Sie den bereits bekannten Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> verwenden oder den Befehl <span class="math notranslate nohighlight">\(\texttt{plt.figure()}\)</span>, welcher Python signalisiert, dass das Diagramm in einem neuen Plot mit eigenen Achsen dargestellt werden soll.</p>
+<p>Dieses Verhalten kann gewünscht sein, muss es aber nicht. Um Python mitzuteilen, dass Sie beide Plots separat darstellen wollen, können Sie den bereits bekannten Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> verwenden oder den Befehl <span class="math notranslate nohighlight">\(\texttt{plt.figure()}\)</span>, welcher Python signalisiert, dass das Diagramm in einem neuen Plot mit eigenen Achsen dargestellt werden soll.</p>
 <p>Im besten Fall verwenden Sie beide Befehle, denn <span class="math notranslate nohighlight">\(\texttt{plt.figure}\)</span> erstellt eine leere Leinwand (außerhalb von interaktiven Programmierumgebungen ein neues Fenster) für die kommenden <span class="math notranslate nohighlight">\(\texttt{plot}\)</span>-Befehle und der Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show}\)</span> zeigt die Diagramme schließlich an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,7 +675,7 @@
 </section>
 <section id="beschriftungen-von-diagrammen">
 <h2>Beschriftungen von Diagrammen<a class="headerlink" href="#beschriftungen-von-diagrammen" title="Link to this heading">#</a></h2>
-<p>Sie können Diagrammen Beschriftungen hinzufügen, indem Sie Diagrammanmerkungsfunktionen wie <span class="math notranslate nohighlight">\(\texttt{plt.title}\)</span> verwenden. Für diese Funktionen müssen Sie Text eingeben. In Python wird Text in Anführungszeichen (<span class="math notranslate nohighlight">\(\texttt{&quot;}\)</span>) gesetzt.</p>
+<p>Sie können Diagrammen Beschriftungen hinzufügen, indem Sie Plotanmerkungsfunktionen wie <span class="math notranslate nohighlight">\(\texttt{plt.title}\)</span> verwenden. Für diese Funktionen müssen Sie Text eingeben. In Python wird Text in Anführungszeichen (<span class="math notranslate nohighlight">\(\texttt{&quot;}\)</span>) gesetzt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plot Titel&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -710,7 +711,7 @@
 </div>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Erweitern Sie den vorgegebenen Code, sodass die <span class="math notranslate nohighlight">\(y\)</span>-Achse des Diagramms mit <span class="math notranslate nohighlight">\(\texttt{&quot;durchschnittliche Besuchszahlen&quot;}\)</span> beschriftet wird.</p>
+<p>Erweitern Sie den vorgegebenen Code, sodass die <span class="math notranslate nohighlight">\(y\)</span>-Achse des Plots mit <span class="math notranslate nohighlight">\(\texttt{&quot;durchschnittliche Besuchszahlen&quot;}\)</span> beschriftet wird.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -864,7 +865,7 @@ Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{label}\)</sp
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-in-einem-diagramm-darstellen">Vektoren in einem Diagramm darstellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-in-einem-diagramm-plot-darstellen">Vektoren in einem Diagramm/Plot darstellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beschriftungen-von-diagrammen">Beschriftungen von Diagrammen</a></li>
 </ul>
   </nav></div>

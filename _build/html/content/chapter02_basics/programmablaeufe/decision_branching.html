@@ -213,6 +213,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Bedingte Anweisungen</a></li>
 
 
+
 </ul>
 </details></li>
 </ul>
@@ -440,10 +441,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-erneuerbare-energien">Beispiel - Erneuerbare Energien</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#match-anweisung">match-Anweisung</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exkurs-vorzeitiges-beenden-einer-schleife-uber-if-anweisungen">Exkurs: Vorzeitiges Beenden einer Schleife über if-Anweisungen</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exkurs-vorzeitiges-beenden-einer-schleife-uber-if-anweisungen">Exkurs: Vorzeitiges Beenden einer Schleife über if-Anweisungen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#match-anweisung">match-Anweisung</a></li>
 </ul>
 
             </nav>
@@ -757,14 +756,14 @@ Aufgabe 2.4</label><div class="sd-tab-content docutils">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># zufälliges Einkommen generieren</span>
-<span class="n">einkommen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">))</span> 
+<span class="n">einkommen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300000</span><span class="p">)</span>
 
 <span class="c1"># Ihr Code </span>
 <span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einkommen:&quot;</span><span class="p">,</span> <span class="n">einkommen</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Steuersatz:&quot;</span><span class="p">,</span> <span class="n">steuersatz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einkommen: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">einkommen</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Steuersatz: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">steuersatz</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -825,14 +824,14 @@ Aufgabe 2.4</label><div class="sd-tab-content docutils">
 <span class="k">else</span><span class="p">:</span> 
     <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.45</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Steuerbetrag:&quot;</span><span class="p">,</span> <span class="n">einkommen</span> <span class="o">*</span> <span class="n">steuersatz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Steuerbetrag: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">einkommen</span> <span class="o">*</span> <span class="n">steuersatz</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="beispiel-erneuerbare-energien">
 <h2>Beispiel - Erneuerbare Energien<a class="headerlink" href="#beispiel-erneuerbare-energien" title="Link to this heading">#</a></h2>
-<p>An dieser Stellen wollen wir nochmal den Anteil erneuerbarer Energien am Gesamtenergieverbrauch für verschiedene Länder graphisch darstellen. Den Datensatz haben Sie bereits im Kapitel zu <a class="reference internal" href="for_loops.html"><span class="std std-doc">for Schleifen</span></a> kennengelernt. Die gegebenen Daten sind:</p>
+<p>An dieser Stellen wollen wir nochmal den Anteil erneuerbarer Energien am Gesamtenergieverbrauch für verschiedene Länder graphisch darstellen. Den Datensatz haben Sie bereits im Kapitel zu <a class="reference internal" href="for_loops.html"><span class="std std-doc">for-Schleifen</span></a> kennengelernt. Die gegebenen Daten sind:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\texttt{years}\)</span> - NumPy-Array, welches die Jahre 2005 bis 2023 enthält</p></li>
 <li><p><span class="math notranslate nohighlight">\(\texttt{countries}\)</span> - NumPy-Array, welche die verschiedenen Länder enthält</p></li>
@@ -889,9 +888,9 @@ Aufgabe 2.4</label><div class="sd-tab-content docutils">
 </div>
 </details>
 </div>
-<p>Allerdings wollen wir nun, der Nutzerin basierend auf ihren Eingaben, eine Rückmeldung geben. In dieser Übung sollen Sie die Nutzerin informieren, falls keine Daten für das gewählte Land vorliegen oder Werte im Datensatz des Landes fehlen.</p>
+<p>Basierend auf den Eingaben der Nutzerin wollen wir ihr eine unmittelbare Rückmeldung anzeigen. In dieser Übung sollen Sie die Nutzerin informieren, falls keine Daten für das gewählte Land vorliegen oder Werte im Datensatz des Landes fehlen.</p>
 <p><strong>Fehlende Datensätze für Länder</strong></p>
-<p>Um zu überprüfen, ob ein bestimmtes Element – in diesem Fall ein Land – überhaupt im Datensatz enthalten ist, können Sie den Operator <span class="math notranslate nohighlight">\(\texttt{in}\)</span> verwenden. Damit lässt sich feststellen, ob ein gesuchtes Element in einem Array vorkommt. Der Ausdruck <span class="math notranslate nohighlight">\(\texttt{x in array}\)</span> liefert einen Wahrheitswert (<span class="math notranslate nohighlight">\(\texttt{True}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{False}\)</span>) und gibt somit lediglich an, ob das Element enthalten ist – nicht wo.</p>
+<p>Um zu überprüfen, ob ein bestimmtes Element – in diesem Fall ein Land – überhaupt im Datensatz enthalten ist, können Sie den Operator <span class="math notranslate nohighlight">\(\texttt{in}\)</span> verwenden. Damit lässt sich feststellen, ob ein gesuchtes Element in einem Array vorkommt. Der Ausdruck <span class="math notranslate nohighlight">\(\texttt{x in array}\)</span> liefert einen Wahrheitswert (<span class="math notranslate nohighlight">\(\texttt{True}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{False}\)</span>) und gibt somit an, ob das Element enthalten ist, aber nicht wo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obstkorb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;Apfel&quot;</span><span class="p">,</span> <span class="s2">&quot;Banane&quot;</span><span class="p">,</span> <span class="s2">&quot;Kiwi&quot;</span><span class="p">])</span>
@@ -911,13 +910,13 @@ Für fehlende Werte (<span class="math notranslate nohighlight">\(\texttt{nan}\)
 <input checked="checked" id="sd-tab-item-11" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-11">
 Aufgabe 3.1</label><div class="sd-tab-content docutils">
-<p>Prüfen Sie ob für das Land <span class="math notranslate nohighlight">\(\texttt{ctry}\)</span> überhaupt ein Datensatz existiert, das heißt ob <span class="math notranslate nohighlight">\(\texttt{ctry}\)</span> ein Element von <span class="math notranslate nohighlight">\(\texttt{countries}\)</span> ist. Falls nicht, geben Sie eine Fehlermeldung mit <span class="math notranslate nohighlight">\(\texttt{raise Exception(errMsg)}\)</span> aus.
+<p>Prüfen Sie ob für das Land <span class="math notranslate nohighlight">\(\texttt{ctry}\)</span> im Datensatz vorhanden ist, das heißt ob <span class="math notranslate nohighlight">\(\texttt{ctry}\)</span> ein Element von <span class="math notranslate nohighlight">\(\texttt{countries}\)</span> ist. Falls nicht, geben Sie eine Fehlermeldung mit <span class="math notranslate nohighlight">\(\texttt{raise Exception(errMsg)}\)</span> aus.
 Testen Sie Ihren Code für <span class="math notranslate nohighlight">\(\texttt{&quot;Canada&quot;}\)</span>.</p>
 </div>
 <input id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-12">
 Aufgabe 3.2</label><div class="sd-tab-content docutils">
-<p>Prüfen Sie on Werte in den Daten zum Anteil erneuerbarer Energien eines Landes fehlen (<span class="math notranslate nohighlight">\(\texttt{nan}\)</span>-Werte). Falls ja, soll die Warnmeldung <span class="math notranslate nohighlight">\(\texttt{warnMsg}\)</span> als Warnung mit <span class="math notranslate nohighlight">\(\texttt{print()}\)</span> ausgegeben werden. Testen Sie Ihren Code für <span class="math notranslate nohighlight">\(\texttt{ctry = &quot;Norway&quot;}\)</span>.</p>
+<p>Prüfen Sie, ob Werte in den Daten zum Anteil erneuerbarer Energien eines Landes fehlen (<span class="math notranslate nohighlight">\(\texttt{nan}\)</span>-Werte). Falls ja, soll die Warnmeldung <span class="math notranslate nohighlight">\(\texttt{warnMsg}\)</span> als Warnung mit <span class="math notranslate nohighlight">\(\texttt{print()}\)</span> ausgegeben werden. Testen Sie Ihren Code für <span class="math notranslate nohighlight">\(\texttt{ctry = &quot;Norway&quot;}\)</span>.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -931,7 +930,7 @@ Aufgabe 3.2</label><div class="sd-tab-content docutils">
 <span class="n">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Daten für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot; fehlen!&quot;</span>
 
 <span class="c1"># Ihr Code</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">my_ctry</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ctry</span><span class="p">)</span>
 <span class="n">ctry_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -983,7 +982,7 @@ Aufgabe 3.2</label><div class="sd-tab-content docutils">
 <span class="n">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Daten für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot; fehlen!&quot;</span>
 
 <span class="k">if</span> <span class="n">ctry</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ctry</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ctry</span><span class="p">)</span>
     <span class="n">ctry_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span>
 
     <span class="k">if</span><span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ctry_data</span><span class="p">))):</span>
@@ -1001,6 +1000,68 @@ Aufgabe 3.2</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exkurs-vorzeitiges-beenden-einer-schleife-uber-if-anweisungen">
+<h1>Exkurs: Vorzeitiges Beenden einer Schleife über if-Anweisungen<a class="headerlink" href="#exkurs-vorzeitiges-beenden-einer-schleife-uber-if-anweisungen" title="Link to this heading">#</a></h1>
+<p>Neben dem automatischen Beenden einer while-Schleife durch das Erreichen der Abbruchbedingung gibt es die Möglichkeiten eine Schleife mit if-Anweisungen gezielt vorzeitig zu verlassen oder zu beeinflussen. Dazu zählen insbesondere die Anweisungen <span class="math notranslate nohighlight">\(\texttt{break}\)</span>, <span class="math notranslate nohighlight">\(\texttt{return}\)</span> und <span class="math notranslate nohighlight">\(\texttt{continue}\)</span>. Sie bieten eine individuelle Kontrolle über den Schleifenablauf.</p>
+<ul class="simple">
+<li><p>Mit <span class="math notranslate nohighlight">\(\texttt{break}\)</span> kann die Schleife <strong>sofort beendet</strong> werden, unabhängig davon, ob die Bedingung noch erfüllt ist.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{return}\)</span> verlässt die aktuelle Funktion (und damit auch eine eventuelle Schleife darin) direkt und gibt optional einen Wert zurück.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{continue}\)</span> überspringt den Rest des aktuellen Schleifendurchlaufs und beginnt direkt mit der <strong>nächsten Iteration</strong>.</p></li>
+</ul>
+<p>Solche Mechanismen können über if-Anweisungen integriert werden und sind besonders nützlich, wenn <strong>Sonderfälle</strong> behandelt werden müssen.</p>
+<p>Wir betrachten folgendes Beispiel:
+Ein Spieler würfelt so lange, bis die Summe aller Augenzahlen den Wert 21 überschreitet.
+Falls er zwischendurch eine 6 würfelt, endet das Spiel sofort, und er bekommt 21 Punkte.
+Ansonsten erhält er als Punktzahl die aktuelle Summe minus 21.</p>
+<p>Der Sonderfall, dass das Spiel sofort endet sobald eine 6 gewürfelt wird, kann mit Hilfe des Befehls <span class="math notranslate nohighlight">\(\texttt{break}\)</span> und einer if-Anweisung erzielt werden. Der folgende Code simuliert genau dieses Beispiel. Mit <span class="math notranslate nohighlight">\(\texttt{np.random.randint(1,7)}\)</span> wird eine zufällige ganze Zahl zwischen <span class="math notranslate nohighlight">\(1\)</span> und <span class="math notranslate nohighlight">\(6\)</span> generiert. Diese Ausdruck simuliert demnach den Würfelwurf.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">kumulative_augensumme</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="n">wurf_aug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wurf: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">wurf_aug</span><span class="p">))</span>
+    
+    <span class="k">if</span> <span class="n">wurf_aug</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">punktzahl</span> <span class="o">=</span> <span class="mi">21</span>
+        <span class="k">break</span>
+    
+    <span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="n">kumulative_augensumme</span> <span class="o">+</span> <span class="n">wurf_aug</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Diese Zeile wird nur ausgeführt, wenn break nicht eintritt</span>
+    <span class="n">punktzahl</span> <span class="o">=</span> <span class="n">kumulative_augensumme</span> <span class="o">-</span> <span class="mi">21</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punktzahl:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">punktzahl</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternativ kann das Würfelspiel über eine Funktion und der Sonderfall mit Hilfe des Befehls <span class="math notranslate nohighlight">\(\texttt{return}\)</span> und einer if-Anweisung simuliert werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wuerfelspiel</span><span class="p">():</span>
+    <span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">while</span> <span class="n">kumulative_augensumme</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
+        <span class="n">wurf_aug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wurf: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">wurf_aug</span><span class="p">))</span>
+        
+        <span class="k">if</span> <span class="n">wurf_aug</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">21</span>
+        
+        <span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="n">kumulative_augensumme</span> <span class="o">+</span> <span class="n">wurf_aug</span>
+
+    <span class="k">return</span> <span class="n">kumulative_augensumme</span> <span class="o">-</span> <span class="mi">21</span>
+
+<span class="c1"># Spiel starten</span>
+<span class="n">punktzahl</span> <span class="o">=</span> <span class="n">wuerfelspiel</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punktzahl:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">punktzahl</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="match-anweisung">
 <h1>match-Anweisung<a class="headerlink" href="#match-anweisung" title="Link to this heading">#</a></h1>
@@ -1093,85 +1154,6 @@ if-elif-else-Anweisung</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<section id="exkurs-vorzeitiges-beenden-einer-schleife-uber-if-anweisungen">
-<h2>Exkurs: Vorzeitiges Beenden einer Schleife über if-Anweisungen<a class="headerlink" href="#exkurs-vorzeitiges-beenden-einer-schleife-uber-if-anweisungen" title="Link to this heading">#</a></h2>
-<p>Neben dem automatischen Beenden einer while-Schleife durch das Erreichen der Abbruchbedingung gibt es weitere Möglichkeiten, eine Schleife mit if-Anweisungen <strong>gezielt vorzeitig</strong> zu verlassen oder zu beeinflussen. Dazu zählen insbesondere die Anweisungen <span class="math notranslate nohighlight">\(\texttt{break}\)</span>, <span class="math notranslate nohighlight">\(\texttt{return}\)</span> und <span class="math notranslate nohighlight">\(\texttt{continue}\)</span>. Sie bieten eine individuelle Kontrolle über den Schleifenablauf.</p>
-<ul class="simple">
-<li><p>Mit <span class="math notranslate nohighlight">\(\texttt{break}\)</span> kann die Schleife <strong>sofort beendet</strong> werden, unabhängig davon, ob die Bedingung noch erfüllt ist.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\texttt{return}\)</span> verlässt die <strong>aktuelle Funktion</strong> (und damit auch eine eventuelle Schleife darin) direkt und gibt optional einen Wert zurück.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\texttt{continue}\)</span> <strong>überspringt</strong> den Rest des aktuellen Schleifendurchlaufs und beginnt direkt mit der <strong>nächsten Iteration</strong>.</p></li>
-</ul>
-<p>Solche Mechanismen können über if-Anweisungen integriert werden und sind besonders nützlich, wenn <strong>Sonderfälle</strong> behandelt werden müssen.</p>
-<p>Wir betrachten folgendes Beispiel:
-Ein Spieler würfelt so lange, bis die Summe aller Augenzahlen den Wert 21 überschreitet.
-Falls er zwischendurch eine 6 würfelt, endet das Spiel sofort, und er bekommt 21 Punkte.
-Ansonsten erhält er als Punktzahl die aktuelle Summe minus 21.</p>
-<p>Der Sonderfall, dass das Spiel sofort endet sobald eine 6 gewürfelt wird, kann mit Hilfe des Befehls <span class="math notranslate nohighlight">\(\texttt{break}\)</span> und einer if-Anweisung erzielt werden. Der folgende Code simuliert genau dieses Beispiel. Mit <span class="math notranslate nohighlight">\(\texttt{np.random.randint(1,7)}\)</span> wird eine zufällige ganze Zahl zwischen <span class="math notranslate nohighlight">\(1\)</span> und <span class="math notranslate nohighlight">\(6\)</span> generiert. Diese Ausdruck simuliert demnach den Würfelwurf.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">kumulative_augensumme</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
-    <span class="n">wurf_aug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wurf: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">wurf_aug</span><span class="p">))</span>
-    
-    <span class="k">if</span> <span class="n">wurf_aug</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="n">punktzahl</span> <span class="o">=</span> <span class="mi">21</span>
-        <span class="k">break</span>
-    
-    <span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="n">kumulative_augensumme</span> <span class="o">+</span> <span class="n">wurf_aug</span>
-
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># Diese Zeile wird nur ausgeführt, wenn break nicht eintritt</span>
-    <span class="n">punktzahl</span> <span class="o">=</span> <span class="n">kumulative_augensumme</span> <span class="o">-</span> <span class="mi">21</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punktzahl:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">punktzahl</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wurf: 4
-Wurf: 2
-Wurf: 5
-Wurf: 4
-Wurf: 3
-Wurf: 4
-Punktzahl: 1
-</pre></div>
-</div>
-</div>
-</div>
-<p>Alternativ kann das Würfelspiel über eine Funktion simuliert werden und mir Hilfe des Befehls <span class="math notranslate nohighlight">\(\texttt{return}\)</span> und einer if-Anweisung der Sonderfall simuliert werden.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wuerfelspiel</span><span class="p">():</span>
-    <span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">while</span> <span class="n">kumulative_augensumme</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
-        <span class="n">wurf_aug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wurf: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">wurf_aug</span><span class="p">))</span>
-        
-        <span class="k">if</span> <span class="n">wurf_aug</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mi">21</span>
-        
-        <span class="n">kumulative_augensumme</span> <span class="o">=</span> <span class="n">kumulative_augensumme</span> <span class="o">+</span> <span class="n">wurf_aug</span>
-
-    <span class="k">return</span> <span class="n">kumulative_augensumme</span> <span class="o">-</span> <span class="mi">21</span>
-
-<span class="c1"># Spiel starten</span>
-<span class="n">punktzahl</span> <span class="o">=</span> <span class="n">wuerfelspiel</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Punktzahl:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">punktzahl</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wurf: 6
-Punktzahl: 21
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1248,10 +1230,8 @@ Punktzahl: 21
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-erneuerbare-energien">Beispiel - Erneuerbare Energien</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#match-anweisung">match-Anweisung</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exkurs-vorzeitiges-beenden-einer-schleife-uber-if-anweisungen">Exkurs: Vorzeitiges Beenden einer Schleife über if-Anweisungen</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exkurs-vorzeitiges-beenden-einer-schleife-uber-if-anweisungen">Exkurs: Vorzeitiges Beenden einer Schleife über if-Anweisungen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#match-anweisung">match-Anweisung</a></li>
 </ul>
 
   </nav></div>
