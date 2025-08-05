@@ -1,0 +1,1121 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Arrayerstellung &#8212; Python Programmierkurs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter03_spezialisierung/arrays_2/arrayerstellung';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Arrays zusammenfügen" href="concatenating_arrays.html" />
+    <link rel="prev" title="Arrays II" href="arrays_2_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../chapter01_einfuehrung/vorwort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/Logo_UMA.png" class="logo__image only-light" alt="Python Programmierkurs - Home"/>
+    <script>document.write(`<img src="../../../_static/Logo_UMA.png" class="logo__image only-dark" alt="Python Programmierkurs - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">
+                    Vorwort
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/befehle/befehle_intro.html">Grundlegende Konzepte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/befehle/befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/befehle/python_pakete.html">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/arrays/array_intro.html">Arrays I</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/indizierung.html">Indizierung von Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/rechnen_mit_arrays.html">Rechnen mit Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/arrays/logische_arrays.html">Logische Indizierung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/visualization/visualization_intro.html">Visualisierung I</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/visualization/visualization.html">Daten plotten</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/functions/funktionsaufrufe.html">Funktionsaufrufe und -rückgaben</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/functions/funktionen_schreiben.html">Funktionen definieren</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter02_basics/programmablaeufe/intro.html">Programmierkonstrukte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/programmablaeufe/while_loops.html">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/programmablaeufe/for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter02_basics/programmablaeufe/decision_branching.html">Bedingte Anweisungen</a></li>
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../debugging/error_signs.html">Fehlermeldungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../debugging/analysing_code.html">Fehlersuche</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vektorisierung/intro.html">Effizienter Code</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vektorisierung/efficiency.html">Vektorisierung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="arrays_2_intro.html">Arrays II</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping_arrays.html">Arrays umformen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation_2/advanced_2D_plots.html">Graphiken individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation_2/several_lines_one_plot.html">Diagramme mit mehreren Graphen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualisation_2/3D_plots.html">3D Graphiken</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../working_with_data/working_with_data_intro.html">Datenaufbereitung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_data/organizing_data_in_table.html">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_data/organizing_data_in_table_2.html">Tabellen auslesen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/chapter03_spezialisierung/arrays_2/arrayerstellung.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Arrayerstellung</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-der-matrix-und-vektor-funktionen">Übersicht der Matrix- und Vektor-Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellen-von-vektoren">Erstellen von Vektoren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-zufallsmatrizen">Erstellung von Zufallsmatrizen</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="arrayerstellung">
+<h1>Arrayerstellung<a class="headerlink" href="#arrayerstellung" title="Link to this heading">#</a></h1>
+<p>In den <a class="reference internal" href="../../chapter02_basics/arrays/arrayerstellung.html"><span class="std std-doc">Grundlagen zur Arrayserstellung</span></a> haben Sie bereits einige Möglichkeiten kennengelernt, um Arrays zu erzeugen. Insbesondere Methoden zur manuellen Arrayerstellung, Erstellung von Vektoren mit gleichmäßigen Abständen und Arrayerstellung mit Hilfe von Funktionen.</p>
+<p>In diesem Kapitel sollen Sie die gelernten Aspekte wiederholen, um diese elementaren Operationen zu festigen und im nächten Kapitel zu vertiefen.</p>
+<section id="manuelle-arrayerstellung">
+<h2>Manuelle Arrayerstellung<a class="headerlink" href="#manuelle-arrayerstellung" title="Link to this heading">#</a></h2>
+<p>Zunächst wiederholen Sie, wie man manuell Arrays erstellt.</p>
+<div class="admonition-aufgabe-1-1 admonition">
+<p class="admonition-title">Aufgabe 1.1</p>
+<p>Erstellen Sie einen Vektor mit dem Namen <span class="math notranslate nohighlight">\(x\)</span> mit den Elementen <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(\sin(\pi)\)</span> und <span class="math notranslate nohighlight">\(\sqrt{36}\)</span>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.array}\)</span> und eckige Klammern (<span class="math notranslate nohighlight">\(\texttt{[]}\)</span>), um den Vektor zu erstellen. Die verwendeten Funktionen und Werte könne Sie mittels <span class="math notranslate nohighlight">\(\texttt{np.sin}\)</span>, <span class="math notranslate nohighlight">\(\texttt{np.pi}\)</span> und  <span class="math notranslate nohighlight">\(\texttt{np.sqrt}\)</span> ausdrücken. Vergessen Sie nicht, die notwendigen Pakete zu importieren.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">36</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-aufgabe-1-2 admonition">
+<p class="admonition-title">Aufgabe 1.2</p>
+<p>Erstellen Sie eine Matrix mit dem Namen <span class="math notranslate nohighlight">\(A\)</span> und diesen Werten:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        1 &amp; 2 &amp; 3 &amp; 4\\
+        5 &amp; 6 &amp; 7 &amp; 8
+    \end{pmatrix}.
+\end{split}\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.array}\)</span> und eckige Klammern (<span class="math notranslate nohighlight">\(\texttt{[[],[]]}\)</span>), um die Matrix zu erstellen</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="vektoren-mit-werten-in-gleichmaszigen-abstanden">
+<h2>Vektoren mit Werten in gleichmäßigen Abständen<a class="headerlink" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden" title="Link to this heading">#</a></h2>
+<p><span style="color:red"> Hier bitte nochmal drübergucken. Entweder Widerholung entfernen oder nicht die Matrix A als einleitendens Beispiel nehmen.</span></p>
+<p>Die erste Spalte von <span class="math notranslate nohighlight">\(A\)</span> kann mit Hilfe von in NumPy enthaltenen Funktionen erzeugt werden, statt sie manuell einzutippen. Die Aufgaben dieses Abschnitts sollen zur Wiederholung dieser Funktionen gelten.</p>
+<div class="admonition-aufgabe-2-1 admonition">
+<p class="admonition-title">Aufgabe 2.1</p>
+<p>Speichern Sie die erste Zeile von <span class="math notranslate nohighlight">\(A\)</span> in dem Vektor <span class="math notranslate nohighlight">\(\texttt{A_zeile1}\)</span>. mit Hilfe von in NumPy enthaltenen Funktionen.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Nutzen Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.arange(startwert, endwert)}\)</span>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_zeile1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_zeile1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-aufgabe-2-2 admonition">
+<p class="admonition-title">Aufgabe 2.2</p>
+<p>Erstellen Sie den Vektor <span class="math notranslate nohighlight">\(\texttt{x_absteigend}\)</span> mit den Werten</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        55 &amp; 52 &amp; 49 &amp; 46 &amp; 43 &amp; 40\\
+    \end{pmatrix}
+\end{split}\]</div>
+<p>mit Hilfe von in NumPy enthaltenen Funktionen.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Nutzen Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.arange(startwert, endwert, abstand)}\)</span>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_absteigend</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_absteigend</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-aufgabe-2-3 admonition">
+<p class="admonition-title">Aufgabe 2.3</p>
+<p>Erstellen Sie den Vektor <span class="math notranslate nohighlight">\(\texttt{x_pi}\)</span>, welcher ein <span class="math notranslate nohighlight">\(-\pi\)</span> startet, bei <span class="math notranslate nohighlight">\(3\pi\)</span> endet. Der Vektor soll <span class="math notranslate nohighlight">\(50\)</span> Elemente enthalten und der Abstand zwischen zwei benachbarten Einträgen soll konstant sein.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Nutzen Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.linspace(startwert, endwert, anzahl_elemente)}\)</span>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">x_pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Die Funktionen <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.linspace}\)</span>, sind sehr nützliche Funktionen, um eine regelmäßige Zahlenfolgen zu erzeugen.</p>
+<p><span style="color:red"> Ich verstehe die nachfolgende Frage nicht. Was ist das Ziel/die Intention? Genauso Aufgabe 2.4.</span></p>
+<p>Was erwarten Sie, wenn Sie die Funktion dazu zwingen nur einen Wert auszugeben? Bevor sie die nächste Aufgabe bearbeiten, stellen Sie eine Vermutung auf, wie das Ergebnis aussehen wird. Stimmt Ihre Vermutung mit der tatsächlichen Ausgabe überein?</p>
+<div class="admonition-aufgabe-2-4 admonition">
+<p class="admonition-title">Aufgabe 2.4</p>
+<p>Erstellen Sie mit <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> einen Vektor <span class="math notranslate nohighlight">\(\texttt{x_arange_1element}\)</span>, dessen Elemente bei <span class="math notranslate nohighlight">\(0\)</span> beginnen, bei <span class="math notranslate nohighlight">\(10\)</span> enden und jeweils durch einen Abstand von <span class="math notranslate nohighlight">\(15\)</span> getrennt sind.</p>
+<p>Erstellen Sie weiterhin einen Vektor <span class="math notranslate nohighlight">\(\texttt{x_linspace_1element}\)</span>, der bei <span class="math notranslate nohighlight">\(0\)</span> beginnt, bei <span class="math notranslate nohighlight">\(10\)</span> endet und der nur <span class="math notranslate nohighlight">\(1\)</span> Element enthält.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_arange_1element</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">x_linspace_1element</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x_arange_1element =&quot;</span><span class="p">,</span> <span class="n">x_arange_1element</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x_linspace_1element =&quot;</span><span class="p">,</span> <span class="n">x_linspace_1element</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="arrayerstellung-mittels-funktionen">
+<h2>Arrayerstellung mittels Funktionen<a class="headerlink" href="#arrayerstellung-mittels-funktionen" title="Link to this heading">#</a></h2>
+<p>Um Matrizen mit gewisser Struktur zu erzeugen, haben Sie bereits einige Methoden kennengelernt, zum Beispiel <span class="math notranslate nohighlight">\(\texttt{np.zeros()}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.ones()}\)</span>. In der Numerik benötigen wir häufig die Einhheitsmatrix sowie Diagonal- und Dreieckmatrizen. Auch für solche Matrizen stellt NumPy entsprechende Funktionen zur Erstellung bereit. Wir beginnen mit der Einheitsmatrix.
+Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> erstellt man eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale Einheitsmatrix.</p>
+<div class="admonition-aufgabe-3-1 admonition">
+<p class="admonition-title">Aufgabe 3.1</p>
+<p>Erstellen Sie die <span class="math notranslate nohighlight">\((4 \times 4)\)</span> Matrix <span class="math notranslate nohighlight">\(\texttt{A_nur5}\)</span>, bei der jeder Eintrag die Zahl <span class="math notranslate nohighlight">\(5\)</span> ist. Berechnen Sie anschließend mit Hilfe der erstellten Matrix <span class="math notranslate nohighlight">\(\texttt{A_nur5}\)</span>, die Matrix <span class="math notranslate nohighlight">\(\texttt{A_nur45}\)</span>, bei der alle Einträge <span class="math notranslate nohighlight">\(5\)</span> sind außer die Diagonaleinträge. Diese enthalten den Wert <span class="math notranslate nohighlight">\(4\)</span>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.ones(zeilen, spalten)}\)</span> und multiplizieren Sie die Matrix mit dem passenden Faktor. Nutzen Sie anschließend <span class="math notranslate nohighlight">\(\texttt{np.eye(dimension)}\)</span>, um von jedem Diagonaleintrag <span class="math notranslate nohighlight">\(1\)</span> abzuziehen.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_nur5</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">A_nur45</span> <span class="o">=</span> <span class="n">A_nur5</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_nur45</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Nun schauen wir uns Diagonalmatrizen an. Diese können Sie in NumPy mit dem Befehl <span class="math notranslate nohighlight">\(\texttt{np.diag}\)</span> erzeugen. Der Code <span class="math notranslate nohighlight">\(\texttt{np.diag([1, 2, 3])}\)</span> erstellt eine <span class="math notranslate nohighlight">\((3 \times 3)\)</span> Diagonalmatrix, mit den Einträgen <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span> und <span class="math notranslate nohighlight">\(3\)</span> auf der Diagonalen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-3-2 admonition">
+<p class="admonition-title">Aufgabe 3.2</p>
+<p>Erstellen Sie die Matrix <span class="math notranslate nohighlight">\(\texttt{A_diagonal}\)</span> mit den Werten:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        12 &amp; 0 &amp; 0 &amp; 0\\
+        0 &amp; -3 &amp; 0 &amp; 0\\
+        0 &amp; 0 &amp; 3 &amp; 0\\
+        0 &amp; 0 &amp; 0 &amp; 0
+    \end{pmatrix}.
+\end{split}\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_diagonal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_diagonal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Zudem gibt es Methoden obere und untere Dreiecksmatrizen zu erzeugen. Die FUnktion <span class="math notranslate nohighlight">\(\texttt{np.tri(n)}\)</span> erstellt eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale untere Dreiecksmatrix mit <span class="math notranslate nohighlight">\(1\)</span> auf und unterhalb der Diagonalen. Der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.triu(A)}\)</span> transformiert eine quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine obere Dreiecksmatrix, indem er alle Einträge unterhalb der Diagonalen auf <span class="math notranslate nohighlight">\(0\)</span> setzt. Analog transformiert die Funktion <span class="math notranslate nohighlight">\(\texttt{np.tril(A)}\)</span> die quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine untere Dreiecksmatrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Matrix aus A3.1</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
+
+<span class="c1"># löscht alle Einträge oberhalb der Diagonalen</span>
+<span class="n">A_untere_dreieck</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tril</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">A_untere_dreieck</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-3-3 admonition">
+<p class="admonition-title">Aufgabe 3.3</p>
+<p>Erstellen Sie die Matrix  <span class="math notranslate nohighlight">\(\texttt{A_kein_dreieck}\)</span> mit den Werten:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 
+        3 &amp; 2 &amp; 2\\
+        1 &amp; 3 &amp; 2\\
+        1 &amp; 1 &amp; 3
+    \end{pmatrix}.
+\end{split}\]</div>
+<p>Nutzen Sie dabei die Summe zweier Dreiecksmatrizen.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie  <span class="math notranslate nohighlight">\(\texttt{np.tri}\)</span>, um eine untere Dreiecksmatrix zu erstellen, und  <span class="math notranslate nohighlight">\(\texttt{np.ones}\)</span> sowie  <span class="math notranslate nohighlight">\(\texttt{np.triu}\)</span>, um eine obere Dreiecksmatrix zu erstellen.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_tri</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tri</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">A_obere_dreieck</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">A_kein_dreieck</span> <span class="o">=</span> <span class="n">A_tri</span> <span class="o">+</span> <span class="n">A_obere_dreieck</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_kein_dreieck</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Neben Funktionen, die strukturierte Matrizen erzeugen, gibt es auch Funktionen, die Matrizen mit zufälligen Einträgen erstellen. Eine solche Funktion haben Sie bereits bei den Grundlagen zur Arrayserstellung kennen gelernt: <span class="math notranslate nohighlight">\(\texttt{np.random.rand}\)</span>. Diese Funktion generiert gleichverteilte Zufallszahlen im Intervall <span class="math notranslate nohighlight">\([0,1]\)</span>. Zudem existiert die Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.randn}\)</span>, welche standardnormalverteilte Zufallszahlen erzeugt. Zum Beispiel der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.random.randn(3,2)}\)</span> erstellt eine <span class="math notranslate nohighlight">\((3 \times 2)\)</span> Matrix mit standardnormalverteilten Einträgen.</p>
+<div class="admonition-aufgabe-3-4 admonition">
+<p class="admonition-title">Aufgabe 3.4</p>
+<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix  <span class="math notranslate nohighlight">\(\texttt{A_uniform}\)</span>, die zufällig gleichverteilte Einträge zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> annimmt, sowie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix  <span class="math notranslate nohighlight">\(\texttt{A_normal}\)</span>, die standardnormalverteilte Zufallszahlen beinhaltet. Vergleichen Sie die maximalen Einträge beider Matrizen.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie die Funktionen  <span class="math notranslate nohighlight">\(\texttt{np.random.rand}\)</span> und  <span class="math notranslate nohighlight">\(\texttt{np.random.randn}\)</span>, um die Matrizen zu erzeugen. Nutzen Sie anschließend  <span class="math notranslate nohighlight">\(\texttt{.max()}\)</span>, um den maximalen Wert zu extrahieren.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_uniform</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">A_normal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der maximale Wert der uniform verteilten Matrix ist&#39;</span><span class="p">,</span> <span class="n">A_uniform</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;und der der gleichverteilten ist&#39;</span><span class="p">,</span> <span class="n">A_normal</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="c1"># Beobachtung: Der gleichverteilte maximale Wert ist nahe bei 1, der normalverteilte deutlich über 1.</span>
+</pre></div>
+</div>
+</div>
+<p>Für manche Anwendung möchte man zufällige ganze Zahlen erzeugen. Auch dafür bietet NumPy eine Funktion: die Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.randint}\)</span>, welche 3 Eingabeparameter hat:</p>
+<div class="math notranslate nohighlight">
+\[
+\texttt{np.random.randint(min_wert, max_wert, size)}
+\]</div>
+<p>Die Funktion gibt nun ein Array der Größe  <span class="math notranslate nohighlight">\(\texttt{size}\)</span> aus, welche gleichmäßig verteilte ganze Zahlen aus dem Intervall <span class="math notranslate nohighlight">\([\texttt{min_wert},\texttt{max_wert})\)</span> als Einträge besitzt. Der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.random.randint(0, 10, (2,3))}\)</span> erzeugt eine <span class="math notranslate nohighlight">\((2 \times 3)\)</span> Matrix, die nur ganze Zahlen zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(9\)</span> annimmt. Beachten Sie auch hier wieder, dass die obere Grenze, die man angibt nicht angenommen wird.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_randint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_randint</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-3-5 admonition">
+<p class="admonition-title">Aufgabe 3.5</p>
+<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <span class="math notranslate nohighlight">\(\texttt{A_ganzzahlig}\)</span>, die zufällige ganzzahlige Einträge zwischen <span class="math notranslate nohighlight">\(-3\)</span> und <span class="math notranslate nohighlight">\(4\)</span> annimmt. Betrachten Sie anschließend den maximalen Wert der Matrix.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_ganzzahlig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der maximale Wert der gleichverteilten, ganzzahligen Matrix ist&#39;</span><span class="p">,</span> <span class="n">A_ganzzahlig</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Möchten Sie Zahlen innerhalb des Intervalls <span class="math notranslate nohighlight">\([\texttt{min_wert},\texttt{max_wert})\)</span> erzeugen, die nicht zwingend ganzzahlig sind, können Sie auf die bereits bekannte Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.rand}\)</span> zurückgreifen. Dabei müssen die so erzeugten Zufallszahlen geeignet skaliert werden. Dies erreichen sie mit Hilfe der Tansformation</p>
+<div class="math notranslate nohighlight">
+\[\texttt{min_wert + (max_wert - min_wert) * np.random.rand(m,n)}.\]</div>
+<p>Der Code  <span class="math notranslate nohighlight">\(\texttt{4 + (12 - 4) * np.random.rand(3,2)}\)</span> erzeugt eine <span class="math notranslate nohighlight">\((3 \times 2)\)</span> Matrix, die beliebige rationale Zahlen zwischen <span class="math notranslate nohighlight">\(4\)</span> und <span class="math notranslate nohighlight">\(12\)</span> annimmt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erzeugt 3 x 2 Matrix mit beliebigen rationalen Zahlen zwischen 4 und 12</span>
+<span class="n">A_rational</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="p">(</span><span class="mi">12</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A_rational</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-3-6 admonition">
+<p class="admonition-title">Aufgabe 3.6</p>
+<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <span class="math notranslate nohighlight">\(\texttt{A_nicht_ganzzahlig}\)</span>, die zufällige rationale Einträge zwischen <span class="math notranslate nohighlight">\(-3\)</span> und <span class="math notranslate nohighlight">\(4\)</span> annimmt. Betrachten Sie anschließend den maximalen Wert der Matrix.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.random.rand}\)</span> und skalieren Sie diese geeignet, um die Matrix zu erzeugen. Nutzen Sie anschließend <span class="math notranslate nohighlight">\(\texttt{.max()}\)</span>, um den maximalen Wert zu extrahieren.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_nicht_ganzzahlig</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der maximale Wert der gleichverteilten, rationalen Matrix ist&#39;</span><span class="p">,</span> <span class="n">A_nicht_ganzzahlig</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Nach einem ähnlichen Vorgehen können Sie normalverteilte Zufallszahlen mit Erwartungsert <span class="math notranslate nohighlight">\(\texttt{nu}\)</span> und Standardabweichung <span class="math notranslate nohighlight">\(\texttt{sigma}\)</span> generieren. Dazu verwenden wir erneut <span class="math notranslate nohighlight">\(\texttt{np.random.randn}\)</span> und skalieren mit der folgenden Transformation:</p>
+<div class="math notranslate nohighlight">
+\[\texttt{nu + sigma * np.random.randn(m,n)}.\]</div>
+<p>Der Code <span class="math notranslate nohighlight">\(\texttt{-1 + 3 * np.random.randn(3,2)}\)</span> erzeugt eine <span class="math notranslate nohighlight">\((3 \times 2)\)</span> Matrix, die normalverteilte Zahlen mit Erwartungswert <span class="math notranslate nohighlight">\(-1\)</span> und Standardabweichung <span class="math notranslate nohighlight">\(3\)</span> annimmt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># erzeugt 2 x 3 Matrix mit normalverteilte Zahlen zwischen mit Erwartungswert -1 und Standardabweichung 3</span>
+<span class="n">A_normal_skaliert</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A_normal_skaliert</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-aufgabe-3-7 admonition">
+<p class="admonition-title">Aufgabe 3.7</p>
+<p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <span class="math notranslate nohighlight">\(\texttt{A_normal2}\)</span>, die standardnormalverteilte Zufallszahlen mit Erwartungswert <span class="math notranslate nohighlight">\(2\)</span> uns Standardabweichung <span class="math notranslate nohighlight">\(0.5\)</span> annimmt. Betrachten Sie anschließend den maximalen Wert der Matrix.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_normal2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Der maximale Wert der gleichverteilten, rationalen Matrix ist&#39;</span><span class="p">,</span> <span class="n">A_normal2</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="ubersicht-der-matrix-und-vektor-funktionen">
+<h2>Übersicht der Matrix- und Vektor-Funktionen<a class="headerlink" href="#ubersicht-der-matrix-und-vektor-funktionen" title="Link to this heading">#</a></h2>
+<p>Abschließend möchten wir Ihnen noch eine grobe Übersicht über die Funktionen zum Erzeugen von Matrizen und Vektoren geben. Dabei haben wir die Liste um ein paar nützliche Befehle erweitert, die wir in diesem Kurs nicht explizit verwenden, die aber durchaus von Nutzen sein können.</p>
+<section id="erstellen-von-vektoren">
+<h3>Erstellen von Vektoren<a class="headerlink" href="#erstellen-von-vektoren" title="Link to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Funktion</p></th>
+<th class="head"><p>Beschreibung</p></th>
+<th class="head"><p>Beispiel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.arange(start, stop, step)}\)</span></p></td>
+<td><p>Erzeugt Werte von <span class="math notranslate nohighlight">\(\texttt{start}\)</span> bis <span class="math notranslate nohighlight">\(\texttt{stop}\)</span> mit einer Schrittweite von <span class="math notranslate nohighlight">\(\texttt{step}\)</span>.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.arange(0, 5, 1)}\)</span>  <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0. &amp; 1. &amp; 2. &amp;. 3. &amp; 4. \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.linspace(start, stop, num)}\)</span></p></td>
+<td><p>Erzeugt gleichmäßig verteilte Zahlen zwischen <span class="math notranslate nohighlight">\(\texttt{start}\)</span> und <span class="math notranslate nohighlight">\(\texttt{stop}\)</span>.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.linspace(0, 1, 5)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0. &amp; 0.25 &amp; 0.5 &amp; 0.75 &amp; 1. \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.logspace(start, stop, num)}\)</span></p></td>
+<td><p>Erzeugt logarithmisch verteilte Zahlen zwischen <span class="math notranslate nohighlight">\(\texttt{10^\text{start}}\)</span> und <span class="math notranslate nohighlight">\(\texttt{10^\text{stop}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.logspace(0, 2, 5)}\)</span>  <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1. &amp; 3.162 &amp; 10. &amp; 31.62 &amp; 100. \end{bmatrix}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="docutils">
+<h3 class="rubric" id="erstellung-von-strukturierten-matrizen">Erstellung von strukturierten Matrizen</h3>
+<div class="full-width docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Funktion</p></th>
+<th class="head"><p>Beschreibung</p></th>
+<th class="head"><p>Beispiel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.zeros(shape)}\)</span></p></td>
+<td><p>Erstellt eine Matrix der Form <span class="math notranslate nohighlight">\(\texttt{shape}\)</span>, die nur Nullen enthält.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.zeros((2,3))}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0. &amp; 0. &amp; 0. \\ 0. &amp; 0. &amp; 0. \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.ones(shape)}\)</span></p></td>
+<td><p>Erstellt eine Matrix der Form <span class="math notranslate nohighlight">\(\texttt{shape}\)</span>, die nur Einsen enthält.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.ones((2,3))}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1. &amp; 1. &amp; 1. \\ 1. &amp; 1. &amp; 1. \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.full(shape, w)}\)</span></p></td>
+<td><p>Erstellt eine Matrix, die mit einem angegebenen Wert <span class="math notranslate nohighlight">\(\texttt{w}\)</span> gefüllt ist.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.full((2,3), 7)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 7 &amp; 7 &amp; 7 \\ 7 &amp; 7 &amp; 7 \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.eye(N)}\)</span></p></td>
+<td><p>Erstellt eine Identitätsmatrix der Größe <span class="math notranslate nohighlight">\(\texttt{N}\)</span>.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.eye(3)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1. &amp; 0. &amp; 0. \\ 0. &amp; 1. &amp; 0. \\ 0. &amp; 0. &amp; 1. \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.diag(v)}\)</span></p></td>
+<td><p>Erstellt eine diagonale Matrix mit den Elementen von <span class="math notranslate nohighlight">\(\texttt{v}\)</span>.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.diag([1, 2, 3])}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 3 \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.tri(N)}\)</span></p></td>
+<td><p>Erstellt eine untere Dreiecksmatrix der Größe <span class="math notranslate nohighlight">\(\texttt{N}\)</span> mit Einsen unterhalb der Diagonalen.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.tri(3)}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1. &amp; 0. &amp; 0. \\ 1. &amp; 1. &amp; 0. \\ 1. &amp; 1. &amp; 1. \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.triu(A)}\)</span></p></td>
+<td><p>Erstellt eine obere Dreiecksmatrix, indem alle Werte unter der Diagonalen von <span class="math notranslate nohighlight">\(\texttt{A}\)</span> auf Null gesetzt werden.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.triu([[1,2,3],[4,5,6],[7,8,9]])}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 5 &amp; 6 \\ 0 &amp; 0 &amp; 9 \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.tril(A)}\)</span></p></td>
+<td><p>Erstellt eine untere Dreiecksmatrix, indem alle Werte oberhalb der Diagonalen von <span class="math notranslate nohighlight">\(\texttt{A}\)</span> auf Null gesetzt werden.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.tril([[1,2,3],[4,5,6],[7,8,9]])}\)</span> <span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 4 &amp; 5 &amp; 0 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="erstellung-von-zufallsmatrizen">
+<h3>Erstellung von Zufallsmatrizen<a class="headerlink" href="#erstellung-von-zufallsmatrizen" title="Link to this heading">#</a></h3>
+<div class="full-width docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Funktion</p></th>
+<th class="head"><p>Beschreibung</p></th>
+<th class="head"><p>Beispiel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.random.rand(d0,d1)}\)</span></p></td>
+<td><p>Erzeugt eine <span class="math notranslate nohighlight">\((d0 \times d1)\)</span> Matrix mit Zufallswerten gleichmäßig verteilt zwischen 0 und 1.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.random.rand(2,3)}\)</span><br />
+<span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0.840228 &amp; 0.466983 &amp; 0.156066 \\ 0.771374 &amp; 0.634024 &amp; 0.530364 \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.random.randn(d0,d1)}\)</span></p></td>
+<td><p>Erzeugt eine <span class="math notranslate nohighlight">\((d0 \times d1)\)</span> Matrix mit Zufallswerten aus einer Standardnormalverteilung.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.random.randn(2,3)}\)</span><br />
+<span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 0.389413 &amp; -0.923499 &amp; 0.037768 \\ -0.714868 &amp; -1.67741 &amp; -2.08224 \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\texttt{np.random.randint(l,h,size)}\)</span></p></td>
+<td><p>Erzeugt eine Matrix der Form <span class="math notranslate nohighlight">\(\texttt{size}\)</span> mit ganzzahligen Zufallswerten zwischen <span class="math notranslate nohighlight">\(\texttt{l}\)</span> und <span class="math notranslate nohighlight">\(\texttt{h}\)</span>.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.random.randint(0,10,(2,3))}\)</span><br />
+<span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 3 &amp; 3 &amp; 9 \\ 1 &amp; 6 &amp; 3 \end{bmatrix}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\texttt{np.random.choice(v,size)}\)</span></p></td>
+<td><p>Erzeugt eine Matrix der Form <span class="math notranslate nohighlight">\(\texttt{size}\)</span> mit Einträgen zufällig aus dem Array <span class="math notranslate nohighlight">\(\texttt{v}\)</span>.</p></td>
+<td><p><span class="math notranslate nohighlight">\(\texttt{np.random.choice([1,2,3,4],(2,3))}\)</span><br />
+<span class="math notranslate nohighlight">\(\rightarrow \begin{bmatrix} 3 &amp; 4 &amp; 2 \\ 2 &amp; 2 &amp; 1 \end{bmatrix}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\chapter03_spezialisierung\arrays_2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="arrays_2_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Arrays II</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="concatenating_arrays.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arrays zusammenfügen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-der-matrix-und-vektor-funktionen">Übersicht der Matrix- und Vektor-Funktionen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellen-von-vektoren">Erstellen von Vektoren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellung-von-zufallsmatrizen">Erstellung von Zufallsmatrizen</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jacob Heieck, Alena Ulke
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

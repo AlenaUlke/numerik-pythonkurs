@@ -1,0 +1,912 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Pakete &#8212; Python Programmierkurs</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=b8171b4a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js?v=12818e64"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/chapter02_basics/befehle/python_pakete';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Arrays I" href="../arrays/array_intro.html" />
+    <link rel="prev" title="Befehle" href="befehle_eingeben.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../chapter01_einfuehrung/vorwort.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/Logo_UMA.png" class="logo__image only-light" alt="Python Programmierkurs - Home"/>
+    <script>document.write(`<img src="../../../_static/Logo_UMA.png" class="logo__image only-dark" alt="Python Programmierkurs - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../chapter01_einfuehrung/vorwort.html">
+                    Vorwort
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen von Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="befehle_intro.html">Grundlegende Konzepte</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="befehle_eingeben.html">Befehle</a></li>
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Python Pakete</a></li>
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../arrays/array_intro.html">Arrays I</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../arrays/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays/indizierung.html">Indizierung von Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays/rechnen_mit_arrays.html">Rechnen mit Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrays/logische_arrays.html">Logische Indizierung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../visualization/visualization_intro.html">Visualisierung I</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/visualization.html">Daten plotten</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../functions/functions_intro.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functions/funktionsaufrufe.html">Funktionsaufrufe und -rückgaben</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../functions/funktionen_schreiben.html">Funktionen definieren</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../programmablaeufe/intro.html">Programmierkonstrukte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/while_loops.html">While-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/for_loops.html">For-Schleife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programmablaeufe/decision_branching.html">Bedingte Anweisungen</a></li>
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python schlauer nutzen</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/debugging_intro.html">Debugging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/error_signs.html">Fehlermeldungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/debugging/analysing_code.html">Fehlersuche</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/vektorisierung/intro.html">Effizienter Code</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/vektorisierung/efficiency.html">Vektorisierung</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/AI/KI_intro.html">KI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Programmieren_mit_KI.html">Programmieren mit KI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/AI/Debugging_mit_KI.html">Debugging mit KI</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenverabeitung in Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrays_2_intro.html">Arrays II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/arrayerstellung.html">Arrayerstellung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/concatenating_arrays.html">Arrays zusammenfügen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/arrays_2/reshaping_arrays.html">Arrays umformen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/visualisation_2_intro.html">Visualisierung II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/advanced_2D_plots.html">Graphiken individuell gestalten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/several_lines_one_plot.html">Diagramme mit mehreren Graphen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/visualisation_2/3D_plots.html">3D Graphiken</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/working_with_data_intro.html">Datenaufbereitung</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table.html">Tabellen aufbauen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapter03_spezialisierung/working_with_data/organizing_data_in_table_2.html">Tabellen auslesen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/chapter02_basics/befehle/python_pakete.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python Pakete</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python Pakete</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-von-externen-paketen">Installation von (externen) Paketen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importieren-von-paketen">Importieren von Paketen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-i-texttt-import">Option I - <span class="math notranslate nohighlight">\(\texttt{import}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-ii-texttt-import-as">Option II - <span class="math notranslate nohighlight">\(\texttt{import _ as _ }\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-iii-texttt-from-import">Option III - <span class="math notranslate nohighlight">\(\texttt{from _ import _ }\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-iv-texttt-from-import">Option IV - <span class="math notranslate nohighlight">\(\texttt{from _ import *}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exkurs-gleichnamige-funktionen-in-verschiedenen-paketen">Exkurs: Gleichnamige Funktionen in verschiedenen Paketen</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-pakete">
+<h1>Python Pakete<a class="headerlink" href="#python-pakete" title="Link to this heading">#</a></h1>
+<p>Häufig umfassen Rechungen komplexere Operationen als die Standardrechenoperationen wie Addition, Subtraktion, Multiplikation und Division oder es werden mathematische Konstanten wie <span class="math notranslate nohighlight">\(\pi\)</span> oder <span class="math notranslate nohighlight">\(e\)</span> benötigt.
+In diesem Fall steht eine umfassende Sammlung von Paketen (auch „Bibliotheken“ oder „Module“ genannt) zur Verfügung, die viele nützliche Funktionen und Werkzeuge beinhalten.</p>
+<p>Ein <em>Paket</em> ist eine Sammlung von Funktionen, Klassen und Modulen, die für bestimmte Anwendungsbereiche entwickelt wurden – etwa zum Rechnen mit Matrizen, zur Datenverarbeitung, zur Darstellung von Grafiken oder zur Arbeit mit Dateien.
+Durch die Nutzung von Paketen können Sie:</p>
+<ul class="simple">
+<li><p>auf bewährte und getestete Funktionen zurückgreifen,</p></li>
+<li><p>Ihren eigenen Code kürzer und lesbarer gestalten,</p></li>
+<li><p>sich auf die Lösung Ihres konkreten Problems konzentrieren, ohne grundlegende Funktionen selbst implementieren zu müssen.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="installation-von-externen-paketen">
+<h1>Installation von (externen) Paketen<a class="headerlink" href="#installation-von-externen-paketen" title="Link to this heading">#</a></h1>
+<p>In Python unterscheidet man zwischen zwei verschieden Arten von Paketen: <em>Pakete der Standardbibliothek</em> und <em>externe Pakete</em>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/index.html">Pakete der Standrardbibliothek</a> werden automatisch mit Python zusammen installiert, zum Beispiel wenn Sie dem <a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html"><span class="std std-doc">Installationguide</span></a> folgen.</p></li>
+<li><p>Externe Pakete werden von Dritten entwickelt und müssen manuell installiert werden - in der Regel über die Paketmanager <em>pip</em> oder <em>conda</em>.</p></li>
+</ul>
+<p>Wenn Sie dem <a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html"><span class="std std-doc">Installationguide</span></a> gefolgt sind, um Python auf Ihrem Rechner zu installieren, wurden bereits
+viele gängige (externe) Pakete auch außerhalb der Standardbibliothek vorinstalliert. Auch in diesem Jupyter Book stehen Ihnen die gängigsten Pakete bereits zur Verfügung.
+Aus diesem Grund verzichten wir an dieser Stelle auf eine ausführliche Anleitung zur Installation eines Paketmanagers.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="importieren-von-paketen">
+<h1>Importieren von Paketen<a class="headerlink" href="#importieren-von-paketen" title="Link to this heading">#</a></h1>
+<p>Um ein Paket in Ihrem eigenen Python-Programm nutzen zu können, müssen Sie es zunächst importieren. Dies geschieht mit dem Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{import}\)</span> unabhänging davon, ob es ein externes Paket oder ein Paket der Standardbibliothek ist.</p>
+<p>Als Beispiel binden wir das externe Paket NumPy ein, welches Sie im Verlauf des Kurses noch genauer kennenlernen werden. Dieses Paket stellt zahlreiche mathematische Funktionen und Konstanten zur Verfügung, mit denen sich unter anderem Berechnungen mit reellen Zahlen, Vektoren und Matrizen durchführen lassen – beispielsweise:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mathe</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\texttt{numpy}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\pi\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pi</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">e</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sqrt(x)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sin(x)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sin(x)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cos(x)\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cos(x)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\vert x \vert\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^x\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">exp(x)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In Python gibt es verschiedene Optionen ein Paket oder gezielt einzelne Funktion daraus zu importieren.
+Im Folgenden geben wir Ihnen eine Übersicht über die verschiedenen Optionen, sowie die zuhehörige Syntax zum Aufrufen einer Funktion.
+Als Beispiel dient das Paket NumPy und die darin enthaltene Funktion <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span>.</p>
+<p>Zunächst können Sie sich das Paket NumPy als eine Art Werkzeugkasten vorstellen, welches mit dem Etikett NumPy versehen ist. Die Funktionen innerhalb des Pakets sind die Werkzeuge darin – und Python ist die Handwerkerin, die damit arbeitet.</p>
+<section id="option-i-texttt-import">
+<h2>Option I - <span class="math notranslate nohighlight">\(\texttt{import}\)</span><a class="headerlink" href="#option-i-texttt-import" title="Link to this heading">#</a></h2>
+<p>Der Befehl <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span></code> stellt das Paket NumPy zur Verfügung:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span> 
+
+<span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mit dem Befehl <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span></code> übergeben Sie Python den gesamten Werkzeugkasten. Die Werkzeuge bleiben zunächst im Kasten. Erst mit dem Aufruf <code class="docutils literal notranslate"><span class="pre">numpy.sqrt</span></code> weisen Sie Python an, ein bestimmtes Werkzeug – in diesem Fall die Funktion <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span> – aus dem Kasten herauszunehmen und zu verwenden.</p>
+<p>In komplexeren Projekt wird typischerweise eine Vielzahl verschiedener Pakete benötigt.
+Aus diesem Grund wird bei <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span></code> der Paketname – also der „Werkzeugkasten“ – als Präfix mit angegeben. Der Zusatz <code class="docutils literal notranslate"><span class="pre">numpy.</span></code> gibt dabei eindeutig an, in welchem Paket sich die Funktion <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span> befindet.</p>
+</section>
+<section id="option-ii-texttt-import-as">
+<h2>Option II - <span class="math notranslate nohighlight">\(\texttt{import _ as _ }\)</span><a class="headerlink" href="#option-ii-texttt-import-as" title="Link to this heading">#</a></h2>
+<p>Der Befehl <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> stellt das Paket NumPy unter dem kurzen Alias <span class="math notranslate nohighlight">\(\texttt{np}\)</span> zur Verfügung:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
+
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sie können sich das so vorstellen: Python erhält wie zuvor den gesamten Werkzeugkasten – aber dieses Mal mit einem neuen Label.
+Das ursprüngliche Etikett NumPy wird durch <span class="math notranslate nohighlight">\(\texttt{np}\)</span> ersetzt, wodurch sich die Schreibweise im weiteren Code vereinfacht.
+An der Funktionsweise ändert sich nichts: Python greift weiterhin mit <code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code> gezielt auf das Werkzeug <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span> im Kasten <span class="math notranslate nohighlight">\(\texttt{np}\)</span> zu.
+Diese Variante ist in der Praxis sehr weit verbreitet.</p>
+</section>
+<section id="option-iii-texttt-from-import">
+<h2>Option III - <span class="math notranslate nohighlight">\(\texttt{from _ import _ }\)</span><a class="headerlink" href="#option-iii-texttt-from-import" title="Link to this heading">#</a></h2>
+<p>Der Befehl <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">numpy</span> <span class="pre">import</span> <span class="pre">sqrt</span></code> stellt ausschließlich die Funktion <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span> aus dem Paket NumPy zur Verfügung:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In diesem Fall wird nur das Werkzeug <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span> aus dem Werkzeugkasten NumPy entnommen und direkt an Python übergeben.
+Python kann es dadurch ohne weiteren Verweis auf das Paket verwenden – ein einfacher Aufruf mit <code class="docutils literal notranslate"><span class="pre">sqrt(x)</span></code> genügt.
+Diese Methode eignet sich, wenn Sie gezielt nur einzelne Funktionen benötigen und den Code kompakt halten möchten.</p>
+<div class="warning admonition">
+<p class="admonition-title">Achtung</p>
+<p>Da Sie nur <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span> importiert haben, stehen andere Funktionen aus NumPy – wie zum Beispiel <span class="math notranslate nohighlight">\(\texttt{abs}\)</span>, <span class="math notranslate nohighlight">\(\texttt{log}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{sin}\)</span> – <strong>nicht</strong> zur Verfügung.</p>
+</div>
+<p>Wenn Sie jetzt <code class="docutils literal notranslate"><span class="pre">abs(x)</span></code> aufrufen, wird dabei die eingebaute Python-Funktion <span class="math notranslate nohighlight">\(\texttt{abs}\)</span> verwendet, nicht die Variante aus NumPy.
+Falls es jedoch keine eingebaute Funktion mit dem entsprechenden Namen gibt, wie zum Beispiel <span class="math notranslate nohighlight">\(\texttt{log}\)</span>, und Sie diese nicht explizit importiert haben, führt ein Aufruf wie <code class="docutils literal notranslate"><span class="pre">log(x)</span></code> zu einer Fehlermeldung.
+Möchten Sie mehrere Funktionen gleichzeitig importieren, können Sie dies mit Kommata angeben:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="nb">abs</span>
+
+<span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="option-iv-texttt-from-import">
+<h2>Option IV - <span class="math notranslate nohighlight">\(\texttt{from _ import *}\)</span><a class="headerlink" href="#option-iv-texttt-from-import" title="Link to this heading">#</a></h2>
+<p>Der Befehl <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">numpy</span> <span class="pre">import</span> <span class="pre">*</span></code> stellt alle Funktionen und Objekte aus dem Paket NumPy unmittelbar zur Verfügung:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sie können sich das so vorstellen: Mit <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">numpy</span> <span class="pre">import</span> <span class="pre">*</span></code> kippen Sie den gesamten Werkzeugkasten aus – alle Werkzeuge liegen nun offen vor Python.
+Die Funktion <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span> wird dadurch direkt verfügbar, ohne dass Python erst im Kasten nachsehen muss.</p>
+<div class="admonition-aufgabe-1 admonition">
+<p class="admonition-title">Aufgabe 1</p>
+<p>Importieren Sie aus dem Paket NumPy nur die Konstante <span class="math notranslate nohighlight">\(\pi\)</span> erstellen Sie die Variable <span class="math notranslate nohighlight">\(\texttt{y}\)</span> mit dem Wert <span class="math notranslate nohighlight">\(\frac{\pi}{3}\)</span>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Verwenden Sie das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">_</span> <span class="pre">import</span> <span class="pre">_</span></code>, um <span class="math notranslate nohighlight">\(\pi\)</span> aus dem Paket NumPy zu importieren.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-aufgabe-2 admonition">
+<p class="admonition-title">Aufgabe 2</p>
+<p>Importieren Sie das Paket NumPy unter dem Alias <span class="math notranslate nohighlight">\(\texttt{np}\)</span> und berechnen Sie <span class="math notranslate nohighlight">\(\sin\left( \frac{\pi}{3} \right)\)</span>. Speichern Sie das Ergebnis in der Variable <span class="math notranslate nohighlight">\(\texttt{z}\)</span>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Zusammenfassung</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Importbefehl</p></th>
+<th class="head"><p>Syntax für Funktionsaufruf</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">numpy.sqrt(x)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.sqrt(x)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">numpy</span> <span class="pre">import</span> <span class="pre">sqrt</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sqrt(x)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">numpy</span> <span class="pre">import</span> <span class="pre">*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sqrt(x)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exkurs-gleichnamige-funktionen-in-verschiedenen-paketen">
+<h1>Exkurs: Gleichnamige Funktionen in verschiedenen Paketen<a class="headerlink" href="#exkurs-gleichnamige-funktionen-in-verschiedenen-paketen" title="Link to this heading">#</a></h1>
+<p>Beim Arbeiten mit Paketen in Python kann es vorkommen, dass mehrere Pakete ähnliche oder sogar gleichnamige Funktionen bereitstellen. Dies ist nicht ungewöhnlich, da verschiedene Entwicklerteams ähnliche Probleme auf unterschiedliche Weise lösen – beispielsweise mit unterschiedlichem Funktionsumfang, anderer Performance oder alternativer Syntax.</p>
+<p>Ein klassisches Beispiel ist die Quadratwurzel-Funktion <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span>. Diese ist sowohl im Standardpaket <span class="math notranslate nohighlight">\(\texttt{math}\)</span> als auch im externen Paket NumPy verfügbar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Ausgabe: 4.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>    <span class="c1"># Ausgabe: 4.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obwohl beide Funktionen denselben Namen tragen und das gleiche Ergebnis liefern, unterscheiden sie sich im Detail – zum Beispiel bei der Unterstützung für Vektoren oder Matrizen.
+Die <span class="math notranslate nohighlight">\(\texttt{math.sqrt()}\)</span>-Funktion funktioniert nur mit einzelnen Zahlen, die <span class="math notranslate nohighlight">\(\texttt{np.sqrt()}\)</span>-Funktion dagegen auch zusätzlich für Vektoren.</p>
+<p>Wenn zwei Pakete Funktionen mit gleichem Namen bereitstellen, besteht die Gefahr von Namenskonflikten – insbesondere dann, wenn Sie beide Funktionen direkt mit <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">_</span> <span class="pre">import</span> <span class="pre">_</span></code> importieren. Python ist dann nicht klar ob mit <span class="math notranslate nohighlight">\(\texttt{sqrt}\)</span>, die Funktion aus <span class="math notranslate nohighlight">\(\texttt{math}\)</span> oder NumPy gemeint ist und wird eine Fehlermeldung anzeigen.
+Um dies zu vermeiden, empfiehlt es sich, Pakete immer mit eindeutigen Aliasnamen zu importieren:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Klare Unterscheidung über Präfixe</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternativ sollten Sie auf <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">_</span> <span class="pre">import</span> <span class="pre">_</span></code> nur zurückgreifen, wenn sicher ist, dass es keine Namensüberschneidungen gibt oder der Kontext klar eingegrenzt ist.</p>
+<style>
+  /* Stil für die hinweis Schaltfläche */
+  main details.toggle-hinweis summary {
+    color: white;
+    background-color: #959daf; /* blau */
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Berücksichtigt das Padding in der Breite */
+  }
+
+  /* Allgemeiner Stil für den ausgeklappten Text */
+  main details article {
+    line-height: 1.3; /* Zeilenhöhe für kompakten Text */
+    padding: 10px;
+    margin: 0; /* Kein Versatz */
+    border-radius: 5px;
+    box-sizing: border-box; /* Berücksichtigt das Padding in der Breite */
+  }
+
+  /* Allgemeiner Stil für den Codeauszug */
+  pre {
+    padding: 10px; /* Weniger Abstand innen (oben und unten) */
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin: 3px 0; /* Minimaler äußerer Abstand oben und unten */
+    line-height: 1.3;
+  }
+
+  code {
+    line-height: 1; /* Zeilenhöhe für kompakten Text */
+    margin: 0;
+  }
+
+  /* Hintergrundfarbe des ausgeklappten Inhalts für die HHinweis Schaltfläche */
+  main details.toggle-hinweis[open] article {
+    color: black;
+    background-color: #b2b8c5; /* hellblau */
+  }
+
+  /* Verhindert, dass der Stil auf die Navigationsleiste wirkt */
+  nav details summary {
+    background-color: unset; /* Rücksetzung der Hintergrundfarbe in der Navigation */
+    color: unset; /* Rücksetzung der Textfarbe in der Navigation */
+  }
+</style>
+<style>
+  /* Stil für die lösung Schaltfläche */
+  main details.toggle-lösung summary {
+    color: white;
+    background-color: #95afa7; /* grün */
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Berücksichtigt das Padding in der Breite */
+  }
+
+  /* Allgemeiner Stil für den ausgeklappten Text */
+  main details article {
+    line-height: 1.3; /* Zeilenhöhe für kompakten Text */
+    padding: 10px;
+    margin: 0; /* Kein Versatz */
+    border-radius: 5px;
+    box-sizing: border-box; /* Berücksichtigt das Padding in der Breite */
+  }
+
+  /* Allgemeiner Stil für den Codeauszug */
+  pre {
+    padding: 10px; /* Weniger Abstand innen (oben und unten) */
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin: 3px 0; /* Minimaler äußerer Abstand oben und unten */
+    line-height: 1.3;
+  }
+
+  code {
+    line-height: 1; /* Zeilenhöhe für kompakten Text */
+    margin: 0;
+  }
+
+  /* Hintergrundfarbe des ausgeklappten Inhalts für die grüne Schaltfläche */
+  main details.toggle-lösung[open] article {
+    color: black;
+    background-color: #b2c5bf; /* hellgrün */
+  }
+</style><br>
+<br></section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\chapter02_basics\befehle"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="befehle_eingeben.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Befehle</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../arrays/array_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arrays I</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python Pakete</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-von-externen-paketen">Installation von (externen) Paketen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importieren-von-paketen">Importieren von Paketen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-i-texttt-import">Option I - <span class="math notranslate nohighlight">\(\texttt{import}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-ii-texttt-import-as">Option II - <span class="math notranslate nohighlight">\(\texttt{import _ as _ }\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-iii-texttt-from-import">Option III - <span class="math notranslate nohighlight">\(\texttt{from _ import _ }\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-iv-texttt-from-import">Option IV - <span class="math notranslate nohighlight">\(\texttt{from _ import *}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exkurs-gleichnamige-funktionen-in-verschiedenen-paketen">Exkurs: Gleichnamige Funktionen in verschiedenen Paketen</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jacob Heieck, Alena Ulke
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
