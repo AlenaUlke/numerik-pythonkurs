@@ -1,15 +1,14 @@
 # Visualisierung II
 
-Im Kapitel [Visualisierung](../../chapter02_basics/visualization/visualization.ipynb) haben Sie bereits gelernt, wie man mit `matplotlib` grundlegende Plots erstellen kann. In diesem Kapitel gehen wir einen Schritt weiter und zeigen, wie sich Plots individuell anpassen lassen, um Daten besser sichtbar und analysierbar zu machen.
+Im Kapitel [Visualisierung](../../chapter02_basics/visualization/visualization.ipynb) haben Sie bereits die Grundlagen gelernt um in Python Diagramme zu erstellt. In diesem Kapitel gehen wir einen Schritt weiter und zeigen, wie sich Diagramme individuell anpassen lassen, um Daten verständlicher darzustellen.
 
-Der Fokus liegt zunächst auf der Anpassung einzelner Plots durch sogenannte **Keyword-Argumente**, mit denen sich Farbe, Linienart und Punktdarstellung steuern lassen. Darauf aufbauend lernen Sie, wie man mehrere Linien in einem Plot darstellen kann – sei es durch Übergabe mehrerer Vektoren oder ganzer Matrizen – und wie man diese Linien visuell unterscheidbar macht. Außerdem behandeln wir, wie Sie Achsenbeschriftungen und Achsengrenzen individuell festlegen können, um den Plot an Ihre Analysebedürfnisse anzupassen.
+Der Fokus liegt zunächst auf der Anpassung einzelner Diagramme durch sogenannte *Keyword-Argumente*, mit denen sich Farbe, Linienart und Punktdarstellung verändern lassen. Darauf aufbauend lernen Sie, wie man mehrere Graphen in einem Diagramm übersichtlich darstellen kann. Außerdem zeigen wir Ihnen, wie Sie Achsenbeschriftungen und Achsengrenzen individuell festlegen können.
 
-Abschließend lernen Sie, wie sich auch drei-dimensionale Daten mit `matplotlib` visualisieren und ebenfalls gezielt gestalten lassen.
+Abschließend lernen Sie, wie sich auch drei-dimensionale Daten in Python visualisieren und ebenfalls gezielt gestalten lassen.
 
 ## Lernziele
 
-- Wie kann man Plots mit Farben, Linienarten und Punktdarstellungen individuell anpassen?
-- Wie kann man mehrere Linien in einem Plot darstellen – auch aus Matrizen heraus?
-- Wie kann man einzelne Linien visuell voneinander unterscheiden?
+- Wie kann man Farben, Linienarten und Punktdarstellungen in einem Diagramm individuell anpassen?
+- Wie kann man mehrere Graphen in einem Diagramm darstellen?
 - Wie kann man Achsenbeschriftungen und Achsengrenzen festlegen?
-- Wie kann man dreidimensionale Plots erzeugen und individuell gestalten?
+- Wie kann man dreidimensionale Diagramme erzeugen und individuell gestalten?

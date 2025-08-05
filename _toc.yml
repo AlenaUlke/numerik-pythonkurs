@@ -11,7 +11,7 @@ parts:
 #   file: content/chapter01_einfuehrung/vorwort
   - title: Struktur des Kurses
     file: content/chapter01_einfuehrung/kursstruktur
-  - title: Infos und Installationsguide
+  - title: Installationsguide
     file: content/chapter01_einfuehrung/installationsguide
   - title: Wie nutzt man dieses Jupyterbook?
     file: content/chapter01_einfuehrung/funktionsweise_jupyter_book
@@ -28,7 +28,8 @@ parts:
       file: content/chapter02_basics/befehle/befehle_eingeben
     - title: Python Bibliotheken und Pakete
       file: content/chapter02_basics/befehle/python_pakete
-  - title: Arrays
+
+  - title: Arrays I
     file: content/chapter02_basics/arrays/array_intro
     sections: 
     - title: Arrayerstellung
@@ -39,20 +40,26 @@ parts:
       file: content/chapter02_basics/arrays/rechnen_mit_arrays
     - title: Logische Indizierung
       file: content/chapter02_basics/arrays/logische_arrays
-    - title: Quiz
-      file: content/chapter02_basics/arrays/quiz
-  - title: Datenvisualisierung
+  #  - title: Quiz
+  #    file: content/chapter02_basics/arrays/quiz
+
+  - title: Visualisierung I
     file: content/chapter02_basics/visualization/visualization_intro
     sections: 
-    - title: Visualisierung
+    - title: Daten plotten
       file: content/chapter02_basics/visualization/visualization
 #    - title: Datenimportierung
 #      file: content/chapter02_basics/visualization/data_import
   - title: Funktionen
     file: content/chapter02_basics/functions/functions_intro
-    sections: 
-    - title: Funktionsausgaben
+    sections:
+    - title: Funktionen schreiben
       file: content/chapter02_basics/functions/funktionsaufrufe
+    - title: Funktionen schreiben
+      file: content/chapter02_basics/functions/funktionen_schreiben
+  #  - title: Function handles
+  #    file: content/chapter03_spezialisierung/functions/function_handles
+  
   - title: Programmierkonstrukte
     file: content/chapter02_basics/programmablaeufe/intro
     sections: 
@@ -66,22 +73,20 @@ parts:
 
 - caption: Python schlauer nutzen
   chapters:
-  - title: Funktionen
-    file: content/chapter03_spezialisierung/functions/functions_intro
-    sections:
-    - title: Funktionen schreiben
-      file: content/chapter03_spezialisierung/functions/dreiecke
-    - title: Function handles
-      file: content/chapter03_spezialisierung/functions/function_handles
   - title: Debugging
     file: content/chapter03_spezialisierung/debugging/debugging_intro
     sections:
-    - title: Fehleranzeige
+    - title: Fehlermeldungen
       file: content/chapter03_spezialisierung/debugging/error_signs
-    - title: Fehleranalyse
+    - title: Fehlersuche
       file: content/chapter03_spezialisierung/debugging/analysing_code
+
+  - title: Effizienter Code
+    file: content/chapter03_spezialisierung/vektorisierung/intro
+    sections:
     - title: Vektorisierung
-      file: content/chapter03_spezialisierung/debugging/efficiency
+      file: content/chapter03_spezialisierung/vektorisierung/efficiency
+
   - title: KI
     file: content/chapter03_spezialisierung/AI/KI_intro
     sections:
@@ -102,18 +107,20 @@ parts:
       file: content/chapter03_spezialisierung/arrays_2/concatenating_arrays
     - title: Arrays umformen
       file: content/chapter03_spezialisierung/arrays_2/reshaping_arrays
-    - title: Quiz
-      file: content/chapter03_spezialisierung/arrays_2/quiz
+  #  - title: Quiz
+  #    file: content/chapter03_spezialisierung/arrays_2/quiz
+
   - title: Visualisierung II
     file: content/chapter03_spezialisierung/visualisation_2/visualisation_2_intro
     sections:
-    - title: Plots individuell gestalten
+    - title: Graphiken individuell gestalten
       file: content/chapter03_spezialisierung/visualisation_2/advanced_2D_plots
-    - title: Mehrfach-Plots
+    - title: Diagramme mit mehreren Graphen
       file: content/chapter03_spezialisierung/visualisation_2/several_lines_one_plot
-    - title: 3D Plots
+    - title: 3D Graphiken
       file: content/chapter03_spezialisierung/visualisation_2/3D_plots
-  - title: Mit Daten arbeiten
+
+  - title: Datenaufbereitung
     file: content/chapter03_spezialisierung/working_with_data/working_with_data_intro
     sections:
     - title: Tabellen aufbauen
