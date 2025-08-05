@@ -1,7 +1,0 @@
-# Vektoren und Matrizen
-
-
-## Lernziele
-
-- 
-- 
