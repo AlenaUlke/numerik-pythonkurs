@@ -10,7 +10,7 @@ In diesem Dokument finden Sie eine strukturierte Übersicht über den Aufbau des
 
 
 
-Der Kurs gliedert sich in mehrere Kapitel und insgesamt 12 Kurseinheiten. Zu Beginn (Grundlagen in Python) fokussieren wir uns auf die Grundlagen, bevor wir uns zu vertiefenden Konzepten (Python schlauer nutzen und Datenverarbeitung in Python) vorarbeiten. Für jede der 12 Kurseinheiten erhalten Sie eine klare Zuordnung, welche Kapitel jeweils behandelt werden. Für die ersten zehn Einheiten stellen wir Ihnen zusätzlich externe Übungsdateien zur Verfügung, mit denen Sie den Stoff eigenständig vertiefen können.
+Der Kurs gliedert sich in mehrere Kapitel und insgesamt 12 Kurseinheiten. Zu Beginn (*Grundlagen in Python*) fokussieren wir uns auf die Grundlagen, bevor wir uns zu vertiefenden Konzepten (*Python schlauer nutzen* und *Datenverarbeitung in Python*) vorarbeiten. Für jede der 12 Kurseinheiten erhalten Sie eine klare Zuordnung, welche Kapitel jeweils behandelt werden. Für die ersten zehn Einheiten stellen wir Ihnen zusätzlich externe Übungsdateien zur Verfügung, mit denen Sie den Stoff eigenständig vertiefen können.
 
 
 

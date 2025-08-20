@@ -1,23 +1,8 @@
-(python-infos)= 
+(installationsempfehlungen)=
 # Installationsguide
-
-```{figure} img/python-logo.png
-    :figclass: margin
-    :width: 150px   
-```
-
-Python ist eine der weltweit bekanntesten und am häufigsten verwendeten Programmiersprachen. Sie wurde in den frühen 1990er Jahren von Guido van Rossum entwickelt und ist seitdem stetig gewachsen. Van Rossum entwarf Python mit dem Ziel, eine einfache, leicht lesbare und dennoch leistungsstarke Sprache zu schaffen. Python ist bekannt für seine klare Syntax, die es Programmierer:innen ermöglicht, Konzepte mit weniger Codezeilen auszudrücken, als dies bei anderen Sprachen der Fall ist. Das macht sie zu einer sogenannte *höhere Programmiersprache*, da sie näher an der menschlichen Sprache und weiter entfernt von der Maschinensprache ist, die Computer direkt verstehen. Durch diesen höheren Abstraktionsgrad ist Python leicht erlernbar und besonders bei Einsteigern beliebt.
-
-Ein großer Vorteil von Python ist, dass es interpretiert und nicht kompiliert wird. Das bedeutet, dass Python-Code direkt Zeile für Zeile von einem speziellen Programm, dem sogenannten Interpreter, ausgeführt wird. Im Gegensatz dazu müssen bei kompilierten Sprachen, wie [C](https://de.wikipedia.org/wiki/C_(Programmiersprache)) oder [Java](https://de.wikipedia.org/wiki/Java_(Programmiersprache)), die Programme zunächst vollständig in Maschinensprache übersetzt werden, bevor sie ausgeführt werden können. Das erleichtert den Entwicklungsprozess und ermöglicht es, schnell Ergebnisse zu sehen und Fehler zu beheben.
 
 Python wird in einer Vielzahl von Bereichen eingesetzt, darunter Webentwicklung, Datenanalyse, maschinelles Lernen, wissenschaftliches Rechnen und sogar im Bereich der künstlichen Intelligenz. Die Vielseitigkeit der Sprache, zusammen mit ihrer großen Gemeinschaft und der riesigen Sammlung von Bibliotheken und Tools, macht Python zu einer hervorragenden Wahl für verschiedenste Anwendungen. Ein Grund für Pythons weitreichenden Einsatzmöglichkeiten sind die umfangreichen [Standardbibliothek](https://docs.python.org/3/library/), welche größtenteils plattformunabhängig verwendbar sind und für zahlreiche Anwendungsfälle bereits die passenden Lösungen bieten.
 
-Der Name *Python* stammt nicht, wie man vielleicht vermuten könnte, von der Schlange, sondern von der britischen Comedy-Gruppe Monty Python. Der Entwickler der Sprache, Guido van Rossum, war ein großer Fan der Serie Monty Python’s Flying Circus. Als er Ende der 1980er Jahre eine neue Programmiersprache entwickelte, suchte er nach einem Namen, der kurz, einzigartig und einprägsam war. Dabei fiel seine Wahl auf *Python* als humorvolle Anspielung auf die berühmte Comedy-Gruppe.
-
-
-
-(installationsempfehlungen)=
-# Python installieren
 
 Damit wir in der ersten Kurseinheit direkt starten können, bitten wir Sie, im Vorfeld die benötigte Entwicklungsumgebung zu installieren. Wir werden die Anaconda Distribution verwenden. Anaconda ist eine Python-Distribution, was bedeutet, dass es neben Python auch eine Vielzahl nützlicher Bibliotheken und Werkzeuge, wie **Jupyter Notebook** und ein eigenes System für virtuelle Umgebungen, mitbringt – all das, was wir in diesem Kurs verwenden möchten.
 
