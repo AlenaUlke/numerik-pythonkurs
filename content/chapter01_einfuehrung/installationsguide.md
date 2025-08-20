@@ -18,8 +18,13 @@ Laden Sie Anaconda [hier](https://www.anaconda.com/download) herunter. Dazu müs
 Anschließend erhalten Sie eine E-Mail, bei der Sie den Button **Download Now** drücken müssen.
 ```{figure} img/anaconda/anaconda_installation_2.png
 ```
-Sie werden zu einer Seite weitergeleitet, auf der Sie zunächst ihr Betriebssystem auswählen müssen, um dann die entsprechende Datei herunterzuladen. Für jedes Betriebssystem haben wir die richtige Wahl rot umrandet. 
+Sie werden zu einer Seite weitergeleitet, auf der Sie zunächst ihr Betriebssystem auswählen müssen, um dann die entsprechende Datei herunterzuladen. Für jedes Betriebssystem haben wir die richtige Wahl rot umrandet.
+
+Falls Sie MacOS verwenden, hängt die richtige Wahl von dem Prozessors Ihres Mac-Computers ab. Wenn ein Apple M1, M2, M3, M4 Prozessor oder neuer verbaut worden ist, wählen Sie die Variante *Apple silicon*.
+
 ```{figure} img/anaconda/anaconda_installation_3.png
+    :figclass: center 
+    :width: 100%
 ```
 Nun haben Sie die aktuelle Version von Python (Python 3.12) heruntergeladen.
 
