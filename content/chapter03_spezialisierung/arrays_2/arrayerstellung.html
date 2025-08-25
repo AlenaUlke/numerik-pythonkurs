@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -451,8 +450,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wiederholung-arrayerstellung">Wiederholung Arrayerstellung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-der-matrix-und-vektor-funktionen">Übersicht der Matrix- und Vektor-Funktionen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellen-von-vektoren">Erstellen von Vektoren</a></li>
@@ -474,9 +472,8 @@ document.write(`
 <h1>Arrayerstellung<a class="headerlink" href="#arrayerstellung" title="Link to this heading">#</a></h1>
 <p>In den <a class="reference internal" href="../../chapter02_basics/arrays/arrayerstellung.html"><span class="std std-doc">Grundlagen zur Arrayserstellung</span></a> haben Sie bereits einige Möglichkeiten kennengelernt, um Arrays zu erzeugen. Insbesondere Methoden zur manuellen Arrayerstellung, Erstellung von Vektoren mit gleichmäßigen Abständen und Arrayerstellung mit Hilfe von Funktionen.</p>
 <p>In diesem Kapitel sollen Sie die gelernten Aspekte wiederholen, um diese elementaren Operationen zu festigen und im nächten Kapitel zu vertiefen.</p>
-<section id="manuelle-arrayerstellung">
-<h2>Manuelle Arrayerstellung<a class="headerlink" href="#manuelle-arrayerstellung" title="Link to this heading">#</a></h2>
-<p>Zunächst wiederholen Sie, wie man manuell Arrays erstellt.</p>
+<section id="wiederholung-arrayerstellung">
+<h2>Wiederholung Arrayerstellung<a class="headerlink" href="#wiederholung-arrayerstellung" title="Link to this heading">#</a></h2>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
 <p>Erstellen Sie einen Vektor mit dem Namen <span class="math notranslate nohighlight">\(x\)</span> mit den Elementen <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(\sin(\pi)\)</span> und <span class="math notranslate nohighlight">\(\sqrt{36}\)</span>.</p>
@@ -530,35 +527,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</section>
-<section id="vektoren-mit-werten-in-gleichmaszigen-abstanden">
-<h2>Vektoren mit Werten in gleichmäßigen Abständen<a class="headerlink" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden" title="Link to this heading">#</a></h2>
-<p><span style="color:red"> Hier bitte nochmal drübergucken. Entweder Widerholung entfernen oder nicht die Matrix A als einleitendens Beispiel nehmen.</span></p>
-<p>Die erste Spalte von <span class="math notranslate nohighlight">\(A\)</span> kann mit Hilfe von in NumPy enthaltenen Funktionen erzeugt werden, statt sie manuell einzutippen. Die Aufgaben dieses Abschnitts sollen zur Wiederholung dieser Funktionen gelten.</p>
-<div class="admonition-aufgabe-2-1 admonition">
-<p class="admonition-title">Aufgabe 2.1</p>
-<p>Speichern Sie die erste Zeile von <span class="math notranslate nohighlight">\(A\)</span> in dem Vektor <span class="math notranslate nohighlight">\(\texttt{A_zeile1}\)</span>. mit Hilfe von in NumPy enthaltenen Funktionen.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="note dropdown admonition">
-<p class="admonition-title">Hinweis</p>
-<p>Nutzen Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.arange(startwert, endwert)}\)</span>.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_zeile1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A_zeile1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition-aufgabe-2-2 admonition">
-<p class="admonition-title">Aufgabe 2.2</p>
+<div class="admonition-aufgabe-1-3 admonition">
+<p class="admonition-title">Aufgabe 1.3</p>
 <p>Erstellen Sie den Vektor <span class="math notranslate nohighlight">\(\texttt{x_absteigend}\)</span> mit den Werten</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -586,9 +556,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="admonition-aufgabe-2-3 admonition">
-<p class="admonition-title">Aufgabe 2.3</p>
-<p>Erstellen Sie den Vektor <span class="math notranslate nohighlight">\(\texttt{x_pi}\)</span>, welcher ein <span class="math notranslate nohighlight">\(-\pi\)</span> startet, bei <span class="math notranslate nohighlight">\(3\pi\)</span> endet. Der Vektor soll <span class="math notranslate nohighlight">\(50\)</span> Elemente enthalten und der Abstand zwischen zwei benachbarten Einträgen soll konstant sein.</p>
+<div class="admonition-aufgabe-1-4 admonition">
+<p class="admonition-title">Aufgabe 1.4</p>
+<p>Erstellen Sie den Vektor <span class="math notranslate nohighlight">\(\texttt{x_pi}\)</span>, welcher bei <span class="math notranslate nohighlight">\(-\pi\)</span> startet und bei <span class="math notranslate nohighlight">\(3\pi\)</span> endet. Der Vektor soll <span class="math notranslate nohighlight">\(50\)</span> Elemente enthalten und der Abstand zwischen zwei benachbarten Einträgen soll konstant sein.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -608,37 +578,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<p>Die Funktionen <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.linspace}\)</span>, sind sehr nützliche Funktionen, um eine regelmäßige Zahlenfolgen zu erzeugen.</p>
-<p><span style="color:red"> Ich verstehe die nachfolgende Frage nicht. Was ist das Ziel/die Intention? Genauso Aufgabe 2.4.</span></p>
-<p>Was erwarten Sie, wenn Sie die Funktion dazu zwingen nur einen Wert auszugeben? Bevor sie die nächste Aufgabe bearbeiten, stellen Sie eine Vermutung auf, wie das Ergebnis aussehen wird. Stimmt Ihre Vermutung mit der tatsächlichen Ausgabe überein?</p>
-<div class="admonition-aufgabe-2-4 admonition">
-<p class="admonition-title">Aufgabe 2.4</p>
-<p>Erstellen Sie mit <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> einen Vektor <span class="math notranslate nohighlight">\(\texttt{x_arange_1element}\)</span>, dessen Elemente bei <span class="math notranslate nohighlight">\(0\)</span> beginnen, bei <span class="math notranslate nohighlight">\(10\)</span> enden und jeweils durch einen Abstand von <span class="math notranslate nohighlight">\(15\)</span> getrennt sind.</p>
-<p>Erstellen Sie weiterhin einen Vektor <span class="math notranslate nohighlight">\(\texttt{x_linspace_1element}\)</span>, der bei <span class="math notranslate nohighlight">\(0\)</span> beginnt, bei <span class="math notranslate nohighlight">\(10\)</span> endet und der nur <span class="math notranslate nohighlight">\(1\)</span> Element enthält.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_arange_1element</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">x_linspace_1element</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x_arange_1element =&quot;</span><span class="p">,</span> <span class="n">x_arange_1element</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x_linspace_1element =&quot;</span><span class="p">,</span> <span class="n">x_linspace_1element</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </section>
 <section id="arrayerstellung-mittels-funktionen">
 <h2>Arrayerstellung mittels Funktionen<a class="headerlink" href="#arrayerstellung-mittels-funktionen" title="Link to this heading">#</a></h2>
 <p>Um Matrizen mit gewisser Struktur zu erzeugen, haben Sie bereits einige Methoden kennengelernt, zum Beispiel <span class="math notranslate nohighlight">\(\texttt{np.zeros()}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.ones()}\)</span>. In der Numerik benötigen wir häufig die Einhheitsmatrix sowie Diagonal- und Dreieckmatrizen. Auch für solche Matrizen stellt NumPy entsprechende Funktionen zur Erstellung bereit. Wir beginnen mit der Einheitsmatrix.
 Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> erstellt man eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale Einheitsmatrix.</p>
-<div class="admonition-aufgabe-3-1 admonition">
-<p class="admonition-title">Aufgabe 3.1</p>
+<div class="admonition-aufgabe-2-1 admonition">
+<p class="admonition-title">Aufgabe 2.1</p>
 <p>Erstellen Sie die <span class="math notranslate nohighlight">\((4 \times 4)\)</span> Matrix <span class="math notranslate nohighlight">\(\texttt{A_nur5}\)</span>, bei der jeder Eintrag die Zahl <span class="math notranslate nohighlight">\(5\)</span> ist. Berechnen Sie anschließend mit Hilfe der erstellten Matrix <span class="math notranslate nohighlight">\(\texttt{A_nur5}\)</span>, die Matrix <span class="math notranslate nohighlight">\(\texttt{A_nur45}\)</span>, bei der alle Einträge <span class="math notranslate nohighlight">\(5\)</span> sind außer die Diagonaleinträge. Diese enthalten den Wert <span class="math notranslate nohighlight">\(4\)</span>.</p>
 </div>
 <div class="cell docutils container">
@@ -650,11 +596,11 @@ Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> ers
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis</p>
-<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.ones(zeilen, spalten)}\)</span> und multiplizieren Sie die Matrix mit dem passenden Faktor. Nutzen Sie anschließend <span class="math notranslate nohighlight">\(\texttt{np.eye(dimension)}\)</span>, um von jedem Diagonaleintrag <span class="math notranslate nohighlight">\(1\)</span> abzuziehen.</p>
+<p>Verwenden Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{np.ones([zeilen, spalten])}\)</span> und multiplizieren Sie die Matrix mit dem passenden Faktor. Nutzen Sie anschließend <span class="math notranslate nohighlight">\(\texttt{np.eye(dimension)}\)</span>, um von jedem Diagonaleintrag <span class="math notranslate nohighlight">\(1\)</span> abzuziehen.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_nur5</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A_nur5</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="n">A_nur45</span> <span class="o">=</span> <span class="n">A_nur5</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A_nur45</span><span class="p">)</span>
 </pre></div>
@@ -670,8 +616,8 @@ Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> ers
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-3-2 admonition">
-<p class="admonition-title">Aufgabe 3.2</p>
+<div class="admonition-aufgabe-2-2 admonition">
+<p class="admonition-title">Aufgabe 2.2</p>
 <p>Erstellen Sie die Matrix <span class="math notranslate nohighlight">\(\texttt{A_diagonal}\)</span> mit den Werten:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -697,11 +643,11 @@ Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> ers
 </pre></div>
 </div>
 </div>
-<p>Zudem gibt es Methoden obere und untere Dreiecksmatrizen zu erzeugen. Die FUnktion <span class="math notranslate nohighlight">\(\texttt{np.tri(n)}\)</span> erstellt eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale untere Dreiecksmatrix mit <span class="math notranslate nohighlight">\(1\)</span> auf und unterhalb der Diagonalen. Der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.triu(A)}\)</span> transformiert eine quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine obere Dreiecksmatrix, indem er alle Einträge unterhalb der Diagonalen auf <span class="math notranslate nohighlight">\(0\)</span> setzt. Analog transformiert die Funktion <span class="math notranslate nohighlight">\(\texttt{np.tril(A)}\)</span> die quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine untere Dreiecksmatrix.</p>
+<p>Zudem gibt es Methoden obere und untere Dreiecksmatrizen zu erzeugen. Die Funktion <span class="math notranslate nohighlight">\(\texttt{np.tri(n)}\)</span> erstellt eine <span class="math notranslate nohighlight">\(n\)</span>-dimensionale untere Dreiecksmatrix mit <span class="math notranslate nohighlight">\(1\)</span> auf und unterhalb der Diagonalen. Der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.triu(A)}\)</span> transformiert eine quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine obere Dreiecksmatrix, indem er alle Einträge unterhalb der Diagonalen auf <span class="math notranslate nohighlight">\(0\)</span> setzt. Analog transformiert die Funktion <span class="math notranslate nohighlight">\(\texttt{np.tril(A)}\)</span> die quadratische Matrix <span class="math notranslate nohighlight">\(A\)</span> in eine untere Dreiecksmatrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Matrix aus A3.1</span>
-<span class="n">A</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
+<span class="n">A</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
 
 <span class="c1"># löscht alle Einträge oberhalb der Diagonalen</span>
 <span class="n">A_untere_dreieck</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tril</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> 
@@ -710,8 +656,8 @@ Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> ers
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-3-3 admonition">
-<p class="admonition-title">Aufgabe 3.3</p>
+<div class="admonition-aufgabe-2-3 admonition">
+<p class="admonition-title">Aufgabe 2.3</p>
 <p>Erstellen Sie die Matrix  <span class="math notranslate nohighlight">\(\texttt{A_kein_dreieck}\)</span> mit den Werten:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -744,8 +690,8 @@ Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> ers
 </div>
 </div>
 <p>Neben Funktionen, die strukturierte Matrizen erzeugen, gibt es auch Funktionen, die Matrizen mit zufälligen Einträgen erstellen. Eine solche Funktion haben Sie bereits bei den Grundlagen zur Arrayserstellung kennen gelernt: <span class="math notranslate nohighlight">\(\texttt{np.random.rand}\)</span>. Diese Funktion generiert gleichverteilte Zufallszahlen im Intervall <span class="math notranslate nohighlight">\([0,1]\)</span>. Zudem existiert die Funktion  <span class="math notranslate nohighlight">\(\texttt{np.random.randn}\)</span>, welche standardnormalverteilte Zufallszahlen erzeugt. Zum Beispiel der Ausdruck  <span class="math notranslate nohighlight">\(\texttt{np.random.randn(3,2)}\)</span> erstellt eine <span class="math notranslate nohighlight">\((3 \times 2)\)</span> Matrix mit standardnormalverteilten Einträgen.</p>
-<div class="admonition-aufgabe-3-4 admonition">
-<p class="admonition-title">Aufgabe 3.4</p>
+<div class="admonition-aufgabe-2-4 admonition">
+<p class="admonition-title">Aufgabe 2.4</p>
 <p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix  <span class="math notranslate nohighlight">\(\texttt{A_uniform}\)</span>, die zufällig gleichverteilte Einträge zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span> annimmt, sowie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix  <span class="math notranslate nohighlight">\(\texttt{A_normal}\)</span>, die standardnormalverteilte Zufallszahlen beinhaltet. Vergleichen Sie die maximalen Einträge beider Matrizen.</p>
 </div>
 <div class="cell docutils container">
@@ -782,8 +728,8 @@ Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> ers
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-3-5 admonition">
-<p class="admonition-title">Aufgabe 3.5</p>
+<div class="admonition-aufgabe-2-5 admonition">
+<p class="admonition-title">Aufgabe 2.5</p>
 <p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <span class="math notranslate nohighlight">\(\texttt{A_ganzzahlig}\)</span>, die zufällige ganzzahlige Einträge zwischen <span class="math notranslate nohighlight">\(-3\)</span> und <span class="math notranslate nohighlight">\(4\)</span> annimmt. Betrachten Sie anschließend den maximalen Wert der Matrix.</p>
 </div>
 <div class="cell docutils container">
@@ -814,8 +760,8 @@ Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> ers
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-3-6 admonition">
-<p class="admonition-title">Aufgabe 3.6</p>
+<div class="admonition-aufgabe-2-6 admonition">
+<p class="admonition-title">Aufgabe 2.6</p>
 <p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <span class="math notranslate nohighlight">\(\texttt{A_nicht_ganzzahlig}\)</span>, die zufällige rationale Einträge zwischen <span class="math notranslate nohighlight">\(-3\)</span> und <span class="math notranslate nohighlight">\(4\)</span> annimmt. Betrachten Sie anschließend den maximalen Wert der Matrix.</p>
 </div>
 <div class="cell docutils container">
@@ -850,8 +796,8 @@ Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> ers
 </div>
 </div>
 </div>
-<div class="admonition-aufgabe-3-7 admonition">
-<p class="admonition-title">Aufgabe 3.7</p>
+<div class="admonition-aufgabe-2-7 admonition">
+<p class="admonition-title">Aufgabe 2.7</p>
 <p>Erstellen Sie eine <span class="math notranslate nohighlight">\((200 \times 200)\)</span> Matrix <span class="math notranslate nohighlight">\(\texttt{A_normal2}\)</span>, die standardnormalverteilte Zufallszahlen mit Erwartungswert <span class="math notranslate nohighlight">\(2\)</span> uns Standardabweichung <span class="math notranslate nohighlight">\(0.5\)</span> annimmt. Betrachten Sie anschließend den maximalen Wert der Matrix.</p>
 </div>
 <div class="cell docutils container">
@@ -1056,8 +1002,7 @@ Mit <span class="math notranslate nohighlight">\(\texttt{np.eye(n)}\)</span> ers
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manuelle-arrayerstellung">Manuelle Arrayerstellung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektoren-mit-werten-in-gleichmaszigen-abstanden">Vektoren mit Werten in gleichmäßigen Abständen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wiederholung-arrayerstellung">Wiederholung Arrayerstellung</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrayerstellung-mittels-funktionen">Arrayerstellung mittels Funktionen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubersicht-der-matrix-und-vektor-funktionen">Übersicht der Matrix- und Vektor-Funktionen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellen-von-vektoren">Erstellen von Vektoren</a></li>

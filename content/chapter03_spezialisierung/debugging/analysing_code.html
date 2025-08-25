@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -456,23 +455,23 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="fehlersuche">
 <h1>Fehlersuche<a class="headerlink" href="#fehlersuche" title="Link to this heading">#</a></h1>
 <p>Neben der Fehlerbehebung ist es beim Programmieren essentiell Fehler zu finden. Am schwierigsten ist es Fehler zu finden, die Python nicht erkennt, zum Beispiel wenn Sie versehentlich in Ihrer Rechnung <span class="math notranslate nohighlight">\(\texttt{+}\)</span> statt <span class="math notranslate nohighlight">\(\texttt{-}\)</span> geschrieben haben oder die falsche Variable updaten.
-Augenscheinlich ist Python zufrieden, nur Sie am Ende nicht, wenn der Code tut nicht was Sie wollen 😔. Daher ist es wichtig, dass Sie Ihren Code, insbesondere Funktionen, die Sie schreiben, anhand von kleinen Beispielen testen. Die Beispiele sollten so konstruiert sein, dass Ihnen klar ist was das Ergebnis ist, damit Sie die Ergebnisse vergleichen können.
+Augenscheinlich ist Python zufrieden, nur Sie am Ende nicht, da der Code dennoch nicht das tut was Sie wollen 😔. Daher ist es wichtig, dass Sie Ihren Code, insbesondere Funktionen, die Sie schreiben, anhand von kleinen Beispielen testen. Die Beispiele sollten so konstruiert sein, dass Ihnen klar ist was das Ergebnis ist, damit Sie die Ergebnisse vergleichen können.
 So stellen Sie sicher, dass Ihr Code auch die richtigen Ergenisse erzeugt, wenn die handschriftliche Rechnung zu aufwändig wäre.</p>
 <p>Dieses Vorgehen werden wir anhand einer einfachen Aufgabe testen. Dazu erstellen wir eine Funktion, die gewichtete Scores für verschiedene Produkten berechnet. Jedes Produkt hat eine Reihe von Werten, und diese Werte werden mit einem Gewichtsvektor multipliziert, um den Score jedes Produkts zu berechnen. Die Werte umfassen verschiedene Produktmerkmale. Die Produktinformationen sind in der folgenden Tabelle dargestellt:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>ID</p></th>
 <th class="head"><p>Qualität</p></th>
-<th class="head"><p>Design</p></th>
-<th class="head"><p>Größe</p></th>
 <th class="head"><p>Komfort</p></th>
-<th class="head"><p>Preis (€)</p></th>
-<th class="head"><p>Beliebtheit</p></th>
+<th class="head"><p>Retourenquote</p></th>
+<th class="head"><p>Leistung</p></th>
+<th class="head"><p># Bewertungen</p></th>
+<th class="head"><p>Lagerbestand</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>90</p></td>
+<td><p>91</p></td>
 <td><p>85</p></td>
 <td><p>30</p></td>
 <td><p>80</p></td>
@@ -558,7 +557,7 @@ So stellen Sie sicher, dass Ihr Code auch die richtigen Ergenisse erzeugt, wenn 
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \mathbf{P} = \begin{pmatrix}
-1 &amp; 90 &amp; 85 &amp; 30 &amp; 80 &amp; 500 &amp; 1200 \\
+1 &amp; 91 &amp; 85 &amp; 30 &amp; 80 &amp; 500 &amp; 1200 \\
 2 &amp; 80 &amp; 90 &amp; 20 &amp; 85 &amp; 200 &amp; 1500 \\
   &amp;    &amp;    &amp; \vdots &amp;   &amp;   &amp; \\
 10 &amp; 76 &amp; 82 &amp; 30 &amp; 80 &amp; 350 &amp; 1100
@@ -567,7 +566,7 @@ So stellen Sie sicher, dass Ihr Code auch die richtigen Ergenisse erzeugt, wenn 
 <p>Die Einträge der Matrix <span class="math notranslate nohighlight">\(\mathbf{P}\)</span> sind wie folgt zu verstehen:</p>
 <ul class="simple">
 <li><p>Jede Zeile repräsentiert ein Produkt.</p></li>
-<li><p>Die erste Spaten enthält die Produktnummern.</p></li>
+<li><p>Die erste Spalte enthält die Produktnummern.</p></li>
 <li><p>Die Spalten <span class="math notranslate nohighlight">\(2\)</span> bis <span class="math notranslate nohighlight">\(7\)</span> codieren verschiedene Merkmale des Produkts wie zum Beispiel: Durchschnittsbewertung, Verkaufszahlen, Retourenquote, Preis-Leistungsverhältnis, Anzahl der Bewertungen und Lagerbestand.</p></li>
 </ul>
 <p>Die Gewichtsmatrix, die für die Berechnung des Scores verwendet wird, ist gegeben durch:</p>
@@ -581,13 +580,13 @@ So stellen Sie sicher, dass Ihr Code auch die richtigen Ergenisse erzeugt, wenn 
 Daraus ergibt sich beispielshaft der Score für das erste Produkt</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-\text{Score}_1 = &amp; \left(\frac{90}{97} \cdot 0.4\right) 
+\text{Score}_1 = &amp; \left(\frac{91}{97} \cdot 0.4\right) 
   + \left(\frac{85}{90} \cdot 0.25\right) 
   + \left(\frac{30}{40} \cdot (-0.15)\right) \\
   &amp; + \left(\frac{80}{97} \cdot 0.15\right) 
   + \left(\frac{500}{1000} \cdot 0.05\right) 
   + \left(\frac{1200}{1600} \cdot 0.05\right) 
-  = 0.681.
+  = 0.685.
 \end{align}\end{split}\]</div>
 <p>Sie haben bereits einen Codevorschlag erhalten und sollen diesen auf Korrektheit prüfen und gegebenenfalls auftretende Fehler beheben. Zunächst definieren wir aber die entsprechende Matrix <span class="math notranslate nohighlight">\(\mathbf{P}\)</span> als das Array <span class="math notranslate nohighlight">\(\texttt{products}\)</span> und die Gewichte <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> als das Array <span class="math notranslate nohighlight">\(\texttt{weights}\)</span>.</p>
 <div class="cell tag_thebe-init docutils container">
@@ -595,7 +594,7 @@ Daraus ergibt sich beispielshaft der Score für das erste Produkt</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">products</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1200</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1200</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">1500</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">800</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span>
@@ -677,7 +676,7 @@ Aufgabe 1.3</label><div class="sd-tab-content docutils">
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis A1.2</p>
-<p>Bei der Normierung werden für untetschiedliche Produkte durch unterschiedliche Werte geteilt. Ist das sinnvoll? Laufen die Schleifen über die richtigen Werte?</p>
+<p>Bei der Normierung werden für unterschiedliche Produkte durch unterschiedliche Werte geteilt. Ist das sinnvoll? Laufen die Schleifen über die richtigen Werte?</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A1.1</p>
@@ -700,15 +699,15 @@ Aufgabe 1.3</label><div class="sd-tab-content docutils">
     <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>  
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)):</span>
-            <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>  <span class="c1"># Korrektur</span>
+            <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>  <span class="c1"># Korrektur</span>
 
     <span class="n">product_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">ids</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">product_scores</span>
 
 <span class="c1"># Beispiel-Daten für die ersten 3 Merkmale</span>
-<span class="n">products_test</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">weights_test</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">products_test</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">weights_test</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="n">product_scores</span> <span class="o">=</span> <span class="n">score_berechnung</span><span class="p">(</span><span class="n">products_test</span><span class="p">,</span> <span class="n">weights_test</span><span class="p">)</span>
 
@@ -734,20 +733,20 @@ Aufgabe 1.3</label><div class="sd-tab-content docutils">
     <span class="n">values</span> <span class="o">=</span> <span class="n">P</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span> <span class="c1"># Korrektur</span>
+        <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">values</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span> <span class="c1"># Korrektur </span>
 
     <span class="n">scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span>  
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">)):</span> <span class="c1"># Korrektur</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)):</span>
-            <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>  
+            <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>  <span class="c1"># Korrektur A1.1</span>
 
     <span class="n">product_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">ids</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">product_scores</span>
 
 <span class="c1"># Beispiel-Daten</span>
-<span class="n">products_test</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">weights_test</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">products_test</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">weights_test</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="n">product_scores</span> <span class="o">=</span> <span class="n">score_berechnung</span><span class="p">(</span><span class="n">products_test</span><span class="p">,</span> <span class="n">weights_test</span><span class="p">)</span>
 
@@ -785,8 +784,8 @@ Aufgabe 1.3</label><div class="sd-tab-content docutils">
     <span class="k">return</span> <span class="n">product_scores</span>
 
 <span class="c1"># Beispiel-Daten</span>
-<span class="n">products_test</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
-<span class="n">weights_test</span> <span class="o">=</span> <span class="n">weights</span>
+<span class="n">products_test</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">weights_test</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="n">product_scores</span> <span class="o">=</span> <span class="n">score_berechnung</span><span class="p">(</span><span class="n">products_test</span><span class="p">,</span> <span class="n">weights_test</span><span class="p">)</span>
 

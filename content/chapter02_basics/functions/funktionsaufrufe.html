@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -487,6 +486,8 @@ document.write(`
 <span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 <span class="n">A_mystery</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">B_mystery</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -585,7 +586,7 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\texttt{_, num_cols = np.shape(A)}\)</span></p>
 <div class="admonition-aufgabe-2-4 admonition">
 <p class="admonition-title">Aufgabe 2.4</p>
-<p>Erstellen Sie eine Variable mit dem Namen <span class="math notranslate nohighlight">\(\texttt{num_rows}\)</span>, die die Anzahl der Zeilen der Matrix <span class="math notranslate nohighlight">\(\texttt{A_mystery}\)</span> enthält.</p>
+<p>Erstellen Sie eine Variable mit dem Namen <span class="math notranslate nohighlight">\(\texttt{num_rows}\)</span>, die die Anzahl der Zeilen des Arrays <span class="math notranslate nohighlight">\(\texttt{B_mystery}\)</span> enthält. Vergewissern Sie sich vorher wie viele Dimensionen das Array hat.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -596,7 +597,9 @@ document.write(`
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_rows</span><span class="p">,</span> <span class="n">_</span> <span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">A_mystery</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dim</span><span class="p">(</span><span class="n">B_mystery</span><span class="p">))</span>
+
+<span class="n">num_rows</span><span class="p">,</span> <span class="n">_</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">B_mystery</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

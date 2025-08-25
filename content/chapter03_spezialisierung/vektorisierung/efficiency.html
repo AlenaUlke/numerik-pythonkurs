@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -519,7 +518,7 @@ document.write(`
 </div>
 <div class="admonition-aufgabe-1-2 admonition">
 <p class="admonition-title">Aufgabe 1.2</p>
-<p>Der folgende Code soll die <span class="math notranslate nohighlight">\(\Vert \cdot \Vert_2\)</span>-Norm aller Zeile einer <span class="math notranslate nohighlight">\(m \times n\)</span> Matrix berechnen. Schreiben Sie die Berechnung einmal als Schleife über die Zeilen und einmal als vekorisierte Operation mithilfe des Befehls <span class="math notranslate nohighlight">\(\texttt{np.linalg.norm}\)</span>. Machen Sie sich ggf. mit dem Befehl vertraut.</p>
+<p>Der folgende Code soll die <span class="math notranslate nohighlight">\(\Vert \cdot \Vert_2\)</span>-Norm aller Zeilen einer <span class="math notranslate nohighlight">\(m \times n\)</span> Matrix berechnen. Schreiben Sie die Berechnung einmal als Schleife über die Zeilen und einmal als vekorisierte Operation mithilfe des Befehls <span class="math notranslate nohighlight">\(\texttt{np.linalg.norm}\)</span>. Machen Sie sich ggf. mit dem Befehl vertraut.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -576,9 +575,7 @@ document.write(`
 </section>
 <section id="vektorisierte-operationen">
 <h2>Vektorisierte Operationen<a class="headerlink" href="#vektorisierte-operationen" title="Link to this heading">#</a></h2>
-<p><span style="color:red"> Kommentar, dass wir Zeilen und Spaltenvekoren brauchen und 1D vlt nicht klappt oder das flasche leifert.</span></p>
-<p>Im Rahmen des <a class="reference internal" href="../../chapter02_basics/arrays/rechnen_mit_arrays.html"><span class="std std-doc">Rechnen mit Arrays</span></a> haben Sie bereits implizit weitere vektorisierte Operationen kennengelernt. Unteranderem die Addition eines Arrays <span class="math notranslate nohighlight">\(\texttt{x}\)</span> und eines Skalars, zum Beispiel addiert der Befehl <span class="math notranslate nohighlight">\(\texttt{x + 5}\)</span> auf jeden Eintrag von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> den Wert <span class="math notranslate nohighlight">\(5\)</span> ohne das Sie weder einen extra Vektor dessen Einträge alle <span class="math notranslate nohighlight">\(5\)</span> sind, noch müssen Sie durch die Einträge des Vektor iterieren und jedes Element separat mit <span class="math notranslate nohighlight">\(5\)</span> addieren.
-Diese vektorisierte Variante der Addition lässt sich auch auf Matrizen und Vektoren erweitern. Angenommen wir haben den Vektor</p>
+<p>Im Rahmen des <a class="reference internal" href="../../chapter02_basics/arrays/rechnen_mit_arrays.html"><span class="std std-doc">Rechnen mit Arrays</span></a> haben Sie bereits implizit weitere vektorisierte Operationen kennengelernt. Unter anderem die Addition eines Arrays <span class="math notranslate nohighlight">\(\texttt{x}\)</span> mit einem Skalar. So addiert zum Beispiel der Ausdruck <span class="math notranslate nohighlight">\(\texttt{x + 5}\)</span> den Wert <span class="math notranslate nohighlight">\(5\)</span> automatisch zu jedem Eintrag von <span class="math notranslate nohighlight">\(\texttt{x}\)</span>, ohne dass Sie einen zusätzlichen Vektor mit dem Wert <span class="math notranslate nohighlight">\(5\)</span> erstellen oder durch die Einträge von <span class="math notranslate nohighlight">\(\texttt{x}\)</span> iterieren müssen. Diese vektorisierte Variante der Addition lässt sich auch auf Matrizen und Vektoren erweitern. Angenommen wir haben den Vektor</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{pmatrix}
@@ -589,9 +586,9 @@ Diese vektorisierte Variante der Addition lässt sich auch auf Matrizen und Vekt
 \end{pmatrix} \quad \text{und} \quad 
 \begin{pmatrix}
 0 &amp; 1 &amp; 2\\
-\end{pmatrix}
+\end{pmatrix}.
 \end{split}\]</div>
-<p>Dann können wir mit der <em>korrkten</em> Addition dieser beiden Vektoren die folgende Matrix erzeugen:</p>
+<p>Dann können wir mit der <em>korrekten</em> Addition dieser beiden Vektoren die folgende Matrix erzeugen:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{pmatrix}
@@ -606,7 +603,7 @@ Diese vektorisierte Variante der Addition lässt sich auch auf Matrizen und Vekt
 <a class="reference internal image-reference" href="../../../_images/numpy_broadcasting.png"><img alt="../../../_images/numpy_broadcasting.png" src="../../../_images/numpy_broadcasting.png" style="width: 90%;" />
 </a>
 </figure>
-<p>Für alle Methoden genügt es die Vektoren und Matrizen miteinander zu addieren. Bei der zweiten Methode muss allerdings sichergestellt sein, dass die Anzahl der Spalten des Vekors und der Matriz übereinstimmen.</p>
+<p>Für alle Methoden genügt es die Vektoren und Matrizen miteinander zu addieren. Bei der zweiten Methode muss allerdings sichergestellt sein, dass die Anzahl der Spalten des Vektors und der Matrix übereinstimmen.</p>
 <div class="warning admonition">
 <p class="admonition-title">Achtung</p>
 <p>Die spaltenweise oder zeilenweise Addition funktioniert nur, wenn die Anzahl der Zeilen oder Spalten der Matrix und des Vektors identisch sind.</p>
@@ -625,13 +622,30 @@ Diese vektorisierte Variante der Addition lässt sich auch auf Matrizen und Vekt
 </div>
 </div>
 </div>
+<p>Die Addition funktioniert zuverlässig, wenn klar ist, dass es sich um einen Zeilenvektor (Form (1, n)) und einen Spaltenvektor (Form (m, 1)) handelt. Wird dagegen ein eindimensionales Array (Form (n,)) verwendet, kann die Addition mit einer Matrix (z. B. Form (m, n)) zwar funktionieren, aber die Kombination zweier eindimensionaler Arrays ist nicht ohne Weiteres möglich und führt zu einem Fehler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">],[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span>
+
+<span class="n">zeilenvektor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">spaltenvektor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]))</span>
+
+<span class="c1"># funktioniert</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix</span> <span class="o">+</span> <span class="n">zeilenvektor</span><span class="p">)</span>
+
+<span class="c1"># funktioniert nicht</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zeilenvektor</span> <span class="o">+</span> <span class="n">spaltenvektor</span><span class="p">)</span>  <span class="c1"># Fehler</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Ganz analog zu Addition funktioniert auch die zeilenweise bzw. spaltenweise Multiplikation. Dazu betrachten wir das folgenden Beispiel. Angenommen, wir haben eine Matrix der historischen Renditen von vier Aktien über drei Jahre:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 R = \begin{pmatrix}
 0.05 &amp; 0.02 &amp; -0.01 &amp; 0.03 \\
-0.07 &amp; 0.04 &amp; 0.00  &amp; 0.05 \\
--0.03 &amp; 0.01 &amp; 0.02  &amp; 0.01 \\
+0.07 &amp; 0.04 &amp; 0.00 &amp; 0.05 \\
+-0.03 &amp; 0.01 &amp; 0.02 &amp; 0.01
 \end{pmatrix}
 \end{split}\]</div>
 <p>Nun möchten wir für jedes Jahr einen unterschiedlichen Steuerfaktor anwenden. Die Steuerfaktoren sind:</p>
@@ -643,24 +657,22 @@ R = \begin{pmatrix}
 0.92\\
 \end{pmatrix}.
 \end{split}\]</div>
-<p>Die Matrix der Renditen nach Anwendung des jeweiligen Steuerfaktors für jedes Jahr ergibt sich durch die Multiplikation der Zeilen der Matrix <span class="math notranslate nohighlight">\(R\)</span> mit dem Vektor der Steuerfaktoren.</p>
-<div class="admonition-aufgabe-1-2 admonition">
-<p class="admonition-title">Aufgabe 1.2</p>
-<p>Berechnen Sie mit Hilfe der Zeilenweise Multiplikation die tatsächlichten Renditen nach der Steuer und speichern Sie das Ergebnis in der Matrix <span class="math notranslate nohighlight">\(\texttt{R_steuer}\)</span>.</p>
+<p>Die Matrix der Renditen nach Anwendung des jeweiligen Steuerfaktors für jedes Jahr ergibt sich durch die Multiplikation der <span class="math notranslate nohighlight">\(k\)</span>-ten Zeile der Matrix <span class="math notranslate nohighlight">\(R\)</span> mit dem <span class="math notranslate nohighlight">\(k\)</span>-ten Eintrag des Vektors Steuerfaktoren für <span class="math notranslate nohighlight">\(k=1,2,3\)</span>.</p>
+<div class="admonition-aufgabe-2-1 admonition">
+<p class="admonition-title">Aufgabe 2.1</p>
+<p>Berechnen Sie mit Hilfe der zeilenweise Multiplikation die tatsächlichten Renditen nach der Steuer und speichern Sie das Ergebnis in der Matrix <span class="math notranslate nohighlight">\(\texttt{R_steuer}\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Renditenmatrix (3 Jahre x 4 Aktien)</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-    <span class="p">[</span>
-        <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">],</span>  <span class="c1"># 2019</span>
-        <span class="p">[</span><span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>  <span class="c1"># 2020</span>
-        <span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span>  <span class="c1"># 2021</span>
-    <span class="p">]</span>
-<span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span>  <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]</span>
+<span class="p">])</span>
 
 <span class="c1"># Steuerfaktoren für jedes Jahr</span>
-<span class="n">steuerfaktoren</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">])</span>
+<span class="n">steuerfaktoren</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.9</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.88</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.92</span><span class="p">]])</span>
 
 <span class="c1"># Ihr Code</span>
 </pre></div>
@@ -673,17 +685,7 @@ R = \begin{pmatrix}
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Renditenmatrix (3 Jahre x 4 Aktien)</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-    <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">],</span>  <span class="c1"># 2019</span>
-    <span class="p">[</span><span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>   <span class="c1"># 2020</span>
-    <span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]</span>   <span class="c1"># 2021</span>
-<span class="p">])</span>
-
-<span class="c1"># Steuerfaktoren für jedes Jahr</span>
-<span class="n">steuerfaktoren</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">])</span>
-
-<span class="c1"># Anwendung der Steuerfaktoren auf die entsprechenden Zeilen der Matrix</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Anwendung der Steuerfaktoren auf die entsprechenden Zeilen der Matrix</span>
 <span class="n">R_steuer</span> <span class="o">=</span> <span class="n">R</span> <span class="o">*</span> <span class="n">steuerfaktoren</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrix der Renditen nach Anwendung der Steuerfaktoren:&quot;</span><span class="p">)</span>
@@ -691,8 +693,8 @@ R = \begin{pmatrix}
 </pre></div>
 </div>
 </div>
-<div class="admonition-aufgabe-1-3 admonition">
-<p class="admonition-title">Aufgabe 1.3</p>
+<div class="admonition-aufgabe-2-2 admonition">
+<p class="admonition-title">Aufgabe 2.2</p>
 <p>Nutzen Sie Ihr neu hinzugewonnenes Wissen, um effizient (ohne Schleife) die Summe der Quadrate der ersten 100 natürlichen Zahlen zu berechnen.</p>
 </div>
 <div class="cell docutils container">
@@ -727,8 +729,8 @@ R = \begin{pmatrix}
 </div>
 </div>
 <p>Erinnern Sie sich an das Beispiel aus dem Kapitel <a class="reference internal" href="../debugging/error_signs.html"><span class="std std-doc">Fehleranzeige</span></a> zurück, bei dem Produkte gemäß Gewichte im Bezug auf sechs verschiedene Merkmale bewertet werden sollten.</p>
-<div class="admonition-aufgabe-1-4 admonition">
-<p class="admonition-title">Aufgabe 1.4</p>
+<div class="admonition-aufgabe-2-3 admonition">
+<p class="admonition-title">Aufgabe 2.3</p>
 <p>Vektorisieren Sie die Funktion <span class="math notranslate nohighlight">\(\texttt{score_berechnung(P, w)}\)</span>. Lassen Sie den Code zunächst ohne Bearbeitung durchlaufen, um sich zu vergewissern, welche Werte herauskommen sollten.</p>
 </div>
 <div class="cell docutils container">

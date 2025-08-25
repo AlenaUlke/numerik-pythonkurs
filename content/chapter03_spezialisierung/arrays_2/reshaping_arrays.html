@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -510,8 +509,8 @@ document.write(`
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Achtung</p>
-<p>Achten Sie darauf, dass die Anzahl der Element des Arrays <span class="math notranslate nohighlight">\(\texttt{arr}\)</span> gleich der Anzahl der Element der gwünschten Form ist. Wenn Sie ein Array in eine <span class="math notranslate nohighlight">\(m \times n\)</span> Matrix umformen möchten, muss also
-<span class="math notranslate nohighlight">\(\texttt{np.size(arr)} =  m \cdot n\)</span> gelten. Anderfalls gibt Python eine Fehlermeldung aus!</p>
+<p>Achten Sie darauf, dass die Anzahl der Element des Arrays <span class="math notranslate nohighlight">\(\texttt{arr}\)</span> gleich der Anzahl der Element der gewünschten Form ist. Wenn Sie ein Array in eine <span class="math notranslate nohighlight">\(m \times n\)</span> Matrix umformen möchten, muss also
+<span class="math notranslate nohighlight">\(\texttt{np.size(arr)} =  m \cdot n\)</span> gelten. Andernfalls gibt Python eine Fehlermeldung aus!</p>
 </div>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
@@ -611,7 +610,7 @@ document.write(`
 </figure>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1_kopie</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">a1_3x4_matrix</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1_kopie</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">a1_3x4</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">a1_kopie</span><span class="p">)</span>
 </pre></div>
@@ -663,7 +662,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<p>Bisher haben wir die Matrizen immer Zeilenweise gefüllt. Das heißt, die erste Zeile besteht aus den ersten Einträgen des Vektors, die Zweite aus den Einträgen danach usw. Diese Anordnung nennt man <em>row-major order</em>. Natürlich kann man eine Matrix auch Spaltenweise füllen. Das nennt man auch <em>column-major order</em>. Dazu muss <span class="math notranslate nohighlight">\(\texttt{np.reshape}\)</span> die zusätzliche Eingabe <span class="math notranslate nohighlight">\(\texttt{order = 'F'}\)</span> hinzugefügt werden.</p>
+<p>Bisher haben wir die Matrizen immer zeilenweise gefüllt. Das heißt, die erste Zeile besteht aus den ersten Einträgen des Vektors, die Zweite aus den Einträgen danach usw. Diese Anordnung nennt man <em>row-major order</em>. Natürlich kann man eine Matrix auch spaltenweise füllen. Das nennt man auch <em>column-major order</em>. Dazu muss <span class="math notranslate nohighlight">\(\texttt{np.reshape}\)</span> die zusätzliche Eingabe <span class="math notranslate nohighlight">\(\texttt{order = 'F'}\)</span> hinzugefügt werden.</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../../_images/reshape_order.png"><img alt="../../../_images/reshape_order.png" src="../../../_images/reshape_order.png" style="width: 60%;" />
 </a>

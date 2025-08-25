@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -653,7 +652,7 @@ Der Code <span class="math notranslate nohighlight">\(\texttt{x[1:4]}\)</span> e
 <p>Genauso liefert <span class="math notranslate nohighlight">\(\texttt{A[0:3, 2]}\)</span> das erste, zweite und dritte Element der dritten Spalte von <span class="math notranslate nohighlight">\(\texttt{A}\)</span>.</p>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
-<p>Extrahieren Sie aus dem eindimensionalen Array <span class="math notranslate nohighlight">\(\texttt{alter}\)</span> das Alter der Patienten 5 bis 12 und speichern Sie das Ergebnis in der Variable <span class="math notranslate nohighlight">\(\texttt{teilgruppe_alter}\)</span>.</p>
+<p>Extrahieren Sie aus dem eindimensionalen Array <span class="math notranslate nohighlight">\(\texttt{alter}\)</span> das Alter der Patienten, welche zu den Indices 5 bis 12 korresponsieren und speichern Sie das Ergebnis in der Variable <span class="math notranslate nohighlight">\(\texttt{teilgruppe_alter}\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -681,8 +680,7 @@ Der Code <span class="math notranslate nohighlight">\(\texttt{x[1:4]}\)</span> e
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># sollte (15, 5) liefern</span>
-<span class="n">blutwerte</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">blutwerte</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -708,7 +706,7 @@ Der Code <span class="math notranslate nohighlight">\(\texttt{x[1:4]}\)</span> e
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">testgruppe_a</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="mi">7</span><span class="p">,</span> <span class="p">:]</span>
 
-<span class="c1"># alternativ bzw- äquvalent</span>
+<span class="c1"># alternativ bzw. äquivalent</span>
 <span class="n">testgruppe_a</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>

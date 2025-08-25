@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -468,7 +467,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="funktionen-definieren">
 <h1>Funktionen definieren<a class="headerlink" href="#funktionen-definieren" title="Link to this heading">#</a></h1>
-<p>Wenn Sie in Pyton wiederholt dieselbe Berechnung durchführen möchten, dann lohnt es sich, Funktionen zu verwenden. <em>Funktionen</em> sind ein zentrales Werkzeug der Programmierung: Sie helfen, Code zu strukturieren, zu wiederverwenden und verständlich zu dokumentieren.</p>
+<p>Wenn Sie in Pyton wiederholt dieselbe Berechnung durchführen möchten, dann lohnt es sich, Funktionen zu verwenden. <em>Funktionen</em> sind ein zentrales Werkzeug der Programmierung. Funktionen helfen Code zu strukturieren und wiederverwendbar zu machen.</p>
 <p>Stellen Sie sich vor, Sie möchten den Flächeninhalt mehrerer Dreiecke berechnen. Die bekannte mathematische Formel dafür lautet:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -512,7 +511,7 @@ A= \frac{1}{2} \cdot \text{Grundseite} \cdot \text{Höhe}
 <p class="admonition-title">Bemerkung</p>
 <p>Verwenden Sie für sich selbst sprechende Namen, die den Zweck der Funktion klar machen.</p>
 </div>
-<p>In den runden Klammern steht eine Liste von Eingabewerten, auch Parameter genannt. Das sind Platzhalter für Werte, die beim Aufruf der Funktion übergeben werden. Alle Anweisungen, die zur Funktion gehören, müssen <strong>eingerückt</strong> sein. Python erkennt anhand der Einrückung, wo der Funktionskörper beginnt und endet - ähnlich wie bei Schleifen oder if-Anweisungen.</p>
+<p>In den runden Klammern steht eine Liste von Eingabewerten, auch Parameter genannt. Das sind Platzhalter für Werte, die beim Aufruf der Funktion übergeben werden. Alle Anweisungen, die zur Funktion gehören, müssen <strong>eingerückt</strong> sein. Python erkennt anhand der Einrückung, wo der Funktionskörper beginnt und endet.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dreiecksfläche</span><span class="p">(</span><span class="n">grundseite</span><span class="p">,</span> <span class="n">höhe</span><span class="p">):</span>
     <span class="n">grundseite_mal_höhe</span> <span class="o">=</span> <span class="n">grundseite</span> <span class="o">*</span> <span class="n">höhe</span>  <span class="c1"># gehört zur Funktion</span>
 
@@ -585,7 +584,7 @@ A= \frac{1}{2} \cdot \text{Grundseite} \cdot \text{Höhe}
 <p class="admonition-title">Aufgabe 1.2</p>
 <p>Schreiben Sie eine Funktion <span class="math notranslate nohighlight">\(\texttt{norm(x)}\)</span>, die die euklidische Norm eines <span class="math notranslate nohighlight">\(n\)</span>-dimensionalen Vektors <span class="math notranslate nohighlight">\(x\)</span> berechnet. Das heißt:
 <span class="math notranslate nohighlight">\(
-\Vert x \Vert_2 = \sqrt{x_1^2 + \ldots x_n^2}
+\Vert x \Vert_2 = \sqrt{x_1^2 + \ldots + x_n^2}
 \)</span>
 Verwenden Sie als Eingabe ein NumPy-Array.</p>
 </div>
@@ -602,7 +601,9 @@ Verwenden Sie als Eingabe ein NumPy-Array.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">norm</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">norm</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Berechnet die 2-Norm eines n-dimensionalen Vektors.</span>
 <span class="sd">    </span>
 <span class="sd">    Input:</span>
@@ -620,9 +621,9 @@ Verwenden Sie als Eingabe ein NumPy-Array.</p>
 </pre></div>
 </div>
 </div>
-<div class="admonition-aufgabe-3 admonition">
-<p class="admonition-title">Aufgabe 3</p>
-<p>Schreiben Sie eine Funktion <span class="math notranslate nohighlight">\(\texttt{abstand(p1, p2, norm\_funktion)}\)</span>, die den Abstand zweier <span class="math notranslate nohighlight">\(n\)</span>-dimensionaler Punkten <span class="math notranslate nohighlight">\(p_1\)</span>​ und <span class="math notranslate nohighlight">\(p_2\)</span> berechnet. <span class="math notranslate nohighlight">\(\texttt{norm\_funktion}\)</span> ist dabei eine Funktion, welche eine beliebige Norm <span class="math notranslate nohighlight">\(\Vert \cdot \Vert\)</span> darstellt.</p>
+<div class="admonition-aufgabe-1-3 admonition">
+<p class="admonition-title">Aufgabe 1.3</p>
+<p>Schreiben Sie eine Funktion <span class="math notranslate nohighlight">\(\texttt{abstand(p1, p2, norm_funktion)}\)</span>, die den Abstand zweier <span class="math notranslate nohighlight">\(n\)</span>-dimensionaler Punkten <span class="math notranslate nohighlight">\(p_1\)</span>​ und <span class="math notranslate nohighlight">\(p_2\)</span> berechnet. <span class="math notranslate nohighlight">\(\texttt{norm_funktion}\)</span> ist dabei eine Funktion, welche eine beliebige Norm <span class="math notranslate nohighlight">\(\Vert \cdot \Vert\)</span> darstellt.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -649,11 +650,7 @@ Verwenden Sie als Eingabe ein NumPy-Array.</p>
 <span class="sd">    abstand_der_punkte (float): Abstand zwischen den Punkten</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p2</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Die Punkte müssen die gleiche Dimension haben.&quot;</span><span class="p">)</span>
-    
     <span class="n">differenz</span> <span class="o">=</span> <span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span>
-
     <span class="n">abstand_der_punkte</span> <span class="o">=</span> <span class="n">norm_funktion</span><span class="p">(</span><span class="n">differenz</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">abstand_der_punkte</span>
@@ -700,7 +697,7 @@ Was erwarten Sie als Ergebnis?</p>
 </div>
 </div>
 </div>
-<p>Sie können aber auch <em>Schlüsselwortargumente</em> verwenden. Dabei wird dem Namen eines Arguments beim Aufruf direkt ein Wert zugewiesen, wodruch die Lesbarkeit erhöht wird und Fehler bei der Reihenfolge der Variablen verhindert.</p>
+<p>Sie können aber auch <em>Schlüsselwortargumente</em> verwenden. Dabei wird dem Namen eines Arguments beim Aufruf direkt ein Wert zugewiesen, wodurch die Lesbarkeit erhöht wird und Fehler bei der Reihenfolge der Variablen verhindert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A1</span> <span class="o">=</span> <span class="n">dreiecksfläche</span><span class="p">(</span><span class="n">höhe</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">grundseite</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
@@ -740,7 +737,7 @@ Was erwarten Sie als Ergebnis?</p>
 <p>Beim Schreiben eigener Funktionen lohnt es sich, ein paar bewährte Grundsätze zu beachten:</p>
 <ul class="simple">
 <li><p><strong>Lokale Variablen:</strong> Variablen, die innerhalb einer Funktion definiert sind, gelten nur dort. Sie überschreiben keine gleichnamigen Variablen außerhalb der Funktion.</p></li>
-<li><p><strong>Sinnvolle Namen wählen:</strong> Verwenden Sie für sich selbst sprechende Funktions- und Variablennamen, z. B. <span class="math notranslate nohighlight">\(\texttt{berechne\_mittelwert}\)</span> statt <span class="math notranslate nohighlight">\(\texttt{f1}\)</span>.</p></li>
+<li><p><strong>Sinnvolle Namen wählen:</strong> Verwenden Sie für sich selbst sprechende Funktions- und Variablennamen, z. B. <span class="math notranslate nohighlight">\(\texttt{berechne_mittelwert}\)</span> statt <span class="math notranslate nohighlight">\(\texttt{f1}\)</span>.</p></li>
 <li><p><strong>Keine doppelten Berechnungen:</strong> Wenn Sie eine Berechnung mehrfach benötigen, lagern Sie sie in eine Funktion aus – das spart Zeit und vermeidet Fehler.</p></li>
 <li><p><strong>Dokumentation hilft auch Ihnen selbst:</strong> Ein klarer DocString spart Nachdenken, wenn Sie später Ihren eigenen Code wieder verwenden oder erweitern wollen.</p></li>
 <li><p><strong>Funktionen sind Bausteine:</strong> Denken Sie Funktionen als kleine Werkzeuge, die sich kombinieren lassen – das macht auch komplexe numerische Probleme leichter handhabbar.</p></li>

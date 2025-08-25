@@ -1,23 +1,8 @@
-(python-infos)= 
+(installationsempfehlungen)=
 # Installationsguide
-
-```{figure} img/python-logo.png
-    :figclass: margin
-    :width: 150px   
-```
-
-Python ist eine der weltweit bekanntesten und am häufigsten verwendeten Programmiersprachen. Sie wurde in den frühen 1990er Jahren von Guido van Rossum entwickelt und ist seitdem stetig gewachsen. Van Rossum entwarf Python mit dem Ziel, eine einfache, leicht lesbare und dennoch leistungsstarke Sprache zu schaffen. Python ist bekannt für seine klare Syntax, die es Programmierer:innen ermöglicht, Konzepte mit weniger Codezeilen auszudrücken, als dies bei anderen Sprachen der Fall ist. Das macht sie zu einer sogenannte *höhere Programmiersprache*, da sie näher an der menschlichen Sprache und weiter entfernt von der Maschinensprache ist, die Computer direkt verstehen. Durch diesen höheren Abstraktionsgrad ist Python leicht erlernbar und besonders bei Einsteigern beliebt.
-
-Ein großer Vorteil von Python ist, dass es interpretiert und nicht kompiliert wird. Das bedeutet, dass Python-Code direkt Zeile für Zeile von einem speziellen Programm, dem sogenannten Interpreter, ausgeführt wird. Im Gegensatz dazu müssen bei kompilierten Sprachen, wie [C](https://de.wikipedia.org/wiki/C_(Programmiersprache)) oder [Java](https://de.wikipedia.org/wiki/Java_(Programmiersprache)), die Programme zunächst vollständig in Maschinensprache übersetzt werden, bevor sie ausgeführt werden können. Das erleichtert den Entwicklungsprozess und ermöglicht es, schnell Ergebnisse zu sehen und Fehler zu beheben.
 
 Python wird in einer Vielzahl von Bereichen eingesetzt, darunter Webentwicklung, Datenanalyse, maschinelles Lernen, wissenschaftliches Rechnen und sogar im Bereich der künstlichen Intelligenz. Die Vielseitigkeit der Sprache, zusammen mit ihrer großen Gemeinschaft und der riesigen Sammlung von Bibliotheken und Tools, macht Python zu einer hervorragenden Wahl für verschiedenste Anwendungen. Ein Grund für Pythons weitreichenden Einsatzmöglichkeiten sind die umfangreichen [Standardbibliothek](https://docs.python.org/3/library/), welche größtenteils plattformunabhängig verwendbar sind und für zahlreiche Anwendungsfälle bereits die passenden Lösungen bieten.
 
-Der Name *Python* stammt nicht, wie man vielleicht vermuten könnte, von der Schlange, sondern von der britischen Comedy-Gruppe Monty Python. Der Entwickler der Sprache, Guido van Rossum, war ein großer Fan der Serie Monty Python’s Flying Circus. Als er Ende der 1980er Jahre eine neue Programmiersprache entwickelte, suchte er nach einem Namen, der kurz, einzigartig und einprägsam war. Dabei fiel seine Wahl auf *Python* als humorvolle Anspielung auf die berühmte Comedy-Gruppe.
-
-
-
-(installationsempfehlungen)=
-# Python installieren
 
 Damit wir in der ersten Kurseinheit direkt starten können, bitten wir Sie, im Vorfeld die benötigte Entwicklungsumgebung zu installieren. Wir werden die Anaconda Distribution verwenden. Anaconda ist eine Python-Distribution, was bedeutet, dass es neben Python auch eine Vielzahl nützlicher Bibliotheken und Werkzeuge, wie **Jupyter Notebook** und ein eigenes System für virtuelle Umgebungen, mitbringt – all das, was wir in diesem Kurs verwenden möchten.
 
@@ -26,17 +11,36 @@ Anaconda bietet eine All-in-One-Lösung, die sowohl Python als auch wichtige Bib
 Für die Installation von Anaconda gehen Sie bitte wie folgt vor:
 
 ## Schritt 1 - Anaconda herunterladen
-Laden Sie Anaconda [hier](https://www.anaconda.com/download) herunter. Dazu müssen Sie zunächst Ihre E-Mail im rot umrandeten Rechteck eingeben und danach auf **Submit** drücken.
-```{figure} img/anaconda/anaconda_installation_1.png
-```
+Laden Sie Anaconda [hier](https://www.anaconda.com/download/success) herunter. 
+Sie werden zu einer Seite weitergeleitet, auf der Sie zunächst ihr Betriebssystem auswählen müssen, um dann die entsprechende Datei herunterzuladen. Für jedes Betriebssystem haben wir die richtige Wahl rot umrandet.
 
-Anschließend erhalten Sie eine E-Mail, bei der Sie den Button **Download Now** drücken müssen.
-```{figure} img/anaconda/anaconda_installation_2.png
+Falls Sie MacOS verwenden, hängt die richtige Wahl von dem Prozessors Ihres Mac-Computers ab. Wenn ein Apple M1, M2, M3, M4 Prozessor oder neuer verbaut worden ist, wählen Sie die Variante *Apple silicon*.
+
+::::{tab-set} 
+
+:::{tab-item} Windows
+```{figure} img/anaconda/anaconda_install_windows.jpg
+   :figclass: center
+   :width: 100%
 ```
-Sie werden zu einer Seite weitergeleitet, auf der Sie zunächst ihr Betriebssystem auswählen müssen, um dann die entsprechende Datei herunterzuladen. Für jedes Betriebssystem haben wir die richtige Wahl rot umrandet. 
-```{figure} img/anaconda/anaconda_installation_3.png
+:::
+
+:::{tab-item} MacOS
+```{figure} img/anaconda/anaconda_install_mac.jpg
+   :figclass: center
+   :width: 100%
 ```
-Nun haben Sie die aktuelle Version von Python (Python 3.12) heruntergeladen.
+:::
+
+:::{tab-item} Linux
+```{figure} img/anaconda/anaconda_install_linux.jpg
+   :figclass: center
+   :width: 100%
+```
+:::
+::::
+
+Nun haben Sie die aktuelle Version von Python (Python 3.13) heruntergeladen.
 
 ## Schritt 2 - Anaconda installieren
 Starten Sie den heruntergeladenen Installer. Klicken Sie so lange **Next >** und **I Agree** bis Sie den Dateipfad wählen

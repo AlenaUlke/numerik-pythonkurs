@@ -67,7 +67,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Wir nutzt man dieses Jupyter-Book?" href="funktionsweise_jupyter_book.html" />
-    <link rel="prev" title="Struktur des Kurses" href="kursstruktur.html" />
+    <link rel="prev" title="Kursstruktur" href="kursstruktur.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,9 +187,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -418,15 +417,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Installationsguide</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installieren">Python installieren</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schritt-1-anaconda-herunterladen">Schritt 1 - Anaconda herunterladen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schritt-2-anaconda-installieren">Schritt 2 - Anaconda installieren</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schritt-3-anaconda-starten">Schritt 3 - Anaconda starten</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -438,36 +432,43 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installationsguide">
-<span id="python-infos"></span><h1>Installationsguide<a class="headerlink" href="#installationsguide" title="Link to this heading">#</a></h1>
-<figure class="margin align-default">
-<a class="reference internal image-reference" href="../../_images/python-logo.png"><img alt="../../_images/python-logo.png" src="../../_images/python-logo.png" style="width: 150px;" />
-</a>
-</figure>
-<p>Python ist eine der weltweit bekanntesten und am häufigsten verwendeten Programmiersprachen. Sie wurde in den frühen 1990er Jahren von Guido van Rossum entwickelt und ist seitdem stetig gewachsen. Van Rossum entwarf Python mit dem Ziel, eine einfache, leicht lesbare und dennoch leistungsstarke Sprache zu schaffen. Python ist bekannt für seine klare Syntax, die es Programmierer:innen ermöglicht, Konzepte mit weniger Codezeilen auszudrücken, als dies bei anderen Sprachen der Fall ist. Das macht sie zu einer sogenannte <em>höhere Programmiersprache</em>, da sie näher an der menschlichen Sprache und weiter entfernt von der Maschinensprache ist, die Computer direkt verstehen. Durch diesen höheren Abstraktionsgrad ist Python leicht erlernbar und besonders bei Einsteigern beliebt.</p>
-<p>Ein großer Vorteil von Python ist, dass es interpretiert und nicht kompiliert wird. Das bedeutet, dass Python-Code direkt Zeile für Zeile von einem speziellen Programm, dem sogenannten Interpreter, ausgeführt wird. Im Gegensatz dazu müssen bei kompilierten Sprachen, wie <a class="reference external" href="https://de.wikipedia.org/wiki/C_(Programmiersprache)">C</a> oder <a class="reference external" href="https://de.wikipedia.org/wiki/Java_(Programmiersprache)">Java</a>, die Programme zunächst vollständig in Maschinensprache übersetzt werden, bevor sie ausgeführt werden können. Das erleichtert den Entwicklungsprozess und ermöglicht es, schnell Ergebnisse zu sehen und Fehler zu beheben.</p>
+<span id="installationsempfehlungen"></span><h1>Installationsguide<a class="headerlink" href="#installationsguide" title="Link to this heading">#</a></h1>
 <p>Python wird in einer Vielzahl von Bereichen eingesetzt, darunter Webentwicklung, Datenanalyse, maschinelles Lernen, wissenschaftliches Rechnen und sogar im Bereich der künstlichen Intelligenz. Die Vielseitigkeit der Sprache, zusammen mit ihrer großen Gemeinschaft und der riesigen Sammlung von Bibliotheken und Tools, macht Python zu einer hervorragenden Wahl für verschiedenste Anwendungen. Ein Grund für Pythons weitreichenden Einsatzmöglichkeiten sind die umfangreichen <a class="reference external" href="https://docs.python.org/3/library/">Standardbibliothek</a>, welche größtenteils plattformunabhängig verwendbar sind und für zahlreiche Anwendungsfälle bereits die passenden Lösungen bieten.</p>
-<p>Der Name <em>Python</em> stammt nicht, wie man vielleicht vermuten könnte, von der Schlange, sondern von der britischen Comedy-Gruppe Monty Python. Der Entwickler der Sprache, Guido van Rossum, war ein großer Fan der Serie Monty Python’s Flying Circus. Als er Ende der 1980er Jahre eine neue Programmiersprache entwickelte, suchte er nach einem Namen, der kurz, einzigartig und einprägsam war. Dabei fiel seine Wahl auf <em>Python</em> als humorvolle Anspielung auf die berühmte Comedy-Gruppe.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="python-installieren">
-<span id="installationsempfehlungen"></span><h1>Python installieren<a class="headerlink" href="#python-installieren" title="Link to this heading">#</a></h1>
 <p>Damit wir in der ersten Kurseinheit direkt starten können, bitten wir Sie, im Vorfeld die benötigte Entwicklungsumgebung zu installieren. Wir werden die Anaconda Distribution verwenden. Anaconda ist eine Python-Distribution, was bedeutet, dass es neben Python auch eine Vielzahl nützlicher Bibliotheken und Werkzeuge, wie <strong>Jupyter Notebook</strong> und ein eigenes System für virtuelle Umgebungen, mitbringt – all das, was wir in diesem Kurs verwenden möchten.</p>
 <p>Anaconda bietet eine All-in-One-Lösung, die sowohl Python als auch wichtige Bibliotheken und Werkzeuge umfasst. Das <strong>Jupyter Notebook</strong> ist für diesen Kurs besonders praktisch, da es uns ermöglicht, in einer einzigen Datei sowohl Programmcode als auch Texte, Formeln und Bilder zu integrieren. So können wir beispielsweise die Aufgabenstellung direkt über dem Code platzieren und mit erläuterndem Text versehen. Dies schafft eine übersichtliche und interaktive Arbeitsumgebung, die das Lernen und die Bearbeitung der Übungen erleichtert.</p>
 <p>Für die Installation von Anaconda gehen Sie bitte wie folgt vor:</p>
 <section id="schritt-1-anaconda-herunterladen">
 <h2>Schritt 1 - Anaconda herunterladen<a class="headerlink" href="#schritt-1-anaconda-herunterladen" title="Link to this heading">#</a></h2>
-<p>Laden Sie Anaconda <a class="reference external" href="https://www.anaconda.com/download">hier</a> herunter. Dazu müssen Sie zunächst Ihre E-Mail im rot umrandeten Rechteck eingeben und danach auf <strong>Submit</strong> drücken.</p>
-<figure class="align-default">
-<img alt="../../_images/anaconda_installation_1.png" src="../../_images/anaconda_installation_1.png" />
+<p>Laden Sie Anaconda <a class="reference external" href="https://www.anaconda.com/download/success">hier</a> herunter.
+Sie werden zu einer Seite weitergeleitet, auf der Sie zunächst ihr Betriebssystem auswählen müssen, um dann die entsprechende Datei herunterzuladen. Für jedes Betriebssystem haben wir die richtige Wahl rot umrandet.</p>
+<p>Falls Sie MacOS verwenden, hängt die richtige Wahl von dem Prozessors Ihres Mac-Computers ab. Wenn ein Apple M1, M2, M3, M4 Prozessor oder neuer verbaut worden ist, wählen Sie die Variante <em>Apple silicon</em>.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Windows</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../_images/anaconda_install_windows.jpg"><img alt="../../_images/anaconda_install_windows.jpg" src="../../_images/anaconda_install_windows.jpg" style="width: 100%;" />
+</a>
 </figure>
-<p>Anschließend erhalten Sie eine E-Mail, bei der Sie den Button <strong>Download Now</strong> drücken müssen.</p>
-<figure class="align-default">
-<img alt="../../_images/anaconda_installation_2.png" src="../../_images/anaconda_installation_2.png" />
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+MacOS</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../_images/anaconda_install_mac.jpg"><img alt="../../_images/anaconda_install_mac.jpg" src="../../_images/anaconda_install_mac.jpg" style="width: 100%;" />
+</a>
 </figure>
-<p>Sie werden zu einer Seite weitergeleitet, auf der Sie zunächst ihr Betriebssystem auswählen müssen, um dann die entsprechende Datei herunterzuladen. Für jedes Betriebssystem haben wir die richtige Wahl rot umrandet.</p>
-<figure class="align-default">
-<img alt="../../_images/anaconda_installation_3.png" src="../../_images/anaconda_installation_3.png" />
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Linux</label><div class="sd-tab-content docutils">
+<figure class="center align-default">
+<a class="reference internal image-reference" href="../../_images/anaconda_install_linux.jpg"><img alt="../../_images/anaconda_install_linux.jpg" src="../../_images/anaconda_install_linux.jpg" style="width: 100%;" />
+</a>
 </figure>
-<p>Nun haben Sie die aktuelle Version von Python (Python 3.12) heruntergeladen.</p>
+</div>
+</div>
+<p>Nun haben Sie die aktuelle Version von Python (Python 3.13) heruntergeladen.</p>
 </section>
 <section id="schritt-2-anaconda-installieren">
 <h2>Schritt 2 - Anaconda installieren<a class="headerlink" href="#schritt-2-anaconda-installieren" title="Link to this heading">#</a></h2>
@@ -538,7 +539,7 @@ Hier starten Sie das bereits mitinstallierten Jupyter Notebook:</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Struktur des Kurses</p>
+        <p class="prev-next-title">Kursstruktur</p>
       </div>
     </a>
     <a class="right-next"
@@ -566,15 +567,10 @@ Hier starten Sie das bereits mitinstallierten Jupyter Notebook:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Installationsguide</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installieren">Python installieren</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schritt-1-anaconda-herunterladen">Schritt 1 - Anaconda herunterladen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schritt-2-anaconda-installieren">Schritt 2 - Anaconda installieren</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schritt-3-anaconda-starten">Schritt 3 - Anaconda starten</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

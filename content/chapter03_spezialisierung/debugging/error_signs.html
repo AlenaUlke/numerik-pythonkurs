@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -575,9 +574,15 @@ Nutzen Sie dazu die Rückmeldung in Form einer Fehlermeldnug von Python.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
+<p>An dieser Stelle ist es wichtig, dass die beiden Zeilen gleich lang sind. Dies können Sie erreichen, indem Sie bei der zweiten Zeile ein Element hinzufügen (<em>Option 1</em>) oder bei der ersten Zeile ein Element entfernen (<em>Option 2</em>).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
+<span class="c1"># Option 1</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>  <span class="c1"># Korrektur</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  
+
+<span class="c1"># Option 2</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>  <span class="c1"># Korrektur</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  
 </pre></div>
 </div>
@@ -764,7 +769,7 @@ Woran könnte das liegen? Passen Sie den Code so an, dass die Fehlermeldung nich
 </pre></div>
 </div>
 </div>
-<p>Wenn Sie den Code aus der Lösung ausführen, merken Sie dass nun keine Fehlermeldung mehr erscheint. Allerdings ist nach dem Code die <span class="math notranslate nohighlight">\(10.\)</span> Fibonacci-Zahl die Zahl <span class="math notranslate nohighlight">\(21\)</span>, was nicht korrekt ist. Die <span class="math notranslate nohighlight">\(10.\)</span> Fibonacci-Zahl ist nämlich <span class="math notranslate nohighlight">\(34\)</span>. Solche Fehler erkennt Python leider nicht und Sie müssen Sie selbst durch das Testen Ihres Codes finden.</p>
+<p>Wenn Sie den Code aus der Lösung ausführen, merken Sie dass nun keine Fehlermeldung mehr erscheint. Allerdings ist nach dem Code die <span class="math notranslate nohighlight">\(10.\)</span> Fibonacci-Zahl die Zahl <span class="math notranslate nohighlight">\(4\)</span>, was nicht korrekt ist. Die <span class="math notranslate nohighlight">\(10.\)</span> Fibonacci-Zahl ist nämlich <span class="math notranslate nohighlight">\(34\)</span>. Solche Fehler erkennt Python leider nicht und Sie müssen Sie selbst durch das Testen Ihres Codes finden.</p>
 <div class="admonition-aufgabe-2-2 admonition">
 <p class="admonition-title">Aufgabe 2.2</p>
 <p>Passen Sie den Code an, sodass die <span class="math notranslate nohighlight">\(10.\)</span> Fibonacci-Zahl korrekt berechnet wird.</p>
@@ -801,7 +806,7 @@ Woran könnte das liegen? Passen Sie den Code so an, dass die Fehlermeldung nich
 </div>
 </div>
 <p>Abschließend wollen wir die Anzahl an Mensaessen, die an einer fiktiven Mensa pro Semester komsumiert werden grafisch darstellen und haben den folgenden Code geschrieben. Leider haben sich Fehler eingeschlichen.
-Der Code erzeugt zunächst die Daten für 30 verschiedene Semester und soll anschließen der Plot erstellen.</p>
+Der Code erzeugt zunächst die Daten für 30 verschiedene Semester und soll anschließend der Plot erstellen.</p>
 <div class="admonition-aufgabe-2-3 admonition">
 <p class="admonition-title">Aufgabe 2.3</p>
 <p>Finden Sie die Fehler in dem Codeausschnitt und verbessern Sie diese.</p>
@@ -813,7 +818,7 @@ Der Code erzeugt zunächst die Daten für 30 verschiedene Semester und soll ansc
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># für reproduzierbare Ergebnisse</span>
 
-<span class="c1"># Erszeugung der Anzahl an verkauften Mensaessen pro Semester</span>
+<span class="c1"># Erzeugung der Anzahl an verkauften Mensaessen pro Semester</span>
 <span class="n">trend</span> <span class="o">=</span> <span class="mi">850</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
 <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">Mensaessen</span> <span class="o">=</span> <span class="n">trend</span> <span class="o">+</span> <span class="n">noise</span>
@@ -863,8 +868,8 @@ Der Code erzeugt zunächst die Daten für 30 verschiedene Semester und soll ansc
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalisiere die Daten</span>
 <span class="n">Mensaessen_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Mensaessen</span><span class="p">)</span> <span class="o">/</span> <span class="n">Mensaessen</span>
 
-<span class="c1"># Dürchführung der Regression</span>
-<span class="n">Grad</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1"># Durchführung der Regression</span>
+<span class="n">Grad</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">Koeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">Semester</span><span class="p">,</span> <span class="n">Mensaessen_norm</span><span class="p">,</span> <span class="n">Grad</span><span class="p">)</span>
 <span class="n">polynomial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">Koeff</span><span class="p">)</span>
 <span class="n">Regression_Mensaessen</span> <span class="o">=</span> <span class="n">polynomial</span><span class="p">(</span><span class="n">Semester</span><span class="p">)</span>
@@ -887,7 +892,7 @@ Der Code erzeugt zunächst die Daten für 30 verschiedene Semester und soll ansc
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Mensaessen_norm</span> <span class="o">=</span> <span class="n">Mensaessen</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Mensaessen</span><span class="p">)</span> <span class="c1"># Korrektur</span>
 
-<span class="n">Grad</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="n">Grad</span> <span class="o">=</span> <span class="mi">1</span> 
 <span class="n">Koeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">Semester</span><span class="p">,</span> <span class="n">Mensaessen_norm</span><span class="p">,</span> <span class="n">Grad</span><span class="p">)</span>
 <span class="n">polynomial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">Koeff</span><span class="p">)</span>
 <span class="n">Regression_Mensaessen</span> <span class="o">=</span> <span class="n">polynomial</span><span class="p">(</span><span class="n">Semester</span><span class="p">)</span>

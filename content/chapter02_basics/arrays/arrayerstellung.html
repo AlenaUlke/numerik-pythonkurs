@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -593,10 +592,14 @@ Im folgenden werden wir sie dennoch <em>Vektoren</em> nennen.</p>
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">A_zeile</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># sollte (1, 2) liefern</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">A_zeile</span><span class="p">))</span> <span class="c1"># sollte (1, 2) liefern</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Um eine Matrix mit einer Zeile zu erstellen, nutzen Sie <span class="math notranslate nohighlight">\(\texttt{np.array([[...]])}\)</span>. Der Aufruf <span class="math notranslate nohighlight">\(\texttt{np.array([5, 10])}\)</span> erstellt einen Vektor!</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
@@ -618,7 +621,7 @@ Im folgenden werden wir sie dennoch <em>Vektoren</em> nennen.</p>
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">A_spalte</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># sollte (3, 1) liefern</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">A_spalte</span><span class="p">))</span> <span class="c1"># sollte (3, 1) liefern</span>
 </pre></div>
 </div>
 </div>
@@ -708,6 +711,10 @@ Im folgenden werden wir sie dennoch <em>Vektoren</em> nennen.</p>
 </div>
 </div>
 </div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Denken Sie daran, dass <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> den Endwert <strong>nicht</strong> mit einschließt.</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
@@ -760,7 +767,8 @@ Es ist aber auch möglich einen anderen Abstand festzulegen.
 </div>
 </div>
 <p>Anstatt den Abstand zwischen den einzelnen Elementen eines Vektors vorzugeben, können Sie auch die gewünschte Anzahl an Elementen zwischen einem Start- und einem Endwert angeben. Dazu wird die Funktion <span class="math notranslate nohighlight">\(\texttt{np.linspace}\)</span> verwendet. Sie erwartet die Eingabe in der Form
-<span class="math notranslate nohighlight">\(\texttt{linspace(startwert, endwert, anzahl_elemente)}\)</span>. Im Gegensatz zu der Funktion <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> ist der Endwert bei <span class="math notranslate nohighlight">\(\texttt{np.linspace}\)</span> im Wertebereich des Vektors enthalten. Die Funktion erzeugt also einen Wertebereich im Sinne des abgeschlossenen Intervalls <span class="math notranslate nohighlight">\([\texttt{startwert}, \texttt{endwert}]\)</span>.</p>
+<span class="math notranslate nohighlight">\(\texttt{linspace(startwert, endwert, anzahl_elemente)}\)</span>. Wie auch bei der Funktion <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> haben die Elemente alle denselben Abstand, welcher automatisch aus dem Start- und Endwert sowie der Elementanzahl bestimmt wird.
+Im Gegensatz zu der Funktion <span class="math notranslate nohighlight">\(\texttt{np.arange}\)</span> ist der Endwert bei <span class="math notranslate nohighlight">\(\texttt{np.linspace}\)</span> im Wertebereich des Vektors enthalten. Die Funktion erzeugt also einen Wertebereich im Sinne des abgeschlossenen Intervalls <span class="math notranslate nohighlight">\([\texttt{startwert}, \texttt{endwert}]\)</span>, dabei haben die Einträge alle denselben Abstand zueinander.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -794,7 +802,7 @@ mit <span class="math notranslate nohighlight">\(100\)</span> Elementen erstelle
 </section>
 <section id="arrayerstellung-mittels-funktionen">
 <h2>Arrayerstellung mittels Funktionen<a class="headerlink" href="#arrayerstellung-mittels-funktionen" title="Link to this heading">#</a></h2>
-<p>Neben Funktionen zur Erzeugung gleichmäßig verteilter Vektoren bietet Python auch Möglichkeiten, Arrays mit zufälligen Einträgen zu erstellen. So erzeugt <span class="math notranslate nohighlight">\(\texttt{np.random.rand(n)}\)</span> einen Vektor mit <span class="math notranslate nohighlight">\(n\)</span> zufällig gewählten Werten zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Neben Funktionen zur Erzeugung gleichmäßig verteilter Vektoren bietet Python auch Möglichkeiten, Arrays mit zufälligen Einträgen zu erstellen. So erzeugt <span class="math notranslate nohighlight">\(\texttt{np.random.rand(n)}\)</span> einen Vektor mit <span class="math notranslate nohighlight">\(n\)</span> zufällig gleichverteilten gewählten Werten zwischen <span class="math notranslate nohighlight">\(0\)</span> und <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># erstellt ein Vektor der Länge 2</span>
@@ -893,7 +901,7 @@ Beides liefert jedoch dasselbe Ergebnis:</p>
 </div>
 <div class="admonition-aufgabe-3-4 admonition">
 <p class="admonition-title">Aufgabe 3.4</p>
-<p>Erzeugen Sie mit Hilfe der Funktion <span class="math notranslate nohighlight">\(\texttt{np.zeros}\)</span> eine <span class="math notranslate nohighlight">\((4 \times 7)\)</span> Matrix aus Nullen und speichern Sie das Ergebnis in einer Varaiblen <span class="math notranslate nohighlight">\(\text{A_zero}\)</span>.</p>
+<p>Erzeugen Sie mit Hilfe der Funktion <span class="math notranslate nohighlight">\(\texttt{np.zeros}\)</span> eine <span class="math notranslate nohighlight">\((4 \times 7)\)</span> Matrix aus Nullen und speichern Sie das Ergebnis in einer Variablen <span class="math notranslate nohighlight">\(\text{A_zero}\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -911,6 +919,7 @@ Beides liefert jedoch dasselbe Ergebnis:</p>
 </pre></div>
 </div>
 </div>
+<p>Das erzeugen von Nullvektoren oder -matrizen erlaubt es uns die Struktur eines Vektors oder einer Matrix bereits festzulegen und anschließend die Einträge Stück für Stück zu modifizieren, zum Beispiel, wenn Sie einen Einheitsvektor erstellen wollen.</p>
 <p>Sie können die Größe, die Dimension und die Anzahl der Elemente eines bereits erstellten Array mit Hilfe der folgenden Funktionen auslesen:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\texttt{shape}\)</span>: Größe des Arrays</p></li>

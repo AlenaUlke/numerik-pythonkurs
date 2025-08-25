@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -524,11 +523,16 @@ Bedingung ist falsch</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition-aufgabe-1-1 admonition">
 <p class="admonition-title">Aufgabe 1.1</p>
-<p>Modifizieren Sie den Code so, dass der Variable <span class="math notranslate nohighlight">\(\texttt{b}\)</span> der Wert <span class="math notranslate nohighlight">\(1\)</span> zugewiesen wird, wenn <span class="math notranslate nohighlight">\(\texttt{a}\)</span> größer als <span class="math notranslate nohighlight">\(1\)</span> ist. Ändern Sie en Wert für <span class="math notranslate nohighlight">\(\texttt{a}\)</span> anschließend zu <span class="math notranslate nohighlight">\(0\)</span> und führen Sie den Code erneut aus.</p>
+<p>Modifizieren Sie den Code so, dass der Variable <span class="math notranslate nohighlight">\(\texttt{b}\)</span> der Wert <span class="math notranslate nohighlight">\(1\)</span> zugewiesen wird, wenn <span class="math notranslate nohighlight">\(\texttt{a}\)</span> größer als <span class="math notranslate nohighlight">\(1\)</span> ist. Ändern Sie den Wert für <span class="math notranslate nohighlight">\(\texttt{a}\)</span> anschließend zu <span class="math notranslate nohighlight">\(0\)</span> und führen Sie den Code erneut aus.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># falls Sie den Code für verschiedene Werte von a testen wollen bitte &quot;del b&quot; auskommentieren, </span>
+<span class="c1"># damit b für jeden Durchlauf gelöscht wird. </span>
+
+<span class="c1"># del b </span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span> 
 
@@ -709,12 +713,13 @@ if und elif Bedingung sind falsch</label><div class="sd-tab-content docutils">
 </section>
 <section id="beispiel-einkommenssteuer">
 <h2>Beispiel - Einkommenssteuer<a class="headerlink" href="#beispiel-einkommenssteuer" title="Link to this heading">#</a></h2>
-<p>In Deutschland ist die Einkommensteuer progressiv, das heißt: Je mehr Sie verdienen, desto höher ist der Steuersatz. Die tatsächliche Berechnung ist recht komplex, aber zur Veranschaulichung reicht ein stark vereinfachtes Modell:</p>
+<p>In Deutschland ist die Einkommensteuer progressiv, das heißt: Je mehr Sie verdienen, desto höher ist der Steuersatz.
+Im Folgenden betrachten wir den Grezsteuersatz abhängig vom Einkommen. Diese sind in der Tabelle zusammengefasst.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Zone</p></th>
 <th class="head"><p>Einkommen (in Euro)</p></th>
-<th class="head"><p>Steuersatz</p></th>
+<th class="head"><p>Grenzsteuersatz</p></th>
 </tr>
 </thead>
 <tbody>
@@ -741,44 +746,44 @@ if und elif Bedingung sind falsch</label><div class="sd-tab-content docutils">
 </tbody>
 </table>
 </div>
-<p>Je nach Höhe Ihres Einkommens soll Ihr Programm nun automatisch den passenden Steuersatz wählen und den Steuerbetrag berechnen.</p>
+<p>Je nach Höhe Ihres Einkommens soll Ihr Programm nun automatisch den passenden Grenzteuersatz bestimmen.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-7">
 Aufgabe 2.1</label><div class="sd-tab-content docutils">
-<p>Passen Sie den Code so an, dass wenn <span class="math notranslate nohighlight">\(\texttt{einkommen}\)</span> kleiner gleich als <span class="math notranslate nohighlight">\(12096\)</span> ist, dann wird <span class="math notranslate nohighlight">\(\texttt{steuersatz}\)</span> auf <span class="math notranslate nohighlight">\(0\)</span> gesetzt und andernfalls auf <span class="math notranslate nohighlight">\(0.14\)</span>.</p>
+<p>Passen Sie den Code so an, dass wenn <span class="math notranslate nohighlight">\(\texttt{einkommen}\)</span> kleiner gleich als <span class="math notranslate nohighlight">\(12096\)</span> ist, dann wird <span class="math notranslate nohighlight">\(\texttt{grenzsteuersatz}\)</span> auf <span class="math notranslate nohighlight">\(0\)</span> gesetzt und andernfalls auf <span class="math notranslate nohighlight">\(0.14\)</span>.</p>
 </div>
 <input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-8">
 Aufgabe 2.2</label><div class="sd-tab-content docutils">
-<p>Erweitern Sie Ihren Code, so dass nun auch Zone 2 korrekt besteuert wird, sprich:</p>
+<p>Erweitern Sie Ihren Code, so dass nun auch für Zone 2 der korrekte Grenzsteuersatz ausgegeben wird, sprich:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lrlrl}
-    &amp; \texttt{einkommen} &amp; \le 12096 &amp; \Rightarrow &amp; \texttt{steuersatz} = 0, \\
-    12096 &lt; &amp; \texttt{einkommen} &amp; \le 17443 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.14, \\
-    &amp; \texttt{einkommen} &amp; \ge 17444 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.2397.
+    &amp; \texttt{einkommen} &amp; \le 12096 &amp; \Rightarrow &amp; \texttt{grenzsteuersatz} = 0, \\
+    12096 &lt; &amp; \texttt{einkommen} &amp; \le 17443 &amp; \Rightarrow &amp; \texttt{grenzsteuersatz}= 0.14, \\
+    &amp; \texttt{einkommen} &amp; \ge 17444 &amp; \Rightarrow &amp; \texttt{grenzsteuersatz}= 0.2397.
 \end{array}
 \end{split}\]</div>
 </div>
 <input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-9">
 Aufgabe 2.3</label><div class="sd-tab-content docutils">
-<p>Erweitern Sie Ihren Code, so dass nun auch Zone 3 korrekt besteuert wird, sprich:</p>
+<p>Erweitern Sie Ihren Code, so dass nun auch für Zone 3 der korrekte Grenzsteuersatz ausgegeben wird, sprich:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lrlrl}
-    &amp; \texttt{einkommen} &amp; \le 12096 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0, \\
-    12096 &lt; &amp; \texttt{einkommen} &amp; \le 17443 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.14, \\
-    17433 &lt; &amp; \texttt{einkommen} &amp; \ge 68480 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.2397, \\
-    &amp; \texttt{einkommen} &amp; \ge 68481 &amp; \Rightarrow &amp; \texttt{steuersatz}= 0.42.
+    &amp; \texttt{einkommen} &amp; \le 12096 &amp; \Rightarrow &amp; \texttt{grenzsteuersatz}= 0, \\
+    12096 &lt; &amp; \texttt{einkommen} &amp; \le 17443 &amp; \Rightarrow &amp; \texttt{grenzsteuersatz}= 0.14, \\
+    17433 &lt; &amp; \texttt{einkommen} &amp; \ge 68480 &amp; \Rightarrow &amp; \texttt{grenzsteuersatz}= 0.2397, \\
+    &amp; \texttt{einkommen} &amp; \ge 68481 &amp; \Rightarrow &amp; \texttt{grenzsteuersatz}= 0.42.
 \end{array}
 \end{split}\]</div>
 </div>
 <input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-10">
 Aufgabe 2.4</label><div class="sd-tab-content docutils">
-<p>Erweitern Sie Ihren Code, so dass alle Zonen korrekt besteuert werden. Außdem soll Ihr Code den Steuerbetrag, also <span class="math notranslate nohighlight">\(\texttt{einkommen} \cdot \texttt{steuersatz}\)</span> ausgeben.</p>
+<p>Erweitern Sie Ihren Code, so dass für alle Zonen der korrekte Grenzsteuersatz bestimmt wird.</p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -788,12 +793,12 @@ Aufgabe 2.4</label><div class="sd-tab-content docutils">
 <span class="c1"># zufälliges Einkommen generieren</span>
 <span class="n">einkommen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300000</span><span class="p">)</span>
 
-<span class="c1"># Ihr Code </span>
-<span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+<span class="c1"># Ihr Code</span>
+<span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einkommen: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">einkommen</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Steuersatz: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">steuersatz</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grenzsteuersatz: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">grenzsteuersatz</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -811,50 +816,60 @@ Aufgabe 2.4</label><div class="sd-tab-content docutils">
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A2.1</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">12096</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einkommen: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">einkommen</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grenzsteuersatz: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">grenzsteuersatz</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A2.2</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">12096</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">17443</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.2397</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.2397</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einkommen: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">einkommen</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grenzsteuersatz: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">grenzsteuersatz</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A2.3</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">12096</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">17443</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
 <span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">68480</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.2397</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.2397</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.42</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.42</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einkommen: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">einkommen</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grenzsteuersatz: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">grenzsteuersatz</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A2.4</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">12096</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">17443</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.14</span>
 <span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">68480</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.2397</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.2397</span>
 <span class="k">elif</span> <span class="n">einkommen</span> <span class="o">&lt;=</span> <span class="mi">277825</span><span class="p">:</span>
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.42</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.42</span>
 <span class="k">else</span><span class="p">:</span> 
-    <span class="n">steuersatz</span> <span class="o">=</span> <span class="mf">0.45</span>
+    <span class="n">grenzsteuersatz</span> <span class="o">=</span> <span class="mf">0.45</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Steuerbetrag: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">einkommen</span> <span class="o">*</span> <span class="n">steuersatz</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einkommen: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">einkommen</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grenzsteuersatz: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">grenzsteuersatz</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -984,7 +999,10 @@ Aufgabe 3.2</label><div class="sd-tab-content docutils">
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A3.1</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ctry</span> <span class="o">=</span> <span class="s2">&quot;Canada&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">ctry</span> <span class="o">=</span> <span class="s2">&quot;Canada&quot;</span>
 
 <span class="n">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Daten für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot; fehlen!&quot;</span>
 <span class="n">warnMsg</span> <span class="o">=</span> <span class="s2">&quot;Es fehlen einzelne Datenpunkte für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span>
@@ -1006,7 +1024,10 @@ Aufgabe 3.2</label><div class="sd-tab-content docutils">
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A3.2</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ctry</span> <span class="o">=</span> <span class="s2">&quot;Norway&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">ctry</span> <span class="o">=</span> <span class="s2">&quot;Norway&quot;</span>
 
 <span class="n">warnMsg</span> <span class="o">=</span> <span class="s2">&quot;Es fehlen einzelne Datenpunkte für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span>
 <span class="n">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Daten für &quot;</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">&quot; fehlen!&quot;</span>
@@ -1156,7 +1177,7 @@ if-elif-else-Anweisung</label><div class="sd-tab-content docutils">
 <span class="n">wochentag</span> <span class="o">=</span> <span class="s2">&quot;Dienstag&quot;</span>
 <span class="c1">#Ihr Code </span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es ist der&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tag_nr</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Tag der Woche. Also ist &quot;</span> <span class="o">+</span> <span class="n">wochentag</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es ist der &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tag_nr</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Tag der Woche. Also ist &quot;</span> <span class="o">+</span> <span class="n">wochentag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

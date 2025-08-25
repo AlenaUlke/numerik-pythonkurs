@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -465,8 +464,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="graphiken-individuell-gestalten">
 <h1>Graphiken individuell gestalten<a class="headerlink" href="#graphiken-individuell-gestalten" title="Link to this heading">#</a></h1>
-<p>Im vorherigen Kapitel zur <a class="reference internal" href="../../chapter02_basics/visualization/visualization.html"><span class="std std-doc">Visualisierung</span></a> haben Sie bereits die Grundlagen kennengelernt um mit Matplotlib Diagramme und Graphiken in Python zu erstellt. Außderdem haben Sie bereits die wichtigsten Elemente eines Diagramms kennengelernt – etwa Achsen, Linien und einfache Beschriftungen. In diesem Kapitel vertiefen Sie Ihre Kenntnisse und wir zeigen Ihnen, wie Sie Plots gezielt anpassen können, um Informationen klarer darzustellen und die Lesbarkeit Ihrer Grafiken zu verbessern.</p>
-<p>Insbesondere lernen Sie, wie Sie zentrale Eigenschaften von Linien und anderen Diagramm-Elementen direkt beim Aufruf der <span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Funktion festlegen. Dies ist hilfreich, um etwa die Linienbreite, Farbe oder den Linienstil anzupassen.</p>
+<p>Im vorherigen Kapitel zur <a class="reference internal" href="../../chapter02_basics/visualization/visualization.html"><span class="std std-doc">Visualisierung</span></a> haben Sie bereits die Grundlagen kennengelernt, um mit Matplotlib Diagramme und Graphiken in Python zu erstellt. An dieser Stelle haben Sie erste Möglichkeiten gesehen, Plots individuell anzupassen, zum Beispiel mit Befehlen wie <span class="math notranslate nohighlight">\(\texttt{'r--o'}\)</span>. Dieser Befehl erstellt ein Diagramm mit einer roten (<span class="math notranslate nohighlight">\(\texttt{r}\)</span>), gestrichelten (<span class="math notranslate nohighlight">\(\texttt{--}\)</span>) Linie und kreisförmigen (<span class="math notranslate nohighlight">\(\texttt{o}\)</span>) Markierungen.</p>
+<p>In diesem Kapitel vertiefen Sie Ihre Kenntnisse und wir zeigen Ihnen, wie Sie Plots gezielt anpassen können, um Informationen klarer darzustellen und die Lesbarkeit Ihrer Grafiken zu verbessern.</p>
 <section id="texttt-plt-plot-eigenschaften-anpassen">
 <h2><span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Eigenschaften anpassen<a class="headerlink" href="#texttt-plt-plot-eigenschaften-anpassen" title="Link to this heading">#</a></h2>
 <p>Viele Eigenschaften von Diagramm-Elementen können direkt über optionale Argumente an die <span class="math notranslate nohighlight">\(\texttt{plt.plot()}\)</span>-Funktion (und ähnliche Funktionen) übergeben werden. Der allgemeine Aufbau ist wie folgt:</p>
@@ -540,7 +539,7 @@ document.write(`
 </div>
 <p>Auch hier gilt wieder: Sie müssen die Aufbereitung der Rohdaten nicht nachvollziehen. Es ist nur wichtig, das Sie mit den Daten arbeiten können. Wir betrachten die Entwicklung von fünf Länder, Deutschland, USA, China, Norwegen und Brasilien, über den Zeitraum 1990 bis 2023. Allerdings haben die Ihnen zur Verfügung gestellten Daten im Vergleich zum Kapitel zu <a class="reference external" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">for-Schleifen</a> eine leicht andere Struktur.</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\texttt{data_array}\)</span>: Numpy-Array, der Größe <span class="math notranslate nohighlight">\( 33 \times 6\)</span>, wobei</p>
+<li><p><span class="math notranslate nohighlight">\(\texttt{data_array}\)</span>: Numpy-Array, der Größe <span class="math notranslate nohighlight">\( 35 \times 6\)</span>, wobei</p>
 <ul>
 <li><p>die Spalte 0 die Jahres Zahlen enthält, und</p></li>
 <li><p>die Spalten 1 bis 5 den Anteil erneuerbarer Energien in Prozent für Deutschland, USA, China, Norwegen und Brasilien (in genau dieser Reihenfolge) enthalten.</p></li>
@@ -560,7 +559,7 @@ document.write(`
 </div>
 </div>
 <p>Das Ziel ist es die Entwicklung der erneuerbaren Energien über die Jahre hinweg länderübergreifend zu analysieren und zu vergleichen.
-Wir visulaisieren zu nächst exemplarisch die Daten für Deutschland.</p>
+Wir visualisieren zu nächst exemplarisch die Daten für Deutschland.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einfacher Plot mit Markern für die Datenpunkte</span>
@@ -653,7 +652,7 @@ Wir visulaisieren zu nächst exemplarisch die Daten für Deutschland.</p>
 <li><p><span class="math notranslate nohighlight">\(\texttt{markeredgecolor}\)</span>: Farbe des Markerrands</p></li>
 <li><p><span class="math notranslate nohighlight">\(\texttt{markerfacecolor}\)</span>: Farbe des Markerinneren</p></li>
 </ul>
-<p>Verschiedene Diagrammtypen und Objekte besitzen jeweils unterschiedliche Eigenschaften, die angepasst werden können. Anstatt sich alle verfügbaren Optionen einzuprägen, empfiehlt es sich, bei Bedarf einen Blick in die offizielle Dokumentation zu werfen:<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html">Matplotlib Line2D properties</a>.</p>
+<p>Verschiedene Diagrammtypen und Objekte besitzen jeweils unterschiedliche Eigenschaften, die angepasst werden können. Anstatt sich alle verfügbaren Optionen einzuprägen, empfiehlt es sich, bei Bedarf einen Blick in die offizielle Dokumentation zu werfen: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html">Matplotlib Line2D properties</a>.</p>
 <p>Als praktische Hilfe finden Sie hier außerdem eine kompakte Übersicht über die wichtigsten Darstellungsoptionen, die Sie bereits kennengelernt haben – ergänzt um weitere häufig genutzte Einstellungen.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
@@ -812,8 +811,7 @@ Farben machen Unterschiede sichtbar und helfen Zusammenhänge auf einen Blick zu
 </div>
 </div>
 <p>Neben den acht Grundfarben können Sie auch aus über zehn Millionen weiteren Farben wählen, indem Sie sogenannte <em>RGB-Farbwerte</em> angeben. Ein RGB-Wert besteht aus drei Zahlen zwischen 0 und 1, die den <em>Anteil von Rot, Grün und Blau</em> in der gewünschten Farbe bestimmen.
-Um eine Farbe auf diese Weise festzulegen, übergeben Sie ein Tupel mit drei Werten an das Argument <span class="math notranslate nohighlight">\(\texttt{color}\)</span>, zum Beispiel
-$<span class="math notranslate nohighlight">\(\texttt{color=(0.5, 0.6, 0)}.\)</span>$</p>
+Um eine Farbe auf diese Weise festzulegen, übergeben Sie ein Tupel mit drei Werten an das Argument <span class="math notranslate nohighlight">\(\texttt{color}\)</span>, zum Beispiel  <span class="math notranslate nohighlight">\(\texttt{color=(0.5, 0.6, 0)}.\)</span></p>
 <div class="admonition-aufgabe-1-5 admonition">
 <p class="admonition-title">Aufgabe 1.5</p>
 <p>Stellen Sie die Daten aus Aufgabe 1.3 erneut dar, aber diesmal mit einer benutzerdefinierten Farbe, die durch das RGB-Tupel <span class="math notranslate nohighlight">\((0.5, 0.6, 0)\)</span> definiert ist.</p>

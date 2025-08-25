@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -466,7 +465,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="arrays-zusammenfugen">
 <h1>Arrays zusammenfügen<a class="headerlink" href="#arrays-zusammenfugen" title="Link to this heading">#</a></h1>
-<p>Der Lehrstuhl für wissenschaftliches Rechnen der Universität Mannheim hat sich zu Beginn des Jahres 2025 zum Ziel gesetzt die Anzahl an NextBike Ausleihen zu analysieren. Dazu wurden vom 06.01. bis zum 19.01.2025 alle Ausleihen von der NextBike Station am Hauptbahnhof gezählt. Um das Arbeitszeitgesetz nicht zu verletzen, wurde die Zählung in drei Schichten unterteilt. Die erste Schicht beinhaltet den Zeitrum 00:00 Uhr bis 11:59 Uhr werktags. Die Daten der ersten Schicht für Woche 1 (06.01-10.01) sind in der Matrix <span class="math notranslate nohighlight">\(\texttt{W1_vormittag}\)</span> gespeichert:</p>
+<p>Der Lehrstuhl für wissenschaftliches Rechnen der Universität Mannheim hat sich zu Beginn des Jahres 2025 zum Ziel gesetzt die Anzahl an NextBike Ausleihen zu analysieren. Dazu wurden vom 06.01. bis zum 19.01.2025 alle Ausleihen von der NextBike Station am Hauptbahnhof gezählt. Um das Arbeitszeitgesetz nicht zu verletzen, wurde die Zählung in drei Schichten unterteilt. Die erste Schicht beinhaltet den Zeitraum 00:00 Uhr bis 11:59 Uhr werktags. Die Daten der ersten Schicht für Woche 1 (06.01-10.01) sind in der Matrix <span class="math notranslate nohighlight">\(\texttt{W1_vormittag}\)</span> gespeichert:</p>
 <div class="math notranslate nohighlight">
 \[
     \texttt{W1_vormittag} = \begin{pmatrix} 
@@ -514,7 +513,7 @@ document.write(`
 \end{split}\]</div>
 <section id="existierende-arrays-kombinieren">
 <h2>Existierende Arrays kombinieren<a class="headerlink" href="#existierende-arrays-kombinieren" title="Link to this heading">#</a></h2>
-<p>Es gibt zwei Möglichkeiten Matrizen zusammenzufügen: vertikal und horitontal. Dieses Zusammenfügren nennt man in beiden Fällen auch <em>konkatenieren</em> oder <em>Konkatenation</em>.</p>
+<p>Es gibt zwei Möglichkeiten Matrizen zusammenzufügen: vertikal und horizonttal. Dieses Zusammenfügen nennt man in beiden Fällen auch <em>konkatenieren</em> oder <em>Konkatenation</em>.</p>
 <p>Das vertikale Zusammenfügen funktioniert über den Befehl <span class="math notranslate nohighlight">\(\texttt{np.vstack((a,b))}\)</span>, wobei in diesem Fall die Matrix <span class="math notranslate nohighlight">\(\texttt{b}\)</span> unten an die Matrix <span class="math notranslate nohighlight">\(\texttt{a}\)</span> gehängt wird.</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../../../_images/hstack_vstack.png"><img alt="../../../_images/hstack_vstack.png" src="../../../_images/hstack_vstack.png" style="width: 90%;" />
@@ -601,6 +600,15 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="warning admonition">
+<p class="admonition-title">Achtung</p>
+<p>Wird <span class="math notranslate nohighlight">\(\texttt{np.hstack}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{np.vstack}\)</span> mit einem eindimensionalen Array (Form <span class="math notranslate nohighlight">\((n,)\)</span>) aufgerufen, interpretiert NumPy dieses je nach Funktion automatisch:</p>
+<ul class="simple">
+<li><p>Bei <span class="math notranslate nohighlight">\(\texttt{np.hstack}\)</span> als <strong>Zeilenvektor</strong> <span class="math notranslate nohighlight">\((1, n)\)</span></p></li>
+<li><p>Bei <span class="math notranslate nohighlight">\(\texttt{np.vstack}\)</span> als <strong>Spaltenvektor</strong> <span class="math notranslate nohighlight">\((n, 1)\)</span></p></li>
+</ul>
+<p>Das klappt nur, wenn die Dimensionen genau passen, kann aber leicht zu Verwirrung führen. 👉 Daher besser direkt mit zweidimensionalen Arrays arbeiten.</p>
+</div>
 <p>Alternativ zu <span class="math notranslate nohighlight">\(\texttt{np.vstack}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.hstack}\)</span> kann man auch die Funktion <span class="math notranslate nohighlight">\(\texttt{np.concatenate}\)</span> verwenden. Folgenden Funktionsaufrufe sind dabei äquivalent:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -663,7 +671,7 @@ Aufgabe 1.4</label><div class="sd-tab-content docutils">
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis A1.4</p>
-<p>Nutzen Sie <span class="math notranslate nohighlight">\(\texttt{np.hstack}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{np.concatenate}\)</span>. Erzeugen Sie einen Spalten Vektor mit den Einträgen <span class="math notranslate nohighlight">\(\texttt{&quot;Vormittag&quot;}\)</span> und <span class="math notranslate nohighlight">\(\texttt{&quot;Nachmittag&quot;}\)</span>. Der Ausdruck <span class="math notranslate nohighlight">\(\texttt{&quot;&quot;}\)</span> entspricht einem leeren String.</p>
+<p>Nutzen Sie <span class="math notranslate nohighlight">\(\texttt{np.hstack}\)</span> oder <span class="math notranslate nohighlight">\(\texttt{np.concatenate}\)</span>. Erzeugen Sie einen Spaltenvektor mit den Einträgen <span class="math notranslate nohighlight">\(\texttt{&quot;Vormittag&quot;}\)</span> und <span class="math notranslate nohighlight">\(\texttt{&quot;Nachmittag&quot;}\)</span>. Der Ausdruck <span class="math notranslate nohighlight">\(\texttt{&quot;&quot;}\)</span> entspricht einem leeren String.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A1.3</p>
@@ -682,7 +690,7 @@ Aufgabe 1.4</label><div class="sd-tab-content docutils">
 </div>
 <div class="admonition-aufgabe-1-5 admonition">
 <p class="admonition-title">Aufgabe 1.5</p>
-<p>Fügen Sie nur die Daten für Woche 2 analog in einer Matrix <span class="math notranslate nohighlight">\(\texttt{W2}\)</span> zusammen. Schreiben Sie dafür nur <strong>eine Zeile</strong> Code. Da Ergebnis soll wie folgt aussehen:</p>
+<p>Fügen Sie nur die Daten für Woche 2 analog in einer Matrix <span class="math notranslate nohighlight">\(\texttt{W2}\)</span> zusammen. Verwenden Sie dafür nur <strong>eine Zuweisungsoperation</strong>. Da Ergebnis soll wie folgt aussehen:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{pmatrix} 
@@ -730,16 +738,19 @@ Aufgabe 1.4</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
+<div class="warning admonition">
+<p class="admonition-title">Achtung</p>
+<p>Bei <span class="math notranslate nohighlight">\(\texttt{np.concatenate}\)</span> müssen alle Arrays die gleiche Anzahl an Dimensionen haben. Zwei eindimensionale Arrays der Form (Form <span class="math notranslate nohighlight">\((n,)\)</span>) lassen sich nur entlang einer einzigen Achse zusammenhängen, nämlich <span class="math notranslate nohighlight">\(\texttt{axis=0}\)</span>. Andere Achsen sind hier nicht erlaubt. Ein eindimensionales Array (Form <span class="math notranslate nohighlight">\((n,)\)</span>) und ein zweidimensionales Array (Form <span class="math notranslate nohighlight">\( (m, n)\)</span>) können dagegen nicht direkt kombiniert werden.</p>
+</div>
 </section>
 <section id="arrays-mittels-zusammenfugen-erstellen">
 <h2>Arrays mittels Zusammenfügen erstellen<a class="headerlink" href="#arrays-mittels-zusammenfugen-erstellen" title="Link to this heading">#</a></h2>
 <p>Wenn Matrizen gewisse Regelmäßigkeiten in ihren Zeilen oder Spalten aufweisen, kann man die sie effizient über Vektoren erzeugen.</p>
-<p><span style="color:red"> Da ein Vektor transponiert wird muss man hier aufpassen. Es kommt drauf an wie die Studieren den Vektor erstellen. Kann ich auch mit (5, ) und (5, 6) concat machen? Wir brachen hier den Kommentar, dass Sie ZEILEN und SPALTENvektor erstellen müssen, weil sonst klappt das nicht. Und verweis auf exkurs Transponieren. Wahrscheinlich schon zu Beginn klar machen!</span></p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 Aufgabe 2.1</label><div class="sd-tab-content docutils">
-<p>Erstellen Sie die folgenden drei Arrays und nutzen Sie den Vektor <span class="math notranslate nohighlight">\(v\)</span>, um <span class="math notranslate nohighlight">\(M\)</span> zu erzeugen.</p>
+<p>Gegeben seien die beiden zweidimensionalen Arrays</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 s=\begin{pmatrix} 
@@ -749,7 +760,12 @@ s=\begin{pmatrix}
         1\\
         2\\
         3
-    \end{pmatrix} \ \text{ und } \ M = \begin{pmatrix} 
+    \end{pmatrix}.
+\end{split}\]</div>
+<p>Nutzen Sie den Vektor <span class="math notranslate nohighlight">\(v\)</span>, um die folgende Matrix <span class="math notranslate nohighlight">\(M\)</span> zu erzeugen:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M = \begin{pmatrix} 
         1 &amp; 1 &amp; 1\\
         2 &amp; 2 &amp; 2\\
         3 &amp; 3 &amp; 3\\
@@ -802,7 +818,7 @@ Zusatzaufgabe</label><div class="sd-tab-content docutils">
 </div>
 <div class="note dropdown admonition">
 <p class="admonition-title">Hinweis A2.2</p>
-<p>Verwenden Sie <span class="math notranslate nohighlight">\(\texttt{np.hstack}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.vstack}\)</span>. Sie können ein Array transponieren, indem Sie an das Arrays der Zusatz <span class="math notranslate nohighlight">\(\texttt{.T}\)</span> hängen.</p>
+<p>Verwenden Sie <span class="math notranslate nohighlight">\(\texttt{np.hstack}\)</span> und <span class="math notranslate nohighlight">\(\texttt{np.vstack}\)</span>. Sie können ein Array mit <span class="math notranslate nohighlight">\(\texttt{np.transpose}\)</span> transponieren.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A2.1</p>
@@ -815,13 +831,13 @@ Zusatzaufgabe</label><div class="sd-tab-content docutils">
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A2.2</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">M</span><span class="p">,</span><span class="n">v</span><span class="p">)),</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">s</span><span class="p">))))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">M</span><span class="p">,</span><span class="n">v</span><span class="p">)),</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">v</span><span class="p">),</span><span class="n">s</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Lösung A2.3</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CM2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">M</span><span class="p">,</span><span class="n">v</span><span class="o">.</span><span class="n">T</span><span class="p">)),</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">))))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CM2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">M</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">v</span><span class="p">))),</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>

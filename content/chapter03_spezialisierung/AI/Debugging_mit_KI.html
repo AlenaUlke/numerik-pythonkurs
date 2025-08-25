@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -567,8 +566,8 @@ document.write(`
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du greifst an und verursachst </span><span class="si">{</span><span class="n">schaden</span><span class="si">}</span><span class="s2"> Schaden!&quot;</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">aktion</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span>
         <span class="n">heilung</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-        <span class="n">spieler_lp</span> <span class="o">+=</span> <span class="n">heilung</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du heilst dich um </span><span class="si">{</span><span class="n">heilung</span><span class="si">}</span><span class="s2"> Lebenspunkte!&quot;</span><span class="p">)</span>
+        <span class="n">spieler_lp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">spieler_lp</span> <span class="o">+</span> <span class="n">heilung</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Du heilst dich um </span><span class="si">{</span><span class="n">heilung</span><span class="si">}</span><span class="s2"> Lebenspunkte! Du hast </span><span class="si">{</span><span class="n">spieler_lp</span><span class="si">}</span><span class="s2"> Leben.&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ungültige Eingabe. Du verlierst deinen Zug!&quot;</span><span class="p">)</span> 
         

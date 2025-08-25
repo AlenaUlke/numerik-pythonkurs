@@ -189,9 +189,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Struktur des Kurses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/kursstruktur.html">Kursstruktur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/installationsguide.html">Installationsguide</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_book.html">Wie nutzt man dieses Jupyterbook?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapter01_einfuehrung/funktionsweise_jupyter_notebook.html">Wie nutzt man Jupyter-Notebooks?</a></li>
 </ul>
@@ -469,7 +468,7 @@ document.write(`
 <p>Zur Visualisierung von Daten benutzt man in Python typischerweise das Modul <span class="math notranslate nohighlight">\(\texttt{pyplot}\)</span> des Pakets Matplotlib. Daher importieren wir es zu Beginn dieses Kapitels.</p>
 <div class="cell tag_thebe-init docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
@@ -483,7 +482,7 @@ document.write(`
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">uhrzeit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">11.5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uhrzeit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">11.5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="n">besuchszahlen_montag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">99</span><span class="p">,</span>  <span class="mi">372</span><span class="p">,</span>  <span class="mi">250</span><span class="p">,</span>  <span class="mi">600</span><span class="p">,</span>  <span class="mi">357</span><span class="p">,</span>  <span class="mi">116</span><span class="p">,</span> <span class="mi">23</span><span class="p">])</span>
 <span class="n">besuchszahlen_dienstag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">94</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">424</span><span class="p">,</span> <span class="mi">528</span><span class="p">,</span> <span class="mi">416</span><span class="p">,</span> <span class="mi">284</span><span class="p">,</span> <span class="mi">201</span><span class="p">])</span>
 <span class="n">besuchszahlen_montag_average</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.45</span><span class="p">,</span> <span class="mf">367.32</span><span class="p">,</span> <span class="mf">268.12</span><span class="p">,</span> <span class="mf">620.07</span><span class="p">,</span> <span class="mf">370.34</span><span class="p">,</span> <span class="mf">70.58</span><span class="p">,</span>  <span class="mf">23.56</span><span class="p">])</span>
@@ -494,16 +493,20 @@ document.write(`
 </div>
 <section id="vektoren-in-einem-diagramm-plot-darstellen">
 <h2>Vektoren in einem Diagramm/Plot darstellen<a class="headerlink" href="#vektoren-in-einem-diagramm-plot-darstellen" title="Link to this heading">#</a></h2>
-<p>Zwei Vektoren <span class="math notranslate nohighlight">\(\texttt{x}\)</span> und <span class="math notranslate nohighlight">\(\texttt{y}\)</span> derselben Länge können mittels der Funktion <span class="math notranslate nohighlight">\(\texttt{plt.plot(x, y)}\)</span> in einem Diagramm/Plot dargestellt werden. Der Vektor <span class="math notranslate nohighlight">\(\texttt{x}\)</span> entspricht dabei den <span class="math notranslate nohighlight">\(x\)</span>- und der Vektor <span class="math notranslate nohighlight">\(\texttt{y}\)</span> den <span class="math notranslate nohighlight">\(y\)</span>-Koordinaten des Graphen.</p>
+<p>Zwei Vektoren <span class="math notranslate nohighlight">\(\texttt{x}\)</span> und <span class="math notranslate nohighlight">\(\texttt{y}\)</span> derselben Länge können mittels der Funktion <span class="math notranslate nohighlight">\(\texttt{plt.plot(x, y)}\)</span> in einem Diagramm/Plot dargestellt werden.
+Der Vektor <span class="math notranslate nohighlight">\(\texttt{x}\)</span> entspricht dabei den <span class="math notranslate nohighlight">\(x\)</span>- und der Vektor <span class="math notranslate nohighlight">\(\texttt{y}\)</span> den <span class="math notranslate nohighlight">\(y\)</span>-Koordinaten des Graphen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">2.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">2.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/0c4cd97b600aacf01148afa24734b576b2ae094dab5a25f697b45f78b8c28c15.png" src="../../../_images/0c4cd97b600aacf01148afa24734b576b2ae094dab5a25f697b45f78b8c28c15.png" />
 </div>
 </div>
 <p>Der Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> wird in Python verwendet, um bei der Datenvisualisierung mit Matplotlib das Diagramm anzuzeigen. <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> öffnet ein Fenster mit dem erstellten Diagramm oder zeigt es im Jupyter Notebook. Ohne diesen Befehl bleibt das Diagramm oft verborgen, besonders außerhalb von interaktiven Programmierumgebungen. Sowohl diese Website als auch Jupyther Notebooks stellen eine interaktive Umgebnung dar. Hier können Sie den Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> also auch weglassen.</p>
@@ -513,7 +516,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
@@ -542,7 +545,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
@@ -557,7 +560,7 @@ document.write(`
 <p>Beachten Sie, dass wenn Sie mehrere <span class="math notranslate nohighlight">\(\texttt{plot}\)</span>-Befehle direkt hintereinander ausführen ohne diese durch den Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show()}\)</span> zu trennen, werden die Graphen entlang derselben Achsen geplottet in einen gemeinsamen Diagramm dargestellt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span>
 
 <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -574,7 +577,7 @@ document.write(`
 <p>Im besten Fall verwenden Sie beide Befehle, denn <span class="math notranslate nohighlight">\(\texttt{plt.figure}\)</span> erstellt eine leere Leinwand (außerhalb von interaktiven Programmierumgebungen ein neues Fenster) für die kommenden <span class="math notranslate nohighlight">\(\texttt{plot}\)</span>-Befehle und der Befehl <span class="math notranslate nohighlight">\(\texttt{plt.show}\)</span> zeigt die Diagramme schließlich an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>        <span class="c1"># Python erstellt eine neue Figure (= leere Leinwand)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>        <span class="c1"># Python erstellt eine neue Figure (= leere Leinwand)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>      <span class="c1"># der Graph wir erstellt </span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>          <span class="c1"># der Graph wird angezeigt</span>
 
@@ -591,7 +594,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
@@ -612,7 +615,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
@@ -636,7 +639,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
@@ -658,7 +661,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
@@ -678,7 +681,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code </span>
 </pre></div>
 </div>
 </div>
@@ -704,7 +707,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag_average</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -734,7 +737,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag_average</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -783,7 +786,7 @@ Schlüsselwort <span class="math notranslate nohighlight">\(\texttt{label}\)</sp
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_montag</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uhrzeit</span><span class="p">,</span> <span class="n">besuchszahlen_dienstag</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
