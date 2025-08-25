@@ -9,7 +9,7 @@ parts:
   chapters:
 # - title: Vorwort 
 #   file: content/chapter01_einfuehrung/vorwort
-  - title: Struktur des Kurses
+  - title: Kursstruktur
     file: content/chapter01_einfuehrung/kursstruktur
   - title: Installationsguide
     file: content/chapter01_einfuehrung/installationsguide
