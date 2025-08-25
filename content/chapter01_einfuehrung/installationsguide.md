@@ -11,22 +11,36 @@ Anaconda bietet eine All-in-One-Lösung, die sowohl Python als auch wichtige Bib
 Für die Installation von Anaconda gehen Sie bitte wie folgt vor:
 
 ## Schritt 1 - Anaconda herunterladen
-Laden Sie Anaconda [hier](https://www.anaconda.com/download) herunter. Dazu müssen Sie zunächst Ihre E-Mail im rot umrandeten Rechteck eingeben und danach auf **Submit** drücken.
-```{figure} img/anaconda/anaconda_installation_1.png
-```
-
-Anschließend erhalten Sie eine E-Mail, bei der Sie den Button **Download Now** drücken müssen.
-```{figure} img/anaconda/anaconda_installation_2.png
-```
+Laden Sie Anaconda [hier](https://www.anaconda.com/download/success) herunter. 
 Sie werden zu einer Seite weitergeleitet, auf der Sie zunächst ihr Betriebssystem auswählen müssen, um dann die entsprechende Datei herunterzuladen. Für jedes Betriebssystem haben wir die richtige Wahl rot umrandet.
 
 Falls Sie MacOS verwenden, hängt die richtige Wahl von dem Prozessors Ihres Mac-Computers ab. Wenn ein Apple M1, M2, M3, M4 Prozessor oder neuer verbaut worden ist, wählen Sie die Variante *Apple silicon*.
 
-```{figure} img/anaconda/anaconda_installation_3.png
-    :figclass: center 
-    :width: 100%
+::::{tab-set} 
+
+:::{tab-item} Windows
+```{figure} img/anaconda/anaconda_install_windows.jpg
+   :figclass: center
+   :width: 100%
 ```
-Nun haben Sie die aktuelle Version von Python (Python 3.12) heruntergeladen.
+:::
+
+:::{tab-item} MacOS
+```{figure} img/anaconda/anaconda_install_mac.jpg
+   :figclass: center
+   :width: 100%
+```
+:::
+
+:::{tab-item} Linux
+```{figure} img/anaconda/anaconda_install_linux.jpg
+   :figclass: center
+   :width: 100%
+```
+:::
+::::
+
+Nun haben Sie die aktuelle Version von Python (Python 3.13) heruntergeladen.
 
 ## Schritt 2 - Anaconda installieren
 Starten Sie den heruntergeladenen Installer. Klicken Sie so lange **Next >** und **I Agree** bis Sie den Dateipfad wählen
