@@ -80,9 +80,9 @@ Wir wünschen Ihnen viel Freude und Erfolg beim Lernen!
   - * Datenverarbeitung in Python - Datenaufbereitung 
         * Tabellen aufbauen
         * Tabellen auslesen
-  - Jupyter Notebook `Uebung_10.ipynb`
-* - Do, 19.11.26
   - 
+* - Do, 19.11.26
+  - Einführung in das Abschlussprojekt
   - 
 * - **Do, 26.11.26**
   - **schriftliches Theorie-Testat 2**
