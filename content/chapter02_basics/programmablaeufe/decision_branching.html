@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.min.css?v=6e7d0de0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\pointer.css?v=c97663ff" />
@@ -266,11 +266,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Programmierkonstrukte</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="while_loops.html">Die Syntax</a></li>
-
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="while_loops.html">While-Schleife</a></li>
 <li class="toctree-l2"><a class="reference internal" href="for_loops.html">For-Schleife</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Bedingte Anweisungen</a></li>
 
@@ -713,6 +709,10 @@ if und elif Bedingung sind falsch</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
+<div class="warning admonition">
+<p class="admonition-title">Bemerkung</p>
+<p>Bei if-Bedingungen verwendet man in Python <span class="math notranslate nohighlight">\(\texttt{and}\)</span>, um zwei Bedingungen miteinander zu verknüpfen. Das Zeichen <span class="math notranslate nohighlight">\(\texttt{&amp;}\)</span> ist dagegen ein bitweiser Operator und wird beispielsweise häufig bei NumPy-Arrays verwendet.</p>
+</div>
 <div class="admonition-aufgabe-1-4 admonition">
 <p class="admonition-title">Aufgabe 1.4</p>
 <p>Erweitern Sie Ihren Code von Aufgabe 1.1, sodass wenn <span class="math notranslate nohighlight">\(\texttt{a} &gt; 1\)</span> und zusätzlich <span class="math notranslate nohighlight">\(\texttt{a} &lt; 4\)</span> erfüllt ist, dann wird <span class="math notranslate nohighlight">\(\texttt{b}\)</span> auf <span class="math notranslate nohighlight">\(4\)</span> gesetzt. Gilt <span class="math notranslate nohighlight">\(\texttt{a} \geq 4\)</span>, wird <span class="math notranslate nohighlight">\(\texttt{b}\)</span> auf <span class="math notranslate nohighlight">\(1\)</span> gesetzt und ansonsten auf <span class="math notranslate nohighlight">\(-2\)</span>. Testen Sie ihren Code für verschiedene Werte von <span class="math notranslate nohighlight">\(\texttt{a}\)</span>, um sicherzustellen dass alle Bedingungen richtig erfasst werden.</p>
@@ -742,7 +742,7 @@ if und elif Bedingung sind falsch</label><div class="sd-tab-content docutils">
   <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
 
 <span class="c1"># Option 2</span>
-<span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">a</span> <span class="o">&amp;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+<span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
   <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
   <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
@@ -932,7 +932,7 @@ Aufgabe 2.4</label><div class="sd-tab-content docutils">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>numpy
 <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pandas
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>matplotlib.pyplot
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>matplotlib
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1053,17 +1053,17 @@ Aufgabe 3.2</label><div class="sd-tab-content docutils">
 <span class="n">warnMsg</span> <span class="o">=</span> <span class="s2">"Es fehlen einzelne Datenpunkte für "</span> <span class="o">+</span> <span class="n">ctry</span> <span class="o">+</span> <span class="s2">"."</span>
 
 <span class="k">if</span> <span class="n">ctry</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">my_ctry</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">ctry</span><span class="p">)</span>
     <span class="n">ctry_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">ctry_data</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Jahre"</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Anteil erneuerbarer Energien (%)"</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="k">else</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">errMsg</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">ctry_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Jahre"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Anteil erneuerbarer Energien (%)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1084,14 +1084,14 @@ Aufgabe 3.2</label><div class="sd-tab-content docutils">
     <span class="k">if</span><span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ctry_data</span><span class="p">))):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">warnMsg</span><span class="p">)</span>
 
-        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">ctry_data</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Jahre"</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Anteil erneuerbarer Energien (%)"</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
 <span class="k">else</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">errMsg</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">ctry_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Jahre"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Anteil erneuerbarer Energien (%)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
